@@ -1,0 +1,38 @@
+created: 20181008054408759
+creator: Mohammad
+modified: 20190216180316705
+modifier: Mohammad
+tags: reveal
+title: Reveal Windget and Transclusion
+type: text/vnd.tiddlywiki
+z-number: 100
+z-status: 160
+
+When using reveal widget, you can, not only, use Text Reference for `state` attribute but also for `text` attribute, see below example.
+
+!! Example I: Using text references for both text and state attributes
+<<<
+
+Here both ''text'' and ''state'' get their values from text references
+
+<<wikitext-example-without-html 
+src:"""<$reveal type="gteq" state="Reveal Helper Tiddler!!z-number" text={{!!z-number}}>
+This is another experinemt.
+<br>
+`Reveal Helper Tiddler!!z-number`: {{Reveal Helper Tiddler!!z-number}}
+</$reveal>
+""">>
+
+<<<
+
+!! Example II: Using text references for both text and default attributes
+In the below, ''default'' attributes gets its value by transclusion.<<vspace 1cm>>
+
+<<wikitext-example-without-html 
+src:"""<$reveal type="gteq"  default={{!!z-status}} text={{Reveal Helper Tiddler!!z-number}}>
+This is another experinemt.
+<br>
+`Reveal Helper Tiddler!!z-number`: {{Reveal Helper Tiddler!!z-number}}
+</$reveal>
+
+""">>

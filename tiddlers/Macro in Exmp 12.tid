@@ -1,0 +1,25 @@
+created: 20181028044341194
+creator: Mohammad
+modified: 20190216180314876
+modifier: Mohammad
+tags: exmp12 $:/tags/Macro
+title: Macro in Exmp 12
+type: text/vnd.tiddlywiki
+
+\define render-code-snippet()
+```$(snippetLanguage)$
+$(snippetCode)$
+```
+\end
+
+\define snip(tiddler)
+<$list filter="[<__tiddler__>tags[]removeprefix[$:/tags/highlight/]limit[1]]" variable="snippetLanguage">
+<$wikify name="snippetCode" text="""<$text text={{{ [<__tiddler__>get[text]] }}}>""">
+
+<<render-code-snippet>>
+
+</$wikify>
+</$list>
+\end
+
+<pre><$view/></pre>

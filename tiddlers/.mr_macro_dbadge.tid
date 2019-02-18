@@ -1,0 +1,11 @@
+created: 20181203212737578
+creator: Mohammad
+modified: 20190216180307410
+modifier: Mohammad
+tags: $:/tags/Macro badge
+title: .mr/macro/dbadge
+type: text/vnd.tiddlywiki
+
+\define dbadge(subject,status, type:"primary")
+<div class="dbadge"><span class="dbadge-subject">$subject$</span><span class="dbadge-status dbadge-$type$ ">$status$</span></div>
+\end

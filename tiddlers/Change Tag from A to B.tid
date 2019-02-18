@@ -1,0 +1,15 @@
+created: 20180726061937190
+modified: 20190216180309166
+tags: 
+title: Change Tag from A to B
+type: text/vnd.tiddlywiki
+
+```
+<$button> Do 
+<$list filter="[tag[Demo]]">
+<$action-setfield $tiddler=<<currentTiddler>> tags="slide Concept-TS" />
+</$list>
+
+</$button>
+```
+Change the tag from `Demo` to `slide` and `Concept-Ts`

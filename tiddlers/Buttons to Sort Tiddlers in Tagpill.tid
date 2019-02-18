@@ -1,0 +1,65 @@
+created: 20190211064241129
+creator: Mohammad
+keywords: sort tag tagdropdown tagpill
+modified: 20190216180309218
+modifier: Mohammad
+responder: Talha
+tags: exmp47 solution
+title: Buttons to Sort Tiddlers in Tagpill
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/fwmEj4d_B3A/mcYLPzeOBgAJ
+
+; How to add a sort button to tagpill dropdown menu?
+: Put a sorting macro in a tiddler tagged with `$:/tags/TagDropdowb`.
+
+!! Example
+Develop a buttons to sort tiddlers in ascending or descending order and add them to dropdown menu in tagpill.
+
+<<<
+The below code does the job, create a new tiddler, name and tag it as below and put the code inside it.
+* Title: macro/sort-tagged-tiddlers (or whatever you want)
+* Tag: `$:/tags/TagDropdown`
+
+```
+\define tagSortFunc(mainTag, order:"ascend")
+
+<$reveal type="match" default="ascend" text=<<__order__>> >
+<$action-listops  $tiddler=<<__mainTag__>>  $filter="[tag<__mainTag__>sortan[]]"/>
+</$reveal>
+
+<$reveal type="nomatch" default="ascend" text=<<__order__>> >
+<$action-listops  $tiddler=<<__mainTag__>>  $filter="[tag<__mainTag__>!sortan[]]"/>
+</$reveal>
+
+
+\end
+
+\define sortInTagDropdown()
+
+<$button tooltip="Sort tiddlers A → Z" aria-label="Sort tiddlers A → Z" class='tc-btn-invisible'>Sort {{!!title}} tiddlers A → Z
+<$macrocall $name="tagSortFunc" mainTag={{!!title}}/>
+</$button>
+
+<$button tooltip="Sort tiddlers Z → A" aria-label="Sort tiddlers Z → A" class='tc-btn-invisible'>Sort {{!!title}} tiddlers Z → A
+<$macrocall $name="tagSortFunc" mainTag={{!!title}} order="no-ascend"/>
+</$button>
+
+\end
+
+<<sortInTagDropdown>>
+```
+<<<
+
+!! Remarks
+* The `sortInTagDropdown` create two buttons for ascending and descending sort order
+* It then calls the `tagSortFunc` to sort alphanumerically the tiddlers tagged with the current tag
+
+!! See it in action
+[[Example 37|macro/sort-tagged-tiddlers]] impelemnt the above code. To see it in action click on a tagpill and see the two new buttons 
+
+* `Sort tiddlers A → Z` and
+* `Sort tiddlers Z → A`
+
+!! Similar topics
+The below topics are related to sort items
+<<list-links "[search:title[sort]] [search:keywords[sort]] -[<currentTiddler>]" type:"ol">>

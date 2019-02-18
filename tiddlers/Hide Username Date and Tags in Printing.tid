@@ -1,0 +1,23 @@
+created: 20190109062515441
+creator: Mohammad
+keywords: print css hide tag date usrname
+modified: 20190216180311648
+modifier: Mohammad
+responder: Tony Grener
+tags: solution
+title: Hide Username Date and Tags in Printing
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/Hx8oQtB9hdg/hqvnQZGvEQAJ
+
+;Is it possible to hide the username, time stamp and tags  in printed tiddlers?
+
+Put the following CSS syntax in a tiddler, tagged with `$:/tags/Stylesheet`:
+
+```css
+@media print {
+     .tc-subtitle {display:none;}
+     .tc-tags-wrapper {display:none;}
+}
+```
+
+This small code will hide the tags wrapper and subtitle (includes username, modified date stam) from printing.

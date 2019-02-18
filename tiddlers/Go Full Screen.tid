@@ -1,0 +1,28 @@
+created: 20180704023721261
+modified: 20190216180311823
+tags: button
+title: Go Full Screen
+type: text/vnd.tiddlywiki
+
+\define my-actions()
+<$action-sendmessage $message="tm-home"/>
+<$action-sendmessage $message="tm-full-screen"/>
+\end
+
+!! Code
+The below code shows a macro and a button to close all tiddlers and go home and then switch to full screen.
+
+```
+\define my-actions()
+<$action-sendmessage $message="tm-home"/>
+<$action-sendmessage $message="tm-full-screen"/>
+\end
+
+<$button actions=<<my-actions>>>
+Click me!
+</$button>
+```
+
+<$button actions=<<my-actions>>>
+Click me!
+</$button>

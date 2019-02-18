@@ -1,0 +1,113 @@
+created: 20190109092713824
+creator: Mohammad
+keywords: rename edit tiddler title
+modified: 20190216180309583
+modifier: Mohammad
+responder: Eric Shulman
+tags: solution
+title: Batch Edit Tiddler Title
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/oMBoAkJIZhQ/mTlPv3FbEQAJ
+
+; How to edit the title of a group of tiddlers?
+First, a bit of history: The current version of TiddlyWiki ("TW" or "TW5") was completely re-written from the ground up several years ago to take advantage of modern browser tech such as HTML5.  Additionally, in TWC, writing programmatic manipulations of tiddlers required either javascript programming or use of extra "plugins" to provide the needed syntax while in TW5, much of the programmatic syntax is provided natively within the TWCore.
+
+First filter the tiddlers by tag and then execute the batch edit on this group. What I want to do is to put something at the begining of each tiddler's title (like adding prefix) without changing the rest of the tittle. So in the end each tiddler will have the same prefix but different rest of the title.
+
+To "filter tiddlers by tag", use the `<$list>` widget, like this:
+
+```
+<$list filter="[tag[sometag]]">
+   
+</$list> 
+```
+
+The `<$list>` widget uses the filter to find all the matching tiddlers and then loops through all the matches and sets the value of the `<<currentTiddler>>` variable to each title, in turn.  By default, the `<$list>` widget will simply output the value of the `<<currentTiddler>>` resulting in the display of titles of all the matching tiddlers.  To make the widget do something else, you need to add more syntax //within// the enclosing `<$list>...</$list>` that references the `<<currentTiddler>>` variable to act on each tiddler (e.g., setting a specified field value in the `<<currentTiddler>>`)
+
+For example, if you wanted to add/update a field named //matched// to "true", you would use the `<$action-setfield>` widget, like this:
+
+```
+<$list filter="[tag[sometag]]">
+   <$action-setfield $tiddler=<<currentTiddler>> matched="true"/>
+</$list>
+```
+
+However, the above code is //NOT// enough to get the job done.  Because the `<$action-setfield>` widget changes stored tiddler values, it requires a user-initiated //trigger// event to start the process.  To achieve this, you can enclose the above `<$list>...</$list>` loop within a `<$button>` widget, like this:
+
+```
+<$button>
+   BUTTON TEXT
+   <$list filter="[tag[sometag]]">
+      <$action-setfield $tiddler=<<currentTiddler>> matched="true"/>
+   </$list>
+</$button>
+```
+
+So... for your this case, you might think that the code would be something like:
+
+```
+<$button>
+   BUTTON TEXT
+   <$list filter="[tag[sometag]]">
+      <$action-setfield $tiddler=<<currentTiddler>> title="...NEW TITLE HERE..." />
+   </$list>
+</$button>
+```
+
+However... there are a few tricky details to consider:
+
+First, tiddler //titles// are not just display text, but are used to uniquely identify each tiddler.  Thus, changing a title actually ''copies'' the existing tiddler content (//all fields//) to another tiddler with the specified new title and //renaming// a tiddler actually takes TWO actions: 
+
+* first change the title (creating a new tiddler), and then 
+* delete the tiddler with the old title, like this:
+
+```
+<$button>
+   BUTTON TEXT
+   <$list filter="[tag[sometag]]">
+      <$action-setfield      $tiddler=<<currentTiddler>> title="..." /> <!-- CREATES NEW TIDDLER -->
+      <$action-deletetiddler $tiddler=<<currentTiddler>> /> <!-- REMOVES OLD TIDDLER -->  
+   </$list>
+</$button>
+```
+
+The next problem is that TW5 syntax does not do direct text manipulation "in line", so assembling the desired new title (i.e., prepending some text to the beginning of the existing title) requires use of a little "helper" macro, like this:
+
+```
+\define newTitle(prefix) $prefix$$(currentTiddler)$
+```
+
+This macro takes one parameter, "prefix".  The value of the parameter is rendered into the output using the `$...$` syntax (i.e., "`$prefix$`").  The value of the current tiddler title is already available as a variable defined in the calling scope, and is referenced using the `$(...)$`.
+
+Putting it together, we get:
+
+```
+\define newTitle(prefix) $prefix$$(currentTiddler)$
+<$button>
+   BUTTON TEXT
+   <$list filter="[tag[SOMETAG]]">
+      <$action-setfield      $tiddler=<<currentTiddler>> title=<<newTitle "SOMEPREFIX">> />
+      <$action-deletetiddler $tiddler=<<currentTiddler>> />
+   </$list>
+</$button>
+```
+
+While this works, it would be nicer if we didn't "//hard code//" the button label, tag to match and the prefix to be added.  To do this we can move the `<$button>` definition into a macro, and then invoke the macro, passing in the desired values, like this:
+
+```
+\define newTitle(prefix) $prefix$$(currentTiddler)$
+
+\define addPrefix(label,tag,prefix)
+<$button>
+   $label$
+   <$list filter="[tag[$tag$]]">
+      <$action-setfield      $tiddler=<<currentTiddler>> title=<<newTitle "$prefix$">> />
+      <$action-deletetiddler $tiddler=<<currentTiddler>> />
+   </$list>
+</$button>
+\end
+
+<<addPrefix "ClickMe!" "sometag" "SomePrefix">>
+```
+
+That should do it.

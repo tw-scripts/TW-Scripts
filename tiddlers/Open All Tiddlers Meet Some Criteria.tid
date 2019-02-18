@@ -1,0 +1,55 @@
+created: 20190209202932422
+creator: Mohammad
+keywords: open-all macro close-all filter
+modified: 20190216180317278
+modifier: Mohammad
+responder: Mohammad
+tags: solution
+title: Open All Tiddlers Meet Some Criteria
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/8bG7ZJDoXcE/yx0HzjZBBgAJ
+
+; How to open all tiddlers meet special criteria?
+: Use the `action-navigate` widget
+
+!! Example
+The below macro 
+
+* Gets a filter as a criteria to find all tiddlers meet that criteria.
+* Uses the `tm-close-all-tiddlers` message to close all tiddlers open in story river
+* Uses the `action-navigate` to open every output of filtered list in story river
+
+```
+\define open-all(filter, label:"Open all")
+<$button>$label$
+<$action-sendmessage $message="tm-close-all-tiddlers"/>
+<$list filter=<<__filter__>> >
+<$action-navigate $to=<<currentTiddler>> />
+</$list>
+</$button>
+\end
+```
+
+!! Demo
+#<div>
+
+Open all tiddlers tagged with `myTag`.
+
+```
+<<open-all filter:"[tag[myTag]]" label:"Open tagged with myTag">>
+```
+</div>
+#<div>
+
+Open all tiddlers have the word `semantic` in their title in alphabetical order.
+
+```
+<<open-all filter:"[search:title[semantic]] +[sort[]]" label:"Open tagged with myTag">>
+```
+</div>
+
+!! Related solutions
+These solutions are similar:
+
+* [[Close all Tiddlers and Open Home]]
+* [[Open all Tiddlers with Tag-X]]

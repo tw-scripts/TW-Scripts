@@ -1,0 +1,42 @@
+created: 20190208045918195
+creator: Mohammad
+keywords: datatiddler json dictionary index
+modified: 20190216180314145
+modifier: Mohammad
+responder: S.S.
+tags: datatiddler solution
+title: Find DataTiddlers with Certain Index/Value
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/acT3Nqfj_TM/VLC7BRDTHQAJ
+
+; How to list all DataTiddlers have an index/value pairs of (`myIndex: myValue`)?
+: Use a filter to find all DataTiddlers and then search in them to see if there is a `myIndex` index and then check if its value is `myValue` then make a link to it.
+
+!! Example
+The below example finds and lists all DataTiddler:
+
+* have an index named:  `validateAll`
+* that has its value: `true`
+* and it makes a link to the tiddlers
+
+
+```
+\define make-link() <$link to="$(display)$">$(display)$</$link><br>
+
+
+<$list filter="[type[application/x-tiddler-dictionary]]" variable=dataTid>
+<$set name="display" value=<<dataTid>>>
+<$set name="data" tiddler=<<dataTid>> index="validateAll">
+<$list filter="[<data>] -[[true]]" emptyMessage=<<make-link>>>
+</$list>
+</$set>
+</$set>
+</$list>
+```
+
+!! Remarks
+* The macro create a nice link to founded DataTiddlers
+* The first `list` widget lists all DataTiddlers in current wiki
+* The second `list` widget filters those DataTiddlers has a `true` value for `validateAll` index. It uses an else form, beacuse the filter is empty for those DataTiddlers are the answer, so the emptyMessage will triggered and a link will be created for answer.
+
+<<alert primary "This solution can also be used to find DataTiddlers having certain indexes.">>

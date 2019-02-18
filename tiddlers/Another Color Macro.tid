@@ -1,0 +1,55 @@
+created: 20180629164419311
+creator: Mohammad
+modified: 20190216180309633
+modifier: Mohammad
+tags: macro
+title: Another Color Macro
+type: text/vnd.tiddlywiki
+
+\define colorcode(code, name, width:"50%")
+<div style="background-color:$name$;border-radius: 5px;padding: 9px 12px 10px;margin:1em;width:$width$;">
+`$code$` <$text text=$name$ />
+</div>
+\end
+
+! Code
+```
+\define colorcode(code, name, width:"50%")
+<div style="background-color:$name$;border-radius: 5px;padding: 9px 12px 10px;margin:1em;width:$width$;">
+`$code$` <$text text=$name$ />
+</div>
+\end
+```
+
+
+! Syntax 
+```
+<<colorcode code:"hexcode" name:"color name">>
+```
+
+! Reference
+This code is broowed from ~BirtC [[showroom plugin|http://showroom.tiddlyspot.com/#%24%3A%2Fthemes%2FBirthe%2Fshowroom%2FColourExamples]]
+
+! Example (pale colors)
+<<colorcode code:"#FFFACD" name:"LemonChiffon">>
+<<colorcode code:"#FFA07A" name:"LightSalmon">>
+<<colorcode code:"#FFE4E" name:"MistyRose">>
+<<colorcode code:"#FFC0CB" name:"Pink">>
+
+<<colorcode code:"#FFF0F5" name:"LavenderBlush">>
+<<colorcode code:"#E6E6FA" name:"Lavender">>
+<<colorcode code:"#F0FFF0" name:"Honeydew">>
+<<colorcode code:"#98FB98" name:"PaleGreen">>
+
+
+
+<<colorcode code:"#E0FFFF" name:"LightCyan">>
+<<colorcode code:"#7FFFD4" name:"Aquamarine">>
+<<colorcode code:"#F0F8FF" name:"AliceBlue">>
+
+<<colorcode code:"#B0E0E6" name:"PowderBlue">>
+<<colorcode code:"#FFF8DC" name:"Cornsilk">>
+
+<<colorcode code:"#FFE4C4" name:"Bisque">>
+<<colorcode code:"#FFFAFA" name:"Snow">>
+<<colorcode code:"#DCDCDC" name:"Gainsboro">>

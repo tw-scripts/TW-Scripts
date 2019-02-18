@@ -1,0 +1,23 @@
+created: 20180628133028250
+creator: Mohammad
+modified: 20190216180308505
+modifier: Mohammad
+note: 20.01-29.99 tiddlers describe nested lists
+tags: nested
+title: 20.01
+type: text/vnd.tiddlywiki
+
+! Nested list
+The below example shows a nested list. 
+
+* The outer list loops over 01, 02, 03
+* The inner list loop s over a, b, c, d
+* The output is kind of concatenation and stitch `Lec` to `<<OutVar>>-<<InVar>>`.
+
+<$macrocall $name="wikitext-example-without-html" 
+src="""><$list filter="01 02 03" variable="OutVar"  >
+    <$list filter="a b c d" variable="InVar">
+      Lec<<OutVar>>-<<InVar>><br>
+    </$list>
+  </$list>
+"""/>

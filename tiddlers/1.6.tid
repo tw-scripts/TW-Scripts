@@ -1,0 +1,42 @@
+created: 20180603031609064
+creator: Mohammad
+modified: 20190216180308728
+modifier: Mohammad
+tags: filter
+title: 1.6
+type: text/vnd.tiddlywiki
+
+! Formatting the output using html
+Here an ordered list is used followed with an ordered list format.
+
+* ''Case 1''
+
+```
+<ul>
+<$list filter="[[Tiddler-A]] [[Tiddler-B]] [[Tiddler-C]]">
+<li><<currentTiddler>></li>
+</$list>
+</ul>
+```
+
+<ul>
+<$list filter="[[Tiddler-A]] [[Tiddler-B]] [[Tiddler-C]]">
+<li><<currentTiddler>></li>
+</$list>
+</ul>
+
+* ''Case 2''
+
+```
+<ol>
+<$list filter="[[Tiddler-A]] [[Tiddler-B]] [[Tiddler-C]]">
+<li><<currentTiddler>></li>
+</$list>
+</ol>
+```
+
+<ol>
+<$list filter="[[Tiddler-A]] [[Tiddler-B]] [[Tiddler-C]]">
+<li><<currentTiddler>></li>
+</$list>
+</ol>

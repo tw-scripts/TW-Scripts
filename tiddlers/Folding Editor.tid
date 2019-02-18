@@ -1,0 +1,42 @@
+created: 20190111155159125
+creator: Mohammad
+keywords: editor folding transclude
+modified: 20190216180311983
+modifier: Mohammad
+responder: Simon Huber (BTC)
+tags: solution
+title: Folding Editor
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/0EkDcX6frpw/lvj3eRD0EAAJ
+
+; Is there a "folding editor" macro - could be called something like:
+
+```
+<<folding-editor "Tiddler-01">>
+<<folding-editor "Tiddler-02">>
+```
+
+!! A folding editor
+The below macro accepts a tiddler title and create an inline folding editor. A small pen is shown on the right and by clicking it reveals an editor to edit the tiddler inline. 
+
+```
+\define folding-editor(tiddler)
+<$set name="state" value={{{ [[$:/state/folding-editor/]addsuffix<currentTiddler>addsuffix<__tiddler__>] }}}>
+<$reveal stateTitle=<<state>> type="nomatch" text="edit">
+<span style="float: right;">
+<$button class="tc-btn-invisible" setTitle=<<state>> setTo="edit">{{$:/core/images/edit-button}}</$button>
+</span>
+<$list filter="[<__tiddler__>is[missing]] [<__tiddler__>!is[missing]!has[text]]">
+<<__tiddler__>>
+</$list>
+<$transclude tiddler=<<__tiddler__>> mode="block"/>
+</$reveal>
+<$reveal stateTitle=<<state>> type="match" text="edit">
+<span style="float: right;">
+<$button class="tc-btn-invisible" setTitle=<<state>> setTo="">{{$:/core/images/done-button}}</$button>
+</span>
+<$edit-text class="tc-edit-texteditor" tiddler=<<__tiddler__>> tag="textarea" default="" placeholder={{$:/language/EditTemplate/Body/Placeholder}}/>
+</$reveal>
+</$set>
+\end
+```

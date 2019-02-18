@@ -1,0 +1,16 @@
+created: 20181006191032544
+creator: Mohammad
+modified: 20190216180317377
+modifier: Mohammad
+tags: mywiki
+title: Solution Resource
+type: text/vnd.tiddlywiki
+
+<<<Solution resource
+*''url'': https://kookma.github.io/Solution/
+*''pass'': -
+*''user'': solution-archive
+*''desc'': Create solution tiddlers to archive Q&A in [[Google forum|https://groups.google.com/forum/#!topic/tiddlywiki]]
+<<<
+
+<<success """''Note'': From release 1.0.3 the plugin page changed from Solution archive to Solution resource and stored in github. The plugin name is Solution. Previous solution can be found here: http://solution-archive.tiddlyspot.com/""">>

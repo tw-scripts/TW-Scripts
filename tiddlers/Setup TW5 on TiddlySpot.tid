@@ -1,0 +1,18 @@
+caption: How to install TW5 on Tiddlyspot.com
+created: 20180429043700245
+creator: Mohammad
+modified: 20190216180317503
+modifier: Mohammad
+tags: tutorial
+title: Setup TW5 on TiddlySpot
+type: text/vnd.tiddlywiki
+
+<!-- Here we use transclusion -->
+
+''{{!!caption}}''
+
+Open
+
+http://tiddlywiki5.tiddlyspot.com/
+
+Use a site name and password. That's it

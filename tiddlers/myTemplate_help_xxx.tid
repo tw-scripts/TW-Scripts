@@ -1,0 +1,38 @@
+caption: xxx
+created: 20181201192139073
+creator: Mohammad
+modified: 20190216180315730
+modifier: Mohammad
+tags: 
+title: myTemplate/help/xxx
+type: text/vnd.tiddlywiki
+
+!! Image basic
+The `image-basic` macro is used to simply display an image with the desired size, aligining, caption and tooltip.
+
+!! Syntax
+
+```
+<<image-basic img width:"30%" align:"left"  caption:"" tooltip:"">>
+```
+
+!! Content and attributes
+|!Attributes |!Type |!Description |
+|img ||the URL of the image, or the title of an image tiddler |
+|width |optional|the width of the image, height is set automatically, default value is 30%|
+|align |optional|`left`, `right`, `center`, alignment of image, default is `left`|
+|caption |optional|the image caption appears below image|
+|tooltip |optional|the tooltip to be displayed over the image|
+
+!! Example
+```
+<<image-basic 
+  img:"myfig.png" 
+  width:"18rem" 
+  align:"center" 
+  caption:"Fig 1. This is a sample image" 
+  tooltip:"My basic image">>
+```
+
+<<vspace 2cm>>
+<<alert info width:40% "For more examples see the [[Demo site.|$:/plugins/.mr/shiraz/demo-site]]">>

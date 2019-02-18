@@ -1,0 +1,13 @@
+created: 20190201123001573
+creator: Mohammad
+modified: 20190216180310625
+modifier: Mohammad
+tags: $:/tags/Macro exmp36
+title: Example 36: Global Macro
+type: text/vnd.tiddlywiki
+
+\define myMac(x,y)
+<$importvariables filter="[tag[mycode]]">
+<<smac1 """$x$""">> <<smac2 """$y$""">>
+</$importvariables>
+\end

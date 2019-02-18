@@ -1,0 +1,81 @@
+created: 20190201040333091
+creator: Mohammad
+keywords: bracket qoute mark syntax
+modified: 20190216180317496
+modifier: Mohammad
+responder: Eric Shulman and Mat
+tags: syntax solution
+title: Shorthand Syntax Summary
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/3DyHxqqFQbg/JxjN6kYjAQAJ
+
+* The table doesn’t distinguish between using a syntax as an attribute value vs. freestanding — for example, freestanding double curly brace transclusion will wikify the target tiddler, while attribute double curly brace transclusion will just return the raw text
+* The `<<__parameter__>>` example is a bit misleading because there are two things going on: the automatic conversion of a parameter into a variable name, and the usage of that variable name with the double angle bracket syntax. If a macro transcludes a tiddler than that tiddler would “see” the double underscored parameters just like any other inherited variable
+
+---
+
+WikiText provides a range of "shorthands" for widgets. These are less versatile than the widgets but they are typically simpler to use when authoring wikitext.
+
+!! Links
+Shorthand links are based on the LinkWidget
+
+| shorthand syntax | "lingo" | description | more info |h
+| `[[`title`]]` |"a link (with brackets)"|Create link to tiddler|[[Linking in WikiText]]|
+| CamelCase |"a camel case link"|Create link to tiddler|[[Linking in WikiText]]|
+
+!! Transclusions
+Shorthand transclusions are based on the TranscludeWidget.
+
+| shorthand syntax | "lingo" | description | more info |h
+| `{{`title`}}` |"transclude"|Transclude tiddler text field|[[Transclusion in WikiText]]|
+| `{{`title`!!`field`}}` |"transclude field"|Transclude tiddler field|[[Transclusion in WikiText]]|
+| `{{!!`field`}}` |"transclude field"|Transclude field in current tiddler|[[Transclusion in WikiText]]|
+| `{{`...`||`template`}}` <br>"..." represents either of the transclusions above|"template transclusion" |Transclude text / other field value and display via template|[[Transclusion in WikiText]] under ""|
+
+''Index transclusions'': The above shorthand forms apply equally well to transclude values from index tiddlers. To transclude values from index tiddlers, you use the same shorthand form as above but with `##` instead of `!!`, for example `{{`title`##`index`}}`
+
+!! Filtered transclusion
+A filter transclusion works as a kind of "in-line ListWidget". It takes a filter as input, runs it, and from the resulting tiddlers it transcludes the titles.
+
+| shorthand syntax | "lingo" | description | more info |h
+| `{{{`filter`}}}` |"filtered transclusion"|Transclude the titles from the filter output||
+| `{{{`filter`||`template`}}}` |"filtered transclusion with a template"|Transclude the titles from the filter output and display via template||
+
+!! Macro calls and variable calls
+Macro calls and variable calls are based on the MacroCallWidget
+
+| shorthand syntax | "lingo" | description | more info |h
+| `<<`name`>>` |"macro call" or<br>"variable call"|Substitute in contents of macro/variable||
+| `<<`macro "parameter"`>>` |"macro call with parameter"|Substitute in contents of macro using parameter as argument||
+| `<<`macro "p1" "" "p3"`>>` |"macro call with parameters"|Substitute in contents of macro using parameters as argument. Note that second parameter is empty in this example.||
+|`<<__`parameter`__>>`|"(call for) parameter as variable"|?(only inside macros)<br>Evaluate parameter||
+
+!! Delimiters
+String delimiters to encapsulate strings as arguments. You can use either pair as long as the string itself doesn't contain that/those same delimiter.
+
+| shorthand syntax | "lingo" | description | more info |h
+| `'`string`'` |"single quotes"|Delimiter (accepts other delimiters except itself)||
+| `"`string`"` |"double quotes"|Delimiter (accepts other delimiters except itself)||
+|`"""`string`"""`|"triple double quotes"|Delimiter (accepts other delimiters except itself)||
+
+!! Notes
+!!! Do not nest shorthand forms
+It is not possible to nest shorthand forms. For example, this does NOT work
+
+`<<mymacro {{myargument}}>>`
+
+Instead you must use the explicit widget for the outer part
+
+`<$macrocall $name=mymacro myparameter={{myargument}} />`
+
+
+!!! Filters
+Inside filters, the outer brackets are typically omitted. Example
+
+`[tag<tagvariable>]` or `[tag{!!title}]`
+
+!!! Acknowledgement
+* [[Josiah|https://groups.google.com/d/msg/tiddlywiki/3DyHxqqFQbg/1JP6_DzeAAAJ]], started the question.
+* [[Eric Shulman|https://groups.google.com/d/msg/tiddlywiki/3DyHxqqFQbg/JxjN6kYjAQAJ]] replied the question.
+* [[Passingby|https://groups.google.com/d/msg/tiddlywiki/3DyHxqqFQbg/XK3Id0JzAQAJ]] compiled the Eric answer.
+* [[Mat|https://groups.google.com/d/msg/tiddlywiki/3DyHxqqFQbg/HYcVvkJBAAAJ]] created this shorthand summary.

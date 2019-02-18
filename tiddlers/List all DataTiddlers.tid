@@ -1,0 +1,20 @@
+created: 20190207061624681
+creator: Mohammad
+modified: 20190216180315115
+modifier: Mohammad
+tags: datatiddler
+title: List all DataTiddlers
+type: text/vnd.tiddlywiki
+
+;How to list all DataTiddlers (dictinary tiddlers) in the current wiki?
+:Use the field `type`
+
+<$macrocall $name="wikitext-example-without-html" 
+src="""><ol><$list filter="[field:type[application/x-tiddler-dictionary]]">
+<li><<currentTiddler>></li>
+</$list></ol>
+"""/>
+
+!! Remarks
+* The `ol` html tag creates an ordered list
+* `field:type[]` is a filter retrieves tiddlers with soecified type, e.g. `[field:type[application/x-tiddler-dictionary]]` gets all tiddler of type dictionary.  

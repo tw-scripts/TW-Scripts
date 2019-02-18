@@ -1,0 +1,48 @@
+created: 20190208065506593
+creator: Mohammad
+modified: 20190216180310149
+modifier: Mohammad
+tags: exmp45 datatiddler
+title: DataTiddler and Property Table
+type: text/vnd.tiddlywiki
+
+!! Property table macro
+The property table macro (`property-table`) is a utility macro to display the index/value pairs of a DataTiddler (JSON or dictionary tiddler) in a nicely formatted table. For more information see [[macro/datatiddler/utility]].
+
+!! Syntax
+
+```
+<<property-table dataTiddler, indexTitle:"Index", valueTitle:"Value">>
+```
+
+!! Content and attributes
+|!Attributes |!Type |!Description |
+|dataTiddler |required|the URL of the image, or the title of an image tiddler |
+|indexTitle |optional|the title of index column, default value is "Index"|
+|valueTitle |optional|the title of value column, default value is "Value"|
+|tblClass |optional|the optional class for customizing the table|
+|caption |optional|the optional table caption. It can accept wikitext and formatting.|
+
+!! Example i
+Display the property table for [[exmp39/acronyms/web]] DataTiddler.
+
+<$macrocall $name="wikitext-example-without-html" 
+src="""><<property-table 
+  dataTiddler:"exmp39/acronyms/web"
+  indexTitle:"Acronym"
+  valueTitle:"Description"
+  caption:"''Table 1. Web Technology Acronyms''"
+>>
+"""/>
+
+!! Example ii
+Here a custom class `stripedTbl` is used for table. See [[stylesheet/customClass]]. 
+
+<$macrocall $name="wikitext-example-without-html" 
+src="""><<property-table 
+  dataTiddler:"exmp39/acronyms/web"
+  indexTitle:"Acronym"
+  valueTitle:"Description"
+  tblClass:"stripedTbl"
+>>
+"""/>

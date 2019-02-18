@@ -1,0 +1,43 @@
+created: 20180730172828852
+modified: 20190216180310332
+tags: 
+title: Count macro with letters
+type: text/vnd.tiddlywiki
+
+\define words() one two three four five six seven eight nine ten eleven twelve
+
+
+! Solution i
+Ref: [[Eric Shulman|https://groups.google.com/d/msg/tiddlywiki/5TjjJzlGg2Q/SXbS-_28AQAJ]]
+
+```
+\define words() one two three four five six seven eight nine ten eleven twelve
+<$list filter="1 2 3" variable="v">
+<$list filter="[enlist<words>nth<v>]" variable="num">
+<<num>>
+</$list>
+</$list>
+```
+<$list filter="10 3 8 1" variable="num">
+   
+<$list filter="[enlist<words>nth<num>]" >
+<<currentTiddler>>
+</$list>
+   
+</$list>
+
+
+! Solution ii
+Ref: [[Mark S|https://groups.google.com/d/msg/tiddlywiki/5TjjJzlGg2Q/n1nMpiS7AQAJ]]
+
+```
+<$list filter="1 2 3 4 11" variable="number">
+<$list filter="1 A 2 B 3 C 4 D 5 E 6 F 7 G 8 H 9 I 10 J 11 K 12 L +[after<number>]" variable="letter">
+<<letter>>
+</$list>
+```
+
+<$list filter="1 2 3 4 11" variable="number">
+<$list filter="1 A 2 B 3 C 4 D 5 E 6 F 7 G 8 H 9 I 10 J 11 K 12 L +[after<number>]" variable="letter">
+<<letter>>
+</$list>

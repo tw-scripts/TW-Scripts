@@ -1,0 +1,27 @@
+created: 20190110200211551
+creator: Mohammad
+keywords: last butlast operator comma-separated filter
+modified: 20190216180310464
+modifier: Mohammad
+responder: Eric Shulman
+tags: operator last solution
+title: Comma Separated List of Tiddlers
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/PiUwdVpdyzQ/OwsKmr6TEgAJ
+
+There are several tiddlers named as `demo/exmp27/title `. Use `$list` widget and create a list of comma separated titles with links.
+
+
+<$macrocall $name="wikitext-example-without-html" 
+src="""
+<$list filter='[tag[exmp27]butlast[]]'><$link><$text text={{{ [<currentTiddler>removeprefix[demo/exmp27/]] }}} /></$link>, </$list>
+<$list filter='[tag[exmp27]last[]]'><$link><$text text={{{ [<currentTiddler>removeprefix[demo/exmp27/]] }}} /></$link> </$list>
+"""/>
+
+!! Remarks
+* The `butlast` operator, selects all tiddlers and leave the last one unselected.
+* The `last` operator, selects the last item in the list
+* The result are shown with no prefix `demo/exmp27/`
+* Note to the comma `,` in the first `$list`. The reason for using two `$list` widgets here is to create a comma separated list of title. There is no comma after the last item.
+* Tiddlers belong to this demo are tagged with <<tag exmp27>>
+<<alert primary width:50% text:"Note: The original [[post|https://groups.google.com/d/msg/tiddlywiki/PiUwdVpdyzQ/OwsKmr6TEgAJ]] has been revised.<br>This is an example of using `last` and `butlast` operator.">>

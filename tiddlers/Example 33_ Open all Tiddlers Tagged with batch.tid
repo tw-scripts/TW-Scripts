@@ -1,0 +1,24 @@
+created: 20190131154954230
+creator: Mohammad
+modified: 20190216180310632
+modifier: Mohammad
+tags: exmp33
+title: Example 33: Open all Tiddlers Tagged with batch
+type: text/vnd.tiddlywiki
+
+\define myproject(mtag, msort:"modified", title:"My Project")
+<$navigator story="$:/StoryList" history="$:/HistoryList">
+	<$button class="tc-btn-invisible tc-tiddlylink">
+		{{$:/core/images/folder}} $title$
+		<$action-sendmessage $message="tm-close-all-tiddlers" />
+		<$list filter="[tag<__mtag__>!sort<__msort__>]">
+			<$action-navigate $to=<<currentTiddler>>/>        
+		</$list>
+	</$button>
+</$navigator>
+\end
+
+This example opens all tiddlers tagged with `batch` by simply clicking the below button.
+
+<<myproject mtag:"batch" title:"Open all Tiddlers with tag ''batch''" msort:"title">>
+

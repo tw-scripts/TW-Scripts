@@ -1,0 +1,65 @@
+created: 20181222153945197
+creator: Mohammad
+keywords: color tab sidebar tabs macro
+modified: 20190216180308908
+modifier: Mohammad
+responder: Ton Gerner
+tags: tabs solution
+title: Colorful Tab
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/h11oh3-lJ-U/KbhBmPVIDQAJ
+
+! Tabs macro
+The tab created by `tabs` macro can be colorful as below:
+
+* create a custom class
+* customize based on nth-child
+* call tabs using that class
+
+```
+<style>
+.cls2  .tc-tab-buttons button:nth-child(1) {background:blue; color:white;}
+.cls2  .tc-tab-buttons button:nth-child(2) {background:red; color:white;}
+.cls2  .tc-tab-buttons button:nth-child(3) {background:green; color:white;}
+</style>
+
+<<tabs "one two three" class:"cls2">>
+```
+More info:
+
+* [[Tiddlywiki|https://tiddlywiki.com/#tabs%20Macro]]
+* [[Old discussion|]]
+
+
+! Solution by Ton Gerner
+In my own theme I use the following for Sidebar tabs and the vertical More sidebar tabs:
+
+```
+/* SIDEBAR TABS */
+.tc-sidebar-lists .tc-tab-buttons button {
+     color: #0044BB;
+     background-color: #FFFFFF;
+     border: 1px solid #D1DDF3;
+     border-radius: 0.3em;
+}
+
+.tc-sidebar-lists .tc-tab-buttons button.tc-tab-selected {
+     font-weight: bold;
+     color: #0044BB;
+     background-color: #D1DDF3;
+     border: 1px solid #A2BBE6;
+     border-radius: 0.3em;
+}
+
+/* SIDEBAR 'More' TABS */
+.tc-more-sidebar > .tc-tab-set > .tc-tab-buttons > button {
+     background-image: none;
+     background-color: #FFFFFF;
+     border: 1px solid #D1DDF3;
+}
+.tc-more-sidebar > .tc-tab-set > .tc-tab-buttons > button.tc-tab-selected {
+     background-image: none;
+     background-color: #D1DDF3;
+     border: 1px solid #A2BBE6;
+}
+```

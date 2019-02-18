@@ -1,0 +1,12 @@
+created: 20190201123048206
+creator: Mohammad
+modified: 20190216180310619
+modifier: Mohammad
+tags: exmp36 mycode
+title: Example 36: Private Macro
+type: text/vnd.tiddlywiki
+
+\define smac1(a)  This is $a$
+\define smac2(b)  and she lives in $b$.
+
+<pre><$view/></pre>

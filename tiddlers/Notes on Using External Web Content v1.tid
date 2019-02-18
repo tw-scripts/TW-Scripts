@@ -1,0 +1,74 @@
+created: 20190119114344746
+creator: Gloom
+keywords: external web content
+modified: 20190216180317314
+modifier: Mohammad
+responder: barro
+tags: solution
+title: Notes on Using External Web Content v1
+type: application/x-tiddler
+url: https://groups.google.com/d/msg/tiddlywiki/A7QDK1yIms4/aEcWOhMCGwAJ
+
+Displaying external Web based content:
+
+(testing in progress, using Firefox 64)
+
+A. __Viewing in an iframe in Wiki__:
+
+Note on Google app's- when accessing a site using a javascript login (an URL ending in .jspa), a "javascript not enabled" error message-- so apparently javascript has issues operating in iframes, at least with Firefox 64.
+
+# Google Doc's will display and can be edited in an iframe
+#*  if you're not signed into Google which would grant edit permission.
+#* PROBLEM, if signed into Google, the sheet displays but with a "~JavaScript isn't enabled in your browser, so this file can't be opened. Enable and reload." message which prevents not just editing but scrolling the page.
+#* doc permissions influence these results, ie an "edit" in the URL.  Not tested on Google app assets made public.
+
+# Google Sheets will display in an iframe
+#*  if you're not signed into Google which would grant edit permission.
+#* PROBLEM, if signed into Google, the sheet displays but with a "JavaScript isn't enabled in your browser, so this file can't be opened. Enable and reload." message which prevents not just editing but scrolling the page.
+#* doc permissions influence these results, ie an "edit" in the URL.  Not tested on Google app assets made public.
+
+# File hosting:
+#* Google Drive - no
+#* OneDrive - unknown, not tested
+#* Dropbox - unknown, not tested
+
+# Some websites:
+#* Will have to test the website if it will view in an iframe.
+#** If the site/page has HTTP response header X-Frame-Option "DENY" or "SAMEORIGIN", displaying in an iframe will not work unless the Wiki is in the same domain.
+#** sites using a javascript login (an URL ending in ".jspa"), a "javascript not enabled" error message will appear instead of the website displaying-- so apparently javascript has issues operating in iframes
+#** When iframe viewing is prevented see Part B below.
+
+# Youtube videos
+#* "www.youtube.com/watch?_video ID_" won't view in iframe, but "www.youtube.com/embed/_video ID_" will.
+#** Right click on a video at Youtbe and one of the options given is an embed snippet which is an iframe with the video url
+#*** often gives a "video unavailable" error message.
+
+# direct viewing of web hosted multimedia content:
+#* Images, audio, video files online can be the src of an iframe
+#* or images, audio, video files online can be embedded into tiddlers
+#** this is useful with archive org audio which brings up a web page hosting the audio file
+#** (1) using TW's _canonical_uri: for the file url and setting the tiddler type field ("audio/mp3" for audio)
+#** (2) or using HTML audio and video tags in a tiddler
+#** image hot-linking prevention on a website may block this
+#* Text based files online can be the src of an iframe, any file that your browser can display in it without needing an external app, can be displayed in an iframe in its text format.
+
+!
+* In these cases where content will not display within an iframe, the content will have to be opened in a new browser tab using Wikitext external link markup, due to iframe security precautions preventing viewing in an iframe.
+
+B. __View in new browser window__:
+
+(using Wikitext external link markup or html "a href" tag with target="_blank")
+
+# Google Doc's, Sheets, Drive & other Google app's
+#* signed in or not- depends upon the share setting of the asset
+# other file hosting - ~OneDrive, Dropbox
+# many websites
+#* sites/pages using HTTP response header X-Frame-Option "DENY" or "SAMEORIGIN", displaying it in a new tab is the only way to view it.
+#* sites/pages using javascriot log-in/front end (ie URL's  ending in ".jspa", displaying it in a new tab is the only way to view it.
+# Dropbox, others?
+# Youtube videos can be opened in a new tab with Wikitext external link markup using the standard "www.youtube.com/watch?_video ID_" in its url. 
+
+# Of course images, audio, video, text files online can be viewed using Wikitext external link markup.
+#* Interesting experiment- Facebook won't display within an iframe but setting the iframe src to an image on the Facebook page, the image will display within an iframe.
+
+*NOTE: if using html ``<a href>`` instead of using Wikitext external link markup, be sure to use target="_blank" to keep the url you're trying to open not open in the same tab your Wiki is in.

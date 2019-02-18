@@ -1,0 +1,27 @@
+created: 20180814174704772
+creator: Mohammad
+keywords: hide field
+modified: 20190216180311679
+modifier: Mohammad
+responder: Jeremy Ruston
+tags: solution
+title: Hide a Field in Edit Mode
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/3H2mJCm9eQE/7QxxBf59EAAJ
+
+! How fields are hidden from editor?
+* Fields are hidden from the editor if the tiddler with the title `$:/config/EditTemplateFields/Visibility/` plus the name of the field contains "hide". For example, `$:/config/EditTemplateFields/Visibility/title`
+
+* The implementation details can be seen in the shadow tiddler $:/core/ui/EditTemplate/fields
+
+! Example
+If you want to hide the `note` field from editor
+
+* create a tiddler titled `$:/config/EditTemplateFields/Visibility/note`
+* Put `hide` inside its text (bodey)
+
+
+! To see what fields are hidden
+* Try the following in the "filter" tab of advanced search:
+> `[all[shadows+tiddlers]prefix[$:/config/EditTemplateFields/Visibility/]]`
+

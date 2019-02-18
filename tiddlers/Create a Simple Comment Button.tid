@@ -1,0 +1,54 @@
+created: 20190111082809696
+creator: Mohammad
+keywords: button create tiddler comment
+modified: 20190216180310301
+modifier: Mohammad
+responder: Joe Armstrong
+tags: solution
+title: Create a Simple Comment Button
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/BwE0KM_sBJc/AV58mzXnCAAJ
+
+; What is the simplest solution to have a button creates a comment tiddler for current tiddler?
+: Using `action-create` widget and `action-navigate` widget, it is possibe to do that.
+!! Solution
+```
+<$button> Click to make a comment
+  <$action-createtiddler 
+   $basetitle="comment"
+   $savetitle="$:/temp/commentName"
+   relationship="comment" 
+   parent=<<currentTiddler>>
+  /> 
+  <$action-navigate 
+   $to= {{$:/temp/commentName}}
+  />
+</$button>
+```
+
+!! Alternative solution
+A revised version of above code is given below in that the actions are encapsulated in a macro and the title of parent tiddler is added to title of comment tiddler.
+
+```
+\define mytitle() comment on {{!!title}}
+
+\define create-commentTid()
+<$wikify name="ctitle" text=<<mytitle>> >
+<$action-createtiddler 
+ $basetitle=<<ctitle>>
+ $savetitle="$:/temp/commentName"
+ relationship="comment" 
+ parent=<<currentTiddler>> 
+/> 
+<$action-navigate 
+ $to= {{$:/temp/commentName}} 
+/>
+</$wikify>
+\end
+
+<$button actions=<<create-commentTid>> >
+Click to make a comment 
+</$button>
+```
+
+<<alert danger "Here `$wikify` is used inside `create-commentTid` which is passed to `$button` widget as attribute. This need to be studied from good programming style.">>

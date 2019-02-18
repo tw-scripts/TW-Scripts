@@ -1,0 +1,18 @@
+created: 20181117200222608
+creator: Mohammad
+keywords: datatiddler dictionary transclude field index
+modified: 20190216180314355
+modifier: Mohammad
+responder: BurningTreeC
+tags: solution datatiddler
+title: Field Value as DataTiddler Index
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/x0oL2ySw2Gg/wPU4zTDvBQAJ
+
+For getting the property value from a data tiddler (dictionary) using a field, use the below syntax
+
+```
+<$transclude tiddler="data-tiddler" index={{!!field-name}}/>
+```
+
+<<alert danger "The `{{data-tiddler##{{!!field-value}}}}` will not work! Nesting `{}` is not allowed">>

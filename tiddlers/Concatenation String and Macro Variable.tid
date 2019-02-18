@@ -1,0 +1,26 @@
+created: 20180608053518935
+creator: Mohammad
+modified: 20190216180310416
+modifier: Mohammad
+tags: concatenate
+title: Concatenation String and Macro Variable
+type: text/vnd.tiddlywiki
+
+\define mac(tidname)  This is a test $tidname$
+
+```
+\define mac(tidname)  This is a test $tidname$
+
+<ol>
+<$list filter="[tag[slide]]">
+<li><<mac {{!!title}}>></li>
+</$list>
+</ol>
+```
+
+
+<ol>
+<$list filter="[tag[slide]]">
+<li><<mac {{!!title}}>></li>
+</$list>
+</ol>

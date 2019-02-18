@@ -1,0 +1,20 @@
+created: 20190123185617789
+creator: Mohammad
+keywords: button border
+modified: 20190216180316778
+modifier: Mohammad
+responder: Eric Shulman
+tags: solution
+title: Remove Blue Border from Button
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/2uLn4x-_FC0/bXXfOIjnDAAJ
+
+;When click a button in Chrome or Opera, a blue frame (border) is appeared, how to remove it?
+
+# Create a tiddler, name it what you want
+# Tag it with `$:/tags/STylesheet`
+# Add the following as text
+
+```
+.tc-btn-invisible { outline:none; }
+```

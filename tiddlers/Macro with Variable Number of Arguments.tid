@@ -1,0 +1,27 @@
+created: 20181121135914234
+creator: Mohammad
+keywords: macro attribute parameter argument variable
+modified: 20190216180314855
+modifier: Mohammad
+responder: Mark S
+tags: exmp13 solution
+title: Macro with Variable Number of Arguments
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/DXM3eiHHjw0/JbZ8dGFNCQAJ
+
+How TW macro can process variable number of arguments? Assume you have a macro like `<<mymac arg1>>` and you can call it like `<<mymac arg1 arg2 arg3>>`
+
+!!! Solution
+To have variable number of arguments you can use list as below:
+
+```
+\define stuff(myvar mylist) 
+I saw $myvar$. Then <br/>
+<$list filter="[enlist[$mylist$]]">
+<$view field="title"/><br/>
+</$list>
+\end
+```
+The `mylist` argumrnt here can accept a list of argumrnts and the inside list can recognize them!
+
+See [[Example 13|Example 13: Macro and Variable Number of Arguments]]

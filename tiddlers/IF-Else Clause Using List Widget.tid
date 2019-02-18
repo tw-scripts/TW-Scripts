@@ -1,0 +1,36 @@
+created: 20181002122100496
+creator: Mohammad
+display: yes
+modified: 20190216180315437
+modifier: Mohammad
+my-field: false
+tags: list
+title: IF-Else Clause Using List Widget
+type: text/vnd.tiddlywiki
+
+Ref: [[TonyM|https://groups.google.com/d/msg/tiddlywiki/_yicYsQc63k/Qr5GMz9GBAAJ]]
+
+This is a conditional operation using `list` widget and a `field` value for current tiddler. As it is seen if the `display` field contains the value `yes`, it shows the code inside `list` widget if not, it will ignore and jump to end of `list`.
+
+<br>
+<<wikitext-example-without-html 
+"""<$list filter="[is[current]display[yes]]" variable=null>
+
+Do or display what is here eg the code by setting the variable the current tiddler remains the tiddler it is in so `{{!!field-name}}` works
+
+</$list>
+""">>
+
+! If-else clause
+Here the `if-else` clause has been simulated using two list widget in series. If the value of `my-field` is true then the first list widget will run and if not (else) then the next list widget will run. By the way always one of them will be executed based on the value in the filed.
+
+<<vspace 10mm>>
+<<wikitext-example-without-html 
+"""<$list filter="[is[current]my-field[true]]" variable=null>
+Show the true part!
+</$list>
+<$list filter="[is[current]!my-field[true]]" variable=null>
+Show the false part!
+</$list>
+""">>
+

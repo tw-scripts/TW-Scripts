@@ -1,0 +1,58 @@
+created: 20180620024947885
+modified: 20190216180317354
+tags: macro
+title: Nestetd Macro - Passing Variable
+type: application/x-tiddler
+
+\define firstlevel(param1:"the parameter")
+<<secondlevel "$param1$">>
+\end
+
+\define secondlevel(param2:"the other parameter")
+
+And here I need $param2$
+\end
+
+
+! Pass an input param to a nested macro
+This example shows how an input parameter from one macro can be passed to second macro
+
+```
+\define firstlevel(param1:"the parameter")
+<<secondlevel "$param1$">>
+\end
+
+\define secondlevel(param2:"the other parameter")
+
+And here I need $param2$
+\end
+```
+
+* Example
+
+```
+<<firstlevel " you">>
+```
+
+<<firstlevel " you">>
+
+! Solution II
+You could also package the first parameter as a variable
+
+```
+\define firstlevel(param1:"the parameter")
+<$vars myvar="$param1$">
+<<secondlevel>>
+</$vars>
+\end
+
+\define secondlevel()
+And here I need $(myvar)$
+\end
+
+<<firstlevel "you">>
+```
+
+Notice that when you use a parameter passed as a parameter you use $parameter$ but when you use a variable (I'm sure I'm using the terminology)  then you use $(variable)$. Both forms, $param$ and $(variable)$ are only good when called INSIDE a macro.
+
+Ref:https://groups.google.com/d/msg/tiddlywiki/82vRdCdnqLc/DnGWISslBwAJ

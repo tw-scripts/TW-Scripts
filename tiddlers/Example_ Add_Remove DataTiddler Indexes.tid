@@ -1,0 +1,68 @@
+created: 20190207071205610
+creator: Mohammad
+modified: 20190216180310564
+modifier: Mohammad
+tags: datatiddler exmp40
+title: Example: Add/Remove DataTiddler Indexes
+type: text/vnd.tiddlywiki
+
+\define add-index(index, value, dataTid)
+<$button> Add index/value
+<$action-setfield $tiddler="$dataTid$" $index="$index$" $value="$value$"/>
+</$button>
+\end
+
+\define remove-index(index, dataTid)
+<$button> Remove index/value
+<$action-setfield $tiddler="$dataTid$" $index="$index$" />
+</$button>
+\end
+
+;How to add/remove DataTiddler properties (index/value pairs) using Tiddlywiki script?
+: See [[Add Remove DataTiddler Index/Value Pairs]] for detailed explanation. 
+
+For demonstration here we use two macros as below
+
+<<<
+```
+\define add-index(index, value, dataTid)
+<$button> Add index/value
+<$action-setfield $tiddler="$dataTid$" $index="$index$" $value="$value$"/>
+</$button>
+\end
+
+\define remove-index(index, dataTid)
+<$button> Remove index/value
+<$action-setfield $tiddler="$dataTid$" $index="$index$" />
+</$button>
+\end
+```
+<<<
+
+!! Example: Add new index/value
+<<<
+The below example adds a new index/value pair (`GIF: Graphics Interchange Format`) to [[exmp40/acronyms/image]] DataTiddler.
+
+<$macrocall $name="wikitext-example-without-html" 
+src="""<<add-index index:"GIF" value:"Graphics Interchange Format" dataTid:"exmp40/acronyms/image">>
+"""/>
+<<<
+
+!! Example: Remove an index/value pair
+<<<
+The below example removes the index/value pair (`GIF: Graphics Interchange Format`) from [[exmp40/acronyms/image]] DataTiddler.
+
+<$macrocall $name="wikitext-example-without-html" 
+src="""<<remove-index index:"GIF" value:"Graphics Interchange Format" dataTid:"exmp40/acronyms/image">>
+"""/>
+<<<
+
+
+
+!! Demo DataTiddler
+<<<
+The below DataTiddler is used here for demonstration.
+
+The [[exmp40/acronyms/image]] DataTiddler is used here:
+{{exmp40/acronyms/image}}
+<<<

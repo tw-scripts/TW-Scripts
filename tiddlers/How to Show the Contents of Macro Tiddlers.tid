@@ -1,0 +1,15 @@
+created: 20180913100703176
+creator: Mohammad
+modified: 20190216180311496
+modifier: Mohammad
+tags: 
+title: How to Show the Contents of Macro Tiddlers
+type: text/vnd.tiddlywiki
+
+By default all macros are hidden in view mode. 
+
+Sometimes you have a tiddler tagged with `$:/tags/Macro` which contains global macro and you want to see the code in the view mode, to have so, simply add the following lines as the last line of text.
+
+```
+<pre><$view field="text"/></pre>
+```

@@ -1,0 +1,26 @@
+created: 20181107062829914
+creator: Mohammad
+keywords: icon tweak color control buttons
+modified: 20190216180309122
+modifier: Mohammad
+responder: David Gifford
+tags: solution
+title: Chnage Colors and Styles of Control Buttons
+type: text/vnd.tiddlywiki
+url: http://giffmex.org/experiments/tooltips.html#%24%3A%2F.noteslam%2FStylesheet%2FFor.publishing
+
+There are better code, see: [[kookma/stylesheet/tw-adjustment]]
+
+```css
+*ICONS*/
+html body.tc-body .tc-image-edit-button {stroke: white;fill:#000;}
+html body.tc-body .tc-image-delete-button {stroke: white;fill:#ff2222;}
+html body.tc-body .tc-image-cancel-button {stroke: white;fill:#ffdd55;}
+html body.tc-body .tc-image-done-button {stroke: white;fill:#99ee22;}
+html body.tc-body .tc-image-home-button {stroke: white;fill:#5778d8;height:20px;}
+html body.tc-body .tc-image-palette {stroke: white;fill:#7897fc;}
+html body.tc-body .tc-image-new-button {stroke: white;fill:#7897fc;}
+html body.tc-body .tc-image-heading-1 {stroke: white;fill:#7897fc;}
+html body.tc-body .tc-image-favicon {stroke: white;fill:#7897fc;}
+html body.tc-body .tc-image-stamp {stroke: white;fill:#ff2277;}
+```

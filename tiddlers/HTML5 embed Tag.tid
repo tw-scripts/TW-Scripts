@@ -1,0 +1,31 @@
+created: 20181121141304141
+creator: Mohammad
+modified: 20190216180311174
+modifier: Mohammad
+tags: exmp14
+title: HTML5 embed Tag
+type: text/vnd.tiddlywiki
+
+!! The embed tag
+The HTML `<embed>` element embeds external content at the specified point in the document. This content is provided by an external application or other source of interactive content such as a browser plug-in.
+[[Mozilla MDN|https://developer.mozilla.org/en-US/docs/Web/HTML/Element/embed]]
+
+!! Syntax
+The below syntax is used to embed contents
+
+```
+<embed src="" type="MIME type" height="" width="">
+```
+The MIME type pecifies the media type of the embedded content
+
+!! MIME types
+A Multipurpose Internet Mail Extensions (''MIME'') type is a standard that indicates the nature and format of a document, file, or assortment of bytes. See [[Mozilla MDN|https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types]].
+
+|!Type|!Description|!Example of typical subtypes|
+|text|Any document that contains text and is theoretically human readable|text/plain, text/html, text/markdown|
+|image|Any kind of image. Videos are not included, though animated images (like animated GIF) are described with an image type.|image/gif, image/png, image/jpeg, image/bmp, image/webp, image/vnd.microsoft.icon|
+|audio|Any kind of audio file|audio/midi, audio/mpeg, audio/webm, audio/ogg, audio/wav|
+|video|Any kind of video file|video/webm, video/ogg|
+|application|Any kind of binary data, especially data that will be executed or interpreted somehow.|application/javascript, application/octet-stream, application/pkcs12, application/vnd.mspowerpoint, application/xhtml+xml, application/xml, application/pdf|
+
+See [[Example 14|Example 14: Embeding Media]]

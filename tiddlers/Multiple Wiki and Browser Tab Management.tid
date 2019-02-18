@@ -1,0 +1,51 @@
+created: 20190111062405687
+creator: Mohammad
+keywords: browser tab multiple link
+modified: 20190216180315960
+modifier: Mohammad
+responder: Anthony Muscio (TonyM)
+tags: solution
+title: Multiple Wiki and Browser Tab Management
+type: text/vnd.tiddlywiki
+url: 
+
+* The following linkintab macro will always open in the same browser tab, even if it is already open.
+* If your links to wikis use the target parameter you can ensure you do not open the wiki more than once. 
+* You are also protected if you try and reopen the tab and you have not saved previous work.
+* In FireFox, if you move a tab to its own window, and click the link again it will open that windows again (and reload) - if it was minimised it will restore it.
+
+!! Why do this?
+* It allows you to keep tabs closed and open them as needed without fear of saving over the same wiki (Even without using bob)
+* You can establish a Directory Wiki to other wikis that honours this reusable tabs method.
+* No need to go looking for existing tabs, windows or minimised browser windows, just return to your directory, reopen if not open, reload in same tab if open (and saved)
+
+!! Macro
+Put the below script inside a tiddler and tag it with `$:/tags/Macro`
+
+```
+\define linkintab(link tabname)
+<$set name=url value="$link$">
+<$set name=tabname value=$tabname$>
+ <a href=<<url>> target=<<tabname>> ><<tabname>></a> 
+ </$set></$set>
+\end
+```
+
+!! Example
+```
+<<linkintab "https://www.w3schools.com" W3Schools>>
+<<linkintab "http://127.0.0.1:8084/"Bob>>
+```
+
+!! Remarks
+In the follwing case, it is using data from a dataTiddler (the current Tiddler in a list)
+
+```
+<a href={{##wiki-url-full}}  target={{##wiki-sitetitle}}>{{$:/core/images/link}}</a>
+```
+
+And as the above macro shows the following also works
+
+```
+<a href=<<url>> target=<<tabname>> ><<tabname>></a>
+```

@@ -1,0 +1,23 @@
+created: 20180626184804892
+creator: Mohammad
+keywords: checkbox state
+modified: 20190216180309137
+modifier: Mohammad
+output: 
+responder: Jed Carty
+tags: solution
+title: Checkbox with Three State
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/MbeQgDUo1TM/kVumULmwCgAJ
+
+\define tristateCheck(field:output option1:Left option2:Right)
+<$checkbox field="""$field$""" checked="""option1""" unchecked=''> $option1$</$checkbox>
+<$checkbox field="""$field$""" checked="""option2""" unchecked=''> $option2$</$checkbox>
+\end
+
+
+<<tristateCheck>>
+
+
+!!! See also
+[[Checkboxes Like Radio Button]]

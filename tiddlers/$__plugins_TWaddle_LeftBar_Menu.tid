@@ -1,0 +1,19 @@
+created: 20180616073109854
+creator: Mohammad
+modified: 20190216180307477
+modifier: Mohammad
+tags: 
+title: $:/plugins/TWaddle/LeftBar/Menu
+type: text/vnd.tiddlywiki
+
+@@background-color:purple;color:white;padding:3px;font-size:0.85em;font-weight:600;
+''Contents''
+@@
+<div class="tc-table-of-contents">
+<<toc-selective-expandable "contents">>
+</div>
+
+
+---
+{{Create New Link}}
+^^Edit leftbar: [[Menu|$:/plugins/TWaddle/LeftBar/Menu]]^^

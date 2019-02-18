@@ -1,0 +1,47 @@
+created: 20190111065204653
+creator: Mohammad
+keywords: button actions
+modified: 20190216180309476
+modifier: Mohammad
+responder: Jeremy Ruston
+tags: solution
+title: Beset Pattern in Actions and Button Widget
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/ivPwZt3Ixmo/-ekFqc2IGAAJ
+
+; Which pattern is better in using a button widget?
+
+* Pattern A
+```
+<$button actions=""> ...</$button>
+```
+
+* Pattern B
+```
+<$button> 
+actions
+...
+</$button>
+```
+
+<<<Jeremy Ruston
+I personally prefer a variant of style A where one uses a variable to store the action widgets instead of a separate tiddler:
+<<<
+
+!! Example
+* First store the actions in a variable (here a macro)
+```
+\define my-actions()
+<$action-navigate $to="$:/ControlPanel"/>
+<$action-setfield $tiddler="$:/SiteTitle" $value={{{ [{$:/SiteTitle}addsuffix[!]] }}}/>
+\end
+```
+
+* Then pass the variavle to actions attribute of a `$button` widget.
+
+```
+<$button actions=<<my-actions>> >
+Click me to open control panel and add an exclamation mark to the site title
+</$button>
+```
+<<alert warning "''Note'': Pattern A is the recommended pattern and pattern B is deprecated. You can define az many action you like inside a macro and then pass it to button widget.">>

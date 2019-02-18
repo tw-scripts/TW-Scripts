@@ -1,0 +1,10 @@
+created: 20181122042716132
+creator: Mohammad
+description: Part of exmp15 solution
+modified: 20190216180310500
+modifier: Mohammad
+tags: 
+title: Exmp15-Template
+type: text/vnd.tiddlywiki
+
+<font color={{!!color}}><$transclude/></font><br>

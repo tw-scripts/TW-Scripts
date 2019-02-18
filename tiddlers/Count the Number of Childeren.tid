@@ -1,0 +1,30 @@
+created: 20180807184512991
+modified: 20190216180310325
+tags: 
+title: Count the Number of Childeren
+type: text/vnd.tiddlywiki
+
+```
+\define sort-me()
+<$list filter="[all[]tag[fruits]!sort[]]" variable=fruit>
+  <$list filter="[tag<fruit>count[]]" variable=num>
+  "<<fruit>>: <<num>>"
+  </$list>
+</$list>
+\end
+\define .caat() {{!tags}} exmp041
+
+<$wikify name=sort-filter text="<<sort-me>> +[nsort[]]">
+<$list filter=<<sort-filter>> variable="v1">
+<<v1>><br>
+</$list>
+</$wikify>
+```
+
+! Count the number of childeren
+Ref: [[Tony M|https://groups.google.com/d/msg/tiddlywiki/GTz0EKdm4-8/VbUtatmiAQAJ]]
+
+!! To test
+* Create some tiddlres tagged with `fruits` like Apple, Orange, Banana, ...
+* Create some children and tagged them with Apple, Orange, ...
+* The code will count all the tiddlers tagged with these words

@@ -1,0 +1,12 @@
+created: 20190206140355345
+creator: Mohammad
+description: The action-jsontid widget is an action widget that creates new tiddlers from a json tiddler. Action-jsontid is used within triggering widgets such as the ButtonWidget.
+developer: Rizwan Ibnishak
+modified: 20190216180308413
+modifier: Mohammad
+tags: Links
+title: Action JSON Widget
+type: text/vnd.tiddlywiki
+url: https://ibnishak.github.io/Tesseract/pluginsandmacros/index.html#Action-JSONtid
+wiki-name: Action-JSONtid
+

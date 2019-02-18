@@ -1,0 +1,57 @@
+caption: Create a list of numbers
+created: 20180627181906522
+creator: Mohammad
+keywords: number list range
+list: [[Example List Numbers Using BTC Method]] MyNumberTiddler
+modified: 20190216180308542
+modifier: Mohammad
+responder: BTC and Diego and Jed
+tags: solution
+title: 100.50
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/lDRgHIZ1qmQ/I0_xZ5rlBAAJ
+
+! Create a list of numbers
+
+Ref: https://groups.google.com/d/msg/tiddlywiki/lDRgHIZ1qmQ/I0_xZ5rlBAAJ
+
+Three solution has been provided
+
+!!! Diego Mesa:uUsing Evan's forumla range
+<<<
+If you dont want the full formula plugin, you can also just use Evan' range operator directly:
+http://evanbalster.com/tiddlywiki/formulas.html#%24%3A%2Fplugins%2Febalster%2Fformula%2Ffilters%2Frange.js
+<<<
+
+!!! Jed Carty ''numb'' macro using list
+<<<
+```
+title: $:/macro/numb
+tags: $:/tags/Macro
+list: 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30
+
+\define numb(n:10 format:"<<currentTiddler>> ") <$list filter='[enlist{$:/macro/numb!!list}first[$n$]]'>$format$</$list>
+```
+
+<<<
+
+!!! ~BurningThreeC solution using list
+<<<
+* Use the Evan's formula plugin
+This feature has been included in TW 5.1.18 core.
+
+```
+<$list filter="[range[99]]">
+do something
+</$list>
+```
+* Use the list widget with a tiddler containing a list of numbers
+```
+<$list filter="[list[mynumbertiddler]limit[mylimit]]">
+do something
+</$list>
+```
+<<<
+
+The examples and codes by this methods are given in:
+<<list-links "[tag[100.02]]">>

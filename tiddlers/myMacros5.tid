@@ -1,0 +1,22 @@
+created: 20180502063442372
+creator: Mohammad
+modified: 20190216180315843
+modifier: Mohammad
+tags: macro tiddlyfor $:/tags/Macro
+title: myMacros5
+type: text/vnd.tiddlywiki
+
+\define figure(image,caption:"")
+<div class="tc-image">
+[img[$image$]]
+<p>
+$caption$
+</p>
+</div>
+\end
+
+
+!! Experimenting with macro
+This tiddler contains the user defined macros. Edit to see the code.
+
+* figure

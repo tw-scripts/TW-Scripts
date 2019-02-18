@@ -1,0 +1,25 @@
+created: 20190125045017991
+creator: Mohammad
+keywords: stylesheet css order
+modified: 20190216180317255
+modifier: Mohammad
+responder: Anthony Muscio
+tags: solution
+title: Order of Stylesheets in Tiddlywiki
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywikidocs/zJlNjjlyMys/WwI7VXqwAAAJ
+
+The list and order of stylesheet used in Tiddlywiki can be found here
+
+[[Control Panel > Info > Advanced  > Stylesheets|$:/core/ui/ControlPanel/Stylesheets]]
+
+This tiddler shows the order of StyleSheets, and using the `tag pill` therein you can drag and drop to reorder them. 
+
+CSS by definition is Cascading if you can't see what the cascade order is, you can easily be tricked
+
+Unless we were to provide details of all the class names already applied to all TiddlyWikis elements we should also provide information that allows people to identify those elements such as via inspect. And suggest how these can be overridden.
+
+<<alert info "The order of stylesheets is very important. Always the last setting overwrites previous ones!">>
+
+!!! More info
+* https://tiddlywiki.com/#Using%20Stylesheets

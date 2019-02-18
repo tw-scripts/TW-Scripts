@@ -1,0 +1,28 @@
+created: 20180708150613767
+creator: Mohammad
+keywords: exact search
+modified: 20190216180311079
+modifier: Mohammad
+responder: Jed Carty
+tags: solution
+title: Exact Phrase Search
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/PEnAcsPjA8E/3vSovsuABQAJ
+
+Search Term: <$edit-text tiddler='$:/temp/ExactSearch' field='text' tag='input'/>
+
+<$checkbox tiddler='$:/temp/ExactSearch' field='include_system' checked=true unchecked=false> Include System Tiddlers</$checkbox>
+
+<$list filter='[[$:/temp/ExactSearch]has[text]field:include_system[true]]'>
+<$list filter='[regexp:text{$:/temp/ExactSearch}]-[[$:/temp/ExactSearch]]'>
+
+</$list>
+</$list>
+<$list filter='[[$:/temp/ExactSearch]has[text]!field:include_system[true]]'>
+<$list filter='[!is[system]regexp:text{$:/temp/ExactSearch}]-[[$:/temp/ExactSearch]]'>
+
+</$list>
+</$list>
+
+---
+Ref: [[Jed Carty Solution|https://www.ooktech.xyz:8443/Public#Exact%20Phrase%20Search]]. Also see this topic in [[forum|https://groups.google.com/d/msg/tiddlywiki/PEnAcsPjA8E/3vSovsuABQAJ]]

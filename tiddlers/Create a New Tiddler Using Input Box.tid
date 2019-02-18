@@ -1,0 +1,33 @@
+created: 20190203154616403
+creator: Mohammad
+keywords: text-edit tiddler concatenate
+modified: 20190216180310309
+modifier: Mohammad
+responder: Eric Shulman
+tags: solution
+title: Create a New Tiddler Using Input Box
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/Uu7HVEBnro0/y9hlCtF3HQAJ
+
+;How create a new tiddler, with the following specification?
+# Its full title is `$:/long/address/to/tiddler/UserInput`
+# The last part of title e.g. `UserInput` is given through an input box (`edit-text` widget)
+# The caption is the same as `UserInput`
+
+!! Solution
+
+<$macrocall $name="wikitext-example-without-html" 
+src="""<$edit-text tag="input" tiddler="$:/temp/getname" default="" />
+<$button> Click me!
+   <$wikify name="target" text="$:/long/address/to/tiddler/{{$:/temp/getname}}">
+      <$action-sendmessage $message="tm-new-tiddler" $param=<<target>>
+         tags="searcher" caption={{$:/temp/getname}} text={{$:/some/tiddler}}/>
+   </$wikify>
+</$button>
+"""/>
+
+!! Remarks
+# An `$edit-text` widget gets the user input and puts it in a temporary tiddler [[$:/temp/getname]].
+# The `$wikify` widget is used to combine static text with the value from the temporary tiddler (concatenate).
+# The value of the resulting `target` variable is used as the `$param` for the new tiddler title.
+# The value from the temporary tiddler is also used as the caption text for the new tiddler.

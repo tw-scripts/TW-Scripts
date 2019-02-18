@@ -1,0 +1,24 @@
+created: 20190129063053898
+creator: Mohammad
+keywords: drag-and-drop import
+modified: 20190216180309735
+modifier: Mohammad
+responder: Eric Shulman
+tags: import solution
+title: Drag and Drop of a Whole File
+type: text/vnd.tiddlywiki
+url: 
+
+All tiddler links are draggable by default. They can be dragged within a browser window for manipulating tiddlers, or dragged to a different browser window to initiate an import operation
+
+If you drag-and-drop a whole wiki file (a Tiddlywiki file e.g. //mywiki.html//) over another wiki, an [[import operation|https://tiddlywiki.com/#Importing%20Tiddlers]] will be inititaed
+
+This way you can also update old wiki files. Assume you have an //empty.html// of new release. If you drag and drop your old wiki file over the //empty.html//, TW will import all tiddlers except the newer system (core, plugin) tiddlers.
+
+!! Example
+# Open an empty.html (can be downloaded from: https://tiddlywiki.com/#GettingStarted)
+# Open it in a browser
+# Drag your old wiki over it
+# Choose which tiddlers you would like to be imported
+# Save your empty.html
+That's all.

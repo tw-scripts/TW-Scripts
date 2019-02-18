@@ -1,0 +1,22 @@
+created: 20180421081851618
+creator: Mohammad
+modified: 20190216180314938
+modifier: Mohammad
+tags: learn
+title: ListWidget More Examples
+type: text/vnd.tiddlywiki
+
+* ''This next example shows how the $list widget changes the current tiddler:''
+```
+<ol>
+<$list filter="[prefix[C]]">
+<li><<currentTiddler>></li>
+</$list>
+</ol>
+```
+
+<ol>
+<$list filter="[prefix[C]]">
+<li><<currentTiddler>></li>
+</$list>
+</ol>

@@ -1,0 +1,53 @@
+created: 20181008035243424
+creator: Mohammad
+modified: 20190216180316731
+modifier: Mohammad
+tags: reveal
+title: Reveal Widget and Fileds
+type: text/vnd.tiddlywiki
+z-status: jeremy
+
+The `reveal` widget has a great capability for comparison and conditional tests. You can set `state` attribute not only to tiddler titles, but also assign to fileds and use it also against `default` attribute. See [[Conditional Operation]].
+
+Here more examples have been given.
+
+!! Example I: Using filed content
+<<<
+If the value of below textbox is set to `show` the content inside reveal widget will be shown if not, the content will be hidden.
+
+<<alert info """This works by using the filed `z-status` from helper tiddler `Reveal Helper Tiddler`""">>
+<<vspace 1cm>>
+
+<<wikitext-example-without-html 
+src:"""''My Status'': <$edit-text tiddler="Reveal Helper Tiddler" field="z-status"/>
+
+<$reveal type="match" state="Reveal Helper Tiddler!!z-status" text="show">
+
+! This is the revealed content
+And this is some text
+
+</$reveal>
+
+""">>
+<<<
+
+!! Example II: Using filed content from current tiddler
+<<<
+Here the value of `z-status` field of current tiddler is compared against the value of `text` attribute
+<<wikitext-example-without-html 
+src:"""<$reveal type="match" state="!!z-status" text="jeremy">
+Jeremy Rustong the Inventor of Tiddlywiki
+</$reveal>
+""">>
+<<<
+
+!! Example III: Using filed content for text attribute
+<<<
+Here the value of `z-status` field of current tiddler is compared against the value of `text` attribute set to another tiddler z-status filed. Note that transclusion has been used to get the value of `Reveal Helper Tiddler!!z-status`
+
+<<wikitext-example-without-html 
+src:"""<$reveal type="match" state="!!z-status" text={{Reveal Helper Tiddler!!z-status}}>
+Jeremy Rustong the Inventor of Tiddlywiki
+</$reveal>
+""">>
+<<<

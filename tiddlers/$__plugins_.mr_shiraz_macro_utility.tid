@@ -1,0 +1,27 @@
+created: 20170629183034888
+creator: Mohammad
+modified: 20190216180307683
+modifier: Mohammad
+tags: $:/tags/Macro
+title: $:/plugins/.mr/shiraz/macro/utility
+type: text/vnd.tiddlywiki
+
+\define .lorem()
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+\end
+
+\define vspace(height)
+<p style="margin-bottom: $height$;"></p>
+\end
+
+\define hspace(width)
+<span style="margin-left: $width$;"></span>
+\end
+
+!! Utility macros
+This tiddler contains the user defined macros. Edit to see the code.
+
+|table-borderless|k
+|''.lorem'' |create a dummy text |
+|''vspace(height)'' |create a vertical space using an empty paragraph |
+|''hspace(width)'' |create horizontal space using an empty span |

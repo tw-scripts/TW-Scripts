@@ -1,0 +1,17 @@
+created: 20190207122616663
+creator: Mohammad
+modified: 20190216180314537
+modifier: Mohammad
+tags: exmp43 $:/tags/Macro
+title: exmp43/macro/overloading
+type: text/vnd.tiddlywiki
+
+\define mac-xx() 
+This is mac-xx in [[exmp43/macro/overloading]].
+\end
+
+\define mac-yy()
+ This is "mac-yy" in [[exmp43/macro/overloading]].
+ This  calls "mac-xx".<br>
+ <<mac-xx>>
+\end

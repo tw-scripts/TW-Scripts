@@ -1,0 +1,24 @@
+created: 20180602030758806
+creator: Mohammad
+modified: 20190216180308761
+modifier: Mohammad
+tags: filter
+title: 1.2
+type: text/vnd.tiddlywiki
+
+! Simple usage with list
+The filter contains a list of tiddlers and list widget simplate iterates over them.
+
+```
+<ul>
+<$list filter="[[Tiddler-A]] [[Tiddler-B]] [[Tiddler-C]]">
+<li><<currentTiddler>></li>
+</$list>
+</ul>
+```
+
+<ul>
+<$list filter="[[Tiddler-A]] [[Tiddler-B]] [[Tiddler-C]]">
+<li><<currentTiddler>></li>
+</$list>
+</ul>

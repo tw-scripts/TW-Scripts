@@ -1,0 +1,17 @@
+created: 20180730153712290
+creator: Mohammad
+keywords: created day list
+modified: 20190216180315075
+modifier: Mohammad
+responder: Mark S
+tags: solution
+title: List all Tiddlers Created in x Days
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/iXk2UgnVQNk/2UUi2s_KAAAJ
+
+Show all system tiddlers that you have created in the last x days!
+
+<$macrocall $name="wikitext-example-without-html" 
+src="""
+<<list-links "[all[tiddlers+shadows]prefix[$]days[-2]limit[10]]">>
+"""/>

@@ -1,0 +1,47 @@
+created: 20180818050135190
+creator: Mohammad
+keywords: external image directory folder
+modified: 20190216180310287
+modifier: Mohammad
+responder: Mark S
+tags: image solution
+title: Create External Images from A Directory
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/1yTi65sc8D8/0ru-PhMJBAAJ
+
+; Assume you have a folder on Windows drive contains images, how to add these images to wiki as external images?
+
+Using an advanced text editor like Emacs, get a list of your images and put it into a format like this:
+
+```
+cimg2199.jpg: x
+cimg2200.jpg: x
+cimg2201.jpg: x
+cimg2202.jpg: x
+```
+
+Paste this into a tiddler called "MyImages" and change the type to data dictionary. Save the tiddler.
+
+Create another tiddler with the following contents:
+
+```
+\define gluepath() $(path)$$(image)$
+<$set name="path" value="file:///D:\data\graphics\file-us\">
+
+<$button>Make Image Tiddlers
+<$list filter="[[MyImages]indexes[]]" variable="image">
+<$action-createtiddler $basetitle=<<image>> _canonical_uri=<<gluepath>> type="image/jpeg">
+</$list>
+</$button>
+
+</$set>
+```
+
+Change the "path" variable to whatever address is needed for image directory and system (I used `file:///` but you don't need that for images positioned relative to your system).
+
+Click on the "Make Image Tiddlers" button, and a "Image Tiddler" (_canonical_uri based) will be made for each image. 
+
+You can of course play with this to use other image dictionaries, paths, etc. A similar technque could be used to generate image wikitext if you don't like Image Tiddlers. Note that if you are on windows that you can't use drive names like C: in the data dictionary (that's why I applied the path outside the dictionary).
+
+!!! Example
+See TW-Images there are examples there using this technique

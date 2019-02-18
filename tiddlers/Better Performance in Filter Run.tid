@@ -1,0 +1,63 @@
+created: 20180816201359755
+creator: Mohammad
+keywords: filter run
+modified: 20190216180309462
+modifier: Mohammad
+responder: Mark S 
+tags: solution
+title: Better Performance in Filter Run
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/XuHiTCI4N60/JYFMavGvAwAJ
+
+;Which filter run faster?
+:Assume you have more than 100 tiddlers in their tittle there is a "Demo" word! Some of them are hidden tiddlers, their name started with "$:/" what is the best filter to list them?
+
+* Case i: two search:title
+```
+<$list filter="[search:title[exa]] -[search:title[$:]]">
+
+</$list>
+```
+><$list filter="[search:title[exa]] -[search:title[$:]]">
+
+</$list>
+
+* Case ii: one search:title and negate prefix
+```
+<$list filter="[search:title[exa]!prefix[$:/]]">
+
+</$list>
+```
+><$list filter="[search:title[exa]!prefix[$:/]]">
+
+</$list>
+
+* Answer
+This would probably be a little better:
+
+`<$list filter="[search:title[Demo]!prefix[$]]">`
+
+Because this way you don't make the underlying javascript look for the `$` anywhere except the first character location.
+
+Also, yours would omit:
+
+`X$:/My Demo`
+
+Which might exist if a user wanted to make a system tiddler temporarily visible in the recent tiddlers sidebar.
+
+* Case iii
+```
+<$list filter="[!is[system]search:title[exa]]">
+
+</$list>
+```
+><$list filter="[!is[system]search:title[exa]]">
+
+</$list>
+Ref: [[Jeremy Ruston|https://groups.google.com/d/msg/tiddlywiki/XuHiTCI4N60/v2Yrtpv8EAAJ]]
+
+There is a built-in filter operator `is[system]` for detecting system tiddlers, so a better choice would be:
+
+`[!is[system]search:title[Demo]]`
+
+Again, we filter out system tiddlers before doing the search so as to reduce the number of tiddlers that we have to search.

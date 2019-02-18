@@ -1,0 +1,94 @@
+created: 20170430122213416
+creator: Mat von TWaddle
+display: block
+hover-to-display-as: none
+modified: 20190216180307472
+modifier: Mat von TWaddle
+position: fixed
+tags: $:/tags/Stylesheet
+title: $:/plugins/TWaddle/LeftBar/Stylesheet
+type: text/vnd.tiddlywiki
+width: 200px
+
+<pre>button.leftbar-toggle {
+	position:fixed;
+	z-index: 1200;
+	display:{{!!display}};
+	top:0px;
+	left:0px;
+	padding:0px;
+	height:3em;
+	width:2em;
+}
+.leftbar-toggle svg {
+	<<transition "fill 150ms ease-in-out">>
+	fill: <<colour muted-foreground>>;
+}
+.leftbar-toggle:hover svg {
+	fill: <<colour foreground>>;
+}
+.leftbar-togglezone {
+	position:fixed;
+	left:0;
+	top:3em;
+	min-height:50vh;
+	width:1em;
+}
+.leftbar-settingstable {
+	margin:
+	0 auto;
+}
+.leftbar-settingstable,
+ .leftbar-settingstable td {
+	border:0;
+}
+.leftbar-settingstable td:nth-of-type(1) {
+	text-align:right;
+	vertical-align:top;
+}
+.leftbar-content {
+	position:{{!!position}};
+	max-width:calc(42px + {{!!width}});
+	left:0px;
+	top:3em;
+	padding:0em 10px 5px 10px;
+	background:none;
+	min-height:50vh;
+	max-height:85vh;
+	overflow-y:auto;
+}
+.leftbar-content .tc-tab-buttons button.tc-tab-selected {
+	background-color: <<colour sidebar-tab-background-selected>>;
+}
+.leftbar-content .tc-tab-buttons button {
+	background-color: <<colour sidebar-tab-background>>;
+}
+.leftbar-togglezone .leftbar-content {
+	display:none;
+	position:fixed;
+}
+.leftbar-togglezone:hover .leftbar-content {
+	display:{{$:/plugins/TWaddle/LeftBar/Stylesheet!!hover-to-display-as}};
+	background:#f4f4f4;
+	<<box-shadow "1px 1px 5px rgba(0, 0, 0, 0.3)">>
+ }
+
+@media (max-width: {{$:/themes/tiddlywiki/vanilla/metrics/sidebarbreakpoint}}) {
+	.leftbar-content  {
+		display:block;
+		background:#f4f4f4;
+		<<box-shadow "1px 1px 5px rgba(0, 0, 0, 0.3)">>
+		max-width:90vw;
+	}
+	button.leftbar-toggle {
+		background:transparent;
+		height:2em;
+	}
+	button.leftbar-toggle svg {
+		background:white;
+	}
+	button.leftbar-toggle:hover {
+		outline:2px solid lightgray;
+	}
+}
+</pre>

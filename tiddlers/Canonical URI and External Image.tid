@@ -1,0 +1,18 @@
+created: 20190202045302898
+creator: Mohammad
+keywords: external image canonical-uri
+modified: 20190216180309192
+modifier: Mohammad
+responder: Jeremy Ruston
+tags: solution
+title: Canonical URI and External Image
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/Y7V_kCwmeWw/N5vfz3nUCxQJ
+
+;What is _canonical_uri?
+: It lets you wrap an external tiddler into a tiddler so that you can refer to it more easily.
+
+!! Example
+For example, create a tiddler titled ''MyImage'' with the type `image/jpeg` and the `_canonical_uri` field set to ''images\anatomy.jpg''. Then you can embed it as an image with `[img[MyImage]]` or `{{MyImage}}`.
+
+The advantage of using it is that you can subsequently change the URL of the image just by changing it in a single place.

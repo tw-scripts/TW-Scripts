@@ -1,0 +1,48 @@
+created: 20190208093239721
+creator: Mohammad
+modified: 20190216180310594
+modifier: Mohammad
+tags: exmp46
+title: Example 46: Sort Tiddlers in Tag Pill
+type: text/vnd.tiddlywiki
+
+!! Sort tiddlers in tag pill
+The below macro is developed to sort tagged tiddlers in tag pill. It actually populates the list field of the mainTag tiddler and then sort them.
+
+!! Syntax
+
+```
+<<sort-tagging mainTag, label:"Sort Tagged Tiddlers", order:"ascend">>
+```
+Source: [[exmp46/macro]]
+
+!! Content and attributes
+|!Attributes |!Type |!Description |
+|mainTag |required|the title of base tiddler or main tag other tiddlers tagged with|
+|label |optional|the button label, default value is "Sort Tagged Tiddlers"|
+|order |optional|the sort order (ascending, or descending), default is "ascend"|
+
+;Note
+:If the `order` parameter is not `ascend`, then the macro will sort descending, no matter what is passed.
+
+!! Example i
+Sort the tiddlers tagged with <<tag exmp46>> in ''ascending'' order
+
+<<<
+<$macrocall $name="wikitext-example-without-html" 
+src="""<<sort-tagging mainTag:"exmp46">>
+"""/>
+
+List field of [[exmp46]]: {{exmp46!!list}}
+<<<
+
+!! Example ii
+Sort the tiddlers tagged with <<tag exmp46>> in ''descending'' order
+
+<<<
+<$macrocall $name="wikitext-example-without-html" 
+src="""<<sort-tagging mainTag:"exmp46" label:"Sort in descending order" order:"descend">>
+"""/>
+
+List field of [[exmp46]]: {{exmp46!!list}}
+<<<

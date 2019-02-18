@@ -1,0 +1,24 @@
+created: 20181015194405451
+creator: Mohammad
+keywords: css after selector
+modified: 20190216180310242
+modifier: Mohammad
+responder: Mat
+tags: exmp10 solution
+title: CSS for Last Char of Title
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/vVomiCCaiMU/En32kj2PBwAJ
+
+How to set a text after tiddler title tagged with say //period//? 
+
+For example add word experimental to all tiddlers tagged with `period`.
+
+* Solution
+The belwo css uses the `after` selector. Put it in a tiddler tagged with `$:/tags/Stylesheet` and use it. See demo.
+
+```css
+[data-tags*="period"] .tc-title:after {
+  content:"experimental";
+  color:red;
+}
+```

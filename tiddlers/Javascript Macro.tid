@@ -1,0 +1,36 @@
+created: 20190131185213604
+creator: Mohammad
+keywords: javascript macro
+modified: 20190216180315294
+modifier: Mohammad
+responder: Eric Shulman
+tags: solution
+title: Javascript Macro
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/KyNjxlx2-Jw/bsmhoNJqCgAJ
+
+;How to develop a JavaScript macro?
+
+There are two separate cases here:
+# Being able to use custom javascript code to do calculations and other logic
+# Loading the code "on-the-fly"
+
+As has been noted, (2) is problematic from a security standpoint... so let's just ignore that and focus on (1)...
+
+Fortunately, the solution is //already provided// by the TWCore.  You can use
+
+   https://tiddlywiki.com/dev/#JavaScript%20Macros
+   
+to define custom javascript functions that are loaded during startup processing (just like plugins).
+
+Then, after startup, these javascript functions can be invoked from within tiddler content using the standard macro syntax (e.g., `<<myMacro arg1:"foo" arg2:"bar">>` or `<$macrocall $name="myMacro" ... />`.
+
+In addition, just like the definition of regular in-line macros (created using `\define foo(...)`), a javascript macro's "job" is simply to generate and return content for further rendering by the TWCore engine.
+
+A good example of a simple javascript macro can be found here:
+
+   https://tiddlywiki.com/#%24%3A%2Fcore%2Fmodules%2Fmacros%2Fnow.js
+
+This code shows the definition of the TWCore's `<<now>>` macro, which accepts one optional parameter -- a datetime format -- and returns the corresponding datetime text as it's result. 
+
+In addition to the `<<now>>` macro, there are several other javascript macros of varying complexity that are part of the TWCore.  Use <<advanced-search>> to search the *shadow* tiddlers for "core/modules/macros" and you will see about a dozen results for you to study.

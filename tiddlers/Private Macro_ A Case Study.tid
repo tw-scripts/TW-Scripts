@@ -1,0 +1,83 @@
+created: 20190201120700539
+creator: Mohammad
+modified: 20190216180316829
+modifier: Mohammad
+tags: exmp36
+title: Private Macro: A Case Study
+type: text/vnd.tiddlywiki
+
+!! Sub macros
+Assume three are three macros, tow of them work as sub-macro (like sub-function or private methods in other programming language) for the main macro.
+
+<<<
+```
+\define smac1(a)  This is $a$
+\define smac2(b)  and she lives in $b$.
+
+\define myMac(x,y)
+<<smac1 $x$>> <<smac2 $y$>>
+\end
+```
+<<<
+
+The first two macro should not be available globally as they are sub-macro and only used by `myMac` here. How to have `myMac` globally accessible prevent the access to first two macros?
+
+!! Solution
+#<div>
+
+The first two macros are put in a tiddler with a custom tag say `myCode`
+
+* Title: [[Example 36: Private Macro]]
+* Tag: `mycode`
+* Text: as below
+<<<
+```
+\define smac1(a)  This is $a$
+\define smac2(b)  and she lives in $b$.
+```
+<<<
+</div>
+#<div>
+
+The third macro `myMac` should be put in a tiddler tagged with `$:/tags/Macro` to be globally available. Beause it needs the first two macros and they are not accessible, then it is required to import them as below
+
+* Title: [[Example 36: Global Macro]]
+* Tag: `$:/tags/Macro`
+* Text: as below
+<<<
+```
+\define myMac(x,y)
+\import [tag[myCode]]
+<<smac1 """$x$""">> <<smac2 """$y$""">>
+\end
+```
+<<<
+
+It is also possible to use the `importvariables` widget as below
+
+* Title: [[Example 36: Global Macro]]
+* Tag: `$:/tags/Macro`
+* Text: as below
+<<<
+```
+\define myMac(x,y)
+<$importvariables filter="[tag[myCode]]">
+<<smac1 """$x$""">> <<smac2 """$y$""">>
+</$importvariables>
+\end
+```
+<<<
+</div>
+
+!! See example in action
+!!! Call global macro
+<$macrocall $name="wikitext-example-without-html" 
+src="""><<myMac "Bugs Bunny" "Rabbit Hole Hill">>"""/>
+
+!!! Call private macro. 
+<$macrocall $name="wikitext-example-without-html" 
+src="""<<smac1 "Bugs Bunny">>
+<<smac2 "Rabbit Hole Hill">>
+"""/>
+
+<<alert warning "''Note'': No output by private macro `smac1` and `smac2`, because they are NOT globally accessible.">>

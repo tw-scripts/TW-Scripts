@@ -1,0 +1,27 @@
+created: 20181107135644222
+creator: Mohammad
+keywords: sidebar
+modified: 20190216180309160
+modifier: Mohammad
+responder: Mohammad
+tags: solution
+title: Change the Color of Sidebar Tabs
+type: text/vnd.tiddlywiki
+url: -
+
+The below css can change the sidebar tabs color:
+
+```
+/*sidebar tab buttons*/
+.tc-sidebar-lists .tc-tab-buttons button 
+{ 
+ color: #FFFFFF;
+ background-color: #7499DA;
+}
+
+/*sidebar tab buttons when selected*/
+.tc-sidebar-lists .tc-tab-buttons button.tc-tab-selected {
+ color: #FFFFFF;
+ background-color: #4A7ACF;
+}
+```

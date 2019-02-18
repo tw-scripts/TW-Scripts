@@ -1,0 +1,16 @@
+created: 20180421082547817
+creator: Mohammad
+modified: 20190216180314976
+modifier: Mohammad
+tags: list filter
+title: List-Link Macro
+type: text/vnd.tiddlywiki
+
+* ''Example 1''
+`<<list-links filter:"[prefix[C]]">>`
+<<list-links filter:"[prefix[C]]">>
+
+
+* ''Example 2: ordered list link''
+`<<list-links filter:"[prefix[C]]" type:"ol">>`
+<<list-links filter:"[prefix[C]]" type:"ol">>

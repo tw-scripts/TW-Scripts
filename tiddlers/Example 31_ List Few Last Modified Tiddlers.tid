@@ -1,0 +1,26 @@
+created: 20190127103133478
+creator: Mohammad
+modified: 20190216180310645
+modifier: Mohammad
+tags: exmp31
+title: Example 31: List Few Last Modified Tiddlers
+type: text/vnd.tiddlywiki
+
+These are examples show how the last modified tiddlers can be listed.
+
+!! Sample 1
+List the five last modified / created tiddlers tagged with `solution`.
+
+<$macrocall $name="wikitext-example-without-html" 
+src="""<<list-links "[has[modified]!sort[modified]limit[5]]" type:"ol">>
+"""/>
+
+!! Sample 2
+List the ten last modified / created //non-system// tiddlers.
+
+<$macrocall $name="wikitext-example-without-html" 
+src="""<<list-links "[has[modified]!is[system]!sort[modified]limit[5]]" type:"ol">>
+"""/>
+
+* Remarks
+> `!is[system]` excludes system tiddlers

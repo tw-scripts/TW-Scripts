@@ -1,0 +1,31 @@
+created: 20181227142242021
+creator: Mohammad
+modified: 20190216180311314
+modifier: Mohammad
+tags: symbol html5
+title: HTML Entity
+type: text/vnd.tiddlywiki
+
+\define symb(code, color:"")
+<$text text=$code$/><br>
+<br>
+<span style="font-size:3em;color:$color$;"> $code$</span>
+\end
+
+! Html entity code and usage
+Html entities can used to insert symbols and letters. Some example are given below.
+
+<<symb &#128336;>>
+
+<<symb &#128337;>> 
+
+<<symb &#128359;>>
+
+
+!! Other example
+Several other examples have been given in
+
+<<list-links "[tag[html5]tag[symbol]]" type:"ol">>
+
+
+Ref: [[azuliadesigns|https://azuliadesigns.com/html-character-codes-ascii-entity-unicode-symbols/]]

@@ -1,0 +1,32 @@
+created: 20190110134307968
+creator: Mohammad
+modified: 20190216180310038
+modifier: Mohammad
+tags: exmp26
+title: demo/exmp26/link-pdf-use-tiddlerpath
+type: text/vnd.tiddlywiki
+
+\define pdflink2(label path file page)  [ext[$label$|$path$/$file$#page=$page$]]
+\define pdflink(label file page) <$macrocall $name=pdflink2 label="""$label$""" path={{exmp26/pdfs-path}} file="""$file$""" page="""$page$"""/>
+
+In this version, the base path is defined in a tiddler, `exmp26/pdfs-path`. It could be defined in a `field` of a tiddler, but this way is a little more transparent:
+
+```
+\define pdflink2(label path file page)  [ext[$label$|$path$/$file$#page=$page$]]
+\define pdflink(label file page) <$macrocall $name=pdflink2 label="""$label$""" path={{exmp26/pdfs-path}} file="""$file$""" page="""$page$"""/>
+```
+
+Here a macro is used to open a specific page in an external pdf file.
+
+```
+\define pdflink(label file page)  [ext[$label$|$path$.pdf#page=$page$]]
+```
+
+* `label`: the link label to pdf file
+* `file`: the name of pdf file (including `.pdf` extension)
+* `page`: a page number like 4. Note that the page should be in the range.
+
+!! Example
+<$macrocall $name="wikitext-example-without-html" 
+src="""><<pdflink label:"Go to page 4" file:"sample-pdf-file.pdf" page:4>>
+"""/>

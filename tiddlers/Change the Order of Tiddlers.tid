@@ -1,0 +1,31 @@
+created: 20190201055030545
+creator: Mohammad
+keywords: order tiddler tagpill
+modified: 20190216180309155
+modifier: Mohammad
+tags: tip
+title: Change the Order of Tiddlers
+type: text/vnd.tiddlywiki
+
+Many widgets and macro in Tiddlywiki use the tiddler order to display their results. Examples are
+
+* tabs macro (e.g `<<tabs "[tag[mytag]]">>` )
+* toc macro (e.g `<<toc "[tag[mytag]]">>` )
+
+The simplest way to chnage the order of tiddlers is:
+
+# Simply open one of the tiddler tagged say with `mytag`
+# Click on the tag-pill
+# Reorder the tiddlers in the drop down menu by dragging and droping
+
+!! Alternative solution
+# Use the tag macro whenever you want as below
+#* `<<tag mytag>>`
+# A tag-pill will be created
+# Click on the tag-pill
+# Reorder the tiddlers in the drop down menu by dragging and droping
+
+! Example
+Click on the below tag pill and change the order of tiddlers.
+
+><<tag "exmp20">>

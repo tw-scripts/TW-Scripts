@@ -1,0 +1,21 @@
+created: 20180812183429564
+modified: 20190216180317087
+note100: 
+tags: variable
+title: Pass a Macro Result into Variable
+type: text/vnd.tiddlywiki
+
+\define is-template()
+<$list filter="[is[current]has:field[note1000]]" variable=null emptyMessage="no">yes</$list>
+\end
+
+<$set name="v" value=<<is-template>> >
+<<v>><br>
+<$list filter="[<is-template>addsuffix[-best]]">
+<<currentTiddler>>
+</$list>
+</$set>
+
+
+! Experimental
+This example shows how you can return and and put the result of a macro into a variable

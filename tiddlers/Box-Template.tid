@@ -1,0 +1,14 @@
+created: 20181018141049619
+creator: Mohammad
+description: part of exmp08, donot delete
+modified: 20190216180309402
+modifier: Mohammad
+tags: exmp08
+title: Box-Template
+type: text/vnd.tiddlywiki
+
+From <$link to=<<currentTidler>>><$view field=title/></$link>
+<div style="background:#dfe7ff;padding:10px">
+
+{{!!text}}
+</div>

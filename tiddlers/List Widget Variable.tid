@@ -1,0 +1,43 @@
+created: 20180701133610921
+modified: 20190216180314987
+tags: list exmp03
+test-field: 100
+title: List Widget Variable
+type: text/vnd.tiddlywiki
+
+! Case I
+`Listwidger` without variable. See how `!!filed` works. They refer to the each tiddler results from list widget.
+
+```
+<$list filter="[tag[exmp03]]" variable="myTid">
+Title: {{!!title}}<br>
+This is the variable `myTid`: <<myTid>><br>
+Test-Filed: {{!!test-field}}<br>
+</$list>
+```
+<$list filter="[tag[exmp03]]" variable="myTid">
+Title: {{!!title}}<br>
+This is the variable `myTid`: <<myTid>><br>
+Test-Filed: {{!!test-field}}<br>
+</$list>
+
+
+! Case II
+This example `Listwidget` sets a variable. See how `!!filed` works. They refer to the current tiddler (this tiddler) not the list widget variable.
+
+```
+<$list filter="[tag[exmp03]]" >
+Title: {{!!title}}<br>
+This is the variable `currentTiddler`: <<currentTiddler>><br>
+Test-Filed: {{!!test-field}}<br>
+</$list>
+```
+
+<$list filter="[tag[exmp03]]" >
+Title: {{!!title}}<br>
+This is the variable `currentTiddler`: <<currentTiddler>><br>
+Test-Filed: {{!!test-field}}<br>
+</$list>
+
+
+Ref:[[Eric Shulman|https://groups.google.com/d/msg/tiddlywiki/dET9eQbM1gI/oFJeC51EBgAJ]]

@@ -1,0 +1,22 @@
+created: 20181227154006768
+creator: Mohammad
+modified: 20190216180311275
+modifier: Mohammad
+tags: symbol html5
+title: HTML Entity: Stars
+type: text/vnd.tiddlywiki
+
+\define sm(color:"gray") 
+<tr><td><span style="font-size:3.5em;line-height:1.3em;color:$color$;">&#100$(v)$;</span></td>
+<td><$text text="&#100$(v)$;"/></td>
+\end
+
+
+!! Stars
+<table>
+<$list filter="[range[25,59]] -[[35]] -[[36]] -[[52]] -[[55]]" variable="v">
+<<sm>>
+</$list>
+</table>
+
+See: [[HTML Entity]]

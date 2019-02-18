@@ -1,0 +1,33 @@
+created: 20190128050643481
+creator: Mohammad
+keywords: last modified change current-session haschanged
+modified: 20190216180315047
+modifier: Mohammad
+tags: operator
+title: List Changes in Current Session
+type: text/vnd.tiddlywiki
+
+To list and monitor modified / created tiddlers in the current session, use `hascahnaged` operator.
+
+!! Example
+List the last ten tiddlers changed (modified / created) from the start of current session
+
+<$macrocall $name="wikitext-example-without-html" 
+src="""<$list filter="[haschanged[]limit[10]]">
+
+</$list>
+"""/>
+
+<<alert warning "''Note'': A page reload, a refresh, close and reopen wiki, all starts new session.">>
+
+!! Remarks
+It is possible to exclude temp, state, or other tiddlers from list using appropriate filter. For example the below filter expression exlude all state, temp tiddlers and also the two tiddlers `$:/StoryList` and `$:/HistoryList`.
+
+```
+!prefix[$:/state]!prefix[$:/temp]![$:/StoryList]![$:/HistoryList]
+```
+
+!!! See also
+<<list-links "[search:keywords[change]] -[<currentTiddler>]" type:"ol">>
+
+

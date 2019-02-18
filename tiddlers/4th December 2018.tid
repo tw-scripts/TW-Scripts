@@ -1,0 +1,11 @@
+created: 20181204062855238
+creator: Mohammad
+modified: 20190216180308478
+modifier: Mohammad
+tags: task
+title: 4th December 2018
+type: text/vnd.tiddlywiki
+
+https://groups.google.com/d/msg/tiddlywiki/mCudZtzoXU4/-N1VV6SuBwAJ
+
+This plugin changes the methods tiddlywiki uses to retrieve and set values in json data tiddlers

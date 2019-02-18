@@ -1,0 +1,69 @@
+created: 20181122052315056
+creator: Mohammad
+keywords: conditional variable reveal
+modified: 20190216180310448
+modifier: Mohammad
+responder: Eric Shulman
+tags: reveal solution
+title: Compare Variables for Equality and Inequality
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/3NdhzmCD-Rs/yoxtHnBCAAAJ
+
+; How to make a simply comparison between two variables or one variable and a fields content?
+: The answer is using `reveal` widget.
+
+!! Simple reveal example
+
+Normally, the `reveal` widget is used to compare a "text" value with a value stored in the text field of a specified "state" tiddler, like this:
+
+```
+<$reveal type="match" state="$:/state/SampleReveal1" text="show">
+  show this if state tiddler content matches text param
+</$reveal>
+```
+
+
+!! Use default attribute
+However, there is an alternative syntax that allows comparisons between any two values: while the "state" param can only use an implied reference to the "text" field of a specified tiddler, the "default" param can use //ANY literal//, field or variable reference.  Simply //OMIT// the "state" param and use the "default" param in it's place, like this:
+
+```
+<$reveal type="match" default={{sometiddler!!somefield}} text="show">
+   show this if some field in some tiddler matches text param
+</$reveal>
+```
+
+or
+
+```
+<$reveal type="match" default=<<somevariable>> text="show">
+   show this if somevariable matches text param
+</$reveal>
+```
+
+!! Compare any two variables
+Since the "text" param also can use ANY //field// or //variable// reference, you can use `reveal` to compare any two variables, like this:
+
+```
+<$reveal type="match" default=<<somevariable>> text=<<someOtherVariable>>>
+   show this if somevariable value matches someOtherVariable
+</$reveal>
+```
+
+!! Complex cases
+You can use any of the valid "type" values to make the comparison, including the recently added `LT`, `GT`, `LTEQ` and `GTEQ` types.
+
+For example, if you have some "task tiddlers" tagged with "todo" OR "done", you could display conditional output this way:
+
+```
+<$set name="todo" filter="[tag[todo]count[]]">
+<$set name="done" filter="[tag[done]count[]]">
+<$reveal type="match"   default=<<todo>> text="0"> There is nothing to do. </$reveal>
+<$reveal type="nomatch" default=<<todo>> text="0">
+   <$reveal type="match" default=<<done>> text="0">      You haven't started.                             </$reveal>
+   <$reveal type="LT"    default=<<todo>> text=<<done>>> You're making progress... keep going!            </$reveal>
+   <$reveal type="match" default=<<todo>> text=<<done>>> You're half way there... take a short break      </$reveal>
+   <$reveal type="GT"    default=<<todo>> text=<<done>>> You've done a lot... but there's still some left </$reveal>
+</$reveal>
+</$set>
+</$set>
+```

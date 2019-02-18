@@ -1,0 +1,20 @@
+created: 20180831115604149
+creator: Mohammad
+modified: 20190216180311536
+modifier: Mohammad
+tags: 
+title: How to Import a Bundle of Plugins and Tiddlers
+type: text/vnd.tiddlywiki
+
+TW vanilla has few features for end user, it is laways desired to add some plugins and customization tiddlers to it to be useful for end users, the question is how to set parameters and add plugings to it?
+
+
+Ref: [[Eric Shulman|https://groups.google.com/d/msg/tiddlywiki/ZPaiDtpt1Zc/L44cVHs9BAAJ]] and [[Tiddly Tweeter|https://groups.google.com/d/msg/tiddlywiki/ZPaiDtpt1Zc/1L92Xag7BAAJ]]
+
+<<alert primary """
+You can drag-and-drop an entire TW file to import all the tiddlers it contains.  For your purposes, start with an empty.html and drop any of your existing TW files on it.  Then, review the list of tiddlers to be imported, and de-select any tiddlers that are not desired.  Press the "import" button to import the selected tiddlers.  Save the file.  This will be your new starting document any time you need a new "custom empty" file.
+
+---
+
+Another solution is using the [[Bundler plugin|https://wikilabs.github.io/editions/bundler/#%24%3A%2Fplugins%2Fwikilabs%2Fbundler]].
+""">>

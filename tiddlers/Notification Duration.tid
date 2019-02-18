@@ -1,0 +1,28 @@
+created: 20181115151628355
+creator: Mohammad
+keywords: notification duration time
+modified: 20190216180317301
+modifier: Mohammad
+responder: Jeremy Ruston
+tags: solution
+title: Notification Duration
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/ukK1sgl6n3o/Z1gB2kbJAAAJ
+
+Notifications are small informational messages that appear at the top right of the TiddlyWiki window, and automatically disappear after a preset time. How is it possible the preset time to about 15 s.
+
+!! Solution
+There is an internal JavaScript setting for the notification duration. It can be changed with this one liner:
+
+```
+title: $:/_ChangeNotificationDuration
+module-type: startup
+type: application/javascript
+
+$tw.config.preferences.notificationDuration = 15 * 1000;
+```
+
+This is a the code
+$:/_ChangeNotificationDuration
+
+<<alert danger "not works for me!!">>

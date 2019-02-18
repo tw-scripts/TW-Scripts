@@ -1,0 +1,34 @@
+created: 20180816063433189
+creator: Mohammad
+keywords: datatiddler dynamic index reference tiddler
+modified: 20190216180309628
+modifier: Mohammad
+responder: Eric Shulman
+tags: datatiddler exmp05 solution
+title: Another DataTiddler and Tiddler Widget
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/ObhOIy_lZCg/X0WaI5VqAwAJ
+
+How dynamically create a reference in tiddler widget and access the indexes of a data tiddler
+
+
+<$macrocall $name="wikitext-example-without-html" 
+src="""<$tiddler tiddler={{{ [is[current]removeprefix[Another ]addsuffix[ Example]] }}} >
+
+<<currentTiddler>>
+
+* Ali is {{##Ali}}
+* Mohammad is {{##Mohammad}}
+* Hirad is {{##Hirad}}
+</$tiddler>
+"""/>
+
+!! Remarks
+
+* The `tiddler={{{...}}}` parameter is where the magic happens...
+* Within the enclosing "triple curly braces" is some "filter syntax".  This syntax takes the current tiddler title and removes the text "Another" from the beginning of the title and add the suffix " Example", thus producing the correct reference to the corresponding data tiddler. //Note to the spaces.//
+* With this bit of magic, it will automatically display index values from the corresponding "data" tiddler.
+
+---
+Related tiddlers
+<<list-links "[tag[exmp05]] -[<currentTiddler>]">>

@@ -1,0 +1,54 @@
+created: 20180621062529090
+creator: Mohammad
+keywords: filter sidebar search
+modified: 20190216180308290
+modifier: Mohammad
+responder: Eric Shulman
+tags: solution
+title: Add Filter Search into Sidebar
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/xu5Skueta14/mxrD1m_1AgAJ
+
+;How to add the filter search interface into the sidebar tabs?
+: Follow the several steps below
+
+# Press the magnifying glass next to the standard sidebar search input to open $:/AdvancedSearch
+# From the $:/AdvancedSearch *shadows* tab, search for "AdvancedSearch/Filter"
+# Select "$:/core/ui/AdvancedSearch/Filter" from the search results to display that tiddler in the story
+# Edit that tiddler and add a tag: "$:/tags/SideBar"
+# You will now have a "Filter" tab in the sidebar.  Select that tab to perform filter searches with the results displayed in the sidebar.
+
+Extra goodness... there is a down-arrow button next to the filter search input.  This button displays a dropdown list of pre-defined filter seaches.  To add your own pre-defined filter searches to this dropdown list:
+
+# Create a new tiddler (e.g., "MyFilterSearch") tagged with `$:/tags/Filter`
+# Add a "description" field, e.g., "Apples not Oranges"
+# Add a "filter" field containing the filter search syntax, e.g., `[search[apples]!search[oranges]]`
+# Add a "list-before" field.  Do not enter a value for this field.  This will cause the entry to automatically appear before all other pre-defined filters in the list.
+
+You can create as many custom filter searches as you like by following the above steps again, using different titles, descriptions, and filter field values.
+
+One display issue to fix:
+
+The list of pre-defined filters drops down to the RIGHT of the down-arrow button.  In the sidebar, this typically results in part of the list flowing off the right edge of the window, making it hard to use since you can only see part of the filter descriptions.  To fix this:
+
+# <div>
+
+Edit the shadow tiddler 
+
+$:/core/ui/AdvancedSearch/Filter/FilterButtons/dropdown
+</div>
+#<div>
+
+Change this line:
+
+```
+<$reveal state=<<qualify "$:/state/filterDropdown">> type="popup" position="belowleft" animate="yes">`
+```
+to
+
+```
+<$reveal state=<<qualify "$:/state/filterDropdown">> type="nomatch" text="" position="belowleft" animate="yes">`
+```
+
+This will shift the drop-down so it appears directly under the filter search input, rather than below the down-arrow button.
+</div>

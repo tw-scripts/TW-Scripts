@@ -1,0 +1,25 @@
+created: 20181220095814770
+creator: Mohammad
+modified: 20190216180310576
+modifier: Mohammad
+tags: operator append
+title: Example Append Operator
+type: text/vnd.tiddlywiki
+
+<<alert danger "Under construction">>
+
+How simply append items to another variable?
+
+<$macrocall $name="wikitext-example-without-html" 
+src="""
+
+<$set name="t" value="">
+<$set name="a" value="hirad">
+<$list filter="[<t>append<a>]" variable="v">
+<<v>>
+</$list>
+</$set>
+</$set>
+
+"""/>
+

@@ -1,0 +1,23 @@
+created: 20190203111638921
+creator: Mohammad
+modified: 20190216180308490
+modifier: Mohammad
+note: 20.01-29.99 tiddlers describe nested lists
+tags: nested
+title: 20.10
+type: text/vnd.tiddlywiki
+
+! Nested list and set widgets
+How to use nested lists and set wideget to produce a complex outputs.
+
+<$macrocall $name="wikitext-example-without-html" 
+src="""><$list filter="01 02 03">
+ <$set name="myvar" filter="[<currentTiddler>addprefix[Lec]]" emptyValue="No output">
+  <<myvar>>
+ </$set>  
+</$list>
+"""/>
+
+!! Remarks
+* The outer loop (`list` widget) has no variable set, so the default variable `currentTiddler` will applied.
+

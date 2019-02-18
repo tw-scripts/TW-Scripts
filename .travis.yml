@@ -1,0 +1,23 @@
+language: node_js
+node_js:
+  - "11"
+dist: trusty
+sudo: false
+
+branches:
+  only:
+  - master
+
+install:
+  - npm install -g tiddlywiki
+
+script:
+  - tiddlywiki --verbose --build index
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  local_dir: output
+  on:
+    branch: master

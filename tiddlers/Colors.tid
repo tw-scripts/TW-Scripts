@@ -1,0 +1,172 @@
+created: 20181010035955280
+creator: Mohammad
+keywords: color hex
+modified: 20190216180308799
+modifier: Mohammad
+responder: TonGerner
+tags: solution
+title: Colors
+type: text/vnd.tiddlywiki
+url: http://tw5custom.tiddlyspot.com/#Colors
+
+\define colorbar(color, width:"100",height:"20")
+<svg width="$width$" height="$height$">
+  <rect fill="$color$" x="0" y="0" width="$width$" height="$height$"/>
+</svg>
+\end
+
+For more information see: [[w3schools|https://www.w3schools.com/tags/ref_colornames.asp]]
+
+All modern browsers (and TW5!) support the following 140 color names (case insensitive!):
+
+<<<
+''Example:''
+
+```
+@@color:white;background-color:red;This is white text on a red background@@
+```
+renders as: @@color:white;background-color:red;This is white text on a red background@@
+<<<
+
+|Color Name |HEX |Color |h
+|AliceBlue  |#F0F8FF |<<colorbar #F0F8FF>>  |
+|AntiqueWhite  |#FAEBD7 |<<colorbar #FAEBD7>>  |
+|Aqua = Cyan |#00FFFF |<<colorbar #00FFFF>>  |
+|Aquamarine  |#7FFFD4 |<<colorbar #7FFFD4>>  |
+|Azure  |#F0FFFF |<<colorbar #F0FFFF>>  |
+|Beige  |#F5F5DC |<<colorbar #F5F5DC>>  |
+|Bisque  |#FFE4C4 |<<colorbar #FFE4C4>>  |
+|Black  |#000000 |<<colorbar #000000>>  |
+|BlanchedAlmond  |#FFEBCD |<<colorbar #FFEBCD>>  |
+|Blue  |#0000FF |<<colorbar #0000FF>>  |
+|BlueViolet  |#8A2BE2 |<<colorbar #8A2BE2>>  |
+|Brown  |#A52A2A |<<colorbar #A52A2A>>  |
+|BurlyWood  |#DEB887 |<<colorbar #DEB887>>  |
+|CadetBlue  |#5F9EA0 |<<colorbar #5F9EA0>>  |
+|Chartreuse  |#7FFF00 |<<colorbar #7FFF00>>  |
+|Chocolate  |#D2691E |<<colorbar #D2691E>>  |
+|Coral  |#FF7F50 |<<colorbar #FF7F50>>  |
+|CornflowerBlue  |#6495ED |<<colorbar #6495ED>>  |
+|Cornsilk  |#FFF8DC |<<colorbar #FFF8DC>>  |
+|Crimson  |#DC143C |<<colorbar #DC143C>>  |
+|Cyan = Aqua |#00FFFF |<<colorbar #00FFFF>>  |
+|DarkBlue  |#00008B |<<colorbar #00008B>>  |
+|DarkCyan  |#008B8B |<<colorbar #008B8B>>  |
+|DarkGoldenRod  |#B8860B |<<colorbar #B8860B>>  |
+|DarkGray / ~DarkGrey |#A9A9A9 |<<colorbar #A9A9A9>>  |
+|DarkGreen  |#006400 |<<colorbar #006400>>  |
+|DarkKhaki  |#BDB76B |<<colorbar #BDB76B>>  |
+|DarkMagenta  |#8B008B |<<colorbar #8B008B>>  |
+|DarkOliveGreen  |#556B2F |<<colorbar #556B2F>>  |
+|DarkOrange  |#FF8C00 |<<colorbar #FF8C00>>  |
+|DarkOrchid  |#9932CC |<<colorbar #9932CC>>  |
+|DarkRed  |#8B0000 |<<colorbar #8B0000>>  |
+|DarkSalmon  |#E9967A |<<colorbar #E9967A>>  |
+|DarkSeaGreen  |#8FBC8F |<<colorbar #8FBC8F>>  |
+|DarkSlateBlue  |#483D8B |<<colorbar #483D8B>>  |
+|DarkSlateGray / ~DarkSlateGrey |#2F4F4F |<<colorbar #2F4F4F>>  |
+|DarkTurquoise  |#00CED1 |<<colorbar #00CED1>>  |
+|DarkViolet  |#9400D3 |<<colorbar #9400D3>>  |
+|DeepPink  |#FF1493 |<<colorbar #FF1493>>  |
+|DeepSkyBlue  |#00BFFF |<<colorbar #>>  |
+|DimGray / ~DimGrey |#696969 |<<colorbar #696969>>  |
+|DodgerBlue  |#1E90FF |<<colorbar #1E90FF>>  |
+|FireBrick  |#B22222 |<<colorbar #B22222>>  |
+|FloralWhite  |#FFFAF0 |<<colorbar #FFFAF0>>  |
+|ForestGreen  |#228B22 |<<colorbar #228B22>>  |
+|Fuchsia / Magenta |#FF00FF |<<colorbar #FF00FF>>  |
+|Gainsboro  |#DCDCDC |<<colorbar #DCDCDC>>  |
+|GhostWhite  |#F8F8FF |<<colorbar #F8F8FF>>  |
+|Gold  |#FFD700 |<<colorbar #FFD700>>  |
+|GoldenRod  |#DAA520 |<<colorbar #DAA520>>  |
+|Gray / Grey |#808080 |<<colorbar #808080>>  |
+|Green  |#008000 |<<colorbar #008000>>  |
+|GreenYellow  |#ADFF2F |<<colorbar #ADFF2F>>  |
+|HoneyDew  |#F0FFF0 |<<colorbar #F0FFF0>>  |
+|HotPink  |#FF69B4 |<<colorbar #FF69B4>>  |
+|IndianRed   |#CD5C5C |<<colorbar #CD5C5C>>  |
+|Indigo   |#4B0082 |<<colorbar #4B0082>>  |
+|Ivory  |#FFFFF0 |<<colorbar #FFFFF0>>  |
+|Khaki  |#F0E68C |<<colorbar #F0E68C>>  |
+|Lavender  |#E6E6FA |<<colorbar #E6E6FA>>  |
+|LavenderBlush  |#FFF0F5 |<<colorbar #FFF0F5>>  |
+|LawnGreen  |#7CFC00 |<<colorbar #7CFC00>>  |
+|LemonChiffon  |#FFFACD |<<colorbar #FFFACD>>  |
+|LightBlue  |#ADD8E6 |<<colorbar #ADD8E6>>  |
+|LightCoral  |#F08080 |<<colorbar #F08080>>  |
+|LightCyan  |#E0FFFF |<<colorbar #E0FFFF>>  |
+|LightGoldenRodYellow  |#FAFAD2 |<<colorbar #FAFAD2>>  |
+|LightGray / ~LightGrey |#D3D3D3 |<<colorbar #D3D3D3>>  |
+|LightGreen  |#90EE90 |<<colorbar #90EE90>>  |
+|LightPink  |#FFB6C1 |<<colorbar #FFB6C1>>  |
+|LightSalmon  |#FFA07A |<<colorbar #FFA07A>>  |
+|LightSeaGreen  |#20B2AA |<<colorbar #20B2AA>>  |
+|LightSkyBlue  |#87CEFA |<<colorbar #87CEFA>>  |
+|LightSlateGray / ~LightSlateGrey |#778899 |<<colorbar #778899>>  |
+|LightSteelBlue  |#B0C4DE |<<colorbar #B0C4DE>>  |
+|LightYellow  |#FFFFE0 |<<colorbar #FFFFE0>>  |
+|Lime  |#00FF00 |<<colorbar #00FF00>>  |
+|LimeGreen  |#32CD32 |<<colorbar #32CD32>>  |
+|Linen  |#FAF0E6 |<<colorbar #FAF0E6>>  |
+|Magenta / Fuchsia |#FF00FF |<<colorbar #FF00FF>>  |
+|Maroon  |#800000 |<<colorbar #800000>>  |
+|MediumAquaMarine  |#66CDAA |<<colorbar #66CDAA>>  |
+|MediumBlue  |#0000CD |<<colorbar #0000CD>>  |
+|MediumOrchid  |#BA55D3 |<<colorbar #BA55D3>>  |
+|MediumPurple  |#9370DB |<<colorbar #9370DB>>  |
+|MediumSeaGreen  |#3CB371 |<<colorbar #3CB371>>  |
+|MediumSlateBlue  |#7B68EE |<<colorbar #7B68EE>>  |
+|MediumSpringGreen  |#00FA9A |<<colorbar #00FA9A>>  |
+|MediumTurquoise  |#48D1CC |<<colorbar #48D1CC>>  |
+|MediumVioletRed  |#C71585 |<<colorbar #C71585>>  |
+|MidnightBlue  |#191970 |<<colorbar #191970>>  |
+|MintCream  |#F5FFFA |<<colorbar #F5FFFA>>  |
+|MistyRose  |#FFE4E1 |<<colorbar #FFE4E1>>  |
+|Moccasin  |#FFE4B5 |<<colorbar #FFE4B5>>  |
+|NavajoWhite  |#FFDEAD |<<colorbar #FFDEAD>>  |
+|Navy  |#000080 |<<colorbar #000080>>  |
+|OldLace  |#FDF5E6 |<<colorbar #FDF5E6>>  |
+|Olive  |#808000 |<<colorbar #808000>>  |
+|OliveDrab  |#6B8E23 |<<colorbar #6B8E23>>  |
+|Orange  |#FFA500 |<<colorbar #FFA500>>  |
+|OrangeRed  |#FF4500 |<<colorbar #FF4500>>  |
+|Orchid  |#DA70D6 |<<colorbar #DA70D6>>  |
+|PaleGoldenRod  |#EEE8AA |<<colorbar #EEE8AA>>  |
+|PaleGreen  |#98FB98 |<<colorbar #98FB98>>  |
+|PaleTurquoise  |#AFEEEE |<<colorbar #AFEEEE>>  |
+|PaleVioletRed  |#DB7093 |<<colorbar #DB7093>>  |
+|PapayaWhip  |#FFEFD5 |<<colorbar #FFEFD5>>  |
+|PeachPuff  |#FFDAB9 |<<colorbar #FFDAB9>>  |
+|Peru  |#CD853F |<<colorbar #CD853F>>  |
+|Pink  |#FFC0CB |<<colorbar #FFC0CB>>  |
+|Plum  |#DDA0DD |<<colorbar #DDA0DD>>  |
+|PowderBlue  |#B0E0E6 |<<colorbar #B0E0E6>>  |
+|Purple  |#800080 |<<colorbar #800080>>  |
+|RebeccaPurple  |#663399 |<<colorbar #663399>>  |
+|Red  |#FF0000 |<<colorbar #FF0000>>  |
+|RosyBrown  |#BC8F8F |<<colorbar #BC8F8F>>  |
+|RoyalBlue  |#4169E1 |<<colorbar #4169E1>>  |
+|SaddleBrown  |#8B4513 |<<colorbar #8B4513>>  |
+|Salmon  |#FA8072 |<<colorbar #FA8072>>  |
+|SandyBrown  |#F4A460 |<<colorbar #F4A460>>  |
+|SeaGreen  |#2E8B57 |<<colorbar #2E8B57>>  |
+|SeaShell  |#FFF5EE |<<colorbar #FFF5EE>>  |
+|Sienna  |#A0522D |<<colorbar #A0522D>>  |
+|Silver  |#C0C0C0 |<<colorbar #C0C0C0>>  |
+|SkyBlue  |#87CEEB |<<colorbar #87CEEB>>  |
+|SlateBlue  |#6A5ACD |<<colorbar #6A5ACD>>  |
+|SlateGray / ~SlateGrey |#708090 |<<colorbar #708090>>  |
+|Snow  |#FFFAFA |<<colorbar #FFFAFA>>  |
+|SpringGreen  |#00FF7F |<<colorbar #00FF7F>>  |
+|SteelBlue  |#4682B4 |<<colorbar #4682B4>>  |
+|Tan  |#D2B48C |<<colorbar #D2B48C>>  |
+|Teal  |#008080 |<<colorbar #008080>>  |
+|Thistle  |#D8BFD8 |<<colorbar #D8BFD8>>  |
+|Tomato  |#FF6347 |<<colorbar #FF6347>>  |
+|Turquoise  |#40E0D0 |<<colorbar #40E0D0>>  |
+|Violet  |#EE82EE |<<colorbar #EE82EE>>  |
+|Wheat  |#F5DEB3 |<<colorbar #F5DEB3>>  |
+|White  |#FFFFFF |<<colorbar #FFFFFF>>  |
+|WhiteSmoke  |#F5F5F5 |<<colorbar #F5F5F5>>  |
+|Yellow  |#FFFF00 |<<colorbar #FFFF00>>  |
+|YellowGreen  |#9ACD32 |<<colorbar #9ACD32>>  |

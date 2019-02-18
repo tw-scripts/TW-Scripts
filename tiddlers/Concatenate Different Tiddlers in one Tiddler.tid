@@ -1,0 +1,62 @@
+created: 20190111080300267
+creator: Mohammad
+keywords: concatenate writing tool
+modified: 20190216180310435
+modifier: Mohammad
+responder: Eric Shulman
+tags: solution
+title: Concatenate Different Tiddlers in one Tiddler
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/yzVdb42TUBI/mWXIBI7ZCAAJ
+
+Stefan Pfister a fiction story writer asked how can I create a long big fixed version of narration by concatenating the text of all related tiddlers? The purpose is to have a final pdf or raw text to be exported to some publication / layout software.
+
+# <div>
+
+First, we need some wiki syntax for generating the desired output.  Something like this:
+
+```
+<$list filter="[tag[About]]"><$text text={{!!text}}/></$list>
+```
+</div>
+# <div>
+
+Next, we can //capture// that output to a variable, using the `<$wikify>` widget:
+
+```
+<$wikify name="out" text="""<$list filter="[tag[About]]"><$text text={{!!text}}/></$list>""">
+   <<out>>
+</$wikify>
+```
+</div>
+# <div>
+
+Then, wrap that in a button so we can trigger an action to save the output to a tiddler instead of directly rendering the output:
+
+```
+<$button> CLICK ME
+   <$wikify name="out" text="""<$list filter="[tag[About]]"><$text text={{!!text}}/></$list>""">
+      <$action-setfield $tiddler="JoinedOutput" text=<<out>> />
+   </$wikify>
+</$button>
+```
+</div>
+# <div>
+
+Finally, for convenient re-use, wrap the entire button in a macro definition, and replace the literal values with macro parameter references.
+
+```
+\define join(label,tag,target)
+<$button> $label$
+   <$wikify name="out" text="""<$list filter="[tag[$tag$]]"><$text text={{!!text}}/></$list>""">
+      <$action-setfield $tiddler="$target$" text=<<out>> />
+   </$wikify>
+</$button>
+\end
+```
+
+and call it like below
+
+```
+<<join "CLICK ME" "About" "JoinedOutput">>
+```

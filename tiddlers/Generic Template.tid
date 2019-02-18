@@ -1,0 +1,19 @@
+created: 20181028032541010
+creator: Mohammad
+keywords: template variable
+list: 
+modified: 20190216180311889
+modifier: Mohammad
+responder: Mark S
+tags: template solution exmp41/country-codes
+title: Generic Template
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/6aOkw8aTk-U/VmUrivhlCQAJ
+
+```
+\define myfilter() [regexp[$(currentTiddler)$:]]
+
+<$macrocall $name="list-links" filter=<<myfilter>>/>
+```
+
+! To Be Completed

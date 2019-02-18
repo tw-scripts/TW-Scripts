@@ -1,0 +1,50 @@
+created: 20190109054740930
+creator: Mohammad
+keywords: button close navigate message
+modified: 20190216180309085
+modifier: Mohammad
+responder: Diego Messa
+tags: message button solution
+title: Close all Tiddlers and Open Home
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/_VTi8ht7KZY/6W6AAKdhEgAJ
+
+; Have a button to navigate back to my home tiddler and close all other tiddlers
+
+```
+<$navigator story="$:/StoryList" history="$:/HistoryList">
+    <$button class="tc-btn-invisible tc-tiddlylink">
+        {{$:/core/images/home-button}} Home
+        <$action-sendmessage $message="tm-close-all-tiddlers" />
+        <$action-navigate $to="PLACE_TITLE_OF_HOME_TIDDLER_HERE"/>
+    </$button>
+</$navigator>
+```
+
+!! Explanation 
+
+* The `tm-close-all-tiddlers` message handles actually closing all tiddlers, by sending that message up to the navigator widget. 
+* Then the action navigate widet actually opens your "HOME" tiddler. 
+* The `class="tc-btn-invisible tc-tiddlylink"` in the button just adds a bit of styling. 
+
+!! A working example
+
+Go to https://tiddlywiki.com, make a new tiddler and paste the following:
+
+```
+<$navigator story="$:/StoryList" history="$:/HistoryList">
+    <$button class="tc-btn-invisible tc-tiddlylink">
+        {{$:/core/images/home-button}} Home
+        <$action-sendmessage $message="tm-close-all-tiddlers" />
+        <$action-navigate $to="ButtonWidget"/>
+    </$button>
+</$navigator>
+```
+
+This will close all tiddlers and navigate to "ButtonWidget" tiddler.
+
+!! Related solutions
+These solutions are similar:
+
+* [[Open All Tiddlers Meet Some Criteria]]
+* [[Open all Tiddlers with Tag-X]]

@@ -1,0 +1,38 @@
+created: 20181227080525748
+creator: Mohammad
+modified: 20190216180311293
+modifier: Mohammad
+tags: symbol html5
+title: HTML Entity: Circled Digits
+type: text/vnd.tiddlywiki
+
+\define sm(color:"gray") 
+<span style="font-size:2.5em;line-height:1.3em;color:$color$;">&#101$(v)$;</span>
+\end
+
+It possible to use html entity codes (decimal code here) to insert symbols into the text.
+
+* Example
+
+`&#10102;`: <span style="font-size:1.5em;">&#10102;</span>
+
+For symbol code see: https://www.toptal.com/designers/htmlarrows/symbols/
+
+!! Negative circled digits san-serief
+
+<$list filter="[range[12,21]]" variable="v">
+<<sm>>
+</$list>
+
+!! Negative circled digits san-serief
+
+<$list filter="[range[22,31]]" variable="v">
+<<sm gray>>
+</$list>
+
+!! Negative circled digits
+<$list filter="02 03 04 04 06 07 08 09 10 11" variable="v">
+<<sm>>
+</$list>
+
+See: [[HTML Entity]]

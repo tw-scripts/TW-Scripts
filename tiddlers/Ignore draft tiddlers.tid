@@ -1,0 +1,20 @@
+created: 20180604194350180
+creator: Mohammad
+modified: 20190216180315383
+modifier: Mohammad
+tags: filter
+title: Ignore draft tiddlers
+type: text/vnd.tiddlywiki
+
+A filter to exlucde draft tiddlers from showing up on lists `-[has[draft.of]]`
+
+```
+<$list filter="[tag[learning]] -[has[draft.of]]">
+<<currentTiddler>><br>
+</$list>
+```
+
+
+<$list filter="[tag[learning]] -[has[draft.of]]">
+<<currentTiddler>><br>
+</$list>

@@ -1,0 +1,60 @@
+created: 20190130195149214
+creator: Mohammad
+keywords: list image gallery clipboard 
+modified: 20190216180308454
+modifier: Mohammad
+responder: Thomas Elmiger
+tags: image solution
+title: A Gallery of Core Imgaes
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/NXMYo4arAp4/S_zKK_GoHQAJ
+
+; Create a gallery of all core imgaes
+: The core images are svg images. To do this use the `list` widget and a small css as below.
+
+! Linkable image
+On mouse hover the tooltip will reveal the full path of image and on click the tiddler contans the svg image will be opened.
+
+<<wikitext-example-without-html 
+src:"""<style>
+.my-gallery svg {
+width:  2.0em !important;
+height: 2.0em !important;
+margin: 0.5em;
+}
+</style>
+<div class="my-gallery">
+<$list filter="[all[tiddlers+shadows]tag[$:/tags/Image]sort[]] -[[$:/core/images/blank]]">
+<$link tooltip="{{!!title}}">
+<$transclude/>
+</$link>
+</$list>
+</div>
+""">>
+
+!! Remarks
+* The my-gallery css class sets the height, width and margin of images
+* The `list` widget, list all core images
+* The `-[[$:/core/images/blank]]` filter exclude the blank (empty) image from listing
+* All images are linkable and on click open the related tiddler.
+
+! Clickable image
+The below example shows the same gallery with clickable images. On click the tiddler name containing the image is copied to clipboard.
+
+
+<$macrocall $name="wikitext-example-without-html" 
+src="""<div class="my-gallery">
+<$list filter="[all[tiddlers+shadows]tag[$:/tags/Image]sort[]] -[[$:/core/images/blank]]">
+<$button  message="tm-copy-to-clipboard" param=<<currentTiddler>> tooltip=<<currentTiddler>> >
+<$transclude/>
+</$button>
+</$list>
+</div>
+"""/>
+
+!! Remarks
+* The my-gallery css class sets the height and width of images. The margin is not used here.
+* The `list` widget, list all core images
+* The `-[[$:/core/images/blank]]` filter exclude the blank (empty) image from listing
+* The `button` widget uses `tm-copy-to-clipboard` to copy the tiddler title of containing image into clipboard. Also the title is used as tooltip to be shown on mouse hover.
+* Each image is wrapped into a button and on click the related tiddler title is copied to clipboard.

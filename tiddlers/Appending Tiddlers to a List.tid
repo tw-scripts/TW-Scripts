@@ -1,0 +1,27 @@
+created: 20181023170415328
+creator: Mohammad
+keywords: subfilter 
+modified: 20190216180309617
+modifier: Mohammad
+responder: Mark S
+tags: solution
+title: Appending Tiddlers to a List
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/FXW8Zjv6atU/jAcdFnucBgAJ
+
+\define addmember()
+<$tiddler tiddler="$:/temp/newproject"><$action-listops $field="members" $subfilter="[{!!newmember}]"/></$tiddler>
+\end
+
+How is it possible to choose and append tiddlers to a list based on some filter criteria?
+
+
+```
+\define addmember()
+<$tiddler tiddler="$:/temp/newproject"><$action-listops $field="members" $subfilter="[{!!newmember}]"/></$tiddler>
+\end
+```
+
+<$macrocall $name="wikitext-example-without-html" 
+src="""Member List: {{$:/temp/newproject!!members}} + <$select tiddler="$:/temp/newproject" field="newmember" actions=<<addmember>>><$list filter="[tag[contact]]"><option>{{!!title}}</option></$list></$select>
+"""/>

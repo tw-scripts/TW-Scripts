@@ -1,0 +1,9 @@
+created: 20180813052132697
+modified: 20190216180308386
+tags: concept
+title: Add a Command to Tiddler Toolbar
+type: text/vnd.tiddlywiki
+
+* Every tiddler tagged with `$:/tags/ViewToolbar` will appear in the Tiddlywiki sidebar
+* The position in the sidebar can be determined using the `list-after` and `list-before` field
+* Normally this tiddler includes a button to take action on click! See the `comments` plugin in ~Tiddlywiki 5.1.18-pre

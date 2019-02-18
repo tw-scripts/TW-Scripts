@@ -1,0 +1,27 @@
+created: 20190211111413668
+creator: Mohammad
+foo: a [[title with space]] c d e f
+keywords: count tiddler field
+modified: 20190216180310582
+modifier: Mohammad
+tags: exmp49
+title: Example 49: Count Items in Tiddler Fields
+type: text/vnd.tiddlywiki
+
+As another example for [[Count items within a Field]] the below code shows the number of items in field `keywords` to the number of items in the field `foo`
+
+<$macrocall $name="wikitext-example-without-html" 
+src="""><$count filter="[list[!!keywords]]" /> / <$count filter="[list[!!foo]]" />
+"""/>
+
+If you want to use the code with a tiddler its title comes from a variable, one solution is to use the `tiddler` widget, so you can use the below code. This code counts the number of items `foo` and `notes` in a tiddler its title comes from variable `ckl_state` and displayes as `a/b`.
+
+```
+\define ckl_state() $(currentTiddler)$_state
+
+<$tiddler tiddler=<<ckl_state>>>
+<$count filter="[list[!!keywords]]" /> / <$count filter="[list[!!foo]]" />
+</$tiddler>
+```
+
+Ref: [[FrD|https://groups.google.com/d/msg/tiddlywiki/OQt4ddlf02Q/tK8tPpadBgAJ]]

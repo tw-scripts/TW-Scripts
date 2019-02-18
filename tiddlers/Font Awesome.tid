@@ -1,0 +1,38 @@
+created: 20181001171249762
+creator: Mohammad
+description: Font Awesome makes it easy to add vector icons and social logos to your website. And version 5 is redesigned and built from the ground up!
+developer: TheDiveO
+modified: 20190216180311964
+modifier: Mohammad
+tags: Links icon
+title: Font Awesome
+type: text/vnd.tiddlywiki
+url: https://thediveo.github.io/TW5FontAwesome/output/fontawesome.html
+wiki-name: Font Awesome
+
+!! Discussion
+There is a discussion at [[Forume|https://groups.google.com/d/msg/tiddlywiki/wp0pY_Aervc/Pg-svkruAwAJ]]. The Font awesome 5.0 has a folder containing the svg files so they can be imported and used as single file in TW.
+See the below recommendations
+
+* [[TonyM|https://groups.google.com/d/msg/tiddlywiki/wp0pY_Aervc/GziGZ4PyAwAJ]]
+* [[Josiah|https://groups.google.com/d/msg/tiddlywiki/wp0pY_Aervc/vXcFkyAQBAAJ]]
+
+* Similar project
+There is other projects for font-icons among them is [[Material Icons]]
+
+! Using fontawesome svg with TW 
+Ref: [[Josiah|https://groups.google.com/d/msg/tiddlywiki/wp0pY_Aervc/vXcFkyAQBAAJ]]
+
+For the FontAwesome SVGs, used as is, I would set width="auto" height="22pt" In fact you can leave width out entirely as "auto" is implied. The reason is that FA SVGs have a "viewBox" that is normally 512 high but can come in variant widths.
+
+And the 22 "points" height is when you want the the same height as icons in TW as the core icons are all (I think) 22pt x 22pt (viewBox="0 0 128 128") -- i.e square. 
+
+SVGs can be confusing at first as the dimensions are not exactly the apparent "image" size. The width and height are actually a scaling in relation to the viewBox.
+
+NOW, if you want square icons, like they are in TW, you could force the FA SVG to reshape by using `width="22pt"` `height="22pt"` and adding `preserveAspectRatio="none"`. I suspect many of the FA SVGs will reshape well. Anyway, IMO its better interface icons are the same size :-)
+
+Here's an example of how the start could look for an FA SVG for a TW icon ...
+
+```
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="22pt" height="22pt" preserveAspectRatio="none">
+```

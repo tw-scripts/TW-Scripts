@@ -1,0 +1,36 @@
+created: 20180715031400001
+creator: Mohammad
+keywords: rexexp search
+modified: 20190216180316785
+modifier: Mohammad
+responder: Mark S
+tags: regexp exmp06 solution
+title: Regexp to Find all Tiddlers with .ext in Their Name
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/FVWc3EJ0ykk/ge_oNryQBQAJ
+
+\define myregexp() ^([a-zA-Z0-9]+\.)*[ext]+$
+
+A macro to list all tiddlers with a `.ext` extenstion in their name using the `regexp`. The name can have any alpha-numeric character(e.g. a-z, A-Z, 0-9)
+
+<<<
+* Change `ext` with any extension you like
+* This example shows how `regexp` can be used in filters
+<<<
+
+* Macro
+```
+\define myregexp() ^([a-zA-Z0-9]+\.)*[ext]+$
+```
+
+* Example
+```
+<<list-links "[regexp<myregexp>!sort[]]">>
+```
+* Results
+
+<<list-links "[regexp<myregexp>!sort[]]">>
+
+---
+Related tiddlers
+<<list-links "[tag[exmp06]] -[<currentTiddler>]">>

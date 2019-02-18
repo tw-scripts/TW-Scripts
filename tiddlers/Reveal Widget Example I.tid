@@ -1,0 +1,20 @@
+created: 20180510144923879
+creator: Mohammad
+modified: 20190216180316724
+modifier: Mohammad
+tags: reveal
+title: Reveal Widget Example I
+type: application/x-tiddler
+
+Use two buttons to show/hide contents using the reveal widget
+
+<<wikitext-example-without-html """<$button set="$:/state/SampleReveal1" setTo="show">Show me</$button>
+<$button set="$:/state/SampleReveal1" setTo="hide">Hide me</$button>
+
+<$reveal type="match" state="$:/state/SampleReveal1" text="show">
+
+! This is the revealed content
+And this is some text
+
+</$reveal>
+""">>

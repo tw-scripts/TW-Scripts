@@ -1,0 +1,23 @@
+created: 20181020032733688
+creator: Mohammad
+keywords: now macro filter
+modified: 20190216180311389
+modifier: Mohammad
+responder: Mark S
+tags: solution
+title: How Use Now Macro inside a Filter
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/ENBWxKTy0Mk/-tyWrSE1CAAJ
+
+How to list (with list-links) everything tagged with "myTag" that also begins with the current year and month (specifically in the format "YYYY.0MM.")
+
+* Solution
+<<<
+Use a set widget and first store your desired date into a varaibale. Here the current year and month can be generated using the `now` macro as `<<now YYYY.0MM.>>`. Other date formats can also be used.
+
+```
+<$set name="mydate" value=<<now YYYY.0MM.>> >
+<<list-links "[tag[myTag]prefix<mydate>]">>
+</$set>
+```
+<<<

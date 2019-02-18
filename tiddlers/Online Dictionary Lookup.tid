@@ -1,0 +1,56 @@
+created: 20190119045518541
+creator: Mohammad
+keywords: search query lookup online dictionary
+modified: 20190216180317290
+modifier: Mohammad
+responder: S.S.
+tags: exmp28 solution
+title: Online Dictionary Lookup
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/PiUwdVpdyzQ/KVszhSJbCQAJ
+
+The below solution shows how an Online Dictionary Lookup can be created from inside Tiddlywiki.
+
+!! Create dictionary tiddler
+In a tiddler titled: [[S.S./data/dictionaryLinks]] and with its Content Type set to : `application/x-tiddler-dictionary`
+put links of queries to those online dictionaries (websites) you wish to use. I have the following
+
+>{{S.S./data/dictionaryLinks}}
+
+!! Create macros
+In a tiddler tagged with `$:/tags/Macro` , define the dictionary macro as follows:
+
+><pre><$text text={{S.S./maro/dictionary}} /></pre>
+
+Here the first macro `dataLinkCreator` create the query to an online dictionary and the second macro `dictionary` gets the word to lookup and create a list of links to all dictionaries existed in [[S.S./data/dictionaryLinks]]
+
+!! Usage
+It possible to directly call the dictionary macro as below
+
+```
+<<dictionary word>>
+```
+
+!! A case study
+Assume some words are stored as tiddler title. It is required to show the links to online dictionaries for title word.
+Here two solution are given.
+
+# <div>
+
+A template can be used to show the links, and the template contains the line:
+
+```
+<<dictionary {{!!title}}>>
+```
+The tiddler's title is simply the word itself, for example: avarice
+
+</div>
+# <div>
+
+In another case, tiddler title is like `Word: name`, then the template line could be replaced with:
+
+```
+<$macrocall $name="dictionary" word={{{ [<currentTiddler>removeprefix[Word: ]] }}} />
+```
+
+See: [[Word: avarice]]

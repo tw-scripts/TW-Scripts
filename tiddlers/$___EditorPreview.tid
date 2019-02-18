@@ -1,0 +1,12 @@
+caption: Spell check
+created: 20181114185428659
+modified: 20190216180307397
+tags: $:/tags/EditPreview
+title: $:/_EditorPreview
+type: text/vnd.tiddlywiki
+
+<$edit-text tiddler=<<currentTiddler>> class="tc-spell-check-preview"/>
+
+<style>
+.tc-spell-check-preview {width:100%;}
+</style>

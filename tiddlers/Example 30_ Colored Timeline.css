@@ -1,0 +1,8 @@
+/*
+This example shows the timeline in Recent Tab in sidebar can be customized using css.
+Here the color of timeline changed to some kind of green!
+*/
+
+.tc-sidebar-lists .tc-timeline {
+   color:#708807;
+}

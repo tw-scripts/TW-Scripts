@@ -1,0 +1,11 @@
+caption: Developer
+created: 20180616073500901
+creator: Mohammad
+modified: 20190216180310015
+modifier: Mohammad
+title: developer
+type: text/vnd.tiddlywiki
+
+<$list filter="[!is[system]tag[developer]sort[title]]">
+<$link to=<<currentTiddler>> tooltip="Custom tooltip"><$text text=<<currentTiddler>>/></$link><br>
+</$list>

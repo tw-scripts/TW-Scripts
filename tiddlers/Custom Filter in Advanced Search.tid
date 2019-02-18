@@ -1,0 +1,22 @@
+created: 20180621055944300
+creator: Mohammad
+keywords: filter search
+modified: 20190216180310213
+modifier: Mohammad
+responder: Eric Shulman
+tags: solution
+title: Custom Filter in Advanced Search
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/aORGuMHX31E/A2hxr7LEBQAJ
+
+To add your own filters to the list of advanced search filters (drop down menu):
+
+# create a new tiddler (e.g. `SomeName`) tagged with `$:/tags/Filter`
+# add a `description` field containing "My Filter")
+# add a `filter` field containing `[search:text[MYSEARCHTEXT]]`)
+# add a `list-before` field (leave it with a blank value)
+
+* the tag indicates that this is an entry for the filter drop-down.
+* the description is the text that appears in the drop-down.
+* the filter is the text to insert into the filter input field when the drop-down item is selected
+* the list-before field (with NO value) forces your custom filter to * the top of the list (otherwise it would be at the end of the list)

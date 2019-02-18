@@ -1,0 +1,39 @@
+created: 20190207124605082
+creator: Mohammad
+keywords: macro variable overload 
+modified: 20190216180314871
+modifier: Mohammad
+responder: Jeremy Ruston
+tags: exmp43 solution
+title: Macro Overloading
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/sZNfQBxMs3c/c-QLG4F0DAAJ
+
+<<< [[Wikipedia|https://en.wikipedia.org/wiki/Function_overloading]]
+In some programming languages, function overloading or method overloading is the ability to create multiple functions of the same name with different implementations. Calls to an overloaded function will run a specific implementation of that function appropriate to the context of the call, allowing one function call to perform different tasks depending on context. 
+<<<
+
+;What is macro overloading in TiddlyWiki?
+: If a macro is called in a scope one (e.g inside a tiddler) and the macro itself calls another macro (a second macro) internally say //maymac//, then if this second macro  //maymac// is existed in the scope of calling tiddler, it will override the core or other scope macro! This is macro overloading.
+
+A good example is the `toc-caption` macro. For more information see Jeremy Ruston explanation [[here|https://groups.google.com/d/msg/tiddlywiki/sZNfQBxMs3c/eOXiDEFxDAAJ]].
+
+!! Example
+A set of macros has been defined in [[exmp43/macro/overloading]] as follows:
+
+> <pre><$view tiddler="exmp43/macro/overloading" /></pre>
+If the macro `mac-xx` is called the expected output is as below:
+
+<<<
+<<mac-yy>>
+<<<
+
+Now, consider it is called from [[Example 43: Macro Overloading]] which itself has an internal macro with the same name `mac-xx` as defined in [[exmp43/macro/overloading]].
+
+><pre><$view tiddler="Example 43: Macro Overloading"/></pre>
+
+Strangely the out is as bellow:
+
+>{{Example 43: Macro Overloading}}
+
+What happened is, in the second case there is a `mac-xx` defined inside [[Example 43: Macro Overloading]], so TW overloads the original macro with this one.

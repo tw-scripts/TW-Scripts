@@ -1,0 +1,42 @@
+created: 20180928051543656
+creator: Mohammad
+keywords: css macro
+modified: 20190216180310235
+modifier: Mohammad
+responder:  Mark S
+tags: solution
+title: CSS inside Macro
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/r-O4O4v_NA8/6uVcmYyEAAAJ
+
+; Is it valid to have css inside macro, if so which of the two below solution is recommended?
+
+# <div>
+
+''Define inline style''
+
+```
+\define vspace(height)
+<style>
+  .vertical-space {
+     margin-bottom: $height$;
+  }
+</style>
+<p class="vertical-space"></p>
+\end
+```
+</div>
+
+# <div>
+
+''Define inline style''
+
+```
+\define vspace(height)
+<p style="margin-bottom: $height$;"></p>
+\end
+```
+</div>
+
+<<alert primary """
+The 2nd approach. When you use `<style>`, the styles "leak" into all the other open tiddlers. Probably OK in this particular use case, but something to be aware of.""" >>

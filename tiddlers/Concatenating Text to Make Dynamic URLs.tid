@@ -1,0 +1,33 @@
+created: 20181223080238680
+creator: Mohammad
+keywords: concatenate
+modified: 20190216180310422
+modifier: Mohammad
+responder: Jed Carty
+tags: concatenate solution
+title: Concatenating Text to Make Dynamic URLs
+type: text/vnd.tiddlywiki
+url: http://inmysocks.tiddlyspot.com/#Concatenating%20text%20to%20make%20dynamic%20URLs
+
+There are some methods by Jed Carty explain ho to concatenate. One example is below. MOre example can be found in the address above.
+
+```
+\define getAddress()
+http://www.principiadiscordia.com/book/$(page)$.php
+\end
+
+<$select field='test_field'>
+<$list filter="1 2 3 4 5 6 7 8 9 10 45 81">
+<option><<currentTiddler>></option>
+</$list>
+</$select>
+
+<$set name=page value={{!!test_field}}>
+<a href=<<getAddress>> target="_blank">go to page {{!!test_field}}</a>
+</$set>
+```
+
+More on concatenation:
+
+# [[Tiddlywiki|https://tiddlywiki.com/#Concatenating%20text%20and%20variables%20using%20macro%20substitution]]
+# 

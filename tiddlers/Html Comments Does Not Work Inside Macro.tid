@@ -1,0 +1,9 @@
+created: 20180730165548424
+modified: 20190216180311329
+tags: 
+title: Html Comments Does Not Work Inside Macro
+type: text/vnd.tiddlywiki
+
+Ref: [[Eric Shulman|https://groups.google.com/d/msg/tiddlywiki/DBWzVqb2Xdo/aaAYk3RyCgAJ]]
+
+Don't use html markup inside macros!

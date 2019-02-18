@@ -1,0 +1,43 @@
+created: 20180905151612861
+creator: Mohammad
+keywords: if conditional macro
+modified: 20190216180315589
+modifier: Mohammad
+responder: Mark S
+tags: macro solution
+title: If Then Else Action Macro
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/qgQjhfYZGQk/FEgPpvDmAAAJ
+
+\define if(filter,ifyes,ifno)
+<$list filter="""$filter$ +[limit[1]]""" name=act emptyMessage=<<$ifno$>>>
+<<$ifyes$>>
+</$list>
+\end
+\define ifyes() YES!
+\define ifno() NO!
+
+The below simple macro can do different things based on the filter content. It uses a list widget, if the filter run has some output then the `ifyes` part is run if the filter result is empty then the `ifno` part will be run.
+
+!!! Input parameters
+
+* `filter`:  a standard TW filter
+* `ifyes`: a macro to be run if filter output is NOT empty
+* `ifno`: a macro to be run if filter output IS empty
+
+!!! Code
+
+```
+\define if(filter,ifyes,ifno)
+<$list filter="""$filter$ +[limit[1]]""" name=act emptyMessage=<<$ifno$>>>
+<<$ifyes$>>
+</$list>
+\end
+\define ifyes() YES!
+\define ifno() NO!
+```
+
+!!! Example
+```
+<<if "[title[GettingStarted]] +[has[title]]" ifyes ifno>>
+```

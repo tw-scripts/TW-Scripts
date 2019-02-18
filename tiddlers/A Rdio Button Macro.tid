@@ -1,0 +1,41 @@
+created: 20180820034129173
+creator: Mohammad
+domain: 1
+keywords: radio button
+modified: 20190216180308448
+modifier: Mohammad
+responder: TonyM
+section: B
+tags: solution
+title: A Rdio Button Macro
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/4X7SXiy30dk/ny_tRu1gBwAJ
+
+\define radio-field(fieldname values-filter)
+<$list filter="$values-filter$" variable=value>
+   <$radio field="$fieldname$" value=<<value>> > <<value>></$radio>
+</$list>
+\end
+
+A radio button macro based on [[Using Radio Button]] solution by Eric Shulman
+
+```
+\define radio-field(fieldname values-filter)
+<$list filter="$values-filter$" variable=value>
+   <$radio field="$fieldname$" value=<<value>> > <<value>></$radio>
+</$list>
+\end
+
+```
+
+* Example
+
+<$macrocall $name="wikitext-example-without-html" 
+src="""
+<<radio-field section "A B C">>
+"""/>
+
+<$macrocall $name="wikitext-example-without-html" 
+src="""
+<<radio-field domain "[each[domain]get[domain]sort[]]">>
+"""/>

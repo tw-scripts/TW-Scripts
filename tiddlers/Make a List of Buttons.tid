@@ -1,0 +1,35 @@
+created: 20180628053232315
+creator: Mohammad
+list: [[Exmp02-P03 Space in Title]]
+modified: 20190216180316127
+modifier: Mohammad
+tags: button exmp02
+title: Make a List of Buttons
+type: text/vnd.tiddlywiki
+
+\define make-title() [[$(myVar)$]]
+
+This is an example shows how a list of buttons can be created and used for actions.
+The below code creates a list of buttons labled with tiddler titles which tagged with `exmp02`.
+It handles tiddlers have spaces in their title.
+
+<$macrocall $name="wikitext-example-without-html" 
+src="""@@color:red;font-weight:700;
+<$list filter="[tag[exmp02]] -[<currentTiddler>]" variable="myVar">
+<$button set="!!list" setTo=<<make-title>> > <<myVar>>
+</$button>
+</$list>
+@@
+"""/>
+
+
+Click any of the above buttons
+
+The value of `list` filed is: ''{{!!list}}''
+
+!! Helper function
+To handle the spaces in the title of tiddler the below helper function has been used
+
+```
+\define make-title() [[$(myVar)$]]
+```

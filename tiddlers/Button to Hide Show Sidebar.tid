@@ -1,0 +1,26 @@
+created: 20190201050149908
+creator: Mohammad
+keywords: sidebar toggle show hide
+modified: 20190216180309231
+modifier: Mohammad
+tags: button
+title: Button to Hide Show Sidebar
+type: text/vnd.tiddlywiki
+
+;How to toggle the Sidebar display using a button?
+Use the `action-setfield` widget and change the text value of `$:/state/sidebar` as below
+
+* `no`: hide the Sidebar
+* `yes`: show the Sidebar
+
+<$macrocall $name="wikitext-example-without-html" 
+src="""<$button>
+<$action-setfield $tiddler="$:/state/sidebar" text ="no"/>
+Hide Sidebar
+</$button>
+<$button>
+<$action-setfield $tiddler="$:/state/sidebar" text ="yes"/>
+Show Sidebar
+</$button>
+"""/>
+

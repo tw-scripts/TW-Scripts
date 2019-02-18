@@ -1,0 +1,43 @@
+created: 20180629074615946
+creator: Mohammad
+keywords: camelcase list filter
+modified: 20190216180309198
+modifier: Mohammad
+responder: Jeremy Ruston
+tags: solution variable
+title: Camel Case Words in List Output
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/G6ZKN7X17YE/nWeHFxeLBQAJ
+
+; The problem of wikification of camel case word in list output
+: Use `text` widget
+
+! Problem
+```
+<ol>
+<$list filter="[tag[100.02]]" variable="myTid">
+<li> <<myTid>></li>
+</$list>
+</ol>
+```
+<ol>
+<$list filter="[tag[100.02]]" variable="myTid">
+<li> <<myTid>></li>
+</$list>
+</ol>
+
+
+! Solution
+```
+<ol>
+<$list filter="[tag[100.02]]" variable="myTid">
+<li><$text text=<<myTid>> /></li>
+</$list>
+</ol>
+```
+<ol>
+<$list filter="[tag[100.02]]" variable="myTid">
+<li><$text text=<<myTid>> /></li>
+</$list>
+</ol>
+

@@ -1,0 +1,48 @@
+created: 20190113140559043
+creator: Mohammad
+modified: 20190216180311728
+modifier: Mohammad
+tags: reading
+title: Has Good Idea for Scripting
+type: text/vnd.tiddlywiki
+
+This is an intresting piece of code and has many points to learn.
+
+```
+\define newTiddlerButton()
+  <$button class=<<tv-config-toolbar-class>>
+           tooltip=<<iconTooltip>>>
+
+    <!-- Create new tiddler from tiddler titled "$param" -->
+
+    <$action-sendmessage
+      $message="tm-new-tiddler"
+      $param="$(templateTitle)$"
+      title="$(tiddlerTitle)$"
+    />
+
+    <!-- Add as toolbar button -->
+
+    <$list filter="[<tv-config-toolbar-icons>prefix[yes]]">
+      {{$(iconTitle)$}}
+    </$list>
+
+    <$list filter="[<tv-config-toolbar-text>prefix[yes]]">
+      <span class="tc-btn-text"><$text text="$(iconCaption)$"/></span>
+    </$list>
+
+  </$button>
+\end
+
+<$vars
+  iconCaption="Create a new tiddler from a template"
+  iconTitle="Template Icon Showing a Green Form Regions"
+  iconTooltip="Create new tiddler from 'User Standard Tiddler Template'"
+  templateTitle="User Standard Tiddler Template"
+  tiddlerTitle="Tiddler Title" >
+
+  <<newTiddlerButton>>
+
+</$vars>
+
+```

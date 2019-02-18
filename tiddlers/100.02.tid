@@ -1,0 +1,51 @@
+created: 20180709153244840
+modified: 20190216180308585
+tags: macro
+title: 100.02
+type: text/vnd.tiddlywiki
+
+\define doc(head:"", text:"")
+!! $head$
+$text$
+\end
+
+! Complex parameter value
+This is a simple macro recieves two parameters and show them as formatted text.
+
+```
+\define doc(head:"", text:"")
+!! $head$
+$text$
+\end
+```
+
+Look at the below examples to see how complex parameter values can be passed
+
+* ''Example''
+```
+<<doc Test "This is a sample text">>
+<<doc "Test 02" text:"""
+This is a complex text.
+This is a monospaced formatting `code`. Below is a list:
+
+* One
+* Two
+""">>
+```
+
+*''Result''
+<<<
+<<doc Test "This is a sample text">>
+<<doc "Test 02" text:"""
+This is a complex text.
+This is a monospaced formatting `code`. Below is a list:
+
+* One
+* Two
+""">>
+<<<
+
+*''Remarks''
+Each parameter value can be enclosed in `'`single quotes`'`, `"`double quotes`"`, `"""`triple double quotes`"""` or `[[`double square brackets`]]`.
+
+//''Triple double quotes''// allow a value to contain almost anything. If a value contains no spaces or single or double quotes, it requires no delimiters.

@@ -1,0 +1,60 @@
+created: 20180708133029847
+creator: Mohammad
+keywords: if field conditional
+modified: 20190216180311106
+modifier: Mohammad
+note: Hi Mohammad
+responder: Mark S
+tags: solution
+title: If Field Macro
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/te5Nbrm9c2c/QfE1uZDKBQAJ
+
+\define if(fieldname test do)
+<$list filter="[is[current]field:$fieldname$[$test$]]" variable="null">
+$do$
+</$list>
+\end
+
+
+The below macro proposed by Tony in [[Forum|https://groups.google.com/d/msg/tiddlywiki/te5Nbrm9c2c/SnGJDUasBQAJ]] and modified by [[Mark S|https://groups.google.com/d/msg/tiddlywiki/te5Nbrm9c2c/QfE1uZDKBQAJ]]
+
+!!! Code
+```
+\define if(fieldname test do)
+<$list filter="[is[current]field:$fieldname$[$test$]]" variable="null">
+$do$
+</$list>
+\end
+```
+
+It can do something against the contents of a field in the currentTiddler.
+
+* `fieldname`: the name of field in current tiddler
+* `test`: the content of filed
+* `do`: string of what to be done
+
+!!! ''Example''
+
+```
+<<if note "Hi Mohammad" do:"""
+
+Hello, your note field contains Hi Mohammad!
+
+* Hi
+* Mohammad
+
+""">>
+```
+Results in:
+
+<<<
+<<if note "Hi Mohammad" do:"""
+
+Hello, your note field contains Hi Mohammad!
+
+* Hi
+* Mohammad
+
+""">>
+<<<

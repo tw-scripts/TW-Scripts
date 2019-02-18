@@ -1,0 +1,25 @@
+created: 20190110113534036
+creator: Mohammad
+modified: 20190216180310044
+modifier: Mohammad
+my: 
+tags: exmp26
+title: demo/exmp26/link-pdf-to-page
+type: text/vnd.tiddlywiki
+
+\define pdflink(label path page)  [ext[$label$|$path$#page=$page$]]
+
+Here a macro is used to open a specific page in an external pdf file.
+
+```
+\define pdflink(label path page)  [ext[$label$|$path$.pdf#page=$page$]]
+```
+
+* `label`: the link label to pdf file
+* `path`: a relative or absolute path to pdf file (including `.pdf` extension)
+* `page`: a page number like 5. Note that the page should be in the range.
+
+!! Example
+<$macrocall $name="wikitext-example-without-html" 
+src="""><<pdflink label:"sample-pdf-file: Page 5" path:"examples/sample-pdf-file.pdf" page:5>>
+"""/>

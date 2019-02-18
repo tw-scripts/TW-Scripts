@@ -1,0 +1,25 @@
+created: 20181028035550739
+creator: Mohammad
+modified: 20190216180308935
+modifier: Mohammad
+title: Color Tools
+type: text/vnd.tiddlywiki
+
+The below list shows some amazing color link and tools
+
+* https://apiumtech.com/blog/14-useful-tools-creating-color-palettes/
+* https://www.canva.com/learn/100-color-combinations/
+* https://www.w3schools.com/cssref/css_colors_legal.asp
+
+!! Tools
+* http://paletton.com/
+* https://www.colorhexa.com/ (can be used for pale colors and color shades! see example: https://www.colorhexa.com/fff3e1<br> //5 stars//)
+
+
+!! CSS frameworks color palettes
+* https://materializecss.com/color.html (color palette and shades )
+
+!! TinyColor [5 star]
+TinyColor is a micro framework for inputting colors and outputting colors as different formats. Input is meant to be as permissive as possible.
+
+http://bgrins.github.io/TinyColor/

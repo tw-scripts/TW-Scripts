@@ -1,0 +1,31 @@
+created: 20190110095607925
+creator: Mohammad
+modified: 20190216180310058
+modifier: Mohammad
+tags: exmp24 OldTopics
+title: demo/exmp24: add remove tags
+type: text/vnd.tiddlywiki
+
+\define myactions(old, new)
+<$fieldmangler>
+<$action-sendmessage $message="tm-add-tag" $param="$new$"/>
+<$action-sendmessage $message="tm-remove-tag" $param="$old$">
+</$fieldmangler>
+\end
+
+\define add-remove-tags(old new)
+Add <<tag $new$>> Remove <<tag $old$>>
+<$button actions=<<myactions $old$ $new$>>>{{$:/core/images/erase}}
+</$button>
+\end
+
+!! Example 1
+Add `Topics` as new tag and remove `OldTopics` as old tag
+<$macrocall $name="wikitext-example-without-html" 
+src="""<<add-remove-tags OldTopics Topics>>
+"""/>
+
+Now do reverse e.g. remove `OldTopics` as old tag and add `Topics` as new tag
+<$macrocall $name="wikitext-example-without-html" 
+src="""<<add-remove-tags Topics OldTopics>>
+"""/>

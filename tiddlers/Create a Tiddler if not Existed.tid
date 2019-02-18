@@ -1,0 +1,78 @@
+created: 20180929161020093
+creator: Mohammad
+keywords: tiddler exist create
+modified: 20190216180310293
+modifier: Mohammad
+responder: Jed Carty
+tags: solution
+title: Create a Tiddler if not Existed
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/iYB1zCljNWQ/pqZ4DQr4AQAJ
+
+\define create-note(tname)
+  <$set name="myTid" filter="[[$tname$]addsuffix[-math]]" select=0>
+    <$list filter="[title<myTid>] +[has[title]]" 
+        variable="newTid" 
+        emptyMessage=<<tiddler-not-exist>>
+    >
+        <$action-navigate $to=<<newTid>> />
+    </$list>
+  </$set>
+\end
+\define tiddler-not-exist()
+  <$action-setfield 
+    $tiddler=<<myTid>>
+    text="Hi, this is a new note"
+    tags="notes"
+  />
+    <$action-navigate $to=<<myTid>>/>
+\end
+
+<$button>
+Test
+<<create-note "Bob Joe">>
+</$button>
+
+
+!! A working version
+
+```
+\define create-note(tname)
+  <$set name="myTid" filter="[[$tname$]addsuffix[-math]]" select=0>
+    <$list filter="[title<myTid>] +[has[title]]" 
+        variable="newTid" 
+        emptyMessage=<<tiddler-not-exist>>
+    >
+        <$action-navigate $to=<<newTid>> />
+    </$list>
+  </$set>
+\end
+\define tiddler-not-exist()
+  <$action-setfield 
+    $tiddler=<<myTid>>
+    text="Hi, this is a new note"
+    tags="notes"
+  />
+    <$action-navigate $to=<<myTid>>/>
+\end
+
+<$button>
+Test
+<<create-note "Bob Joe">>
+</$button>
+```
+
+!! Notes
+<<<
+what I changed:
+
+* A typo in the emptyMessage macrocall
+* replace `{{{myTid}}}` with `<<myTid>>` and add select=0 to the set widget to prevent it from adding `[[ and ]]` around the output. Using `{{{$(myTid)$}}}` evaluates it as a space separated list so any title with a space would be two (or more) separate things, not a single title.
+* remove parent as an input to tiddler-not-exist and remote the unneeded input from the emptyMessage macrocall because it isn't used
+<<<
+
+* Alternate solution
+<<<
+Alternately, this could have fixed it:
+* Using `"""$(myTid)$"""` to make a string instead of `{{{$(myTid)$}}}` to evaluate a filter. This is one place that would break if you had a space, `{{{bob joe}}}` is returned as a list with two entries, `"bob"` and `"joe"` where `"""bob joe"""` is a string and can be used as a single title. I am using `"""` because that lets you put `"` and `'` into the title if you want to for some reason and (hopefully) `"""` is less common in titles.
+<<<

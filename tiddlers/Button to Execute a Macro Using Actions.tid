@@ -1,0 +1,20 @@
+caption: Button to Execute a Macro Using Actions
+created: 20180720183355647
+creator: Mohammad
+modified: 20190216180309288
+modifier: Mohammad
+tags: developer button
+title: Button to Execute a Macro Using Actions
+type: text/vnd.tiddlywiki
+
+\define test()
+<$list filter="[list[$:/StoryList]is[current]]">
+<$action-setfield $tiddler=<<currentTiddler>> caption=<<currentTiddler>> />
+</$list>
+\end
+
+!! Sample
+```
+<$button actions=<<test>> >Push</$button>
+```
+<$button actions=<<test>> >Push</$button>

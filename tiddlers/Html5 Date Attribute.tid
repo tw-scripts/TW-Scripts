@@ -1,0 +1,36 @@
+created: 20181007153626104
+creator: Mohammad
+keywords: date calendar html5
+modified: 20190216180311225
+modifier: Mohammad
+responder: Anonymous
+tags: solution
+title: Html5 Date Attribute
+type: text/vnd.tiddlywiki
+url: https://stackoverflow.com/questions/17825979/aligning-html5-form-elements
+
+The new html5 date attribute example
+
+<style>
+.user-form { padding:20px; }
+
+.user-form .field { padding: 4px; margin:1px; background: #eee; }
+
+.user-form .field label { display:inline-block; width:120px; margin-left:5px; }
+
+.user-form .field input { display:inline-block; }
+</style>
+<form class="user-form">
+    <div class="field">
+        <label for="firstname">First Name:</label>
+        <input name="firstname" type="text" size="50" autofocus />
+    </div>
+    <div class="field">
+        <label for="lastname">Last Name:</label>
+        <input type="text" name="lastname" size="50" />
+    </div>
+    <div class="field">
+        <label for="birthdate">Birth Date:</label>
+        <input type="date" name="bdate" size="50" />
+    </div>
+<form>

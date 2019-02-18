@@ -1,0 +1,40 @@
+created: 20181211183213401
+creator: Mohammad
+keywords: anchor bookmark id link
+modified: 20190216180309413
+modifier: Mohammad
+responder: w3school
+tags: task solution
+title: Bookmarks with ID and Links
+type: text/vnd.tiddlywiki
+url: https://www.w3schools.com/html/html_id.asp
+
+HTML bookmarks are used to allow readers to jump to specific parts of a Web page. Bookmarks can be useful if your webpage is very long. To make a bookmark, you must first create the bookmark, and then add a link to it. When the link is clicked, the page will scroll to the location with the bookmark.
+
+It seems it possible to make a bookmark in TW.
+
+!! Create a bookmark
+First create a bookmark using `id`
+
+```
+<h2 id="C4">Chapter 4</h2>
+```
+
+!! Then, add a link to the bookmark
+(Jump to Chapter 4), from within the same page
+
+
+
+```
+<$link href="#C4">Jump to Chapter 4</$link>
+```
+
+<$link href="#C4">Jump to Chapter 4</$link>
+
+@@color:#f00;background-color:#eee;padding:10px;
+Check with Jeremy
+
+
+Also see this wiki uses internal-link and anchor
+[[Internal-link Demo|http://intlinks.tiddlyspot.com/#tw-href5]]
+@@

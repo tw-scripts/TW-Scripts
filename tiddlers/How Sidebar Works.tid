@@ -1,0 +1,26 @@
+created: 20190207045821035
+creator: Mohammad
+keywords: sidebar
+modified: 20190216180311549
+modifier: Mohammad
+responder: Jeremy Ruston
+tags: solution
+title: How Sidebar Works
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/tOLRdf4NBIA/MTPXkaUoIAAJ
+
+The sidebar is generated like this:
+
+```
+<$list filter="[all[shadows+tiddlers]tag[$:/tags/SideBarSegment]!has[draft.of]]" variable="listItem">
+
+<$reveal type="nomatch" state=<<config-title>> text="hide"  tag="div">
+
+<$transclude tiddler=<<listItem>> mode="block"/>
+
+</$reveal>
+
+</$list>
+```
+
+(See $:/core/ui/PageTemplate/sidebar).

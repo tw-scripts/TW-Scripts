@@ -1,0 +1,15 @@
+created: 20181015195322748
+creator: Mohammad
+modified: 20190216180311059
+modifier: Mohammad
+tags: exmp10 period
+title: Example 10:
+type: text/vnd.tiddlywiki
+
+This tiddler gets its custom styles by tag. See [[stylesheet/exmp10]].
+
+The word `Experimental` is added to the end of tiddler title.
+
+Every tiddler has `period` as tag will get this style.
+
+For more information see also [[Custom styles by tag in Tiddlywiki.com|https://tiddlywiki.com/prerelease/#Custom%20styles%20by%20data-tags]]

@@ -1,0 +1,24 @@
+created: 20190207042754670
+creator: Mohammad
+modified: 20190216180308419
+modifier: Mohammad
+tags: datatiddler exmp39
+title: Access to DataTiddler Index/Value Pair
+type: text/vnd.tiddlywiki
+
+;How to retrieve and display properties (index/value pair) of a DataTiddler?
+
+Consider the below DataTiddler is used:
+[[exmp39/roman-numbers]]
+
+<$transclude tiddler="exmp39/sample-data"/>
+
+!! Example i
+Get the value for indexes: `one` and `four`
+<$macrocall $name="wikitext-example-without-html" 
+src=""">{{exmp39/roman-numbers##one}}
+>{{exmp39/roman-numbers##four}}
+"""/>
+
+!!! Remarks
+* The `##` is used for transcluding the value of index/value pair from a DataTiddler `DataTiddler##Index`

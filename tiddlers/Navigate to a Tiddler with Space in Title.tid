@@ -1,0 +1,27 @@
+created: 20180729200523939
+creator: Mohammad
+keywords: navigate space title
+modified: 20190216180317370
+modifier: Mohammad
+responder: Mark S
+tags: solution
+title: Navigate to a Tiddler with Space in Title
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/jKjAptsfs0E/xbKRRpXLAQAJ
+
+\define target() My Little Tiddler
+
+<$button>Go forth
+<$action-navigate $to=<<target>> />
+</$button>
+
+
+
+```
+\define target() My Little Tiddler
+
+<$button>Go forth
+<$action-navigate $to=<<target>> />
+</$button>
+
+```

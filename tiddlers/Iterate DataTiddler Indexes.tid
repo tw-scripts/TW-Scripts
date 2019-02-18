@@ -1,0 +1,32 @@
+created: 20190207101543826
+creator: Mohammad
+keywords: index datatiddler table dictionary
+modified: 20190216180315304
+modifier: Mohammad
+responder: Tobias Beer
+tags: exmp39 solution
+title: Iterate DataTiddler Indexes
+type: text/vnd.tiddlywiki
+url: http://tobibeer.github.io/tb5/#Iterate%20DataTiddler%20Indexes
+
+; How to list all properties (index/value pairs) of a DataTiddler into a table?
+This example is similar to [[Listing DataTiddler Properties]] and use the same DataTiddler.
+
+
+<$macrocall $name="wikitext-example-without-html" 
+src="""<table>
+<tr>
+<th>index</th>
+<th>value</th>
+</tr>
+
+<$set name="data" value="exmp39/acronyms/web">
+<$list filter="[<data>indexes[]sort[title]]">
+<tr>
+<td>{{!!title}}</td>
+<td><$transclude tiddler=<<data>> index=<<currentTiddler>>/></td>
+</tr>
+</$list>
+</$set>
+</table>
+"""/>

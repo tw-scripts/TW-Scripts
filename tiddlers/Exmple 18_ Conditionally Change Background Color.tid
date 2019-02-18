@@ -1,0 +1,30 @@
+created: 20181223134114467
+creator: Mohammad
+description: do not delete for description see [[Stylesheet with Conditional Rules]]
+modified: 20190216180314426
+modifier: Mohammad
+tags: exmp18
+title: Exmple 18: Conditionally Change Background Color
+type: text/vnd.tiddlywiki
+
+\define if-sidebar-visible(text)
+<$reveal state="$:/state/sidebar" type="nomatch" text="yes" default="yes">
+$text$
+</$reveal>
+\end
+
+\define if-sidebar-not-visible(text)
+<$reveal state="$:/state/sidebar" type="nomatch" text="no" default="yes">
+$text$
+</$reveal>
+\end
+
+\rules only filteredtranscludeinline transcludeinline macrocallinline macrocallblock
+
+html body.tc-body {
+	background: <<if-sidebar-visible "green">><<if-sidebar-not-visible "blue">>;
+}
+
+/*To see this in action add the `$:/tags/Stylesheet` to this tiddler
+and then hide/show the sidebar to see how background color changes.
+*/

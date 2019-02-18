@@ -1,0 +1,13 @@
+created: 20190201130724011
+creator: Mohammad
+description: This a quick exporting tool.
+developer: Jed Carty
+modified: 20190216180314419
+modifier: Mohammad
+tags: Links
+title: Export a List of Tiddlers
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/yzVdb42TUBI/Nq8UlWmyCQAJ
+wiki-name: Export a List of Tiddlers
+
+You can import it into your wiki (you will have to click a button to create a template tiddler, or you can import the template tiddler as well) then you can give a file name (complete with extension) and a filter and then click export as text and a text file with the contents of the tiddlers gets created and downloaded, or click export as rendered html to get the contents of the tiddler exported as rendered html. If you have a tiddler that already transcludes the tiddlers you want in the correct order you can just give that tiddler title as the filter.

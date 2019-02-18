@@ -1,0 +1,13 @@
+author: BurningTreeC
+created: 20180829034040965
+creator: Mohammad
+description: Keybord shorcuts lets bind shortcut keys with several TW actions. Note the github repository is located in: https://github.com/BurningTreeC/KeeBoord
+modified: 20190216180315272
+modifier: Mohammad
+name: KeeBoord plugin
+tags: Links
+title: KeeBoord Plugin
+type: text/vnd.tiddlywiki
+url: https://burningtreec.github.io/KeeBoord/
+
+<<alert success """Note that the ''first and small'' revision is stored in: http://keeboord.tiddlyspot.com/""">>

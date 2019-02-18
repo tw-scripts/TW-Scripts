@@ -1,0 +1,18 @@
+created: 20180907042915587
+creator: Mohammad
+modified: 20190216180317477
+modifier: Mohammad
+tags: concept
+title: Show Difference Between Contents
+type: text/vnd.tiddlywiki
+
+The diff text widget analyses the differences between a pair of source and destination text strings and displays the results as highlighted insertions and deletions (similar to the "track changes" function of a word processor).
+
+When a tiddler is edited, you can also use this tools. To do so
+
+# Edit the tiddler
+# Open the preview pannel (the eyelas icon)
+# Choose preview type drop down (last icon in the edit toolbar)
+#* Select differences from current
+
+<<alert success "''Diff text'' tool is very useful for tracking changes" "50%">>

@@ -1,0 +1,55 @@
+created: 20190111074214190
+creator: Mohammad
+keywords: filter attribute linebreak
+modified: 20190216180315166
+modifier: Mohammad
+responder: Jeremy Ruston
+tags: solution
+title: Line break in Filters Attributes
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/R6QFOPP5Hhs/-zXDbl-VGAAJ
+
+; Why linebreaks cause filter not work?
+
+Joe Armstrong asked why the below code with pattern A works, but with pattern B does not work?
+
+Why linebreaks cause the code stop working?
+
+* Pattern A
+```
+<$set name="username" value={{$:/status/UserName}} emptyValue="(anonymous)">
+<$set name="target" filter="[<currentTiddler>]">
+<$action-createtiddler 
+    $basetitle={{{ [[Comment by ']] +[addsuffix<username>] +[addsuffix[' on ' ]] +[addsuffix<currentTiddler>] +[addsuffix[']] }}} 
+      role="comment" list=<<target>> text="" edit-mode="yes"/>
+</$set>
+</$set>
+```
+
+*Pattern B
+```
+<$set name="username" 
+           value={{$:/status/UserName}} 
+           emptyValue="(anonymous)">
+  <$set name="target" 
+             filter="[<currentTiddler>]">
+    <$action-createtiddler 
+        $basetitle={{{ [[Comment by ']] 
+                                +[addsuffix<username>] 
+                                +[addsuffix[' on ' ]] 
+                                +[addsuffix<currentTiddler>] 
+                                +[addsuffix[']] }}} 
+        role="comment"
+        list=<<target>> 
+        text="" 
+        edit-mode="yes"/>
+    </$set>
+</$set>
+```
+
+!! Answer
+* The first pattern is not readable and error prone.
+* The second pattern is readable.
+* Although filters accept newlines as whitespace, the filtered attribute parser does not accept newlines. Thus this example does not work unless the newline is removed.
+
+See [[GitHub Ticket 3692|https://github.com/Jermolene/TiddlyWiki5/issues/3692]]

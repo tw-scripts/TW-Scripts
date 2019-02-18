@@ -1,0 +1,29 @@
+created: 20181112070818002
+creator: Mohammad
+keywords: svg icon button page-controls
+modified: 20190216180309718
+modifier: Mohammad
+responder: Thomas Elmiger
+tags: task solution
+title: Embed SVG ICONS BUTTONS
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/fxhVN0DCBDc/aTWACf_bAwAJ
+
+<<alert danger "''To be completed''">>
+
+Add description on how colorify svg image
+
+
+"""
+Mohammad, 
+
+Interesting. 
+
+https://tiddlywiki.com/prerelease/#Using%20SVG explains what happens, if the content type is set. 
+
+The class tc-image-button seems to be used only for sizes, not for fill-definitions in vanilla, see 
+https://tiddlywiki.com/prerelease/#%24%3A%2Fthemes%2Ftiddlywiki%2Fvanilla%2Fbase
+
+All the best, 
+Thomas 
+"""

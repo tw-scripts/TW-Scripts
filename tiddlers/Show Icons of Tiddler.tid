@@ -1,0 +1,19 @@
+created: 20180728051932000
+creator: Mohammad
+keywords: icon
+modified: 20190216180317471
+modifier: Mohammad
+responder: Mark S
+tags: solution
+title: Show Icons of Tiddler
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/i_MSK1UMeIU/kZAjIq5PAQAJ
+
+```
+<$list filter="[tags[]]"><$link><$transclude tiddler={{!!icon}}/></$link></$list>
+```
+
+<$list filter="[tags[]]"><$link><$transclude tiddler={{!!icon}}/></$link></$list>
+
+
+

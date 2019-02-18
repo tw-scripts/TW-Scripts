@@ -1,0 +1,25 @@
+created: 20181023162546741
+creator: Mohammad
+keywords: truncate ellipsis
+modified: 20190216180311478
+modifier: Mohammad
+responder: Chris Coyier
+tags: solution
+title: How to Truncate Long String with Ellipsis
+type: text/vnd.tiddlywiki
+url: https://css-tricks.com/snippets/css/truncate-string-with-ellipsis/
+
+<$macrocall $name="wikitext-example-without-html" 
+src="""<style>
+.exp-truncate {
+  width: 250px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+</style>
+
+<div class="exp-truncate">
+This is a test and my words are longer than 20px width,
+</div>
+"""/>

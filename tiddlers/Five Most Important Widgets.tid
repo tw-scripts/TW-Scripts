@@ -1,0 +1,34 @@
+created: 20181223134620754
+creator: Mohammad
+keywords: widget 
+modified: 20190216180314126
+modifier: Mohammad
+responder: Jeremy, BTC, Mohammad, Brian
+tags: solution
+title: Five Most Important Widgets
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywikidev/IwfddsKnSDw/y4aE4zUeCgAJ
+
+My take on the 5 most important widgets to learn would be: 
+
+* `<$transclude>` 
+* `<$set>` (note that `<$tiddler>` is really just an instance of the `<$set>` widget) 
+* `<$list>` 
+* `<$text>` 
+* `<$link>`
+
+And if I was allowed another 5 they would be: 
+
+* `<$macrocall>` 
+* `<$edit-text>` 
+* `<$button>` 
+* `<$navigator>` 
+* `<$reveal>` 
+
+There’s also a bundle of widgets that I consider to be hacked that have hung over from the very early days of TW5. At the beginning we didn’t have flexible enough primitives to model some behaviour (like the story river), and so there’s a number of widgets that encapsulate blobs of JavaScript that could soon be replaced by more generic, smaller components: 
+
+* `<$navigator>` 
+* `<$fieldmangler>` 
+* `<$linkcatcher>` 
+* `<$encrypt>` for encrypting the payload of standalone HTML TiddlyWikis 
+* `<$raw>` 

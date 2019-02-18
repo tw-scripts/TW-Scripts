@@ -1,0 +1,18 @@
+created: 20181002110923068
+creator: Mohammad
+modified: 20190216180316715
+modifier: Mohammad
+show_image: hide
+tags: reveal
+title: Reveal Widget Example II
+type: text/vnd.tiddlywiki
+
+This example shows a checkbox to reveal contents. This example uses a field (here `show image`)
+
+<<wikitext-example-without-html 
+"""<$checkbox checked='show' unchecked='hide' field='show_image'> Show Image</$checkbox>
+
+<$reveal type='match' state='!!show_image' text='show'>
+[img[pig.png]]
+</$reveal>
+""">>

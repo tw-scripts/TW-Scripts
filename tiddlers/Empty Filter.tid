@@ -1,0 +1,21 @@
+created: 20181002193754623
+creator: Mohammad
+keywords: filter empty
+modified: 20190216180309712
+modifier: Mohammad
+responder: Eric Shulman
+tags: filter solution
+title: Empty Filter
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywikidev/1AHFjo2_aI0/_E0YnAdMAAAJ
+
+; Why blank filter in list does not execute the emptyMessage?
+
+The TW parser doesn't differentiate between a parameter with a ''blank value'' and a parameter that ''is not specified'' at all.  Thus, since `filter=""`, it's as if you had just written
+
+<$macrocall 
+  $name="wikitext-example-without-html" 
+src="""<$set name="myVariable" filter="" value="It's magic" emptyValue="It's not magic">
+<$text text=<<myVariable>> />
+</$set>
+""" />

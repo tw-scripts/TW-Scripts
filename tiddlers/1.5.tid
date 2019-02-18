@@ -1,0 +1,27 @@
+created: 20180602032507084
+creator: Mohammad
+modified: 20190216180308735
+modifier: Mohammad
+tags: filter
+title: 1.5
+type: text/vnd.tiddlywiki
+
+!Use other fileds as filter
+
+This example shows any tiddler has a filed called page with value of `02`
+
+```
+<ul>
+<$list filter="[field:page[02]]">
+<li><<currentTiddler>></li>
+</$list>
+</ul>
+```
+
+
+
+<ul>
+<$list filter="[field:page[02]]">
+<li><<currentTiddler>></li>
+</$list>
+</ul>

@@ -1,0 +1,30 @@
+created: 20190207104157101
+creator: Mohammad
+modified: 20190216180310135
+modifier: Mohammad
+tags: exmp42 datatiddler
+title: DataTiddler Index/Value Using Forms
+type: text/vnd.tiddlywiki
+
+; How to use forms to add new index/value pairs to DataTiddlers (also JSON tiddler)?
+: Use a temporary tiddler to get the data from user (e.g. `edit-text` widget) and then use `action-setfield` to add the new properties to DataTiddler. the code includes
+
+* An `edit-text` widget is used to get the data from user
+* A temporary tiddler: `$:/temp/exmp42`, and its fields to store the data
+* An `action-setfield` widget to write the new index/value pair into the DataTiddler (here [[exmp42/sample/data]]).
+
+<$macrocall $name="wikitext-example-without-html" 
+src="""Index: <$edit-text tiddler='$:/temp/exmp42' field='index-name' placeholder='New index'/>
+
+Value: <$edit-text tiddler='$:/temp/exmp42' field='index-value' placeholder='New value'/>
+<$button>Add new index/value
+ <$action-setfield 
+   $tiddler='exmp42/sample/data' 
+   $index={{$:/temp/exmp42!!index-name}} 
+   $value={{$:/temp/exmp42!!index-value}}
+ />
+</$button>
+"""/>
+
+See the changes in [[exmp42/sample/data]]
+{{exmp42/sample/data}}

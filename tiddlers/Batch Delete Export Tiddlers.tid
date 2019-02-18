@@ -1,0 +1,34 @@
+created: 20190122133930139
+creator: Mohammad
+keywords: delete export tiddler batch
+modified: 20190216180309590
+modifier: Mohammad
+responder: Thomas Telmiger
+tags: batch solution
+title: Batch Delete Export Tiddlers
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/7ED4g1hRevI/0ONuwoftGwAJ
+
+The TW built-in [[Advanced Search|https://tiddlywiki.com/#%24%3A%2FAdvancedSearch]] can do batch operation like batch export and batch delete of tiddlers matching a criteria
+
+!! Exporting tiddlers matching a criteria
+From: [[Tiddlywiki.com|https://tiddlywiki.com/#How%20to%20export%20tiddlers]]
+
+# Open [[Advanced Search|https://tiddlywiki.com/#%24%3A%2FAdvancedSearch]] or click little magnifying glass next to the search area on the sidebar
+# Click on the "Filter" tab of the Advanced Search tiddler. Only the Filter tab will allow you to export a selection of tiddlers. Filters follow a particular syntax. Click on this Filters link to learn about how to make filters.
+# Once you have written a filter, a list of tiddlers matching the filter will appear.
+# Now you can click on the export tiddler button to the right of the filter input field. A pop-up menu will offer you the chance to export tiddlers in multiple formats. Currently, the export formats available are:
+#* CSV file format
+#* JSON file format
+#* Static HTML file
+#* ".tid" file format
+#  Now you can click on the ''export tiddler'' button to the right of the filter input field. A pop-up menu will offer you the chance to export tiddlers in multiple formats.
+
+!! Deleting tiddlers matching a criteria
+
+# Open [[Advanced Search|https://tiddlywiki.com/#%24%3A%2FAdvancedSearch]] or click little magnifying glass next to the search area on the sidebar
+# Click on the "Filter" tab of the Advanced Search tiddler. Only the Filter tab will allow you to export a selection of tiddlers. Filters follow a particular syntax. Click on this Filters link to learn about how to make filters.
+# Once you have written a filter, a list of tiddlers matching the filter will appear.
+#  Now you can click on the ''delet tiddlers'': trash button to the right of the filter input field. A pop-up menu will ask you "Are you sure you wish to delete xx tiddler(s)?" Click ''Delete these tiddlers''.
+
+

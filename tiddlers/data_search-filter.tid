@@ -1,0 +1,14 @@
+created: 20190131141053782
+creator: Mohammad
+modified: 20190216180310164
+modifier: Mohammad
+tags: 
+title: data/search-filter
+type: application/x-tiddler-dictionary
+
+search in all fields: `[search:*[keyword]]`
+search only in title: `[search:title[keyword]]`
+search in tags: `[search:tags[keyword]]`
+search only in field //myfield//: `[search:myfield[keyword]]`
+search in several fields e.g. //myfield//, //yourfield//: `[search:myfield,yourfield[keyword]]`
+search in title followed by search in text:`[search:title[foo]search:text[bar]]`

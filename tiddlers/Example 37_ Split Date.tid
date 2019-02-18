@@ -1,0 +1,26 @@
+created: 20190202190402923
+creator: Mohammad
+modified: 20190216180310611
+modifier: Mohammad
+tags: exmp37
+title: Example 37: Split Date
+type: text/vnd.tiddlywiki
+
+\define date-str(date)
+<$list filter="[[$date$]splitbefore[-]]" variable=x >
+<$list filter="[[$date$]removeprefix<x>splitbefore[-]removesuffix[-]]" variable=m>
+
+<$list filter="[[exmp37/data/months]getindex<m>]" variable="mname">
+
+<$list filter="[[$date$]splitbefore[-]removesuffix[-]]" variable=y >
+<$list filter="[[$date$]removeprefix<x>removeprefix<m>removeprefix[-]]" variable=d >
+<<mname>> <<d>>, <<y>>
+</$list>
+</$list>
+</$list>
+</$list>
+</$list>
+\end
+
+><$macrocall $name="wikitext-example-without-html" 
+src="""<<date-str "2019-01-31">>"""/>

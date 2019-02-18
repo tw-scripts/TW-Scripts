@@ -1,0 +1,12 @@
+colorcode: red
+created: 20181122083858789
+creator: Mohammad
+modified: 20190216180311436
+modifier: Mohammad
+tags: 
+title: How to Use
+type: text/vnd.tiddlywiki
+
+<$wikify name="colorcode" text="color:{{!!colorcode}}">
+<span style=<<colorcode>>>abc</span><br/>
+</$wikify>

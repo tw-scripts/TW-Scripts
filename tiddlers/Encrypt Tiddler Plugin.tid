@@ -1,0 +1,15 @@
+created: 20181019201202206
+creator: Mohammad
+description: This plugin adds the ability to encrypt your tiddlers individually. This have several advantages:
+developer: Danielo Rodriguez
+modified: 20190216180309704
+modifier: Mohammad
+tags: Links
+title: Encrypt Tiddler Plugin
+type: text/vnd.tiddlywiki
+url: https://danielorodriguez.com/TW5-EncryptTiddlerPlugin/
+wiki-name: Encrypt Tiddler Plugin
+
+{{$:/plugins/danielo/encryptTiddler/Encrypt-Tiddler}}
+
+See the plugin here: $:/plugins/danielo/encryptTiddler

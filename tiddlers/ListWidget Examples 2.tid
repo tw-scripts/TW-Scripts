@@ -1,0 +1,22 @@
+created: 20180421083314148
+creator: Mohammad
+modified: 20190216180314945
+modifier: Mohammad
+tags: 
+title: ListWidget Examples 2
+type: text/vnd.tiddlywiki
+
+* Formatting List Results
+```
+@@.fourcolumns
+<$list filter="[tag[solution]]" variable="var1"><br>
+
+</$list>
+@@
+
+```
+@@.fourcolumns
+<$list filter="[tag[solution]]" variable="foo"><br>
+<<foo>>
+</$list>
+@@

@@ -1,0 +1,29 @@
+created: 20190113163412387
+creator: Mohammad
+keywords: link pdf page
+modified: 20190216180317079
+modifier: Mohammad
+responder: Anthony Musico (TonyM)
+tags: solution
+title: PDF Document Link
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/e6tyJwnzJic/0RvL2ZuYCQAJ
+
+\define doc-link(path name parameters)
+$path$$name$$parameters$
+\end
+
+The below small macro creates a document link. It gets a thord attributes as parameters whihc here can be used to refer to a certain page in a PDF.
+
+```
+\define doc-link(path name parameters)
+$path$$name$$parameters$
+\end
+```
+
+!! Example
+
+<$macrocall $name="wikitext-example-without-html"
+src="""<a href=<<doc-link "http://gahp.net/wp-content/uploads/2017/09/" "sample.pdf" "#page=5">> target=PDFTab >My PDF File Page 5</a>
+
+<a href=<<doc-link "http://gahp.net/wp-content/uploads/2017/09/" "sample.pdf" "#page=09">> target=PDFTab >My PDF File Page 09</a>""" />

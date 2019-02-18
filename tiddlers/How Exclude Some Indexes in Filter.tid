@@ -1,0 +1,41 @@
+created: 20180821160105973
+creator: Mohammad
+keywords: exclude filter index
+modified: 20190216180311564
+modifier: Mohammad
+responder: Mark S
+tags: solution datatiddler
+title: How Exclude Some Indexes in Filter
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/QGx8BPXTY5w/0qcBG3feBwAJ
+
+Assume the `My Alert Class Dictionary` data (dictionary) tiddler has the below content
+
+```
+primary:x
+secondary:x
+info:x
+success:x
+warning:x
+danger:x
+light:x
+dark:x
+```
+
+How use a filter to list all indexes except `info` and `light`?
+
+You can only do boolean subtract on an entire filter run -- not inside a run.
+
+So this might work for the first part: `[[My Alert Class Dictionary]indexes[]addprefix[bg-]]`
+
+If you just wanted to remove info and light, then maybe this:
+
+` [[My Alert Class Dictionary]indexes[]!prefix[info]!prefix[light]addprefix[bg-]]`
+
+As an example see below:
+
+```
+<$list filter="[[My Alert Class Dictionary]indexes[]!prefix[info]!prefix[light]addprefix[bg-]]" variable="alert-type">
+<<alert type>><br>
+</$list>
+```

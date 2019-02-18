@@ -1,0 +1,26 @@
+created: 20190129072819068
+creator: Mohammad
+keywords: last modified change current-session haschanged emergency save
+modified: 20190216180314406
+modifier: Mohammad
+responder: Anthony Muscio (TonyM)
+tags: solution
+title: Export Latest Changes in Current Session
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/TDGjv2qf-eQ/xXYMp8wjHQAJ
+
+`haschanged[]` will list all tiddlers since the last time the wiki was loaded from disk, ie the reload button, or if you close the tab and reopen again.
+
+It is perfect for an ''emergency save'', like list everything changed since I loaded it this morning. Export to JSON, restore from last working version and import the json.
+
+!! Example
+# Open the <<advanced-search>>
+# Choose the `Filter` tab
+# Enter the below filter `[haschanged[]!prefix[$:/state]!prefix[$:/temp]![$:/StoryList]![$:/HistoryList]]`
+# Click on export tiddler icon on the right side
+# Save as JSON file
+
+You can import this JSON later into a wiki file.
+
+!!! See also
+<<list-links "[search:keywords[change]] -[<currentTiddler>]" type:"ol">>

@@ -1,0 +1,35 @@
+created: 20190211082905066
+creator: Mohammad
+keywords: count field
+modified: 20190216180310339
+modifier: Mohammad
+responder: Mohammad
+tags: exmp49 solution
+title: Count items within a Field
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/OQt4ddlf02Q/lC5z2B6YBgAJ
+
+; How to count items in a tiddler field?
+:Use the `count` widget and `list` operator
+
+!! Example
+Count the number of phrases (words) in the field of `keywords` of tiddlers tagged with solution. Show the results for the first five tiddlers
+
+<$macrocall $name="wikitext-example-without-html" 
+src="""><$list filter="[tag[solution]limit[5]]">
+<$link to=<<currentTiddler>>><$text text=<<currentTiddler>>/></$link>: <$count filter="[list[!!keywords]]" /> keywords<br>
+</$list>
+"""/>
+
+!! Remarks
+* The `list` widget with `tag[soloution]` filter finds tiddlers tagged with solution
+* The `limit[5]` only shows the output for first 5 tiddlers tagged with solution
+* The count widget counts the number of items in the `keywords` field of current tiddler using the `list` operator (`list[!!keywords]`)
+* The output is displayed as link to each tiddler with the number of items.
+* Note that if there is duplicate items, count considers them as one. See [[dominant append|https://tiddlywiki.com/prerelease/#Dominant%20Append]]
+
+<<alert infor "Note how count widget uses a list operator to count the number of items `[!!field-name]`.">>
+
+
+!! More information
+* [[List operator|https://tiddlywiki.com/prerelease/#list%20Operator]]

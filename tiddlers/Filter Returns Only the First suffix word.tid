@@ -1,0 +1,46 @@
+created: 20190210053628665
+creator: Mohammad
+keywords: filter prefix splitbefore suffix removeprefix
+modified: 20190216180314307
+modifier: Mohammad
+responder: S.S.
+tags: filter solution
+title: Filter Returns Only the First suffix word
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/uB8Tr-yOfqs/PWQiJaw7BgAJ
+
+; How to write a filter that returns only the first suffix word after a given prefix?
+: Use prefix, removeprefix, and splitbefore operators to do that.
+
+!! Example
+On Tiddlywiki.com, go to the Advanced Search, Shadows tab, and search for (the prefix): `$:/core/ui/ControlPanel/`. It returns about 50 results.
+The only ones are requested are the ones that have a //single word// after that //prefix//. For example: the  `$:/core/ui/ControlPanel/Saving` is rquested but NOT `$:/core/ui/ControlPanel/Saving/DownloadSaver`.
+
+So, the filter shall:
+1. Find only the tiddlers have one word after the prefix `$:/core/ui/ControlPanel/`
+2. Return all those single words (remove the prefix)
+
+```
+<$list filter="[all[shadows]prefix[$:/core/ui/ControlPanel/]removeprefix[$:/core/ui/ControlPanel/]splitbefore[/]!suffix[/]]">
+
+</$list>
+```
+
+!! Remarks
+* The `all[shadows]prefix[$:/core/ui/ControlPanel/]` finds all shadow tiddlers their title starts with `$:/core/ui/ControlPanel/`
+* The `removeprefix[$:/core/ui/ControlPanel/]` remove the part `$:/core/ui/ControlPanel/` from title
+* The `splitbefore[/]` filter, remove remaining text from title after `/`, but include `/` in the output.
+* The last parst `!suffix[/]` ignores all results having trailing `/`. This will remove those output having `a/b/...` means are not single word after `$:/core/ui/ControlPanel/`. 
+
+
+!! A complete example
+The below script, adds two extra steps. It formats the output as numbered list and also make links to each tiddler. Note that the `set` widget creates the link.
+```
+<ol>
+<$list filter="[all[shadows]prefix[$:/core/ui/ControlPanel/]removeprefix[$:/core/ui/ControlPanel/]splitbefore[/]!suffix[/]]" variable="xx1">
+<$set name=lnk filter={{{[<xx1>addprefix[$:/core/ui/ControlPanel/]]}}}>
+<li><$link to=<<lnk>> > <$text text=<<lnk>>/> </$link></li>
+</$set>
+</$list>
+</ol>
+```

@@ -1,0 +1,30 @@
+created: 20180709151148119
+creator: Mohammad
+keywords: nested field
+modified: 20190216180317360
+modifier: Mohammad
+responder: Mark S
+tags: solution
+title: Nested Referencing Fields
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/nvltA441Xb8/K0lmlcISBgAJ
+
+* ''Question''
+<<<
+Assume you have a tiddler titled "Tiddler-A". It has a caption filed cotains: "I am Tiddler A". Next assume you have Tiddler-B, its summary filed contains "Tiddler-A" I want a transclusion like this in Tiddler-B
+
+```
+{{!!summary!!caption}}
+```
+But it doesnot work!
+<<<
+
+* ''Solution''
+<<<
+The solution is given by Marks as below
+
+```
+\define deref(tid fld) <$transclude tiddler=<<__tid__>> field=<<__fld__>> />
+
+<$macrocall $name="deref" tid={{!!summary}} fld="caption"/>
+```

@@ -1,0 +1,43 @@
+created: 20190201091438845
+creator: Mohammad
+modified: 20190216180308466
+modifier: Mohammad
+tags: tw-book idea
+title: A Book on Tiddlywiki
+type: text/vnd.tiddlywiki
+
+This is a crude idea on writting a small book on TW
+
+!! Title
+* Learn Tiddlywiki by Examples
+* Learn Tiddlywiki in a Week
+
+!!Parts
+# Basics
+#* Wikitexts, create, edit tiddlers, make table of contents
+# Adventures with Tiddlywiki
+#* filter and list, transclude, link, view, text, and set widgets
+# Advanced Features
+#* Scripting
+
+! ''Chapters''
+! Basics
+<$list filter="[tag[tw-book]tag[basic]]">
+
+<$transclude/>
+
+</$list>
+
+! Adventures with Tiddlywiki
+<$list filter="[tag[tw-book]tag[adventure]]">
+
+<$transclude/>
+
+</$list>
+
+! Advanced Features
+<$list filter="[tag[tw-book]tag[advanced]]">
+
+<$transclude/>
+
+</$list>

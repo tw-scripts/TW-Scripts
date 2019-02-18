@@ -1,0 +1,13 @@
+created: 20180429025433836
+creator: Mohammad
+modified: 20190216180315870
+modifier: Mohammad
+tags: mywiki
+title: My Site on TiddlySpot
+type: text/vnd.tiddlywiki
+
+<$list filter="[tag[mywiki]] -[[My Site on TiddlySpot]]">
+
+<$transclude />
+
+</$list>

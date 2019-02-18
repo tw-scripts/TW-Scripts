@@ -1,0 +1,18 @@
+created: 20190124152059869
+creator: Mohammad
+modified: 20190216180317443
+modifier: Mohammad
+tags: search
+title: Simple search
+type: text/vnd.tiddlywiki
+
+The simple or standrad search is the one search in `title`, `tags`, and `text` (body) of tiddlers.
+
+!! Example
+Search all tiddlers have `hirad` word in thier title or tags, or body (text).
+
+<$macrocall $name="wikitext-example-without-html" 
+src="""<$list filter="[search[hirad]]">
+
+</$list>
+"""/>

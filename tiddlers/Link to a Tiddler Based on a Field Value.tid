@@ -1,0 +1,32 @@
+created: 20190209050057116
+creator: Mohammad
+keywords: link field
+modified: 20190216180315141
+modifier: Mohammad
+tags: field
+title: Link to a Tiddler Based on a Field Value
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/NTQwAG0q-Fs/es47iT_YBQAJ
+
+;How to create a link to a tiddler based on field value?
+: Use a macro with a filter to limit the results to specific filed
+
+!! Example
+Assume you wish to make links to tiddler based a field called `id`. Put the below macro inside a tiddler and tagged it with `$:/tags/Macro`
+
+```
+\define linkto(idval)
+<$list filter="[field:id[$idval$]!has[draft.of]limit[1]]"/>
+\end
+```
+
+!! Remarks
+* The macro gets an idval as input parameter
+* The `list` widget uses the filter `field:if[keyword]` to search and list all tiddlers have a field `id` wich its contant is `keyword`
+* The `list` widget then limits the output to one and make an internal link as output
+
+;Note
+: If there are several tiddlers having the same value in their `id` field then all of them are the answer and macro will return a link to the first item found. To prevent this, use uique id value.
+
+!! See also
+* <a href={{!!url}}>Vytas</a>: create direct tiddler links which do not break after the change of the tiddler title

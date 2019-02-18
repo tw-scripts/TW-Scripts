@@ -1,0 +1,21 @@
+created: 20180603032658785
+creator: Mohammad
+modified: 20190216180308741
+modifier: Mohammad
+tags: filter
+title: 1.4
+type: text/vnd.tiddlywiki
+
+!Use field in filter
+List results can be filtered by fileds. Below all tiddlers having a `note` filed containing ''demo'' will be shwon.
+
+```
+<$list filter="[field:note[demo]]">
+<<currentTiddler>><br>
+</$list>
+
+```
+
+<$list filter="[field:note[demo]]">
+<<currentTiddler>><br>
+</$list>

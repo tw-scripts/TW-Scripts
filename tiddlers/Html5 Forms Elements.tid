@@ -1,0 +1,47 @@
+created: 20181007153426849
+creator: Mohammad
+keywords: form label
+modified: 20190216180311157
+modifier: Mohammad
+responder: MDN Web Docs
+tags: html5 task solution
+title: Html5 Forms Elements
+type: text/vnd.tiddlywiki
+url: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form
+
+The below example shows some html5 form features.
+<<vspace 1cm>>
+
+<<wikitext-example-without-html 
+"""<style>
+form.form-example {
+    display: table;
+    background: #eee;
+    padding:15px;
+}
+div.form-example {
+    display: table-row;
+}
+.form-example label, .form-example input {
+    display: table-cell;
+    margin-bottom: 5px;
+}
+.form-example label {
+    padding-right: 10px;
+}
+</style>
+
+<form action="" method="get" class="form-example">
+  <div class="form-example">
+    <label for="name">Enter your name: </label>
+    <input type="text" name="name" id="name" required>
+  </div>
+  <div class="form-example">
+    <label for="email">Enter your email: </label>
+    <input type="email" name="email" id="email" required>
+  </div>
+  <div class="form-example">
+    <input type="submit" value="Subscribe!">
+  </div>
+</form>
+""">>

@@ -1,0 +1,42 @@
+created: 20181225092038216
+creator: Mohammad
+keywords: highlight.js language fortran
+modified: 20190216180308279
+modifier: Mohammad
+responder: Mohammad
+tags: highlight solution
+title: Add More Languages to Highlight.js
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/ufyuVgqjT9Y/CTaQQ8DnBAAJ
+
+# Open https://highlightjs.org/download/
+# Select the language you want and then click download
+# Unzip the `highlight.zip` and open the `highlight.pack.js` in a text editor
+#<div>
+
+Paste the following line as the ''first line'' in the text editor
+
+```
+var hljs = require("$:/plugins/tiddlywiki/highlight/highlight.js");
+```
+</div>
+#<div>
+
+Paste the following line as the ''last line'' in the text editor 
+
+```
+exports.hljs = hljs;
+```
+</div>
+
+# Open the `$:/plugins/tiddlywiki/highlight/highlight.js` tiddler in your wiki and click on edit button from text editor
+# Replace the content of this tiddler with the content of edited `highlight.pack.js` from text editor
+# Save tiddler and save wiki
+# Reload the wiki
+
+That's all
+
+<<alert warning "''Note'': You need to have the `highlight.js` plugin installed in your wiki. If not from control panel, plugins, click get more plugins and install the `highlight.js`.">>
+
+!! Remarks
+* To add Fortran, Matlab and other languages not available in TW official plugin do as described above

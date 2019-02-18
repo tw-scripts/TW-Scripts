@@ -1,0 +1,83 @@
+created: 20180502213625201
+creator: Mohammad
+modified: 20190216180315976
+modifier: Mohammad
+tags: tutorial
+title: Multiline paragraph in list
+type: text/vnd.tiddlywiki
+
+* ''Use three double qoutes''
+<<<
+```
+# One
+# """ Hi Mohammad
+Are you Okay
+"""
+# Best
+# Better
+```
+
+# One
+# """ Hi Mohammad
+Are you Okay
+"""
+# Best
+# Better
+<<<
+
+* ''Use div tag''
+<<<
+Note that the double linebreak preceding this paragraph is significant.
+
+```
+
+# One
+# <div> 
+
+Hi Mohammad. Are you Okay?
+
+> This is a qoute
+This is an image
+[img width=96 [fortran_logo.png]]
+</div>
+# Best
+# Better
+
+```
+
+# One
+# <div> 
+
+Hi Mohammad. Are you Okay?
+
+> This is a qoute
+This is an image
+[img width=96 [fortran_logo.png]]
+</div>
+# Best
+# Better
+
+<<<
+
+!! Other example
+
+* To do today
+*# Eat
+* To get someone else to do
+*# This
+*# That
+*## And the other
+* Next level
+*# One
+*# Two
+
+!!! With CSS class
+*.liBlue List One
+*.liBrown List Two (use data Tiddler)
+*.liGreen List Three
+
+<style>
+.liBlue {color:blue}
+.liBrown {color:{{myPallete##Brown}} }
+.liGreen {color:green}; 
+</style>

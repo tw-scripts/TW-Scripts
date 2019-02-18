@@ -1,0 +1,27 @@
+created: 20180605152702509
+creator: Mohammad
+keywords: navigate previous operator
+modified: 20190216180311780
+modifier: Mohammad
+tags: navigate
+title: Goto Previous Tiddler in Story List
+type: text/vnd.tiddlywiki
+
+; How to create a button to navigate to the previous tiddler in story river?
+: In Tiddlywiki `$:/StoryList` keeps the title of all tiddlers are open in the current story. So it is simple to use the `action-navigate` to go back to the previous tiddler.
+
+!! Code
+Put the below code in a tiddler and tag it with `$:/tags/ViewTemplate`
+
+```
+<$button> 
+<$list filter="[all[current]previous[$:/StoryList]]">
+<$action-navigate $to=<<currentTiddler>> />
+</$list>Open Previous Tiddler
+</$button>
+```
+
+In the above script:
+
+* The `$list` widget search the `$:/StoryList` and returns the previous tiddler in the list based on the current tiddler.
+* It then used the `action-navigate` to go to the previous tiddler (stored in `currentTiddler` variable)

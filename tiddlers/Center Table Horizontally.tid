@@ -1,0 +1,19 @@
+created: 20180928045042773
+creator: Mohammad
+keywords: table css center
+modified: 20190216180309188
+modifier: Mohammad
+responder: Eric Shulman
+tags: solution
+title: Center Table Horizontally
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/d1_Md9CUxEM/dq44Ih6FCwAJ
+
+; How can center table horizontally in a tiddler:
+: Create a tiddler tagged with `$:/tags/Stylesheet` and put the below css code inside it.
+
+```css
+.tc-tiddler-body table.centered{
+    margin:0 auto;
+}
+```

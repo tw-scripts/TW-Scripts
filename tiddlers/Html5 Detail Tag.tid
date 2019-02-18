@@ -1,0 +1,20 @@
+created: 20181005185428078
+creator: Mohammad
+keywords: details summary tag
+modified: 20190216180311212
+modifier: Mohammad
+responder: MDN Web Docs
+tags: html5 solution
+title: Html5 Detail Tag
+type: text/vnd.tiddlywiki
+url: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details
+
+The HTML Details Element (`<details>`) creates a disclosure widget in which information is visible only when the widget is toggled into an "open" state. A summary or label can be provided using the `<summary>` element.
+<<vspace 1cm>>
+<<wikitext-example-without-html 
+src:"""
+<details>
+    <summary>Details</summary>
+    Something small enough to escape casual notice.
+</details>
+""">>

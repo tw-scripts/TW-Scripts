@@ -1,0 +1,37 @@
+created: 20180614111149720
+creator: Mohammad
+modified: 20190216180316198
+modifier: Mohammad
+tags: exmp35 search
+title: Search in Field
+type: text/vnd.tiddlywiki
+
+\define contactevents(name)
+Found in the field 'people' of: 
+<$list filter="[tag[event]search:people<__name__>]">
+
+</$list>
+\end
+
+```
+\define contactevents(name)
+Figured in the field 'people' of: 
+<$list filter="[tag[event]search:people<__name__>]">
+
+</$list>
+\end
+```
+
+!! Example
+
+<<<
+This example shows a filter to search among the tiddlers tagged with `event` having a filed called `people`.
+
+!!! All tiddlers with tag: `event`
+<<list-links "[tag[event]]">>
+
+!!! Tiddlers having Hirad in people filed
+<$macrocall $name="wikitext-example-without-html" 
+src="""<<contactevents Mohammad>>
+"""/>
+<<<

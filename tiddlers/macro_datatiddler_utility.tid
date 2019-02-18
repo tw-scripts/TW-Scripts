@@ -1,0 +1,20 @@
+created: 20190208064631203
+creator: Mohammad
+modified: 20190216180314847
+modifier: Mohammad
+tags: exmp45 $:/tags/Macro
+title: macro/datatiddler/utility
+type: text/vnd.tiddlywiki
+
+\define property-table(dataTiddler, indexTitle:"Index", valueTitle:"Value", tblClass:"", caption:"Empty")
+<table class="$tblClass$">
+ <caption><$reveal type="nomatch" text=<<__caption__>> default="Empty">$caption$</$reveal></caption>
+ <tr><th>$indexTitle$</th><th>$valueTitle$</th></tr>
+ <$list filter="[<__dataTiddler__>indexes[]sort[]]" variable="index">
+ <tr>
+  <td><<index>></td>
+  <td><$transclude tiddler=<<__dataTiddler__>> index=<<index>> /></td>
+ </tr>
+ </$list>
+</table>
+\end

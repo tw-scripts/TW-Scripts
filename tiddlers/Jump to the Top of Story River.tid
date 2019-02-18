@@ -1,0 +1,22 @@
+created: 20180703030324462
+modified: 20190216180315278
+tags: 
+title: Jump to the Top of Story River
+type: text/vnd.tiddlywiki
+
+```
+<$button>
+{{$:/core/images/up-arrow}} 
+<$list variable='Target' filter='[list[$:/StoryList]first[]]'>
+<$action-navigate $to=<<Target>>/>
+</$list>
+</$button>
+```
+Ref:https://groups.google.com/d/msg/tiddlywiki/nSwm5nku9QI/0MbWExywBgAJ
+
+<$button>
+{{$:/core/images/up-arrow}} 
+<$list variable='Target' filter='[list[$:/StoryList]first[]]'>
+<$action-navigate $to=<<Target>>/>
+</$list>
+</$button>

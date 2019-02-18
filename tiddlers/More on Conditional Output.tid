@@ -1,0 +1,62 @@
+created: 20190109081509307
+creator: Mohammad
+keywords: conditional transclude view empty caption
+modified: 20190216180316022
+modifier: Mohammad
+responder: S.S. 
+tags: conditional solution
+title: More on Conditional Output
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/dzZWAa5Hmlo/EwUqundEEQAJ
+
+When `transclude` or `view` widgets are used for conditional output, an issue raised with empty `caption` field.
+
+Consider below solution [[Eric Shulman|Conditional Output]]
+
+```
+<$view field="caption">
+   <$view field="title"></$view>
+</$view>
+```
+
+or this one by [[THomas Elmiger|https://groups.google.com/d/msg/tiddlywiki/dzZWAa5Hmlo/b4vWK6yTEQAJ]]:
+
+```
+<$link tooltip={{!!title}}><$transclude field="caption"><$view field="title"/></$transclude>&nbsp;</$link>
+```
+
+<<<[[S.S.|https://groups.google.com/d/msg/tiddlywiki/dzZWAa5Hmlo/EwUqundEEQAJ]]
+The problem with the above code is that if there is a `caption` field, but it is empty, nothing will show. I find that unacceptable. This was the exact issue I tried to have fixed (on github) but that hasn't been resolved because of possible performance issues in a large table of contents.
+<<<
+
+The better solution proposed by [[S.S.|https://groups.google.com/d/msg/tiddlywiki/dzZWAa5Hmlo/EwUqundEEQAJ]] as below
+
+<<< Best solution
+```
+<$list filter="[all[current]has[caption]]"
+      emptyMessage="""<$view field="title"/>""">
+      <$transclude field="caption"/>
+</$list>
+```
+<<< See also  [[Jeremy note|https://github.com/Jermolene/TiddlyWiki5/issues/3624#issuecomment-445157136]] on GitHub
+
+!! Remarks
+[[TonyM|https://groups.google.com/d/msg/tiddlywiki/dzZWAa5Hmlo/vPJjeTBFEQAJ]] proposed a solution if you want to make a link to a tiddler when there is a caption and it has higher priority
+
+```
+<$list filter="[all[current]has[caption]get[caption]] ~[{!!title}]" variable=name>
+<$link to=<<name>> tooltip="Custom tooltip"><<name>></$link>
+</$list>
+```
+
+You can also make a macro for this as below
+
+```
+\define caption-title()
+<$list filter="[all[current]has[caption]get[caption]] ~[{!!title}]" variable=name>
+<$link to=<<name>> tooltip="Custom tooltip"><<name>></$link>
+</$list>
+\end
+
+and use <<caption-title>> no paramters to always show first the caption, then the titlewith an active link.
+```

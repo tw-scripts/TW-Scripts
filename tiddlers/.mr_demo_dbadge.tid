@@ -1,0 +1,64 @@
+created: 20181204193605622
+creator: Mohammad
+modified: 20190216180307415
+modifier: Mohammad
+tags: badge
+title: .mr/demo/dbadge
+type: text/vnd.tiddlywiki
+
+! Status badges
+The status badges are set of macro and stylesheet. These are double badges in two semantic colors indicate coverage, version, relation, progress, ...
+
+! Using status badge
+The status badges here have four semantic colors but can be customized for more colors
+
+* primary
+* info
+* success
+* warning
+* danger
+
+!! Syntax
+```
+<<dbadge subject status type>>
+```
+<br>
+
+|!Attribute |!Description |
+|subject |the subject of badge|
+|status |the relation, status, coverage, ...|
+|type|one of semantic types: //primary//, //info//, //success//, //warning//, //danger//. Default is  //primary//|
+
+<br>
+
+!! Examples 
+
+```
+<<dbadge "Tiddlywiki" "5.1.18" "info">>
+<<dbadge "Node.js" "passed">>
+<<dbadge "Windows" "7, 8.1, 10" "warning">>
+<<dbadge "Android" "supported" "danger">>
+<<dbadge "coverage" "Html5" "success">>
+```
+<<dbadge "Tiddlywiki" "5.1.18" "info">> <<dbadge "Node.js" "passed">> <<dbadge "Windows" "7, 8.1, 10" "warning">>
+<<dbadge "Android" "supported" "danger">>
+<<dbadge "coverage" "Html5" "success">>
+
+
+!! Other example
+```
+<<dbadge "Tiddlywiki" "I love it">> 
+<<dbadge "Jeremy Ruston" "The creator" success>>
+```
+<<dbadge "Tiddlywiki" "I love it">> <<dbadge "Jeremy Ruston" "The creator" success>> <<dbadge "Forum" "The best in the world" danger>>
+
+<br>
+
+!! Semantic colors
+
+<<dbadge "primary" "blue" primary>> <<dbadge "info" "cyan" info>> <<dbadge "success" "green" success>> <<dbadge "warning" "yellow" warning>> <<dbadge "danger" "red" danger>>
+
+!Installation
+Drag and drop these tiddlers into your wiki
+
+<<list-links [tag[badge]]>>

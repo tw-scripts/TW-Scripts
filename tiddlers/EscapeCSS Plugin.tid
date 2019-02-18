@@ -1,0 +1,13 @@
+created: 20190109113948094
+creator: Mohammad
+description: It's all about the escapecss[] filter that creates valid css selectors from whatever you give it to eat. It handles titles with any kind of charachters including quotes, slashes, brackets
+developer: Simon Huber
+modified: 20190216180309689
+modifier: Mohammad
+tags: Links
+title: EscapeCSS Plugin
+type: text/vnd.tiddlywiki
+url: https://burningtreec.github.io/TW5-escapecss/
+wiki-name: escapecss[]
+
+The approach is used here can be employed to apply custom css dynamically.

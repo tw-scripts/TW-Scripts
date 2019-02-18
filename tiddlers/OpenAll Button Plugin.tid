@@ -1,0 +1,12 @@
+created: 20190211062107103
+creator: Mohammad
+description: This plugin adds the  button to the tag manager drop down menu using the  system tag. The open all button opens all non system tiddlers tagged with that drop down tag.
+developer: Andrew Harrison
+modified: 20190216180317267
+modifier: Mohammad
+tags: Links
+title: OpenAll Button Plugin
+type: text/vnd.tiddlywiki
+url: http://openall.tiddlyspot.com/
+wiki-name: OpenAll plugin
+

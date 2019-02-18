@@ -1,0 +1,39 @@
+created: 20181214182400914
+creator: Mohammad
+keywords: list output store variable save
+modified: 20190216180316381
+modifier: Mohammad
+responder: Bimlas
+tags: solution
+title: Save the Filter Output
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/3jpBhKS7e1o/aOQ7uldQBwAJ
+
+;How the filter output can be saved for further use?
+
+Using the `set` widget it is possible to save the output of a filter run.
+
+```
+<$set name="output" filter="[tag[Filter Operators]first[5]]"> 
+ 
+Text of variable: <$text text=<<output>>/> 
+ 
+List of titles: <$macrocall $name="list-links" filter=<<output>>/> 
+ 
+</$set>
+```
+
+* Example
+The below example run a filter and save its results into a variable called `output`, it then is used in another operation.
+
+<$macrocall $name="wikitext-example-without-html" 
+src="""<$set name="output" filter="[tag[list]first[5]]"> 
+ 
+>Text of variable: <$text text=<<output>>/> 
+ 
+List of titles: 
+
+><$macrocall $name="list-links" filter=<<output>>/> 
+ 
+</$set>
+"""/>

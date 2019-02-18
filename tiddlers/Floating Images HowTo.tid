@@ -1,0 +1,72 @@
+created: 20150320130409526
+creator: Mohammad
+keywords: float image center left right
+modified: 20190216180312003
+modifier: Mohammad
+responder: PMario
+tags: solution floating-images
+title: Floating Images HowTo
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/oO46RUPm4FI/L6Q-OzMXCAAJ
+
+There is a wikitext syntax for images eg: `[img[pig.png]]`. But what if I want to center the image. Or if I want the image left or right aligned and the text should flow around the image. 
+
+There are 3 macros now.
+
+* `<<image-left   "pig.png">>`
+* `<<image-center "pig.png">>`
+* `<<image-right  "pig.png">>`
+
+<br>
+
+!! Left aligned image
+
+```
+<<image-left "pig.png">>
+```
+Activates a `float-left` CSS rule for the image container. 
+
+<<image-left "pig.png" caption:"//Fig 1. floating image//" width:"20%">>
+
+If you want to add a caption to the image, just use: 
+
+```
+<<image-left "pig.png" caption:"//Fig 1. floating image//" width:"20%">>
+```
+As you can see, inline formatting rules can be used. 
+
+<br>
+
+!! Center aligned image
+
+The image below will be centred and slightly bigger. There is no text flow around the image. The macro is used like this:
+
+```
+<<image-center "pig.png" caption:"Fig 2. Centered image" width:"30%">>
+```
+
+<<image-center "pig.png" caption:"Fig 2. Centered image" width:"30%">>
+
+
+!! Right aligned image
+
+<<image-right "pig.png" caption:"''Fig 3. Float right image''" tooltip:"The lovely pig from north" width:"20%">>
+
+This image uses:
+
+```
+<<image-right "pig.png" caption:"''Fig 3. Float right image''" tooltip:"The lovely pig from north" width:"20%">>
+```
+!! Clearfix
+Since "float-left" and "float-right" CSS rules have some effects on the text flow, we need a mechanism, that disables this effect. So we need to assign a special class to the last paragraph of this page: eg: 
+
+```
+@@.image-text ... @@
+```
+
+<<alert info "''Note'': There are more elegant solutions to do this.">>
+
+
+!!! Tiddlers in this solution
+<<list-links "[tag[floating-images]] -[<currentTiddler>]" type:"ol">>
+

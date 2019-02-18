@@ -1,0 +1,15 @@
+created: 20180813051159611
+modified: 20190216180308394
+tags: concept
+title: Add a Command to Sidebar
+type: text/vnd.tiddlywiki
+
+* Every tiddler tagged with `$:/tags/SideBar` will appear in the ~Tiddlywiki sidebar
+* The position in the sidebar can be determined using the `list-after` and `list-before` field
+* If you want to change the text displayed in the sidebar, add the caption filed to that tiddler
+
+!!! Example
+See in this wiki:
+
+# [[Favorites]]
+# [[Keymap|$:/codemirrordemo/sidebar/cheatsheet]]

@@ -1,0 +1,26 @@
+created: 20181231195549381
+creator: Mohammad
+modified: 20190216180310872
+modifier: Mohammad
+tags: video html5 exmp19
+title: Example 19: Embeding Video
+type: text/vnd.tiddlywiki
+
+To embed a video use html5 `video` tag. For description see [[Html Video element|https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video]]
+
+* Example
+Here the video file is stored in a local folder.
+
+<$macrocall $name="wikitext-example-without-html" 
+src="""<div style="text-align:center;"> 
+<video controls width="480">
+ <source src="examples/SampleVideo_1280x720_1mb.mp4"
+         type="video/mp4">
+    Sorry, your browser doesn't support embedded videos.
+</video>
+</div>
+"""/>
+
+
+
+''Note'': "To center video, use `text-align:center;` CSS".

@@ -1,0 +1,23 @@
+created: 20180625165024599
+creator: Mohammad
+keywords: variable macro count
+modified: 20190216180309211
+modifier: Mohammad
+tags: variable
+title: Calculation
+type: text/vnd.tiddlywiki
+
+\define Calculation()
+
+* ''Total number of `learning` tiddlers'': <<ntid>>
+* ''Total number of `solution` tiddlers'': <<mtid>>
+
+\end
+
+<$list filter='[tag[learning]count[]]' variable='ntid'>
+<$list filter='[tag[solution]count[]]' variable='mtid'>
+
+<<Calculation>>
+
+</$list>
+</$list>

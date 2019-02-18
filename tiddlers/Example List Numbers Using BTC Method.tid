@@ -1,0 +1,28 @@
+created: 20180628031507794
+creator: Mohammad
+list: 
+modified: 20190216180310570
+modifier: Mohammad
+tags: 100.50
+title: Example List Numbers Using BTC Method
+type: text/vnd.tiddlywiki
+
+Example using `numb` macro
+
+* ''Exmp 01''
+<$macrocall $name="wikitext-example-without-html" 
+src="""> <$list filter="[list[MyNumberTiddler]limit[5]]" variable="myVar">
+<<myVar>>
+</$list>
+"""/>
+
+
+
+* ''Exmp 02''
+<$macrocall $name="wikitext-example-without-html" 
+src="""><$list filter="[list[MyNumberTiddler]limit[8]]">
+do something <br>
+</$list>
+"""/>
+
+<<alert info "In TW 5.1.18 forward, you can use `range` operator to do this kind of operation efficiently.">>

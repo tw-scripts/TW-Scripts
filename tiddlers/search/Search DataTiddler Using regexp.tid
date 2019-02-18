@@ -1,0 +1,53 @@
+created: 20190207052514719
+creator: Mohammad
+keywords: datatiddler search
+modified: 20190216180316263
+modifier: Mohammad
+responder: Stephan Heradek
+tags: datatiddler solution
+title: Search DataTiddler Using regexp
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/4XTKPnZLEMg/V60qiW4IKUMJ
+
+\define thisSearchMacro(search:"", dataTid:"exmp39/acronyms/web")
+<ol>
+<$list filter="[[$dataTid$]indexes[]regexp:title[(?i)$search$]]">
+<li><<currentTiddler>>: <$transclude tiddler="$dataTid$" index=<<currentTiddler>>/></li>
+</$list>
+</ol>
+\end
+
+; How to search a DataTiddler indixes using the regexp?
+The below solution is proposed by ''{{!!responder}}'' to use `regexp` for searching a DataTiddler.
+
+It uses a macro with a default DataTiddler. It enables you to make the search using regexp filter instead of requiring the exact name.
+
+```
+\define thisSearchMacro(search:"", dataTid:"exmp39/acronyms/web")
+<ol>
+<$list filter="[[$dataTid$]indexes[]regexp:title[(?i)$search$]]">
+<li><<currentTiddler>>: <$transclude tiddler="$dataTid$" index=<<currentTiddler>>/></li>
+</$list>
+</ol>
+\end
+```
+!! Remarks
+filter explanation:
+
+# Get your DataTiddler (the default is [[exmp39/acronyms/web]])
+# Get its indexes
+# Filter them by your search string
+# For each remaining transclude the content
+
+!! Example i
+Search the defualt DataTiddler ([[exmp39/acronyms/web]]) for `ftp`
+<$macrocall $name="wikitext-example-without-html" 
+src="""><<thisSearchMacro "ftp">>
+"""/>
+
+!! Example ii
+Search the [[exmp39/roman-numbers]] DataTiddler for `f`. This will list every index has the letter `f` in its name.
+
+<$macrocall $name="wikitext-example-without-html" 
+src="""><<thisSearchMacro search:"f" dataTid:"exmp39/roman-numbers">>
+"""/>

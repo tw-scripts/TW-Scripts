@@ -1,0 +1,37 @@
+created: 20190208043656547
+creator: Mohammad
+modified: 20190216180316090
+modifier: Mohammad
+tags: task
+title: Maths in Tiddlywiki
+type: application/x-tiddler-dictionary
+
+Ref: https://groups.google.com/d/msg/tiddlywiki/T_v5vSiCEDA/63DmurWSDAAJ
+negate: negation
+abs: absolute value
+ceil: smallest integer greater than or equal to a given number
+floor: the largest integer less than or equal to a given number
+round: the value of a number rounded to the nearest integer
+trunc: the integer part of a number by removing any fractional digits
+sign: the sign of a number, indicating whether the number is positive, negative or zero
+add: add an operand to every number in the input list
+subtract: subtract an operand from every number in the input list
+multiply: multiply every number in the input list by an operand
+divide: divide every number in the input list by an operand
+remainder: replace each item in the input list with the remainder when dividing that number by an operand
+max: replace any number in the input list larger than the operand with the operand
+min: replace any number in the input list smaller than the operand with the operand
+fixed: formats a number using fixed-point notation with the number of fractional digits after the decimal point given by the operand
+precision: returns a string representing the number to the precision specified in the operand
+exponential: returns a string representing the Number object in exponential notation with the number of digits after the decimal point specified in the operand
+sum: replaces the input list with the sum of all the entries
+product: replaces the input list with the product of all the entries
+maxall: replaces the input list with the maximum value of all the entries
+minall: replaces the input list with the minimum value of all the entries
+length: replaces each item in the input list with its string length in characters
+uppercase: replaces each item in the input with its uppercase equivalent
+lowercase: replaces each item in the input with its lowercase equivalent
+trim: trims each item in the input list
+concat: concatenates all of the items in the input list into a single string
+split: splits each of the items in the input list by a given separator
+join: joins all of the items in the input list with a given separator

@@ -1,0 +1,43 @@
+created: 20180606153448324
+creator: Mohammad
+modified: 20190216180309294
+modifier: Mohammad
+tags: button
+title: Button to Execute a Macro
+type: text/vnd.tiddlywiki
+
+\define gotoTid()
+<$action-navigate $to="ToDos" />
+\end
+
+!! A button to execute a macro
+The below button executes `gotoTid` macro. The macro navigates to `ToDos` tiddler.
+
+<<<
+```
+\define gotoTid()
+<$action-navigate $to="ToDos" />
+\end
+
+```
+<<<
+
+!! Method one
+<<<
+<$macrocall $name="wikitext-example-without-html" 
+src="""<$button>Goto ToDos Tiddler
+<<gotoTid>>
+</$button>
+"""/>
+<<<
+
+!! Alternative method
+<<<
+In the below method the action macro is given using the action attribute of button widget. This is the recommended method.
+
+<$macrocall $name="wikitext-example-without-html" 
+src="""<$button actions=<<gotoTid>> >
+Goto ToDos Tiddler
+</$button>
+"""/>
+<<<

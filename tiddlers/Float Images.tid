@@ -1,0 +1,19 @@
+created: 20180618030524807
+creator: Mohammad
+keywords: float image
+modified: 20190216180312237
+modifier: Mohammad
+responder: BTC
+tags: solution
+title: Float Images
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/5bZwwj6cyac/2LzFeA7AAwAJ
+
+What is the best practice for embedding float images in tiddlers to prevent overflow?
+
+!! Solution
+#https://groups.google.com/d/msg/tiddlywiki/5bZwwj6cyac/2LzFeA7AAwAJ
+#https://groups.google.com/d/msg/tiddlywiki/5bZwwj6cyac/bz_GPwsoBAAJ
+
+!! Remarks
+:The first solution seems to work better, the second does not work on TW 5.1.17 and above. The [[$:/plugins/.mr/shiraz/stylesheet/tw-adjustment]] has implemented the first version to wrap the float image inside the tiddler.

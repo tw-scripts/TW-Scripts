@@ -1,0 +1,30 @@
+created: 20181105213746723
+creator: Mohammad
+keywords: EditToolbar time
+modified: 20190216180308441
+modifier: Mohammad
+responder: Riz
+tags: solution
+title: A Simple Time Stamp
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/TiddlyWiki/UHt6GsMpyAQ/USFJxw68AQAJ
+
+How can we create a simple edit toolbar button to insert a time stamp?
+
+You can do it by a simple tiddler like this:
+
+```
+caption: CurrentTime
+condition: [<targetTiddler>!has[type]] [<targetTiddler>type[text/vnd.tiddlywiki]]
+description: Insert Current Time
+icon: $:/core/images/tip
+shortcuts: 
+tags: $:/tags/EditorToolbar
+title: $:/core/ui/EditorToolbar/Time
+
+<$action-sendmessage
+	$message="tm-edit-text-operation"
+	$param="replace-selection"
+	text=<<now>>
+/>
+```

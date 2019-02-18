@@ -1,0 +1,53 @@
+created: 20190207111737747
+creator: Mohammad
+modified: 20190216180316771
+modifier: Mohammad
+tags: datatiddler exmp42
+title: Remove Index/Value Using Form
+type: text/vnd.tiddlywiki
+
+\define reset-mydata()
+<$action-setfield $tiddler="exmp42/sample/data" 
+text="""USA:840
+GBR:826
+DEU:276
+GRD:308
+IRN:364
+FRA:250
+""" />
+
+\end
+
+;How to remove the index/value pairs using forms?
+: Use `select` widget to choose the desired index, and `action-setfield` to remove it.
+
+The below code includes
+
+* A `select` widget to lists all the indexes and let you choose one.
+* A temporary tiddler to store the selected index for later operation.
+* An `action-setfield` widget with //NO// `value` attribute to delete the index/value pair from DataTiddler.
+
+<$macrocall $name="wikitext-example-without-html" 
+src="""><$set name="dataTid" value="exmp42/sample/data">
+Select Index: <$select tiddler="$:/temp/exmp42">
+<$list filter='[<dataTid>indexes[]]'>
+<option value=<<currentTiddler>>><$view field='title'/></option>
+</$list>
+</$select> 
+<$button>Remove index/value
+<$action-setfield $tiddler=<<dataTid>> $index={{$:/temp/exmp42}}/>
+</$button>
+</$set>
+"""/>
+
+!! Demo DataTiddler
+The [[exmp42/sample/data]] is used in this example for demonstration purpose.
+>{{exmp42/sample/data}}
+
+!! Reset DataTiddler to its initial state
+You can reset the [[exmp42/sample/data]] to its initial state. This will allow you to do more experiments. The reset, will write again the data into tiddler. Just push reset button:
+
+><$button actions=<<reset-mydata>>>Reset to initial state</$button>
+
+!! See also
+* [[Jed Carty: InMySocks Wiki|http://inmysocks.tiddlyspot.com/#Bookmarks%20Settings]]

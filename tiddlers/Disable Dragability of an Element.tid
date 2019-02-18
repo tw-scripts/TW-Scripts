@@ -1,0 +1,37 @@
+created: 20190117053859694
+creator: Mohammad
+keywords: css drag drop
+modified: 20190216180309817
+modifier: Mohammad
+responder: Eric Shulman
+tags: solution
+title: Disable Dragability of an Element
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/iJjdxEq58tA/IIV8wBpDGgAJ
+
+There *is* a way to disable dragability of an element:
+
+The following CSS should disable dragging of all links:
+
+```
+a {
+   -moz-user-select: none;
+   -webkit-user-select: none;
+   -ms-user-select: none;
+    user-select: none;
+   -webkit-user-drag: none; user-drag: none;
+   -webkit-touch-callout: none;
+}
+```
+
+Note: to limit this to just certain links, change the above to:
+
+```
+.nodrag a { ... }
+```
+
+and then wrap the desired link(s) within .nodrag, like this:
+
+```
+@@.nodrag [[SomeLink]]@@
+```

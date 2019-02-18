@@ -1,0 +1,32 @@
+created: 20180628081702652
+modified: 20190216180309650
+modifier: Mohammad
+tags: operator filter
+title: Allbefore operator
+type: text/vnd.tiddlywiki
+
+! allbefore operator
+Discard all items except those before the marker
+
+*''Example 01''
+```
+<$list filter="[list[Week Days]allbefore[Wed]]" variable="day">
+<<day>>
+</$list>
+```
+><$list filter="[list[Week Days]allbefore[Wed]]" variable="day">
+<<day>>
+</$list>
+
+*''Example 02''
+Use //include// parameter
+
+```
+<$list filter="[list[Week Days]allbefore:include[Wed]]" variable="day">
+<<day>>
+</$list>
+```
+><$list filter="[list[Week Days]allbefore:include[Wed]]" variable="day">
+<<day>>
+</$list>
+

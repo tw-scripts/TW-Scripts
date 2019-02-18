@@ -1,0 +1,36 @@
+created: 20190207042248903
+creator: Mohammad
+modified: 20190216180314957
+modifier: Mohammad
+tags: datatiddler exmp39
+title: Listing DataTiddler Properties
+type: text/vnd.tiddlywiki
+
+The below examples shows how to access and list index/value pair of a DataTiddler (dictionary).
+
+!! Example i
+;How to retrieve and list selected number of properties (index/value pairs) of a DataTiddler?
+
+Assume you want to list index/value pairs only for "one, three, four" indexes of [[exmp39/roman-numbers]].
+
+
+<$macrocall $name="wikitext-example-without-html" 
+src="""><$list filter="one three four">
+<<currentTiddler>>: <$transclude tiddler="exmp39/roman-numbers" index=<<currentTiddler>>/><br>
+</$list>
+"""/>
+
+!! Exampe ii
+;How to retrieve and list all properties (index/value pairs) of a DataTiddler?
+
+<$macrocall $name="wikitext-example-without-html" 
+src="""><$list filter="[[exmp39/roman-numbers]indexes[]sort[]]">
+<<currentTiddler>>: <$transclude tiddler="exmp39/roman-numbers" index=<<currentTiddler>>/><br>
+</$list>
+"""/>
+
+!!! Remarks
+* The `indexes` selects all data properties of the input title, here [[exmp39/roman-numbers]]
+* The `sort` operator sorts the output
+* The `transclude` widget display the value of given index
+* The `currentTiddler` here is the loop variable and is used to show both the index and retrieve the value using transclude widget

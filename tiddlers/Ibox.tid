@@ -1,0 +1,14 @@
+created: 20190121172913049
+creator: Mohammad
+description: This wiki shows how to display images in TW > 5.1.5 using the <<ibox>> macro.
+developer: Tobias Beer
+keywords: lightbox ibox image photo
+modified: 20190216180311142
+modifier: Mohammad
+tags: Links
+title: Ibox
+type: text/vnd.tiddlywiki
+url: url: http://tobibeer.github.io/tw/ibox/#GettingStarted
+wiki-name: Ibox
+
+<<.keywords>>

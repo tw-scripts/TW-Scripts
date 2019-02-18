@@ -1,0 +1,14 @@
+created: 20180905161739809
+creator: Mohammad
+modified: 20190216180317326
+modifier: Mohammad
+tags: mywiki
+title: Notebox
+type: text/vnd.tiddlywiki
+
+<<<notebox
+*''url'': http://notebox.tiddlyspot.com/
+*''pass'': -
+*''user'': notebox
+*''desc'': CSS and macros for extended markup. Creates notebox and colored boxes for tip, info, warning, ...
+<<<

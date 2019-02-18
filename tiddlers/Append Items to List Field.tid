@@ -1,0 +1,25 @@
+created: 20181214172023283
+creator: Mohammad
+keywords: list append
+modified: 20190216180309622
+modifier: Mohammad
+responder: Mark S
+tags: solution
+title: Append Items to List Field
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/ENSs0lDkL68/AeGRl2pJBwAJ
+
+;How can I append items to `list field` of a tiddler?
+
+Assume the output of a list widget should be appended to the end of items in a list field of a tiddler. The below example shows all tiddlers tagged with `myTag` are appended to the `list` field of `$:/state/reference` tiddler.
+
+```
+<$button>
+<$action-listops $tiddler="$:/state/reference" $subfilter="[tag[myTag1]]"/>
+Populate list field of state reference
+</$button>
+```
+
+This works using the `action-listops` widget. 
+
+See also: https://tiddlywiki.com/#ActionListopsWidget

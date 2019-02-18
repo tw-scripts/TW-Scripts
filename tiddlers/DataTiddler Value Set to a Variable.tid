@@ -1,0 +1,26 @@
+created: 20190131181326003
+creator: Mohammad
+keywords: datatiddler dictionary variable index
+modified: 20190216180310122
+modifier: Mohammad
+responder: Eric Shulman
+tags: solution datatiddler
+title: DataTiddler Value Set to a Variable
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/99ljKjhUhbk/laY2GAoxDwAJ
+
+; How to transclude a Value of a DataTiddler Using a Variable?
+A reference to a data dictionary index is enclosed in doubled curly braces as below
+
+```
+value={{tiddlername##indexname}}
+```
+Note:  If the //tiddlername// portion of the reference is omitted, the reference is to an index in the currentTiddler
+
+```
+<$set name="var1" value={{tiddlername##indexname}}>
+   Here you have access to <<var1>>.
+</$set>
+```
+
+See also [[Variable as DataTiddler Index]] for more information.

@@ -1,0 +1,23 @@
+created: 20180621053320019
+modified: 20190216180315001
+tags: 
+title: List Tiddlers with Special Field
+type: text/vnd.tiddlywiki
+
+;How we can list tiddlers having a `note` filed?
+: ''Eric Shulman'':  If you intend to list only those tiddlers that have actual values for a field, you can use the "has[fieldname]" form of the filter, which selects only tiddlers with that field having a //non-blank// value.
+
+Ref: https://groups.google.com/d/msg/tiddlywiki/yCfGuRs46d4/Z_8oKTDgAAAJ
+
+```
+<$list filter="[has[note]]">
+<<currentTiddler>><br>
+</$list>
+```
+
+* ''Output''
+<<<
+<$list filter="[has[note]]">
+<<currentTiddler>><br>
+</$list>
+<<<

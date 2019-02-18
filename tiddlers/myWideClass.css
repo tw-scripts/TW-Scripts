@@ -1,0 +1,13 @@
+.myClass {
+border: 2px solid blue;
+background-color:#fff3e1;
+}
+
+/* Only customize the tiddler body */
+.shoutout .tc-tiddler-body{
+  font-size:2rem;
+  line-height:1.5rem;
+  text-align: center;
+  font-weight:300;
+  background-color:#efefff;
+}

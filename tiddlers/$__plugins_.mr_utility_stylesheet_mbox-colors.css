@@ -1,0 +1,19 @@
+.message-box{
+     border-radius:5px;
+     padding:10px;
+     color: #495057;
+}
+.bg-primary{
+     background-color:#e7f5ff;
+}
+.bg-warning {
+    background-color: #fff9db;
+}
+
+.bg-danger {
+    background-color: #fff5f5;
+}
+
+.bg-success {
+    background-color: #ebfbee;
+}

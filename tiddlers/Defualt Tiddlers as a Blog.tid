@@ -1,0 +1,22 @@
+created: 20181028042932580
+creator: Mohammad
+keywords: blog defualt-tiddlers
+modified: 20190216180310108
+modifier: Mohammad
+responder: Mark S
+tags: solution
+title: Defualt Tiddlers as a Blog
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/JaUleySfe2E/zfRGj81aCQAJ
+
+How to configure `Default tiddlers` to open all recent ordered by date like a blog?
+
+In the default tiddlers you can put:
+
+```
+[days[-7]!is[system]sort[modified]]
+```
+
+where -7 is how many days you want to appear (-7 means last 7 days).
+
+This is modified date, which changes whenever you update the tiddler. You can change it to `created` if you want, which is based on when the tiddler is created. The distinction might be important if you need to go back to blog entries and make corrections but don't want their order to change.

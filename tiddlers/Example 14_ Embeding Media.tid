@@ -1,0 +1,36 @@
+created: 20181121150521386
+creator: Mohammad
+modified: 20190216180310943
+modifier: Mohammad
+tags: exmp14
+title: Example 14: Embeding Media
+type: text/vnd.tiddlywiki
+
+* Example 1
+An embeded text document
+
+```
+<embed src="myfile.txt">
+<embed src="myfile.txt" type="text/plain">
+<embed src="myfile.txt" type="text/plain" height="50px" width="100%">
+```
+><div style="height:60px;background-color:beige;">
+<embed src="examples/myfile.txt">
+</div>
+
+* Example 2
+An embeded video document. To embed a video use Html5 `video` tag
+
+<$macrocall $name="wikitext-example-without-html" 
+src="""<div style="text-align:center;"> 
+<video controls width="320">
+ <source src="examples/SampleVideo_1280x720_1mb.mp4"
+         type="video/mp4">
+    Sorry, your browser doesn't support embedded videos.
+</video>
+</div>
+"""/>
+
+
+
+<<alert info "To center video, use `text-align:center;` CSS">>

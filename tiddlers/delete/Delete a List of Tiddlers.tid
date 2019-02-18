@@ -1,0 +1,56 @@
+created: 20181203034851202
+creator: Mohammad
+keywords: delete tiddler list button batch
+modified: 20190216180310100
+modifier: Mohammad
+responder: Mark S
+tags: batch solution
+title: Delete a List of Tiddlers
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/ERNELGnH6SY/PX8JKXBcBwAJ
+
+How to create a list of tiddlers tagged with say `mytag` having a delete button for each item? So, one can delete items optionally.
+
+!! Solution i
+Inspired by a similar solution By [[Mark S|https://groups.google.com/d/msg/tiddlywiki/ERNELGnH6SY/PX8JKXBcBwAJ]].
+
+List all tiddlers tagged with `Concepts` and dedicate a delete button to each item.
+
+<<<
+
+```
+<$list filter="[tag[Concepts]]">
+<$button message="tm-delete-tiddler"  >Delete</$button>
+<$text text= <<currentTiddler>> /><br/>
+</$list>
+```
+
+<$list filter="[tag[exmp01]]">
+<$button message="tm-delete-tiddler"  >Delete</$button>
+<$text text= <<currentTiddler>> /><br/>
+</$list>
+
+<<<
+
+!! Solution ii
+Anthony Muscio proposed a simple solution  [[here|https://github.com/kookma/TW-Scripts/issues/1#issue-400568972]]. It uses one button to //delete all tiddlers at once.//
+
+```
+<$button>
+<$list filter="[tag[Concepts]]" variable=tiddlername>
+<$action-deletetiddler $tiddler=<<tiddlername>>/>
+</$list>
+Delete Set
+</$button>
+```
+
+```
+<$button>
+<$action-deletetiddler $filter="[tag[Concepts]]"/>
+Delete Set
+</$button>
+```
+
+!! Solution iii
+Tobias Beer has given a solution inspired [[by posts|https://groups.google.com/d/msg/tiddlywiki/U9GYlwVXp6M/hAtthrlikgUJ]] from [[Stephan Hradek]] and [[Metabele]] to delete tiddlers using a filtered list...
+See it here [[tb5|https://tobibeer.github.io/tb5/#Deleting%20Tiddlers%20Via%20Lists]]

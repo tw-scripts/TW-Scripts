@@ -1,0 +1,13 @@
+created: 20181214165827926
+creator: Mohammad
+modified: 20190216180314835
+modifier: Mohammad
+tags: $:/tags/Macro
+title: macro/rank
+type: text/vnd.tiddlywiki
+
+\define rank(r:"5")
+<span style="font-weight:700;">$r$ [img[star.svg]]
+\end
+
+<<rank 5>>

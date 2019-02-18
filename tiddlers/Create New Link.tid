@@ -1,0 +1,18 @@
+created: 20180712135751907
+creator: Mohammad
+modified: 20190216180310276
+modifier: Mohammad
+title: Create New Link
+type: text/vnd.tiddlywiki
+
+<$button class="tc-btn-invisible"><span style="color:#4B0082; fill:#4B0082;">
+ {{$:/core/images/new-button}} New link</span>
+<$action-sendmessage 
+   $message="tm-new-tiddler"
+   description=""   
+   developer=""
+   tags="Links" 
+   url=""
+   wiki-name=""
+ />
+</$button>

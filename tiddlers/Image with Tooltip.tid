@@ -1,0 +1,26 @@
+created: 20180807130704039
+creator: Mohammad
+keywords: image tooltip
+modified: 20190216180315347
+modifier: Mohammad
+responder: Jeremy Ruston
+tags: solution
+title: Image with Tooltip
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/Q39-MpzN9W0/tqQXdcu7BwAJ
+
+\define image(tiddler, width:"128")
+<$tiddler tiddler=<<__tiddler__>>>
+<$image source={{!!title}} width=$width$ tooltip={{!!caption}}/>
+</$tiddler>
+\end
+
+! Image with tooltip
+
+```
+<<image pig.png 64>>
+```
+
+Hover mouse on image
+
+<<image pig.png 64>>

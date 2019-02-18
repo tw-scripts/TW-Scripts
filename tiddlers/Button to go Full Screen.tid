@@ -1,0 +1,37 @@
+created: 20180516025228703
+creator: Mohammad
+modified: 20190216180309281
+modifier: Mohammad
+tags: button learning
+title: Button to go Full Screen
+type: text/vnd.tiddlywiki
+
+\define my-actions()
+<$action-sendmessage $message="tm-home"/>
+<$action-sendmessage message="tm-full-screen" param="enter">
+\end
+
+!! Go to home and fullscreen
+This button close all tiddlers by triggering the Home action, and then goes to the full screen mode. It uses a macro for actions as below
+
+<<<
+```
+\define my-actions()
+<$action-sendmessage $message="tm-home"/>
+<$action-sendmessage message="tm-full-screen" param="enter">
+\end
+```
+
+Macro `my-actions` take do actions
+
+# closes all tiddlers and go to home by `$message="tm-home"`
+# goto fullscreen by `$message="tm-full-screen"`
+
+<<<
+
+><$macrocall $name="wikitext-example-without-html" 
+src="""<$button actions=<<my-actions>> >
+Home and Full Screen
+</$button>
+"""/>
+

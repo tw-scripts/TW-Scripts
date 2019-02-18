@@ -1,0 +1,11 @@
+created: 20190207122736640
+creator: Mohammad
+description: do not delete, this is part of exmp43
+modified: 20190216180310602
+modifier: Mohammad
+tags: exmp43
+title: Example 43: Macro Overloading
+type: text/vnd.tiddlywiki
+
+\define mac-xx() This is another macro in [[Example 43: Macro Overloading]].
+<<mac-yy>>

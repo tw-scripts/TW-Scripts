@@ -1,0 +1,44 @@
+created: 20180728065915859
+modified: 20190216180315128
+tags: 
+title: Link to the Top of Story River
+type: text/vnd.tiddlywiki
+
+Ref: [[TW5 Hacks|https://tid.li/tw5/hacks.html#%24%3A%2Fplugins%2Ftelmiger%2Flib%2Ftelements%2Flinktotop-standalone]]
+
+<div class="te-to-top">
+<$button class="te-btn-to-top" tooltip="top of the story">
+<$list variable="target" filter="[list[$:/StoryList]first[]]">
+<$action-navigate $to=<<target>>/>
+</$list>
+go to the top
+</$button>
+</div>
+
+<style>
+.te-to-top {
+	position: fixed;
+	bottom: 1rem;
+	right: 1rem;
+	font-size: 1.5rem;
+	height: 1.4em;
+	width: 1.4em;
+	background: rgba(0, 0, 0, .06);
+	overflow: hidden;
+	z-index: 999;
+}
+button.te-btn-to-top {
+	color: rgba(255, 255, 255, .8);
+	background: none;
+	border: none;
+	margin: 0;
+	padding: 0;
+}
+button.te-btn-to-top::before {
+	content: "\25B3";
+	line-height: 1.45;
+}
+button.te-btn-to-top:hover {
+	color: rgba(0, 0, 0, .8);
+}
+</style>

@@ -1,0 +1,14 @@
+created: 20181004060716821
+creator: Mohammad
+keywords: conditional if-clause
+modified: 20190216180311091
+modifier: Mohammad
+responder: Thomas Elmiger
+tags: solution
+title: If Then Else
+type: text/vnd.tiddlywiki
+url: https://tid.li/tw5/hacks.html#ifAisB%20%E2%80%93%20Compare%20if-then-else%20Style%20in%20Wikitext
+
+This macro offers a solution for simple if-then-else text generation.
+
+It presents some added value compared to the reveal widget: it accepts variables as well as transclusions and it can show an error message.

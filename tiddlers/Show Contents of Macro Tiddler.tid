@@ -1,0 +1,22 @@
+created: 20190117123056666
+creator: Mohammad
+modified: 20190216180317483
+modifier: Mohammad
+tags: howto
+title: Show Contents of Macro Tiddler
+type: text/vnd.tiddlywiki
+
+;How to show the contents of tiddler tagged with `$:/tags/Macro`?
+: Tiddlywiki by default hide the contents of any tiddler tagged with `$:/tags/Macro`. To display the contents of these tiddlers by default import the below two tiddlers to your wiki
+
+* [[viewtemplate/show-contents-macro-tiddler]]
+* [[stylesheet/show-contents-macro-tiddler]]
+
+!! Remarks
+The first tiddler is a ViewTemplate, shows the contents of every tiddler tagged with `$:/tags/Macro`
+
+> <pre><$text text={{viewtemplate/show-contents-macro-tiddler}}/></pre>
+
+The second tiddler is a Stylesheet hides the tiddler body to prevent
+
+> <pre><$text text={{stylesheet/show-contents-macro-tiddler}}/></pre>

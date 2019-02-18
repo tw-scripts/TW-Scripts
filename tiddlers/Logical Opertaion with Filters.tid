@@ -1,0 +1,17 @@
+created: 20181022181955857
+creator: Mohammad
+keywords: filter list logical 
+modified: 20190216180314906
+modifier: Mohammad
+responder: Jed Carty
+tags: filter solution
+title: Logical Opertaion with Filters
+type: text/vnd.tiddlywiki
+url: https://ooktech.com/jed/ExampleWikis/FilterLogicExamples/
+
+Filtering is very powerful and it can be used for logical operations. This is some notes about logic operations using filtering in tiddlywiki. Most of what is here isn't all that useful generally, but hopefully it can be used to simplify filtering problems in tiddlywiki.
+
+Filter operators that this applies to the operators //days//, //field//, //has//, //haschanged//, //is//, //regexp//, //sameday//, //search//, //prefix//, //suffix//, //tag// and untagged
+
+
+<<alert success  width:50% "A source used a lot is Tobias Beer's. Just note that a lot of //new operators// have been made since it was authored: http://tobibeer.github.io/tw/filters/#Filter%20Examples">>

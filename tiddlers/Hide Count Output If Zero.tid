@@ -1,0 +1,27 @@
+created: 20180730153952592
+creator: Mohammad
+keywords: count zero hide
+modified: 20190216180311664
+modifier: Mohammad
+responder: Eric Shulman
+tags: solution
+title: Hide Count Output If Zero
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/W1AZ8kUM2g8/xIEkb7i6AQAJ
+
+<$macrocall $name="wikitext-example-without-html" 
+src="""<$list filter="[has[myfilter]count[]]" variable=result >
+<$reveal default="0" type="match" text=<<result>>>
+NOTHING HERE FOLKS!
+</$reveal>
+<$reveal default="0" type="nomatch" text=<<result>>>
+<<result>>
+</$reveal>
+</$list>
+"""/>
+
+
+
+Also:
+
+* [[Mark S|https://groups.google.com/d/msg/tiddlywiki/W1AZ8kUM2g8/FFH27RysAQAJ]]

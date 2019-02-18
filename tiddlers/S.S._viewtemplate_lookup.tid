@@ -1,0 +1,11 @@
+created: 20190119052112576
+creator: Mohammad
+modified: 20190216180316664
+modifier: Mohammad
+tags: exmp28 $:/tags/ViewTemplate
+title: S.S./viewtemplate/lookup
+type: text/vnd.tiddlywiki
+
+<$list filter="[is[current]tag[lookup]]">
+<$macrocall $name="dictionary" word={{{ [<currentTiddler>removeprefix[Word: ]] }}} />
+</$list>

@@ -1,0 +1,54 @@
+created: 20180620190444548
+creator: Mohammad
+keywords: list sorting hierarchy
+modified: 20190216180315039
+modifier: Mohammad
+responder: Eric Shulman
+tags: exmp01 solution
+title: List Contact Tiddlers Based on a Category
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/SNCfVLGldTM/yj-OC4x7BwAJ
+
+! List contacts based on specified categories
+The following code lists contact tiddlers (tagged with contact) based on second tag as category. The categories are stored in [[Circles]] tiddler.
+
+* ''Tiddler contents''
+<<<
+<<list-links filter:"[tag[exmp01]] -[<currentTiddler>]">>
+<<<
+
+* ''Notes''
+<<<
+The thing to remember is that the brackets go with the TYPE of operand....
+
+* `[foo]` is a literal value
+* `<foo>` is a variable reference
+* `{{!!foo}}` is a reference to filed foo in current tiddler
+* `{someTiddler}` is a reference to the text filed of someTiddler
+* `{SomeTiddler!!foo}` is a reference to the value of the "foo" field in tiddler "someTiddler"
+<<<
+
+
+* ''Output''
+
+```
+<$list filter="[list[Circles!!text]]" variable="item">
+
+!! <<item>>
+<<<
+<$list filter="[tag[contact]tag<item>]">
+
+</$list>
+<<<
+</$list>
+```
+
+<$list filter="[list[Circles!!text]]" variable="item">
+
+!! <<item>>
+<<<
+<$list filter="[tag[contact]tag<item>]">
+
+</$list>
+<<<
+</$list>

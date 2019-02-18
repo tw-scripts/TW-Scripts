@@ -1,0 +1,39 @@
+created: 20181231151801763
+creator: Mohammad
+keywords: toc table content width tabbed size
+modified: 20190216180316069
+modifier: Mohammad
+responder: Mark S
+tags: toc solution
+title: Maximum Width of TOC
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/8YXvdaNdGwM/pA6Pn7f_DwAJ
+
+On the https://tiddlywiki.com/ website, if you make a tabbed internal Table of Contents as follows:
+
+```
+Tiddler Title: MyTest
+<$macrocall
+    $name="toc-tabbed-internal-nav"
+    tag="Learning"
+    selectedTiddler="$:/temp/toc/selectedTiddler"
+    unselectedText="<p>Select a topic in the table of contents. Click the arrow to expand a topic.</p>"
+    missingText="<p>Missing tiddler.</p>"
+/>
+```
+
+Some long  titles cause the left side to take up half the width of the tiddler, leaving too little space to display tiddler contents on the right side.
+
+I want to change (reduce) the width allowed on the left-side index of links without modifying the core tiddlers. How to do this?
+
+!! Solution
+
+Tag your tiddler above "Test". Create a stylesheet tiddler (a tiddler tagged $:/tags/Stylesheet) and put the below content inside it.
+
+```
+[data-tags~="Test"] .tc-tabbed-table-of-contents .tc-table-of-contents {
+max-width: 30% ;
+}
+```
+
+That should change the max-width. I think you can see how to change "Test" to some other tag name, if you prefer.

@@ -1,0 +1,23 @@
+created: 20180625161035033
+creator: Mohammad
+keywords: checkbox radio button
+modified: 20190216180309130
+modifier: Mohammad
+responder: Mark S
+status: R
+tags: solution
+title: Checkboxes Like Radio Button
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/MbeQgDUo1TM/nxPsxmRJCgAJ
+
+```
+L <$checkbox field=status checked="L" unchecked="R"/>
+R <$checkbox field=status checked="R" unchecked="L"/>
+```
+
+Left <$checkbox field=status checked="L" unchecked="R"/>
+Right <$checkbox field=status checked="R" unchecked="L"/>
+
+
+!! See also
+[[Checkbox with Three State]]

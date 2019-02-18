@@ -1,0 +1,18 @@
+created: 20190208093315319
+creator: Mohammad
+modified: 20190216180314440
+modifier: Mohammad
+tags: $:/tags/Macro exmp46
+title: exmp46/macro
+type: text/vnd.tiddlywiki
+
+\define sort-tagging(mainTag, label:"Sort Tagged Tiddlers", order:"ascend") 
+<$button>$label$
+<$reveal type="match" default="ascend" text=<<__order__>> >
+<$action-listops  $tiddler=<<__mainTag__>>  $filter="[tag<__mainTag__>sortan[]]"/>
+</$reveal>
+<$reveal type="nomatch" default="ascend" text=<<__order__>> >
+<$action-listops  $tiddler=<<__mainTag__>>  $filter="[tag<__mainTag__>!sortan[]]"/>
+</$reveal>
+</$button>
+\end

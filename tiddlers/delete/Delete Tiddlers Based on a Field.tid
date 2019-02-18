@@ -1,0 +1,26 @@
+created: 20181204054344056
+creator: Mohammad
+keywords: delete filed tiddler viewtemplate
+modified: 20190216180310086
+modifier: Mohammad
+responder: S.S. and Mohammad
+tags: field solution
+title: Delete Tiddlers Based on a Field
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/fakT2_B7gEw/B7d_Om6tBwAJ
+
+How develop a viewtemplate to show a red delete button on tiddlers have a `due` field?
+
+
+
+```
+<$list filter="[is[current]has[due]]">
+  <$button message="tm-delete-tiddler"  tooltip="delete tiddler" class="tc-btn-invisible">
+<span style=background-color:red; class=tc-tag-label>Delete</span>
+  </$button>
+</$list>
+```
+
+It shows a red button. On click it can delete the tiddler.
+
+<<alert success width:100% "The code can be used in a tiddler tagged with `$:/tags/ViewTemplate` to show the delete button on all target tiddlers">>

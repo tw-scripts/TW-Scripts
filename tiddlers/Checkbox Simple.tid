@@ -1,0 +1,13 @@
+created: 20180723191107086
+modified: 20190216180309143
+tags: checkbox
+title: Checkbox Simple
+type: text/vnd.tiddlywiki
+
+```
+<$checkbox tag="done">Is it done?</$checkbox>
+```
+
+This is a simple checkbox sets a tag to the current tiddler.
+
+<$checkbox tag="done">Is it done?</$checkbox>

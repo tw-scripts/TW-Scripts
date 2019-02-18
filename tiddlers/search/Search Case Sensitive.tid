@@ -1,0 +1,21 @@
+created: 20190124153838923
+creator: Mohammad
+modified: 20190216180316284
+modifier: Mohammad
+tags: search
+title: Search Case Sensitive
+type: text/vnd.tiddlywiki
+
+!! How do a case sensitive search?
+By the default the search operator is NOT case sensitive. To make a case sensitive search use the `casesensitive` flag
+
+!! Example
+Search all tiddlers have `Hirad` word in thier title or caption. The search should be case sensitive. The filter is then is:
+
+`[search:title,caption:casesensitive[Hirad]]`
+
+<$macrocall $name="wikitext-example-without-html" 
+src="""><$list filter="[search:title,caption:casesensitive[Hirad]]">
+
+</$list>
+"""/>

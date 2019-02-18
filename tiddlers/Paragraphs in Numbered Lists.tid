@@ -1,0 +1,35 @@
+created: 20181115150106640
+creator: Mohammad
+modified: 20190216180317095
+modifier: Mohammad
+title: Paragraphs in Numbered Lists
+type: text/vnd.tiddlywiki
+
+Entries in the list are delimited with a linebreak, making it impossible to include linebreaks within a list entry. There are a couple of workarounds.
+
+First, you can transclude paragraph content from another tiddler. For example:
+
+```
+* First entry
+* <$transclude tiddler="MyTiddler" mode="block"/>
+* Third entry
+```
+Secondly, you can use an HTML "div" element to contain the multiline content. For example:
+
+<<wikitext-example-without-html 
+src:"""
+# Step 1
+# Step 2
+# Step 3<div>
+
+Here is the first of several paragraphs. Note that the double linebreak preceding this paragraph is significant.
+
+And here is the second of several paragraphs.
+</div>
+# Step 4
+# Step 5
+# Step 6
+""">>
+
+; More information
+: [[Lists in wikitext|https://tiddlywiki.com/#Lists%20in%20WikiText]]

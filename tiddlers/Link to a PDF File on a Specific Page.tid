@@ -1,0 +1,26 @@
+created: 20181011062926118
+creator: Mohammad
+keywords: external link pdf page
+modified: 20190216180315156
+modifier: Mohammad
+responder: Mark S
+tags: exmp26 solution
+title: Link to a PDF File on a Specific Page
+type: text/vnd.tiddlywiki
+url: 
+
+; How to open a PDF file from inside TW and go to a specific page
+
+```
+[ext[your-label|pdf-file-address#page=pg-number]]
+```
+
+* Example
+```
+[ext[Math book|archive\books\math.pdf#page=4]]
+```
+See demos:
+
+* Simple demo: [[Example 26|demo/exmp26/link-pdf-to-page]]
+* Elegant demo (some data are stored in fields) [[Use of tiddler path|demo/exmp26/link-pdf-use-tiddlerpath]]
+

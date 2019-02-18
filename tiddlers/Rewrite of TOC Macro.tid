@@ -1,0 +1,80 @@
+created: 20181005144715707
+creator: Mohammad
+keywords: toc hide level macro
+modified: 20190216180316689
+modifier: Mohammad
+responder: Mark S
+tags: toc solution
+title: Rewrite of TOC Macro
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/ud_zV7Ss_bY/fdNrBSyJAgAJ
+
+<<alert warning """ ''Use with care''! Seems the TW toc macro supports this feature out of the box""">>
+
+; How is it possible to hide some toc levels in TW table of contents? In other words how you can customize the levels of TOC? or how you can limits the TOC up to level three?
+
+It seems the TW core macro `toc-selective-expandable` has not the capabilities to do this! A solution has been proposed by Mark S and he has rewritten the core macro as below
+
+<details>
+
+<summary>Details of code</summary>
+
+```
+\define toc-linked-selective-expandable-body(tag,sort:"",itemClassFilter:" ",exclude,path,prune:"")
+<$set name="toc-state" value=<<qualify """$:/state/toc$path$-$(currentTiddler)$""">>>
+  <$set name="toc-item-class" filter="""$itemClassFilter$""" emptyValue="toc-item" value="toc-item-selected" >
+<$set name="prune" value="""$prune$""">
+    <li class=<<toc-item-class>>>
+      <$link>
+          <$list filter="[all[current]]  -[enlist<prune>] +[tagging[]limit[1]]" variable="ignore" scratch="-[enlist<prune>]" emptyMessage="<$button class='tc-btn-invisible'>{{$:/core/images/blank}}</$button>">
+          <$reveal type="nomatch" state=<<toc-state>> text="open">
+            <$button set=<<toc-state>> setTo="open" class="tc-btn-invisible tc-popup-keep">
+              {{$:/core/images/right-arrow}}
+            </$button>
+          </$reveal>
+          <$reveal type="match" state=<<toc-state>> text="open">
+            <$button set=<<toc-state>> setTo="close" class="tc-btn-invisible tc-popup-keep">
+              {{$:/core/images/down-arrow}}
+            </$button>
+          </$reveal>
+        </$list>
+        <<toc-caption>>
+      </$link>
+      <$reveal type="match" state=<<toc-state>> text="open">
+        <$macrocall $name="toc-selective-expandable" tag=<<currentTiddler>> sort="""$sort$""" itemClassFilter="""$itemClassFilter$""" exclude="""$exclude$""" path="""$path$""" prune="""$prune$"""/>
+      </$reveal>
+    </li>
+</$set>
+  </$set>
+</$set>
+\end
+
+
+\define toc-selective-expandable-empty-message()
+<<toc-linked-selective-expandable-body tag:"""$(tag)$""" sort:"""$(sort)$""" itemClassFilter:"""$(itemClassFilter)$""" exclude:"""$(excluded)$""" path:"""$(path)$""" prune:"""$(prune)$""">>
+\end
+
+\define toc-selective-expandable(tag,sort:"",itemClassFilter,exclude,path,prune)
+<$vars tag="""$tag$""" sort="""$sort$""" itemClassFilter="""$itemClassFilter$""" excluded="""$exclude$ -[[$tag$]]""" path="""$path$/$tag$""" prune="""$prune$""" >
+  <ol class="tc-toc toc-selective-expandable">
+    <$list filter="""[all[shadows+tiddlers]tag[$tag$]!has[draft.of]$sort$] -[[$tag$]] $exclude$""">
+      <$list filter="[all[current]toc-link[no]]" variable="ignore" emptyMessage=<<toc-selective-expandable-empty-message>> >
+        <$macrocall $name=toc-unlinked-selective-expandable-body tag="""$tag$""" sort="""$sort$""" itemClassFilter="""$itemClassFilter$""" exclude=<<excluded>> path=<<path>> prune="""$prune$""" >
+      </$list>
+    </$list>
+  </ol>
+</$vars>
+\end
+```
+</details>
+
+<<alert danger """ ''Warning'': This code will overwrite the core macro, so it is recommended to rename these macro! """>>
+
+!! Example
+If used at [[https://TiddlyWiki.com]] will show the standard table of contents, but "Learning" and "Drag and Drop" (under Features) will both be links -- not expandable branches.
+
+```
+<div class="tc-table-of-contents">
+<<toc-selective-expandable "TableOfContents" prune:"Learning [[Drag and Drop]]">>
+</div>
+```

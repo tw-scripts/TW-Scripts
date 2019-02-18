@@ -1,0 +1,27 @@
+created: 20181003040536290
+creator: Mohammad
+keywords: transclude filter
+modified: 20190216180314216
+modifier: Mohammad
+responder: Mark S
+tags: solution
+title: Filtered Transclusion
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/HhXKiJMtR90/ThgVCmDpAQAJ
+
+Also have a look at [[filtered transclusion|https://tiddlywiki.com/prerelease/#Transclusion%20in%20WikiText]].
+
+The below syntax can be used to transclude a list of tiddlers matching a specified filter:
+
+```
+{{{[tag[2018.10.02]||DailyTemplate]}}}
+```
+
+The [[DailyTemplate]] is a simple template tiddler is used for output. 
+
+See the below the example in action. This example lists all tiddlers tagged with `2018.10.02`.
+
+
+<<wikitext-example-without-html 
+"""{{{ 2018.10.02  || DailyTemplate }}}
+""">>

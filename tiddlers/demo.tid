@@ -1,0 +1,15 @@
+created: 20181010122535206
+creator: Mohammad
+modified: 20190216180310079
+modifier: Mohammad
+title: demo
+type: text/vnd.tiddlywiki
+
+<$list filter='[tag<currentTiddler>limit[1]]' emptyMessage="No tagged tiddlers" variable=null>
+There are <$count filter='[tag<currentTiddler>]'/> tiddlers tagged with <code><<currentTiddler>></code> listed.
+<br>
+<ol>
+<$list filter='[tag<currentTiddler>]'>
+<li> <<currentTiddler>></li>
+</$list>
+</ol>

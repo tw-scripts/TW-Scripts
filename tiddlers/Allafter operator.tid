@@ -1,0 +1,32 @@
+created: 20180628083301741
+modified: 20190216180309659
+modifier: Mohammad
+tags: operator filter
+title: Allafter operator
+type: text/vnd.tiddlywiki
+
+! allafter operator
+Discard all items except those after the marker
+
+*''Example 01''
+```
+<$list filter="[list[Week Days]allafter[Wed]]" variable="day">
+<<day>>
+</$list>
+```
+><$list filter="[list[Week Days]allafter[Wed]]" variable="day">
+<<day>>
+</$list>
+
+*''Example 02''
+Use //include// parameter
+
+```
+<$list filter="[list[Week Days]allafter:include[Wed]]" variable="day">
+<<day>>
+</$list>
+```
+><$list filter="[list[Week Days]allafter:include[Wed]]" variable="day">
+<<day>>
+</$list>
+

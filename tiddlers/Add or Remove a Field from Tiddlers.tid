@@ -1,0 +1,56 @@
+created: 20190121043529373
+creator: Mohammad
+keywords: field add remove delete
+modified: 20190216180308142
+modifier: Mohammad
+responder: Tiddlywiki.com
+tags: exmp29 fieldmangler solution
+title: Add or Remove a Field from Tiddlers
+type: text/vnd.tiddlywiki
+url: https://tiddlywiki.com/#FieldManglerWidget
+
+! Add new fields
+; How to add a new field to a series of tiddlers?
+: List them and use `fieldmangler` to add the new filed.
+
+!! Example
+Add the new filed `rank` to all tiddlers tagged with `exmp29`
+
+><$macrocall $name="wikitext-example-without-html" 
+src="""<$button> Add the new rank field
+ <$list filter="[tag[exmp29]]">
+  <$fieldmangler>
+    <$action-sendmessage $message="tm-add-field" $param="rank"/>
+  </$fieldmangler>
+ </$list>
+</$button>
+"""/>
+
+!!! Remarks
+# The `list` widget list all tiddlers tagged with `Links`.
+# The `action-sendmessage` widget 
+# The button widget triggers the `tm-add-field` and add the `rank` field to all those tiddlers.
+
+! Remove fields
+; How delete a field from a series of tiddlers?
+: List them and use `fieldmangler` to delete the filed.
+
+!! Example
+Delete the filed `rank` from all tiddlers tagged with `exmp29`
+
+><$macrocall $name="wikitext-example-without-html" 
+src="""<$button> Delete the rank field
+ <$list filter="[tag[exmp29]has:field[rank]]">
+  <$fieldmangler>
+    <$action-sendmessage $message="tm-remove-field" $param="rank"/>
+  </$fieldmangler>
+ </$list>
+</$button>
+"""/>
+
+!! Remarks
+# The `list` widget list all tiddlers tagged with `exmp29` which has a field `rank`
+# The `action-sendmessage` widget 
+# The button widget triggers the `tm-remove-field` and deletes `rank` field from all those tiddlers.
+
+<<alert info "The field mangler widget manipulates the fields and tags of a tiddler.">>

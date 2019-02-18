@@ -1,0 +1,47 @@
+created: 20181123060623951
+creator: Mohammad
+keywords: slider reveal
+modified: 20190216180317420
+modifier: Mohammad
+responder: Ton Gerner
+tags: solution
+title: Slider Macro
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/jjQ7PQbMdps/X5s8paLrCQAJ
+
+\define slider(label,tiddler)
+<$button popup="$:/temp/$tiddler$" class="tc-btn-invisible tgc-slider"><$text text="$label$ »"/></$button>
+<!-- Since a tiddler is unique, the state tiddler will be unique -->
+<$reveal type="nomatch" text="" default="" state="$:/temp/$tiddler$" animate="yes">
+
+{{$tiddler$}}
+
+</$reveal>
+\end
+
+!! Slider 
+<<<
+The slider macro uses the `reveal` widget plus a `button` to show/hide the content of a tiddler.
+
+See this Ref http://tw5custom.tiddlyspot.com/ for more information.
+
+The calling syntax is as below:
+
+```
+<<slider label tiddler>>
+```
+Where the label and tiddler are the text to be displayed for slider and the title ot tiddler its content to be displayed.
+<<<
+
+!! Example
+<<<
+<$macrocall $name="wikitext-example-without-html" 
+src="""<<slider "Admin tools" "Administration Tools">>
+"""/>
+<<<
+
+<<alert primary "''Note:'' This macro has not a persistent state, so when lose its focus it will hide.">>
+
+!! See also
+* [[Slider Macro II]]
+* [[Slider Macro III]]

@@ -1,0 +1,14 @@
+created: 20180726085822640
+modified: 20190216180311448
+tags: 
+title: How to Update List Field
+type: text/vnd.tiddlywiki
+
+```
+\define updateListField()
+<$set name="myVar" filter="[tag<currentTiddler>]">
+<$action-setfield $tiddler=<<currentTiddler>> list=<<myVar>> />
+</$set>
+\end
+```
+This macro can update the list field of a tiddler

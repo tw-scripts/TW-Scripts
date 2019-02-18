@@ -1,0 +1,30 @@
+created: 20181122042335197
+creator: Mohammad
+keywords: template list
+modified: 20190216180317436
+modifier: Mohammad
+responder: Mark S
+tags: solution
+title: Simple Template with List
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/c1maS92I83w/6PVS88BvCQAJ
+
+This example shows how template can be used in a list. Assume you several tiddlers tagged with `exmp15` and each tiddler has a `color` field. You can display their text in the color specified in their color field as below:
+
+
+<<wikitext-example-without-html 
+src:"""<$list filter="[tag[exmp15]]" template="Exmp15-Template"></$list>
+""">>
+
+!! Template
+The template used here is:
+
+<code><$text text={{Exmp15-Template}}/></code>
+
+[[Another solution|https://groups.google.com/d/msg/tiddlywiki/c1maS92I83w/URU4o1NxCQAJ]] is to use the wikify widget as below in your template
+
+```
+<$wikify name="colorcode" text="<$view field='color'/><br/>">
+<font color=<<colorcode>>>The quick fox...</font><br/>
+</$wikify>
+```

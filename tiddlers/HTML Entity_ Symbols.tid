@@ -1,0 +1,27 @@
+created: 20181227143115627
+creator: Mohammad
+modified: 20190216180311256
+modifier: Mohammad
+tags: symbol html5
+title: HTML Entity: Symbols
+type: text/vnd.tiddlywiki
+
+<span style="font-size:2.5em;line-height:1.5em; color:gray;">
+&#9743;  &#9776;
+&#9788;  &#9825;
+&#9835;  &#9850;
+&#9885;  &#10043;
+&#10056; &#10057;
+&#10054; &#10019;
+&#10003; &#10005;
+&#10001; &#9993; &#10042;
+
+</span>
+
+
+<span style="font-size:3.5em;line-height:1.5em; color:gray;">
+&#9998; &#10004; &#10006; &#10002; &#10008;
+&#9918; &#9997; &#9992; &#9878; &#9732;&#9749; &#128269; &#128270; 	&#9728;
+</span>
+
+Ref:[[toptal|https://www.toptal.com/designers/htmlarrows/symbols/]]

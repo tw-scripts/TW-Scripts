@@ -1,0 +1,22 @@
+created: 20181203143826268
+creator: Mohammad
+keywords: story defualt tiddler
+modified: 20190216180310369
+modifier: Mohammad
+responder: Jan
+tags: solution
+title: Consolitate the Current Story to Default
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/SdagmscLITg/SN6uIOrKCQAJ
+
+How to consolitate the current story to default?
+
+the below button makes all the open tiddlers in story river as defult tiddlers.
+
+```
+<$set name="myStory" filter="[list[$:/StoryList]!tag[excludeStory]] -[[$:/core/ui/ControlPanel]]">
+<$button tooltip="set the default tiddlers to the current story">{{$:/core/images/save-button}} Story to Default
+<$action-setfield $tiddler="$:/DefaultTiddlers" $value=<<myStory>>/>
+</$button>
+</$set>
+```

@@ -1,0 +1,57 @@
+created: 20190204201056808
+creator: Mohammad
+keywords: highlight.js brush language
+modified: 20190216180310204
+modifier: Mohammad
+responder: Rob Hoelz
+tags: solution
+title: Custom Languages and Brushes for highlight.js
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/aOxmaJL_qbc/Gci5sRFyEQAJ
+
+!! Part i: add brush loader
+# Make sure you have the `highlight.js` plugin installed.
+# <div>
+
+Create a new tiddler as below. Name it whatever you like, here it is called //Extra brush loader//.
+
+* title: `Extra brush loader`
+* type: `application/javascript`
+* field name: `module-type`
+* field value: `startup`
+* with the following as text field:
+<<<
+```
+exports.after = ['load-modules'];
+
+exports.startup = function startup() {
+  let hljs = $tw.modules.execute('$:/plugins/tiddlywiki/highlight/highlight.js');
+
+  $tw.modules.forEachModuleOfType('highlighter', function(title, module) {
+    let moduleSource = $tw.wiki.getTiddlerText(title);
+    console.log('loading brush: ' + title);
+    $tw.utils.evalSandboxed(moduleSource, {hljs:hljs, exports:{}}, title);
+  });
+};
+```
+<<<
+</div>
+
+!! Part ii: add new brushes (languages)
+# Create a new tiddler with any title you like.
+# Set its type to `application/javascript`
+# Add a new field, name it `module-type` and set it to `highlighter`
+# Add the below line as its text field
+#* `if(typeof hljs !== 'undefined') {}`.
+# Download the new brush (language) you like from [[https://cdnjs.com/libraries/highlight.js]].
+# Open the brush you downloaded from step 5 above in a text editor and add its content between above curly brackets.
+# Save and reload wiki
+# For any other language to be added repeat these seven steps.
+
+!! Demo
+For a demo have a a look at: https://hoelz.ro/files/highlighter-example.html
+
+<<alert warning "''Note'': You need to have the `highlight.js` plugin installed in your wiki. If not from control panel, plugins, click get more plugins and install the `highlight.js`.">>
+
+!! Remarks
+* To add Fortran, Matlab and other languages not available in TW official plugin do as described above

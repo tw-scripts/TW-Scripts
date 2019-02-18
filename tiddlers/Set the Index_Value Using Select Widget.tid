@@ -1,0 +1,30 @@
+created: 20190207080922029
+creator: Mohammad
+keywords: datatiddler index/value select
+modified: 20190216180318751
+modifier: Mohammad
+tags: datatiddler exmp41
+title: Set the Index/Value Using Select Widget
+type: text/vnd.tiddlywiki
+
+; How to set the value of specified index in DataTiddler using `select` widget?
+
+The below example sets the value of `DEU` using a `select` widget. User can choose any value from the list of options.
+
+<$macrocall $name="wikitext-example-without-html" 
+src="""><$select tiddler='exmp41/country-codes' index="DEU">
+<option>Not set</option>
+<option>726</option>
+<option>276</option>
+<option>400</option>
+</$select>
+"""/>
+
+!!Remarks
+* The tiddler attribute gets the DataTiddler name
+* The index attribute gets the index name
+* On choosing any options it will be set for the specified index (here `DEU`).
+* <div> See the result in
+{{exmp41/country-codes}}
+</div>
+See also: [[Tiddlywiki|https://tiddlywiki.com/prerelease/#SelectWidget]]

@@ -1,0 +1,52 @@
+created: 20181220063559583
+creator: Mohammad
+keywords: else filter quote remove
+modified: 20190216180316764
+modifier: Mohammad
+responder: Mohammad
+tags: else solution
+title: Remove Surrounding Quotes
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/RvvgJ6j4v2I/COBJUO2eDAAJ
+
+\define remove-quotes(term)
+<$set name="item" value=<<__term__>> >
+  <$set name="noquote"
+    value={{{ [<item>removeprefix["]removesuffix["]] [<item>removeprefix[']removesuffix[']] ~[<item>] }}}
+    emptyValue="Process failed!"> 
+    <<noquote>>
+  </$set>
+</$set>
+\end
+
+! Using the ELSE run filter prefix
+The below code is a demo of //ELSE run// `~` filter prefix. It's purpose here is to get a parameter and remove its surrounding single or souble quotes. If the parameter has not any surrounding quotes, then returns itself.
+
+!! Macro
+```
+\define remove-quotes(term)
+<$set name="item" value=<<__term__>> >
+  <$set name="noquote"
+    value={{{ [<item>removeprefix["]removesuffix["]] [<item>removeprefix[']removesuffix[']] ~[<item>] }}}
+    emptyValue="Process failed!"
+  </$set>
+</$set>
+\end
+```
+
+!! Examples
+!!! Remove single quotes
+<$macrocall $name="wikitext-example-without-html" 
+src="""><<remove-quotes "'single quotes'">>
+"""/>
+
+!!! Remove double quotes
+<$macrocall $name="wikitext-example-without-html" 
+src="""><<remove-quotes '"double quotes"'>>
+"""/>
+
+!!! Empty value
+The macro will return the Process failed! if no parameter passed
+<$macrocall $name="wikitext-example-without-html" 
+src="""><<remove-quotes>>
+"""/>

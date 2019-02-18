@@ -1,0 +1,8 @@
+/* FOUR COLUMN MODE Used for ListWidget example*/
+.fourcolumns {
+   display:block;
+   -moz-column-count:4;
+   -moz-column-gap:1em;
+   -webkit-column-count: 4;
+   -webkit-column-gap:1em;
+}

@@ -1,0 +1,19 @@
+created: 20190130164624887
+creator: Mohammad
+keywords: iframe tiddler
+modified: 20190216180315414
+modifier: Mohammad
+responder: Jeremy Ruston
+tags: exmp32 solution
+title: Iframe and Tiddlers Contains a Html Page
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywikidev/y_Eesqx_qtI/Vc79zzwODQAJ
+
+I have a plain text tiddler, that contains a HTML page including head and body, javascript, including libraries etc... How is it possible to load it through iframe?
+
+!! Example
+The [[Example 32: Test.html]] contains HTML page. Using iframe as below it is possible to laod it.
+<<wikitext-example-without-html 
+src:"""<iframe src={{{ [[Example 32: Test.html]get[text]encodeuricomponent[]addprefix[data:text/html;charset=utf-8,]] }}} width=100% height=300/> 
+""">>
+

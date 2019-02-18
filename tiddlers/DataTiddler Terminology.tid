@@ -1,0 +1,22 @@
+created: 20190205182711700
+creator: Mohammad
+keywords: datatiddler index property value dictionary
+modified: 20190216180310129
+modifier: Mohammad
+responder: Google JSON Style Guide
+tags: datatiddler solution
+title: DataTiddler Terminology
+type: text/vnd.tiddlywiki
+url: https://google.github.io/styleguide/jsoncstyleguide.xml
+
+For the purposes of this style guide, we define the following terms:
+
+* property - a name/value pair inside a JSON object.
+* property name - the name (or key) portion of the property. It is called //index// in Tiddlywiki.
+* property value - the value portion of the property. It is called the //value// in Tiddlywiki.
+
+```
+"propertyName": "propertyValue"
+```
+
+<<alert info """The ''name/value'' pair together is a "property".""" width:50%>>

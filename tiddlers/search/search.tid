@@ -1,0 +1,29 @@
+caption: Search operation
+created: 20190124041504097
+creator: Mohammad
+list: [[Simple search]] [[Search Case Sensitive]] [[Search in Field]] [[Search in Several Fields]] [[Search in All Fields]] [[Search System or Non-System Tiddlers]] [[Search Titles Followed by Text]] [[Tips: Advanced Search with Search Operator]] [[Customize Search Result]]
+modified: 20190216180316363
+modifier: Mohammad
+tags: zolive $:/.mr/toc
+title: search
+type: text/vnd.tiddlywiki
+
+! Search filter
+Search filter operator is a powerful feature in Tiddlywiki lets you to look for information stored in tiddlers. It can search all fields and from TW 5.1.18 supports extended syntax.
+
+<<<From: [[Tiddlywiki.com|https://tiddlywiki.com/#search%20Operator]]
+
+```
+[search:<field list>:<flag list>[<operand>]]
+```
+* ''field list'': a comma delimited list of field names to restrict the search
+** defaults to <<.field tags>>, <<.field text>> and <<.field title>> if blank
+** an asterisk `*` instead of the field list causes the search to be performed across all fields available on each tiddler
+** preceding the list with a minus sign `-` reverses the order so that the search is performed on all fields except the listed fields
+* ''flag list'': a comma delimited list of flags (defaults to `words` if blank)
+* ''operand'': filter operand
+<<<
+
+See examples:
+
+><<list-links "[tag[search]]" type:"ol">>

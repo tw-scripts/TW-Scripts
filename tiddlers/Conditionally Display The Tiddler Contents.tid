@@ -1,0 +1,43 @@
+created: 20181209163259645
+creator: Mohammad
+keywords: viewtemplate conditional hide display body
+modified: 20190216180310376
+modifier: Mohammad
+responder: Eric Shulman
+tags: viewtemplate exmp16 solution
+title: Conditionally Display The Tiddler Contents
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywikidev/RmcrvyWpYZA/PAmAoFkZAwAJ
+
+; How display conditionally the content of any tiddler tagged with `erlang_code` as a code with a compile button?
+: A conditional viewtemplate, a stylesheet is needed as described below
+
+#<div>
+
+Create a tiddler tagged with `$:/tags/Viewtemplate` contains what is planned to be displayed conditionally, here it is planned to show a button and its text as a code.
+
+```
+<$list filter="[is[current]tag[erlang_code]]">
+<button>Compile</button>
+<pre>{{!!text}}</pre>
+</$list>
+```
+</div>
+#<div>
+
+Here there is a problem. It is that the custom ViewTemplate doesn't ''replace'' the standard view... it //ADDS// to it to the end of the standard view.  Thus, you see the tiddler content twice: first as standard wikitext output (the normal tiddler display) then followed by your custom-formatted output.
+
+To get the results you want, you need to suppress the standard output... but only when the tiddler is tagged "erlang_code".
+
+One quick way to achieve this is to use CSS to hide the standard tiddler "body" element.  Just put the following CSS into a tiddler tagged with `$:/tags/Stylesheet`:
+
+```
+[data-tags*="erlang_code"] .tc-tiddler-body { display:none; }
+```
+</div>
+#<div>
+
+Now create any tiddler you want and tag it with `erlang_code` and see the result. An example is given here.
+
+<<list-links "[tag[exmp16]] -[<currentTiddler>]">>
+</div>

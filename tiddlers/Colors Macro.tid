@@ -1,0 +1,48 @@
+created: 20180629145825195
+creator: Mohammad
+modified: 20190216180310471
+modifier: Mohammad
+tags: macro
+title: Colors Macro
+type: text/vnd.tiddlywiki
+
+\define colors(color:"black", txtcolor:"", bgcolor:"")
+<span style="font-size:0.9em;color:$color$;">&#9632;
+  <span style="color:$txtcolor$;background-color:$bgcolor$;">
+  $color$</span>
+</span>
+\end
+
+! Code
+```
+\define colors(color:"black", txtcolor:"", bgcolor:"")
+<span style="font-size:0.9em;color:$color$;">&#9632;
+  <span style="color:$txtcolor$;background-color:$bgcolor$;">
+  $color$</span>
+</span>
+\end
+```
+
+! Syntax
+```
+<<colors color:"yourColor" txtcolor"yourTXTcolor" bgcolor:"Background color">>
+```
+
+! Example
+```
+* <<colors "blue">>
+* <<colors "peru">>
+* <<colors "teal">>
+* <<colors "#bada55" "black" "#bada55">>
+* <<colors "#000000" "white" "black">>
+* <<colors "deeppink">>
+* <<colors "#663399" "white" "#663399">>
+```
+
+* <<colors "blue">>
+* <<colors "peru">>
+* <<colors "teal">>
+* <<colors "#bada55" "black" "#bada55">>
+* <<colors "#000000" "white" "black">>
+* <<colors "deeppink">>
+* <<colors "#663399" "white" "#663399">>

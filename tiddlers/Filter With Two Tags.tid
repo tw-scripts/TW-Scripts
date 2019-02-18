@@ -1,0 +1,37 @@
+created: 20180702182537279
+modified: 20190216180314237
+modifier: Mohammad
+tags: filter
+title: Filter With Two Tags
+type: text/vnd.tiddlywiki
+
+* `[tag[x]tag[y]]` all tiddlers tagged with both x and y
+* `[tag[x]] [tag[y]]` all tiddlers tagged either x or y
+
+Ref: https://tiddlywiki.com/#Introduction%20to%20filter%20notation
+
+
+! Example
+* Case I: ''and''
+```
+<$list filter="[tag[learning]tag[slide]]">
+<<currentTiddler>>
+</$list>
+```
+<<<
+<$list filter="[tag[learning]tag[slide]]">
+<<currentTiddler>>
+</$list>
+<<<
+
+* Case II: ''or''
+```
+<$list filter="[tag[exmp03]][tag[exmp02]]">
+<<currentTiddler>><br>
+</$list>
+```
+<<<
+<$list filter="[tag[exmp03]][tag[exmp02]]">
+<<currentTiddler>><br>
+</$list>
+<<<

@@ -1,0 +1,32 @@
+created: 20180430034354812
+creator: Mohammad
+modified: 20190216180315748
+modifier: Mohammad
+tags: tutorial $:/tags/SideBar
+title: myTab
+type: text/vnd.tiddlywiki
+
+<div style="font-size:0.9em">
+
+!! How to add a new Tab to sidebar
+
+If you use caption, it will be used for Tab caption
+
+# Create a tiddler
+# Tag it with `$:/tags/SideBar`
+# Populate with your desired data
+
+That is it
+
+!! How to add an expandable table of contents
+Put the below code inside the new tab tiddler. Replace the "myTab" with your desired tag
+
+```
+<div class="tc-table-of-contents">
+<<toc-expandable "myTab">>
+</div>
+```
+</div>
+
+^^Edit at: [[myTab]]
+^^

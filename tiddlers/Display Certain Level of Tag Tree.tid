@@ -1,0 +1,26 @@
+created: 20190207175959553
+creator: Mohammad
+keywords: tag hierachy toc
+modified: 20190216180309755
+modifier: Mohammad
+responder: Stephan Hradek
+tags: solution
+title: Display Certain Level of Tag Tree
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/8ULQNg7GPog/1tMjtdVyGhUJ
+
+;How to show a certain level of tag tree?
+: Use `tagging` operator to select certaing level.
+```
+level 1: <$list filter="[tag[$:/.mr/toc]]">
+
+</$list>
+
+level 2: <$list filter="[tag[$:/.mr/toc]tagging[]]">
+
+</$list>
+
+level 3: <$list filter="[tag[$:/.mr/toc]tagging[]tagging[]]">
+
+</$list>
+```

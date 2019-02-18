@@ -1,0 +1,23 @@
+created: 20181007162109777
+creator: Mohammad
+modified: 20190216180316739
+modifier: Mohammad
+tags: reveal
+title: Reveal Helper Tiddler
+type: text/vnd.tiddlywiki
+z-number: 130
+z-status: jeremy
+
+! Dont delete this tiddler
+This tiddler is used as a helper tiddler for ''reveal widget'' examples. So in its own it does nothing. 
+
+<<alert primary """
+''Helper tiddler'' is a tiddler used by other tiddler for demonstration purpose. There examples in this wiki where they need another tiddler fileds to be used!
+""">>
+
+
+The below examples use this helper tiddler
+
+><$list filter="[tag[reveal]search:text[Reveal Helper Tiddler]] -[[Reveal Helper Tiddler]]">
+<$link ><<currentTiddler>></$link><br>
+</$list>

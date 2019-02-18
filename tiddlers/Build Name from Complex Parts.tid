@@ -1,0 +1,27 @@
+created: 20181016023045856
+creator: Mohammad
+keywords: wikify complex field
+modified: 20190216180309388
+modifier: Mohammad
+responder: Mark S
+tags: solution
+title: Build Name from Complex Parts
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/w2kI4_VeohM/6wZXgMALCAAJ
+
+How we can create `tabs` from complex part of texts? Assume these parts are stored in tiddler fields
+
+```
+<$wikify name=Résumé text='{{!!released}} {{!!author}}-Résumé'>
+<$wikify name=Notes text='{{!!released}} {{!!author}}-Notes'>
+<<tabs "[<Résumé>] [<Notes>]" "Click the little link">>
+
+</$wikify>
+</$wikify>
+```
+
+* ''Pitfall''
+;[[Jeremy Ruston|https://groups.google.com/d/msg/tiddlywiki/w2kI4_VeohM/U8kwsI6TBwAJ]]
+Just to point out a pitfall of that approach -- the tranclusions {{!!released}} and {{!!author}} will be wikified, so if you have an author Mary McManus, then their second name would be turned into a link.
+
+If you want to display those fields without wikifying them, then use the `<$text text={{!!released}}/>` or `<$view field="released"/>` widgets.

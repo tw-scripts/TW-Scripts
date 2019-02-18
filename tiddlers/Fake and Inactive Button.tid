@@ -1,0 +1,46 @@
+created: 20180607182751008
+creator: Mohammad
+modified: 20190216180314387
+modifier: Mohammad
+tags: developer learning
+title: Fake and Inactive Button
+type: text/vnd.tiddlywiki
+
+\define fakebtn()
+<button style='opacity: 0.5;' disabled>This button is fake</button>
+\end
+
+*Fake button (disabled) proposed by Mark S
+<<<
+
+```
+<$list filter="[tag[someTag]limit[1]]" emptyMessage=<<fakebtn>> >
+<$button>This button is real</$button>
+</$list>
+```
+
+<$list filter="[tag[someTag]limit[1]]" emptyMessage=<<fakebtn>> >
+<$button>This button is real</$button>
+</$list>
+
+<<<
+
+* Not-allowed cursor
+<<<
+
+```
+<$button style='opacity: 0.6;cursor:not-allowed'>End</$button> 
+```
+
+<$button style='opacity: 0.6;cursor:not-allowed'>End</$button> 
+<<<
+
+* HTML5 disabled button
+<<<
+
+```
+<button disabled style='opacity: 0.6;'>End</button>
+```
+<button disabled style='opacity: 0.6;'>End</button>
+
+<<<

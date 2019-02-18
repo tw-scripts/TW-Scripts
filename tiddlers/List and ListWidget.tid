@@ -1,0 +1,75 @@
+created: 20180421071642344
+creator: Mohammad
+modified: 20190216180315063
+modifier: Mohammad
+tags: learn
+title: List and ListWidget
+type: text/vnd.tiddlywiki
+
+! ListWidget
+The list widget displays a sequence of tiddlers that match a tiddler filter. It can be used for many purposes:
+
+* Displaying custom lists of links, like in TiddlyWiki5's sidebar
+* Custom lists, such as "all tiddlers tagged 'task' that are not tagged 'done'"
+* Listing each of the tags applied to a tiddler
+* Handling the main story river
+
+The tiddlers are displayed by transcluding each in turn through a template. There are several ways to specify the template and for controlling the behaviour of the list.
+
+! Example 1
+
+* Plain list
+<<<
+```
+<$list filter="[tag[markup]sort[title]]"/>
+```
+
+<$list filter="[tag[markup]sort[title]]"/>
+<<<
+
+---
+
+* Custom item output
+<<<
+
+```
+<$list filter="[tag[markup]sort[title]]">
+<<currentTiddler>>
+{{||$:/core/ui/ViewTemplate/tags}}
+</$list>
+```
+
+<$list filter="[tag[markup]sort[title]]">
+<<currentTiddler>>
+{{||$:/core/ui/ViewTemplate/tags}}
+</$list>
+<<<
+
+! Example 2: Grouped List
+
+* ''Types Tab''
+
+```
+<$list filter={{$:/core/Filters/TypedTiddlers!!filter}}>
+<div class="tc-menu-list-item">
+<$view field="type"/>
+<$list filter="[type{!!type}!is[system]sort[title]]">
+<div class="tc-menu-list-subitem">
+<$link to={{!!title}}><$view field="title"/></$link>
+</div>
+</$list>
+</div>
+</$list>
+```
+
+<$list filter={{$:/core/Filters/TypedTiddlers!!filter}}>
+<div class="tc-menu-list-item">
+<$view field="type"/>
+<$list filter="[type{!!type}!is[system]sort[title]]">
+<div class="tc-menu-list-subitem">
+<$link to={{!!title}}><$view field="title"/></$link>
+</div>
+</$list>
+</div>
+</$list>
+

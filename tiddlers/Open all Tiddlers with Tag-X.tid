@@ -1,0 +1,43 @@
+created: 20190131172724975
+creator: Mohammad
+keywords: open navigate
+modified: 20190216180317272
+modifier: Mohammad
+responder: Mohammad
+tags: exmp33 solution
+title: Open all Tiddlers with Tag-X
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/w1i75p03AI0/laCpq-nKHAAJ
+
+;How is it possible to open all tiddlers tagged say with `mytag` in story river?
+:This is simply can be done using a button widget. See the below examples
+
+!! Example
+The below example contains a macro to create a button, accept a button caption, and a tag. On button click all currently open tiddlers in story river are closed and all tiddlers tagged say with `mytag` will be opened.
+
+The example is implemented using [[Example 33: Open all Tiddlers Tagged with batch]] tiddler
+
+<pre><$view tiddler="Example 33: Open all Tiddlers Tagged with batch"/></pre>
+
+!! Remarks
+# Macro `myproject` has three parameter attributes
+#* //mytag//: the tag name tiddlers tagged with
+#* //msort//: the type of sort, e.g.
+#** `title` to sort with tiddler title
+#** `created` to sort with tiddler created date
+#** `modified` to sort with tiddler modified date. This is the default value.
+#** etc
+#* //title//: this is the button caption
+# The `button` widget has two actions
+#* Close all currently open tiddlers in the story river using `tm-close-all-tiddlers` message
+#* Open all tiddlers tagged with //mytag// using a list widget and `action-navigate` widget.
+
+Go to [[Example 33|Example 33: Open all Tiddlers Tagged with batch]] to see the macro in action.
+
+<<alert info "''Note'': There is a plugin [[OpenAll|http://t5a.tiddlyspot.com/#Open%20All%20By%20Tag]] which adds a button to tag pill, lets open all tiddlers tagges with say `mytag`.">>
+
+!! Related solutions
+These solutions are similar:
+
+* [[Open All Tiddlers Meet Some Criteria]]
+* [[Close all Tiddlers and Open Home]]

@@ -1,0 +1,23 @@
+created: 20190128151059148
+creator: Mohammad
+keywords: drag-and-drop import
+modified: 20190216180309730
+modifier: Mohammad
+responder: Tiddlywiki
+tags: import solution
+title: Drag and Drop of Tag Pills
+type: text/vnd.tiddlywiki
+url: https://tiddlywiki.com/#Drag%20and%20Drop
+
+Tag pills are draggable, and are equivalent to simultaneously dragging all of the individual tiddlers carrying the tag
+
+If you drag-n-drop a Tag pill between wikis (two Tiddlywiki files) ALL the tiddlers under that Tag can get imported.
+
+!! Example
+Try to drag the below tag to another wiki files. This will import all tiddlers tagged with `coding` to the new wiki.
+
+<$macrocall $name="wikitext-example-without-html" 
+src="""<<tag coding>>
+"""/>
+
+Thanks to [[Josiah|https://groups.google.com/d/msg/tiddlywiki/GnA7A8tZcCM/QKH6T4YxHQAJ]]

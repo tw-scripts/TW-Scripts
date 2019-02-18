@@ -1,0 +1,63 @@
+created: 20190109103527391
+creator: Mohammad
+modified: 20190216180310664
+modifier: Mohammad
+tags: exmp21
+title: Example 21: List Tags Based on a Field
+type: text/vnd.tiddlywiki
+
+\define mytiddlerslist(myfield)
+<$list filter="[has[$myfield$]tags[]]"><$view field=title/> </$list>
+\end
+
+A macro as below is used to return all tiddlers having `myfiled`.
+
+```
+\define mytiddlerslist(myfield)
+<$list filter="[has[$myfield$]tags[]]"><$view field=title/> </$list>
+\end
+```
+
+Then the maco is called inside a `$wikify` widget and its result is passed to a `$list` widget.
+
+!! Working example 
+Here all tiddlers having `responder` field are listed inside macro and then the output is passed to another list to show the tiddler tags using a custom template.
+
+<$macrocall $name="wikitext-example-without-html" 
+src="""<div class="dynamic-table">
+<$wikify name="mytiddlers" text=<<mytiddlerslist responder>>>
+<$list filter=<<mytiddlers>> >
+ <span class="ditem">
+  <$transclude tiddler="$:/core/ui/TagTemplate"/>
+ </span>
+</$list>
+</$wikify>
+</div>
+"""/>
+
+!! Variable column method
+A fancy css here is used to display the results of above code [[See tiddlywiki.com |https://tiddlywiki.com/#Formatting%20List%20Results%20as%20Tables%20with%20CSS%20-%20Variable%20Column%20Method]].
+
+<<wikitext-example-without-html 
+src:"""<style>
+.dynamic-table {
+  max-width:700px; /* could transclude tiddler width instead */
+  -ms-box-orient: vertical;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: inline-flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.ditem {
+  max-width:160px; min-width:160px;
+  flex: 0 0 2em; /* -grow, -shrink, -basis */
+}
+""">>
+
+

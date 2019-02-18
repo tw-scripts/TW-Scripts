@@ -1,0 +1,18 @@
+created: 20181028181233567
+creator: Mohammad
+keywords: icon toolbar size css
+modified: 20190216180317427
+modifier: Mohammad
+responder: Thomas Elmiger
+tags: css solution
+title: Size of Icons in Tiddler Toolbar
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/K6j9BPqSmM4/XXfo6IyqCQAJ
+
+To change the size of icon simply put the below code inside a tiddler tagged with `$:/tags/Stylesheet`
+
+```
+.tc-tiddler-frame .tc-tiddler-controls {
+    font-size: 2em;
+}
+```

@@ -1,0 +1,17 @@
+caption: Buttons in Tiddlywiki
+created: 20180704023834307
+creator: Mohammad
+list: Exmp02-P01
+modified: 20190216180309224
+modifier: Mohammad
+tags: tutorial learning list
+title: Button Tutorial
+type: text/vnd.tiddlywiki
+
+[img class="float-right"[$:/favicon.ico]]
+
+!! ''A quick tutorial on TW Button''
+ Here the usage and application of button are shown through examples.
+
+
+<<tabs tabsList:"[tag[button]!has[draft.of]nsort[]]  -[[Macro Tutorial]]" default:"Go Full Screen" class:"tc-vertical">>

@@ -1,0 +1,49 @@
+created: 20180723140906962
+creator: Mohammad
+keywords: new tiddler textreference
+modified: 20190216180310270
+modifier: Mohammad
+responder: Mark S
+tags: solution button
+title: Create New Tiddler and TextReference in Tags
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/AA06IiOlZhs/TWM2SW9mCgAJ
+
+\define mybutton(param) 
+<$button>
+New Tiddler
+
+<$action-sendmessage $message="tm-new-tiddler"
+    title="Title"
+    text="some text..."
+
+    tags="slide [[$param$]]"
+/>
+</$button>
+\end
+
+How to use tm-new-tiddler and have more than one tag, some are text reference?
+: Whenever you need to concatenate strings (as you do with the tags) you almost always need to use a macro.
+
+```
+\define mybutton(param) 
+<$button>
+New Tiddler
+
+<$action-sendmessage $message="tm-new-tiddler"
+    title="Title"
+    text="some text..."
+
+    tags="slide [[$param$]]"
+/>
+</$button>
+\end
+```
+
+<$macrocall $name="wikitext-example-without-html" 
+src="""<$macrocall $name="mybutton" param={{!!title}}/>"""/>
+
+
+
+
+

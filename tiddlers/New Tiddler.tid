@@ -1,0 +1,16 @@
+created: 20190123054555393
+creator: Mohammad
+modified: 20190216180317338
+modifier: Mohammad
+tags: 
+title: New Tiddler
+type: text/vnd.tiddlywiki
+
+|A tag: myTag :|filter="[tag[myTag]]"|
+|Has both a tag for BOTH audio AND video :|filter="[tag[audio]tag[video]]"|
+|Has a tag for EITHER audio OR video :|filter="[tag[audio]] [tag[video]]"|
+|A title starting with: Word :|filter="[all[tiddlers]prefix[Word: ]]"|
+|An empty text field :|filter="[all[tiddlers]!has[text]]"|
+|Does not have a modified field:|filter="[all[tiddlers]!has[modified]]"|
+|Has a field called: author , but that field is NOT empty :|filter="[all[tiddlers]has:field[author]]"|
+|Has a field called: author , but that field is empty :|filter="[all[tiddlers]has:field[author]!has[author]]"|

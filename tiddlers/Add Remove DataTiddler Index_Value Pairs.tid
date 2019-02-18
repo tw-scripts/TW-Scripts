@@ -1,0 +1,49 @@
+created: 20190207064142677
+creator: Mohammad
+modified: 20190216180308064
+modifier: Mohammad
+tags: datatiddler exmp40
+title: Add Remove DataTiddler Index/Value Pairs
+type: text/vnd.tiddlywiki
+
+;How to add/remove DataTiddler properties (index/value pairs) using a TW script?
+
+To do this use the `action-setfield` widget as below. Note that the `action-setfield` is used within triggering widgets such as the ButtonWidget.
+
+!! Add a new index/value pair
+<<<
+To add a new index/value pairs use the `action-setfield` widget and specify both the `$index` and `$value` parameters.
+
+```
+<$action-setfield 
+ $tiddler="your-DataTiddler" 
+ $index="property-name" 
+ $value="property-value"
+/>
+```
+
+* Example
+Add the index/vlue (`PNG: Portable Network Graphics`) to the `Acronyms` DataTiddler.
+
+```
+<$action-setfield $tiddler="Acronyms" $index="PNG" $value="Portable Network Graphics"/>
+```
+<<<
+
+!! Remove an index/value pair
+<<<
+To remove an index/value pair use `action-setfield` with //NO// `$value` parameters. //When no value is specified//, `$index` ''will be deleted''.
+
+* Example
+Remove the index/vlue (`PNG: Portable Network Graphics`) from the `Acronyms` DataTiddler.
+
+```
+<$action-setfield $tiddler="Acronyms" $index="PNG"/>
+```
+<<<
+
+<<alert info "''Note'' that the `action-setfield` is used within triggering widgets such as the ''ButtonWidget''.">>
+
+!! For more information
+* See it in action: [[Example: Add/Remove DataTiddler Indexes]]
+* https://tiddlywiki.com/prerelease/#ActionSetFieldWidget

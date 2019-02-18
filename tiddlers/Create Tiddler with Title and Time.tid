@@ -1,0 +1,58 @@
+created: 20181114035156864
+creator: Mohammad
+keywords: time title tiddler substitution
+modified: 20190216180310263
+modifier: Mohammad
+responder: TonyM
+tags: solution
+title: Create Tiddler with Title and Time
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/nC5RtR1L01M/eXNz4RcNAAAJ
+
+\define newTid(param:"", btn-caption:"New project", color:"#8058A5") 
+<$button style="color:$color$; fill:$color$; margin-bottom:5px;">
+{{$:/core/images/new-button}} $btn-caption$
+
+<$wikify name="newTitle" text="""{{!!title}}: <<now "YYYY-0MM-0DD hh12:0mmpm">>""">
+<$action-sendmessage $message="tm-new-tiddler"
+    title=<<newTitle>>
+    text="..."
+    tags="[[$param$]]"
+/>
+</$wikify>
+</$button>
+\end
+
+
+Given a tiddler called "Tiddler X", how to include a button it that to create a new tiddler called "Tiddler X: and the current date time"
+
+* Create a macro to do the job
+
+```
+\define newTid(param:"", btn-caption:"New project", color:"#8058A5") 
+<$button style="color:$color$; fill:$color$; margin-bottom:5px;">
+{{$:/core/images/new-button}} $btn-caption$
+
+<$wikify name="newTitle" text="""{{!!title}}: <<now "YYYY-0MM-0DD hh12:0mmpm">>""">
+<$action-sendmessage $message="tm-new-tiddler"
+    title=<<newTitle>>
+    text="..."
+    tags="[[$param$]]"
+/>
+</$wikify>
+</$button>
+\end
+```
+
+* Example
+> `<<newTid param:"$(currentTiddler)$">>`
+Here macro is called by text substitution e.g `$(currentTiddler)$`
+
+<<newTid param:"$(currentTiddler)$">>
+
+<<alert info width:"60%"  """''Note'': In a thread [[Jeremy Ruston|https://groups.google.com/d/msg/tiddlywiki/glQhVBccv2k/ACBF8e2CAAAJ]] pointed out that //text substitution// like above is rarely the best way to do things. Another solution is to call macro using macrocall widget as shown below.
+""">>
+
+```
+<$macrocall $name="newTid" param=<<currentTiddler>> />
+```

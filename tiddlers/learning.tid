@@ -1,0 +1,12 @@
+caption: Learning
+created: 20180616073408474
+creator: Mohammad
+modified: 20190216180315207
+modifier: Mohammad
+tags: contents
+title: learning
+type: text/vnd.tiddlywiki
+
+<$list filter="[!is[system]tag[learning]sort[title]]">
+<$link to=<<currentTiddler>> tooltip="Custom tooltip"><$text text=<<currentTiddler>>/></$link><br>
+</$list>

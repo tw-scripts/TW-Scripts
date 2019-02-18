@@ -1,0 +1,27 @@
+created: 20190208190653532
+creator: Mohammad
+keywords: conditional viewtemplate tagging
+modified: 20190216180309747
+modifier: Mohammad
+responder: Mohammad and Jeremy Ruston
+tags: $:/_site/tagging tagging solution
+title: Display Tagged Tiddlers Using ViewTemplate
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/xkaG5GRu8jY/asFUUn6NFgAJ
+
+; How to display list of tiddlers tagged with parent tiddler, when it is opened?
+: Use conditional view template.
+
+!! Example
+The below template is show all tiddlers tagged with the parent tiddler as an ordered list:
+
+* It checks to see if there is any tiddler tagged with the current tiddler (parent). This is performed by the outer `list` widget.
+* It then makes a call to `list-links` macro to display the tiddlers using an ordered list.
+* A short message is also showed indication tiddlers tagged with the parent tiddler.
+
+Source: [[viewtemplate/tagging]]
+<pre><$view tiddler="viewtemplate/tagging"/></pre>
+
+<<vspace 2cm>>
+
+<$macrocall $name="alert" type="danger" text="""''Note'': Reffering to paranet tiddler by `<<currentTiddler>>` in the text is problematic. Using the double angle brackets syntax in the open like this causes the text in the target variable to be wikified. Thus, if you had a tiddler called "HelloThere Jeremy" the word "HelloThere" would be turned into a link to a different tiddler."""/>

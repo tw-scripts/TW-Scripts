@@ -1,0 +1,37 @@
+created: 20180801184016331
+creator: Mohammad
+keywords: tag add remove
+modified: 20190216180308047
+modifier: Mohammad
+responder: Mark S
+tags: exmp24 solution
+title: Add Remove Tags
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/dDtYhMUQgFY/xITWKkZSAQAJ
+
+! Add or remove tags to/from a tiddler
+; How a macro can add & remove tags from a tiddler with a single button?
+
+The below code can add an new tag to current tiddler and remove an old tag.
+
+```
+\define myactions(old, new)
+<$fieldmangler>
+<$action-sendmessage $message="tm-add-tag" $param="$new$"/>
+<$action-sendmessage $message="tm-remove-tag" $param="$old$"></$button>
+</$fieldmangler>
+\end
+\define add-remove-tags(old new)
+Add <<tag $new$>> Remove <<tag $old$>>
+<$button actions=<<myactions $old$ $new$>>>{{$:/core/images/erase}}
+</$button>
+\end
+
+<<add-remove-tags OldTopics Topics>>
+```
+
+* The `myactions` macro accpets `old` and `new` parameters, and uses the `fiedmanager` widget to adds the `new` tag and removes the `old` tag.
+* The `add-remove-tags` macro creates a button with a line of text to show which tag will be added and which will be removed. The `tag` macro creates a tag pill. This macro also accepts the `old` and `new` attributes as old and new tags. It can be called from any tiddler you wish (if so, the code should be placed inside a tiddler tagged with `$:/tags/Macro`).
+
+See [[Example 24|demo/exmp24: add remove tags]] to illustrate how this works.
+

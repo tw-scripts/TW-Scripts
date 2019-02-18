@@ -1,0 +1,17 @@
+created: 20180709160117309
+creator: Mohammad
+modified: 20190216180308535
+modifier: Mohammad
+tags: macro
+title: 100.51
+type: text/vnd.tiddlywiki
+
+To have private or NOT globally defined macros, define them in a tiddler of your choice and import them whenever you want to use.
+
+```
+<$importvariables filter="[tag[mySpecialMacros]]">
+All the macros defined in tiddlers with the tag "mySpecialMacros" are available here
+</$importvariables>
+```
+
+Ref: https://tiddlywiki.com/#ImportVariablesWidget

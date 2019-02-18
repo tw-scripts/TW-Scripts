@@ -1,0 +1,29 @@
+created: 20190124155034032
+creator: Mohammad
+modified: 20190216180316218
+modifier: Mohammad
+tags: search
+title: Search in All Fields
+type: text/vnd.tiddlywiki
+
+!! How to search all tiddler fields?
+In TW 5.1.18 above, it is possible to search all fileds of tiddler for a keyword or phrase. The syntax is as bellow
+
+<<<[[From Tiddlywiki|https://tiddlywiki.com/#search%20Operator]]
+
+```
+[search:*[keyword]]
+```
+<<<
+
+!! Example
+Search all NON system tiddlers have the word `Eric` in any field.
+
+* Use the filter: `[search:*[Eric]]`
+* To exclude the system tiddlers: `[search:*[Eric]!is[system]]`
+
+<$macrocall $name="wikitext-example-without-html" 
+src="""<$list filter="[search:*[Eric]!is[system]]">
+
+</$list>
+"""/>

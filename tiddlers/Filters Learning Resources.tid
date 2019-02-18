@@ -1,0 +1,13 @@
+created: 20180604193758351
+creator: Mohammad
+modified: 20190216180314165
+modifier: Mohammad
+tags: filter
+title: Filters Learning Resources
+type: text/vnd.tiddlywiki
+
+* [[https://tiddlywiki.com]] 
+*# [[Introduction to filters|https://tiddlywiki.com/#Filters]]
+*#[[Syntax|https://tiddlywiki.com/#Filter%20Syntax]]
+*#[[Operators|https://tiddlywiki.com/#Filter%20Operators]]
+* [[Tobias Beer filter and list examples|https://tobibeer.github.io/tw/filters]]

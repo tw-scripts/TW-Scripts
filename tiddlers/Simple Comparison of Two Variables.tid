@@ -1,0 +1,26 @@
+created: 20181107055331205
+creator: Mohammad
+keywords: conditional if-clause comparison variable
+modified: 20190216180317450
+modifier: Mohammad
+responder: Mark S
+tags: variable solution
+title: Simple Comparison of Two Variables
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/3NdhzmCD-Rs/8dqeMAYQAAAJ
+
+How to make a simply comparison between two variables or one variable and a fields content.
+
+* eg: `<<currentWiki>>` and  `{{!!wiki-owner}}`
+* or `<<currentWiki>>` and  `<<wiki-owner>>`
+
+A simple test or filter that will be true if they are the same and that will be false if they are the same 
+
+<$macrocall $name="wikitext-example-without-html" 
+src="""
+<$vars test1="abc" test2="abc">
+<$set name="myVariable" filter="[<test1>] -[<test2>]" emptyValue="They match" value="They dont match">
+<$text text=<<myVariable>>/>
+</$set>
+</$vars>
+"""/>

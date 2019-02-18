@@ -1,0 +1,51 @@
+created: 20180702013457481
+creator: Mohammad
+modified: 20190216180310395
+modifier: Mohammad
+tags: conditional reveal macro
+title: Conditional Operation
+type: text/vnd.tiddlywiki
+
+\define _maca(x) This is Macro ''A'':  $x$
+\define _macb(y) This is Macro ''B'':  $y$
+
+\define polymorph(input, cond:"a")
+ <$reveal type="match" text=$cond$ default="a")>
+    <<_maca $input$>>
+ </$reveal>
+ <$reveal type="match" text=$cond$ default="b")>
+    <<_macb $input$>>
+ </$reveal>
+\end
+
+! How to conditionally run a macro?
+The below code runs macro A `_maca` or macro B `_macb` based on the second parameter. The default is macro A
+
+```
+\define _maca(x) This is Macro ''A'':  $x$
+\define _macb(y) This is Macro ''B'':  $y$
+
+\define polymorph(input, cond:"a")
+ <$reveal type="match" text=$cond$ default="a")>
+    <<_maca $input$>>
+ </$reveal>
+ <$reveal type="match" text=$cond$ default="b")>
+    <<_macb $input$>>
+ </$reveal>
+\end
+```
+
+* ''Example''
+
+```
+<<polymorph "Hi">>
+<<polymorph input:"Hello">>
+<<polymorph input:"Hola" "b">>
+<<polymorph input:"Hola" cond:"b">>
+```
+<<<
+<<polymorph "Hi">>
+<<polymorph input:"Hello">>
+<<polymorph input:"Hola" "b">>
+<<polymorph input:"Hola" cond:"b">>
+<<<

@@ -1,0 +1,15 @@
+created: 20180628133245319
+creator: Mohammad
+modified: 20190216180317365
+modifier: Mohammad
+tags: tutorial learning
+title: Nested Lists Tutorial
+type: text/vnd.tiddlywiki
+
+[img class="float-right" [list.ico]]
+
+!! ''A set of examples of nested lists''
+ Here the usage and application of nested lists are shown through examples.
+
+
+<<tabs tabsList:"[tag[nested]!has[draft.of]nsort[]]  -[[Filters Tutorial]]" default:"20.01" class:"tc-vertical">>

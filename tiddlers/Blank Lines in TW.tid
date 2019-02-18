@@ -1,0 +1,20 @@
+created: 20180907042225227
+creator: Mohammad
+modified: 20190216180309451
+modifier: Mohammad
+tags: concept
+title: Blank Lines in TW
+type: text/vnd.tiddlywiki
+
+; How important are blank lines in wikitext?
+: Blank lines cause different mode of output (block mode or inline mode) 
+
+Ref: 
+
+ * [[Forum discussion|https://groups.google.com/d/msg/tiddlywiki/D6_qL9Dob3w/-eZXy_qqBAAJ]]
+ * [[HTML in wikitext|https://tiddlywiki.com/prerelease/#HTML%20in%20WikiText]]
+ 
+!! Block mode versus inline mode 
+ To get the content of an HTML element to be parsed in block mode, the opening tag must be followed by two linebreaks.
+
+Without the two linebreaks, the tag content will be parsed in inline mode which means that block mode formatting such as wikitext tables, lists and headings is not recognised.

@@ -1,0 +1,40 @@
+created: 20190130040857378
+creator: Mohammad
+keywords: search local-wiki
+modified: 20190216180316146
+modifier: Mohammad
+responder: Mohammad
+tags: solution
+title: Search in Local Wiki Files
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/_1dJ35L4GmQ/0L_cdPG4HQAJ
+
+Assume you have several local wiki files stored in different places in your disks (thumb drive, hard disks, local networks) and you want to search all of them from inside a main wiki (the one you normally work with), how to do this?
+
+To search local file you need these parts
+
+# A dictionary tiddler to store the full path to the local wikis
+# A user interface (UI) tiddler includes
+#* a textbox to get the keyword to search
+#* a set of checkbox to customize search
+#* a set of macro to make the links to local wiki files 
+
+!! Example
+Here an example is given. 
+
+* The dictionary tiddler contains full path to four local wikis: [[dictionary/mylocal-TWs]]
+<$transclude tiddler="dictionary/mylocal-TWs" />
+
+* The user interface (UI) tiddler to get the keyword, customize search and create the links [[Search Local TWs]].
+<pre><$view tiddler="Search Local TWs"/></pre>
+
+<<alert warning "''Note'': This solution only creates links and sends a request to lookup those local wikis. It does not retrieve the search results.">>
+
+!! See it in action
+
+* Import (by drag and drop) the below tiddlers to your wiki
+*# [[Search Local TWs]]
+*# [[dictionary/mylocal-TWs]]
+* Edit the conetnts of [[dictionary/mylocal-TWs]] to meet  your requirements. Note to the path and name of your local wikis. You can open your local wiki in browser and then copy its full path from browser address bar.
+* Open [[Search Local TWs]] and input a keywords and click on the links created below the textbox.
+* That's all.

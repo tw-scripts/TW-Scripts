@@ -1,0 +1,41 @@
+created: 20181213053823906
+creator: Mohammad
+keywords: list static hardcopy convert merge
+modified: 20190216180315030
+modifier: Mohammad
+responder: Mark S
+tags: solution
+title: List Results into Hardcopy
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/ug5mrWjLvOs/6k_gGizGBgAJ
+
+;How is it possible to write down the result of filtered list into another tiddler as harcopy (static text)?
+
+I'd like to make a button that allows me to create a "hard copy" of the list into a tiddler in the sense that you could open the tiddler file in another program and just see the list there, i.e. in the form of a normal text file.
+
+!! Solution
+The below code list all tiddler' tagged with `Learning` and then uses a button to write their conents into a tiddler called `myErrands` as a harcopy (static text).
+
+```
+\define mymegatext()
+<$list filter="[tag[Learning]limit[20]]">
+<$view field=text/>
+</$list>
+\end
+\define mybutton()
+<$wikify name=mytext text=<<mymegatext>>>
+<$action-setfield 
+$tiddler="myErrands"
+   tags="hardcopies"
+text=<<mytext>>
+/>
+</$wikify>
+
+\end
+
+<$button actions=<<mybutton>> >
+set Errands
+</$button>
+```
+
+This way it is possible to merge several tiddlers into one. Like merging all tiddlers tagged with `$:/tags/Stylesheet` and export the resulted tiddler to compress using a CSS online minifier.

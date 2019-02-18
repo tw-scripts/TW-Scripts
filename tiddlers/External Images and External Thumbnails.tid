@@ -1,0 +1,53 @@
+created: 20181126050910359
+creator: Mohammad
+keywords: image external
+modified: 20190216180314396
+modifier: Mohammad
+responder: Mark S
+tags: solution
+title: External Images and External Thumbnails
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/6pU_xG0VJec/2bXLAiFB9B0J
+
+; How to display external images (from local folders)? 
+:Have a thumbnail of the image displayed; click on thumbnail to see the full resolution image.
+
+The solution here uses two buttons, but it is possible to have a thumbnail and on click display the full resolution image. The solution includes two macros. The macro assumes
+
+* The images are located in a local folder
+* The thumbnails are stored in `thumbs` under image folder (default is `TW-Images/thumbs/`)
+
+```
+\define imageit(image:"image",path:"TW-Images/")
+<$macrocall $name="imageaid" image="$path$$image$" thumb="$path$thumbs/$image$" state="$:/ImageState/$image$" />
+\end
+\define imageaid(image:"image.jpg" ,thumb:"pathToThumb", state:"ImageRevealState")
+<$button set="$state$" setTo="hide">Full image</$button>
+<$button set="$state$" setTo="show">Small Image</$button><p/>
+<$reveal type="match" state="$state$" text="show">
+<img src="$thumb$" />
+</$reveal>
+<$reveal type="match" state="$state$" text="hide">
+<img src="$image$" />
+</$reveal>
+\end
+```
+
+* Main macro `imageit`
+|!Attribute|!Description|
+|imgage|The image name including extention e.g. `mypic.jpg`|
+|path|The path to image folder, defualt is `TW-Images/`|
+
+The macro `imageit` calls the other macro `imageid` which uses in turn `reveal` widget to show the images.
+
+!! How it works?
+# Put the macros in a tiddler tagged with `$:/tags/Macro`
+#<div>
+
+Call it whenever you like as below
+
+```
+<<imageit "mypic.jpg">>
+<<imageit "sample.png" "d:/TW/pictures/">>
+```
+</div>

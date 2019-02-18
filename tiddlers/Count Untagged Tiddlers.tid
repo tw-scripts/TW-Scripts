@@ -1,0 +1,13 @@
+created: 20180607073006899
+creator: Mohammad
+modified: 20190216180310318
+modifier: Mohammad
+tags: 
+title: Count Untagged Tiddlers
+type: text/vnd.tiddlywiki
+
+```
+<small class="tc-menu-list-count"><$count filter="[untagged[]!is[system]] -[tags[]]"/></small>
+```
+
+<small class="tc-menu-list-count"><$count filter="[untagged[]!is[system]] -[tags[]]"/></small>

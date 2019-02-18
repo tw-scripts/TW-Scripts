@@ -1,0 +1,40 @@
+created: 20181221095310256
+creator: Mohammad
+keywords: widget develop write
+modified: 20190216180311403
+modifier: Mohammad
+responder: Jeremy Ruston
+tags: solution
+title: How to write Widgets
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywikidev/Zs0scZcoqUg/3eOhKJg9CgAJ
+
+Chris Hunt did a nice walkthrough a few years ago:
+
+http://cjhunt.github.io/
+
+Bonus - it’s made with v5.0.7, which now seems ancient. But not much has changed since then, so I’d expect the material to still work.
+
+Alternatively, you could read through some of the core widgets in reverse order of complexity.
+
+https://github.com/Jermolene/TiddlyWiki5/tree/master/core/modules/widgets
+
+The “text" widget is a good place to start; it just renders a string of text provided as an attribute:
+
+https://github.com/Jermolene/TiddlyWiki5/blob/master/core/modules/widgets/text.js
+
+The “codeblock” is marginally more complex: it renders a `<code>/<pre>` pair to contain it’s rendered children:
+
+https://github.com/Jermolene/TiddlyWiki5/blob/master/core/modules/widgets/codeblock.js
+
+The “vars” widget introduces variable assignments:
+
+https://github.com/Jermolene/TiddlyWiki5/blob/master/core/modules/widgets/vars.js
+
+The “count” widget is a good example of a simple widget with a slightly more complicated refresh strategy: it only refreshes itself if the count has changed:
+
+https://github.com/Jermolene/TiddlyWiki5/blob/master/core/modules/widgets/count.js
+
+Finally, the “keyboard” widget is a simple example of a widget with an event handler:
+
+https://github.com/Jermolene/TiddlyWiki5/blob/master/core/modules/widgets/keyboard.js

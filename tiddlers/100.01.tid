@@ -1,0 +1,49 @@
+caption: Concatenation Macro
+created: 20180709151951617
+modified: 20190216180308714
+tags: macro
+title: 100.01
+type: text/vnd.tiddlywiki
+
+\define sayhi(name:"Bugs Bunny" address:"Rabbit Hole Hill")
+Hi, I'm $name$ and I live in $address$.
+\end
+
+* ''A simple macro definition''
+A macro is defined using a `\define` pragma. Like any pragma, //this can only appear at the start of a tiddler//.
+
+```
+\define sayhi(name:"Bugs Bunny" address:"Rabbit Hole Hill")
+Hi, I'm $name$ and I live in $address$.
+\end
+```
+
+* ''Macro call example''
+Note how macro parameters has been passed. How defualt values have been used.
+
+```
+#<<sayhi>>
+#<<sayhi Wolf>>
+#<<sayhi name:Wolf>>
+#<<sayhi "Great Wolf">>
+#<<sayhi Fox "Fox hHole">>
+#<<sayhi address:"London">>
+#<<sayhi address:"Paris" name:"Black Cat">>
+```
+* ''Result''
+#<<sayhi>>
+#<<sayhi Wolf>>
+#<<sayhi name:Wolf>>
+#<<sayhi "Great Wolf">>
+#<<sayhi Fox "Fox hHole">>
+#<<sayhi address:"London">>
+#<<sayhi address:"Paris" name:"Black Cat">>
+
+! Remarks
+<<<
+# Parameters can have default value.
+# Order of parameter can be changed by labels. See example 7.
+# Parameter value with no spaces can be sent without qoutes
+<<<
+
+Ref: More information [[tiddlywiki.com|https://tiddlywiki.com/#Macro%20Calls%20in%20WikiText]]

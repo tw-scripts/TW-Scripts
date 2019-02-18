@@ -1,0 +1,21 @@
+created: 20190107200516137
+modified: 20190216180310710
+tags: exmp20
+title: Example 20: Using subfilter
+type: text/vnd.tiddlywiki
+
+\define mac20() [search:title[example]]
+
+This is an example shows the application of `subfilter`. Here a macro reuturns a filter step.
+
+```
+\define mac20() [search:title[example]]
+```
+
+Then in a list widget it is used with another filter as below
+
+<$macrocall $name="wikitext-example-without-html" 
+src="""><$list filter="[subfilter<mac20>] +[tag[exmp16]]">
+
+</$list>
+"""/>

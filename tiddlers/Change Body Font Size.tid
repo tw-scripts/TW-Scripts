@@ -1,0 +1,45 @@
+created: 20180930165406729
+creator: Mohammad
+keywords: font
+modified: 20190216180309178
+modifier: Mohammad
+responder: Mohammad
+tags: solution
+title: Change Body Font Size
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/7XkeusUTdZU/x3kv5FHlAwAJ
+
+\define set-lineheight()
+<$list filter="[range[18,24]addsuffix[px]after{$:/themes/tiddlywiki/vanilla/metrics/bodyfontsize!!text}]" variable="font-size">
+<$action-setfield $tiddler="$:/themes/tiddlywiki/vanilla/metrics/bodylineheight" text="26px"/>
+</$list>
+<$list filter="[range[10,18]addsuffix[px]after{$:/themes/tiddlywiki/vanilla/metrics/bodyfontsize!!text}]" variable="font-size">
+<$action-setfield $tiddler="$:/themes/tiddlywiki/vanilla/metrics/bodylineheight" text="22px"/>
+</$list>
+\end
+
+Other Ref: [[JD|https://groups.google.com/d/msg/tiddlywiki/7XkeusUTdZU/x3kv5FHlAwAJ]]
+
+''Font size:''
+<$select tiddler='$:/themes/tiddlywiki/vanilla/metrics/bodyfontsize' defualt="15px"
+actions=<<set-lineheight>> >
+<$list filter="[range[10,24]addsuffix[px]]" variable="font-size">
+<option value=<<font-size>>><<font-size>></option>
+</$list>
+</$select>
+<$button>Reset
+<$action-setfield $tiddler="$:/themes/tiddlywiki/vanilla/metrics/bodyfontsize" text="15px"/>
+<$action-setfield $tiddler="$:/themes/tiddlywiki/vanilla/metrics/bodylineheight" text="22px"/>
+</$button>
+
+!! How to change the body font?
+
+
+To change the body font size and line height the below two system tiddlers are used
+
+* [[$:/themes/tiddlywiki/vanilla/metrics/bodyfontsize]]
+* [[$:/themes/tiddlywiki/vanilla/metrics/bodylineheight]]
+
+Here a code has been developed to use a select widget to handle body font sizing. To see the code edit this tiddler. Here based on the font size the line height is changed. A new `range` operator from TW5.1.18 is used to generate a list of font sizes. The line height here is set in two values, for small font `22px` and for big font `26px` line height is used.
+
+<<alert primary "If you want to have the control buttons above the sidebar tag this tiddler with `$:\tags\PageControls`">>

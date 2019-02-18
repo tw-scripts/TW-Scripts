@@ -1,0 +1,43 @@
+created: 20190130165138330
+creator: Mohammad
+keywords: iframe local html file
+modified: 20190216180314921
+modifier: Mohammad
+responder: Mohammad
+tags: solution
+title: Load a Local HTML File in an Iframe
+type: text/vnd.tiddlywiki
+url: -
+
+How to load a local html file into TW using `iframe`?
+
+# Assume غخع have a local html file called //test.html// located in `examples/test.html`
+# Use the html5 ifram tag as below
+
+```
+<iframe src="relative path to local html" width="xx" height="xx" />
+```
+
+!! Example
+The below //test.html// located in examples folder
+
+```
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+        <meta charset="utf-8"> 
+        <title>An HTML page</title> 
+</head> 
+<body> 
+<h1>An HTML page</h1> 
+<p>This is an HTML page.</p> 
+</body> 
+</html> 
+```
+
+Now load it using `iframe` as below:
+
+<<wikitext-example-without-html 
+src:"""<iframe src="examples/test.html" width=100% height=300/>
+""">>
+ 

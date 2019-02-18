@@ -1,0 +1,21 @@
+created: 20190128161742986
+creator: Mohammad
+description: contains utility macros for TW-Scripts documentation
+modified: 20190216180307378
+modifier: Mohammad
+tags: $:/tags/Macro
+title: $:/.mr/macro/utility
+type: text/vnd.tiddlywiki
+
+\define advanced-search()
+[[Advanced Search|$:/AdvancedSearch]] {{$:/core/ui/Buttons/advanced-search}}
+\end
+
+\define make-link(title:"Empty")
+<$reveal type="match" text=<<__title__>> default="Empty">
+<$link to="$(currentTiddler)$" ><$text text="$(currentTiddler)$" /></$link>
+</$reveal>
+<$reveal type="nomatch" text=<<__title__>> default="Empty">
+<$link to=<<__title__>>><$text text=<<__title__>> /></$link>
+</$reveal>
+\end

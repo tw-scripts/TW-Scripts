@@ -1,0 +1,29 @@
+created: 20180413035202974
+creator: Mohammad
+modified: 20190216180309741
+modifier: Mohammad
+tags: tiddlyfor
+title: Documentation Style Guide
+type: text/vnd.tiddlywiki
+
+For consistency, the following rules are recommended when using TiddlyFor as documentation tool.
+
+!!! Tiddlers
+
+* Phillosophy
+* Structure
+* Tagging
+
+!!! Formatting
+
+* Tiddler title shall be capitalized for each work except prepositions and like
+* Headings in sentence case
+
+<<footnote title:"References" 
+text:"
+* TiddlyWiki Documentation Style Guide
+* These are proposed by Pierre
+*# https://pdebuyl.github.io/fortran_hash_table/
+*# http://lab.pdebuyl.be/rmpcdmd/
+*# https://github.com/Fortran-FOSS-Programmers/Best_Practices
+">>

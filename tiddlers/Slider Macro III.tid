@@ -1,0 +1,57 @@
+created: 20181204083701214
+creator: Mohammad
+keywords: slider reveal
+modified: 20190216180317403
+modifier: Mohammad
+responder: Jed Carty
+tags: solution
+title: Slider Macro III
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/WHJVLfeQeWE/p4yqtse8BwAJ
+
+\define slider(label,text)
+<$button popup="state/$(currentTiddler)$$label$" class="tc-btn-invisible"><span style="color:#e55;text-decoration: underline">$label$</span></$button>
+<$reveal type="nomatch" text="" default="" state="state/$(currentTiddler)$$label$" animate="yes">
+<blockquote>
+
+$text$
+
+</blockquote>
+</$reveal>
+\end
+
+A simple slider macro is one accepts a label and a text to be displayed on clicking the label. The below code contains:
+
+* A macro to accpets label, and text as input parameters
+* A `button` to change a state tiddler
+* A `reveal` widget to display the text based on the content of slide tiddler
+
+```
+\define slider(label,text)
+<$button popup="state/$(currentTiddler)$$label$" class="tc-btn-invisible"><span style="color:#e55;text-decoration: underline">$label$</span></$button>
+<$reveal type="nomatch" text="" default="" state="state/$(currentTiddler)$$label$" animate="yes">
+<blockquote>
+
+$text$
+
+</blockquote>
+</$reveal>
+\end
+```
+
+!! Example
+Click on the undelined red words to see the slider in action.
+
+<$macrocall $name="wikitext-example-without-html" 
+src="""<<slider "Carlla" "Hello there. This is a test.">>
+"""/>
+
+<$macrocall $name="wikitext-example-without-html" 
+src="""<<slider "Pira" "My name is Pira.">>
+"""/>
+
+<<alert warning "''Note'': Slider content will be hidden if it loses its focus, e.g when click outside the label area.">>
+
+!! See also
+* [[Slider Macro]]
+* [[Slider Macro II]]

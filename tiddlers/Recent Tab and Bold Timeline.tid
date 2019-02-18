@@ -1,0 +1,31 @@
+created: 20190122143056237
+creator: Mohammad
+keywords: recent tab format date timeline
+modified: 20190216180316792
+modifier: Mohammad
+responder: Thomas Telmiger
+tags: exmp30 solution
+title: Recent Tab and Bold Timeline
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/eH4h6xFwInw/65lqZGBtGwAJ
+
+;How can I make it so that in the Recent tab the dates in which the tiddlers are ordered appear highlighted in bold?
+: Use customized style sheet
+
+# Create a new tiddler
+# Tag it with `$:/tags/Stylesheet`
+# <div>
+
+Put the below css inside it
+
+```
+/* Recent tab */
+.tc-sidebar-lists .tc-timeline {
+   font-weight: bold;
+}
+```
+
+</div>
+# Save and see the result
+
+See [[Example 30: Colored Timeline]]

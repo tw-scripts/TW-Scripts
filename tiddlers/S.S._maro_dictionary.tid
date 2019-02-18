@@ -1,0 +1,22 @@
+created: 20190119042329206
+creator: Mohammad
+modified: 20190216180316670
+modifier: Mohammad
+tags: exmp28 $:/tags/Macro
+title: S.S./maro/dictionary
+type: text/vnd.tiddlywiki
+
+\define dataLinkCreator(data-file index word)
+\rules except wikilink
+<$wikify name="input" text="{{$data-file$##$index$}}$word$">
+<a href=<<input>> target="_blank">$index$</a>
+</$wikify>
+\end
+
+\define dictionary(word datafile:"S.S./data/dictionaryLinks")
+<small>
+<$list filter="[[$datafile$]indexes[]]" variable="index">
+<$macrocall $name="dataLinkCreator" data-file="$datafile$" index=<<index>> word=$word$/>
+</$list>
+</small>
+\end

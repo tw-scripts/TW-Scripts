@@ -1,0 +1,22 @@
+created: 20180628132730919
+creator: Mohammad
+modified: 20190216180308496
+modifier: Mohammad
+note: 20.01-29.99 tiddlers describe nested lists
+tags: nested
+title: 20.02
+type: text/vnd.tiddlywiki
+
+! Nested list 
+A simple nested list
+
+<$list filter="[tag[example]sort[]]">
+<<currentTiddler>>:
+<blockquote>
+<$list filter="[<currentTiddler>tags[]]">
+
+Tagged with <<currentTiddler>>
+</$list>
+
+</blockquote>
+</$list>

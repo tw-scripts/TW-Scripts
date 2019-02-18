@@ -1,0 +1,23 @@
+caption: Concatenation Macro
+created: 20180627181421936
+modified: 20190216180308564
+tags: macro
+title: 100.100
+type: text/vnd.tiddlywiki
+
+\define concatenate(s1:"", s2:"") $s1$$s2$
+
+! {{!!caption}}
+This is a concatenation macro and it can concatenated two strings
+
+```
+\define concatenate(s1:"", s2:"") $s1$$s2$
+```
+
+* ''Example''
+
+```
+<<concatenate "sub" "01">>
+```
+
+<<concatenate "sub" "01">>

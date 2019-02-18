@@ -1,0 +1,31 @@
+caption: Batch operation
+created: 20190122062457284
+creator: Mohammad
+modified: 20190216180309597
+modifier: Mohammad
+tags: zclay $:/.mr/toc
+title: batch
+type: text/vnd.tiddlywiki
+
+Batch operation means do p[eration on all tiddlers meet certain criteria.
+
+!! Certain criteria means like below
+
+* all have special tag
+* all have certain field
+* all have certain field value
+* all have certain creation/modified data
+* all have certain words in their title
+* all have certain words in their body (text)
+
+!! Operation (batch operation)
+* Delete Those Tiddlers
+* Delete a certain fields from Those Tiddlers
+* Add a new tag to Those Tiddlers
+* Add a new field to Those Tiddlers
+* Change a field in Those Tiddlers
+* Add some text to Those Tiddlers
+
+<<alert primary "Those Tiddlers means: meet certain criteria">>
+
+See tiddlers tagged with <<tag batch>>

@@ -1,0 +1,69 @@
+created: 20190201131114561
+creator: Mohammad
+keywords: concatenate export contents
+modified: 20190216180310429
+modifier: Mohammad
+responder: Eric Shulman
+tags: solution
+title: Concatenate the Contents of Different Tiddlers
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/yzVdb42TUBI/mWXIBI7ZCAAJ
+
+; How to hardcopy the contents of several tiddlers in one tiddler?
+Sometimes it is rquired to concatenate the contents of several tiddlers into one anothere tiddler to get the final fixed form of contents. The below is one solution is given by {{!!responder}}.
+
+
+#<div>
+
+First, we need some wiki syntax for generating the desired output.  Something like this:
+
+```
+<$list filter="[tag[About]]"><$text text={{!!text}}/></$list>
+```
+</div>
+
+#<div>
+
+Next, we can 'capture' that output to a variable, using the `<$wikify>` widget:
+
+```
+<$wikify name="out" text="""<$list filter="[tag[About]]"><$text text={{!!text}}/></$list>""">
+   <<out>>
+</$wikify>
+```
+</div>
+
+#<div>
+
+Then, wrap that in a button so we can trigger an action to save the output to a tiddler instead of directly rendering the output:
+
+```
+<$button> CLICK ME
+   <$wikify name="out" text="""<$list filter="[tag[About]]"><$text text={{!!text}}/></$list>""">
+      <$action-setfield $tiddler="JoinedOutput" text=<<out>> />
+   </$wikify>
+</$button>
+```
+</div>
+
+# <div>
+
+Finally, for convenient re-use, wrap the entire button in a macro definition, and replace the literal values with macro parameter references
+
+```
+\define join(label,tag,target)
+<$button> $label$
+   <$wikify name="out" text="""<$list filter="[tag[$tag$]]"><$text text={{!!text}}/></$list>""">
+      <$action-setfield $tiddler="$target$" text=<<out>> />
+   </$wikify>
+</$button>
+\end
+
+<<join "CLICK ME" "About" "JoinedOutput">>
+```
+</div>
+
+
+!! See also
+* [[Export a List of Tiddlers]]
+* [[Thomas Elmiger solution for Readers and Writers|https://tid.li/tw5/test/concept.html]]

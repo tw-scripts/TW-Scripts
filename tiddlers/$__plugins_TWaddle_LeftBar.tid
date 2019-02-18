@@ -1,0 +1,77 @@
+author: Mat von TWaddle
+core-version: >=5.1.16
+created: 20180905142253202
+creator: Mat von TWaddle
+description: LeftBar - a menu type sidebar, on the left
+list: contents readme
+modified: 20190216180307483
+modifier: Mat von TWaddle
+plugin-type: plugin
+title: $:/plugins/TWaddle/LeftBar
+type: application/json
+version: 2.1.4
+
+{
+    "tiddlers": {
+        "$:/plugins/TWaddle/LeftBar/Toggle": {
+            "text": "\\define leftbar-content()\n<div class=\"leftbar-content\">\n\n{{$:/plugins/TWaddle/LeftBar/Menu}}\n</div>\n\\end\n\n<$list filter=\"[title[$:/plugins/TWaddle/LeftBar/temp]!is[tiddler]]\" >\n<$button set=\"$:/state/LeftBar\" setTo=\"show\" class=\"tc-btn-invisible tc-image-button leftbar-toggle\">\n\t{{$:/core/images/menu-button}}\n   \t<$action-setfield $tiddler=\"$:/plugins/TWaddle/LeftBar/temp\"\n\t\t$field=\"storyleft\"\n        $value={{$:/themes/tiddlywiki/vanilla/metrics/storyleft}}/>\n\t<$action-setfield $tiddler=\"$:/plugins/TWaddle/LeftBar/temp\" \n\t\t$field=\"storyright\"\n        $value={{$:/themes/tiddlywiki/vanilla/metrics/storyright}}/>\n    <$action-setfield $tiddler=\"$:/themes/tiddlywiki/vanilla/metrics/storyleft\" \n\t\ttext=\"/*LeftBar*/ calc({{$:/plugins/TWaddle/LeftBar/Stylesheet!!width}} + {{$:/plugins/TWaddle/LeftBar/temp!!storyleft}})\" />\n\t<$action-setfield $tiddler=\"$:/themes/tiddlywiki/vanilla/metrics/storyright\"\n\t\ttext=\"/*LeftBar*/ calc({{$:/plugins/TWaddle/LeftBar/temp!!storyright}} + {{$:/themes/tiddlywiki/vanilla/metrics/storyleft}})\"/>\n</$button>\n</$list>\n\n<$list filter=\"[title[$:/plugins/TWaddle/LeftBar/temp]is[tiddler]]\" >\n<$button set=\"$:/state/LeftBar\" setTo=\"hide\" class=\"tc-btn-invisible tc-image-button leftbar-toggle\">\n\t{{$:/core/images/chevron-left}}\n\t<$action-setfield $tiddler=\"$:/themes/tiddlywiki/vanilla/metrics/storyleft\" \n\t\ttext={{$:/plugins/TWaddle/LeftBar/temp!!storyleft}} />\n\t<$action-setfield $tiddler=\"$:/themes/tiddlywiki/vanilla/metrics/storyright\" \n\t\ttext={{$:/plugins/TWaddle/LeftBar/temp!!storyright}} />\n\t<$action-deletetiddler $tiddler=\"$:/plugins/TWaddle/LeftBar/temp\"/>\n</$button>\n</$list>\n\n<$list filter=\"[title[$:/plugins/TWaddle/LeftBar/temp]is[tiddler]]\" >\n\t<<leftbar-content>>\n</$list>\n<$list filter=\"[title[$:/plugins/TWaddle/LeftBar/temp]!is[tiddler]]\" >\n\t<div class=\"leftbar-togglezone\">\n\t\t<<leftbar-content>>\n\t</div>\n</$list>",
+            "title": "$:/plugins/TWaddle/LeftBar/Toggle",
+            "tags": "$:/tags/PageTemplate",
+            "modifier": "Mat von TWaddle",
+            "modified": "20180905121252605",
+            "creator": "Mat von TWaddle",
+            "created": "20170430114950811"
+        },
+        "$:/plugins/TWaddle/LeftBar/Stylesheet": {
+            "text": "<pre>button.leftbar-toggle {\n\tposition:fixed;\n\tz-index: 1200;\n\tdisplay:{{!!display}};\n\ttop:0px;\n\tleft:0px;\n\tpadding:0px;\n\theight:3em;\n\twidth:2em;\n}\n.leftbar-toggle svg {\n\t<<transition \"fill 150ms ease-in-out\">>\n\tfill: <<colour muted-foreground>>;\n}\n.leftbar-toggle:hover svg {\n\tfill: <<colour foreground>>;\n}\n.leftbar-togglezone {\n\tposition:fixed;\n\tleft:0;\n\ttop:3em;\n\tmin-height:50vh;\n\twidth:1em;\n}\n.leftbar-settingstable {\n\tmargin:\n\t0 auto;\n}\n.leftbar-settingstable,\n .leftbar-settingstable td {\n\tborder:0;\n}\n.leftbar-settingstable td:nth-of-type(1) {\n\ttext-align:right;\n\tvertical-align:top;\n}\n.leftbar-content {\n\tposition:{{!!position}};\n\tmax-width:calc(42px + {{!!width}});\n\tleft:0px;\n\ttop:3em;\n\tpadding:0em 10px 5px 10px;\n\tbackground:none;\n\tmin-height:50vh;\n\tmax-height:85vh;\n\toverflow-y:auto;\n}\n.leftbar-content .tc-tab-buttons button.tc-tab-selected {\n\tbackground-color: <<colour sidebar-tab-background-selected>>;\n}\n.leftbar-content .tc-tab-buttons button {\n\tbackground-color: <<colour sidebar-tab-background>>;\n}\n.leftbar-togglezone .leftbar-content {\n\tdisplay:none;\n\tposition:fixed;\n}\n.leftbar-togglezone:hover .leftbar-content {\n\tdisplay:{{$:/plugins/TWaddle/LeftBar/Stylesheet!!hover-to-display-as}};\n\tbackground:#f4f4f4;\n\t<<box-shadow \"1px 1px 5px rgba(0, 0, 0, 0.3)\">>\n }\n\n@media (max-width: {{$:/themes/tiddlywiki/vanilla/metrics/sidebarbreakpoint}}) {\n\t.leftbar-content  {\n\t\tdisplay:block;\n\t\tbackground:#f4f4f4;\n\t\t<<box-shadow \"1px 1px 5px rgba(0, 0, 0, 0.3)\">>\n\t\tmax-width:90vw;\n\t}\n\tbutton.leftbar-toggle {\n\t\tbackground:transparent;\n\t\theight:2em;\n\t}\n\tbutton.leftbar-toggle svg {\n\t\tbackground:white;\n\t}\n\tbutton.leftbar-toggle:hover {\n\t\toutline:2px solid lightgray;\n\t}\n}\n</pre>\n",
+            "width": "200px",
+            "type": "text/vnd.tiddlywiki",
+            "title": "$:/plugins/TWaddle/LeftBar/Stylesheet",
+            "tags": "$:/tags/Stylesheet",
+            "position": "fixed",
+            "modifier": "Mat von TWaddle",
+            "modified": "20180905120521378",
+            "hover-to-display-as": "block",
+            "display": "block",
+            "creator": "Mat von TWaddle",
+            "created": "20170430122213416"
+        },
+        "$:/plugins/TWaddle/LeftBar/readme": {
+            "text": "!!To use\nEdit the LeftBar contents by editing $:/plugins/TWaddle/LeftBar/Menu\n\n!!LeftBar settings\nAlso found under //Controlpanel> Settings> LeftBar//, unless unchecked here\n\n{{$:/plugins/TWaddle/LeftBar/settings}}\n\n@@color:silver; /// Mat von TWaddle//@@",
+            "title": "$:/plugins/TWaddle/LeftBar/readme",
+            "modifier": "Mat von TWaddle",
+            "modified": "20180426160512182",
+            "creator": "Mat von TWaddle",
+            "created": "20170501015503878"
+        },
+        "$:/plugins/TWaddle/LeftBar/icon": {
+            "text": "{{$:/core/images/menu-button}}",
+            "title": "$:/plugins/TWaddle/LeftBar/icon",
+            "tags": "",
+            "modifier": "Mat von TWaddle",
+            "modified": "20180426160450511",
+            "creator": "Mat von TWaddle",
+            "created": "20170502094251285"
+        },
+        "$:/plugins/TWaddle/LeftBar/Menu": {
+            "text": "Welcome to LeftBar!<br><br>\nChange the content of this by editing $:/plugins/TWaddle/LeftBar/Menu<br><br> \nYou can add tablists or whatever you want.<br><br>\nNote also that you access the menu either by clicking the hamburger or by simply hovering (or tapping) along the left screen edge. If you don't like this behaviour, you can change it in the //Controlpanel > settings// ",
+            "title": "$:/plugins/TWaddle/LeftBar/Menu",
+            "tags": "",
+            "modifier": "Mat von TWaddle",
+            "modified": "20180905122142436",
+            "creator": "Mat von TWaddle",
+            "created": "20170502091456621"
+        },
+        "$:/plugins/TWaddle/LeftBar/settings": {
+            "text": "<table class=\"leftbar-settingstable\">\n<tr>\n<td><$edit-text tiddler=\"$:/plugins/TWaddle/LeftBar/Stylesheet\" field=\"width\" size=3/></td>\n<td>''Width'' for LeftBar</td>\n</tr>\n<tr>\n<td>\n<$checkbox tiddler=\"$:/plugins/TWaddle/LeftBar/Stylesheet\" field=\"display\" checked=\"block\" unchecked=\"none\" default=\"blocked\"/>\n</td>\n<td>''Toggle button'' - display in left top menu</td>\n</tr>\n<tr>\n<td><$checkbox tiddler=\"$:/plugins/TWaddle/LeftBar/Stylesheet\" field=\"position\" checked=\"fixed\" unchecked=\"absolute\" default=\"fixed\"/>\n</td>\n<td>''Scroll vs Fix'' - behaviour when activated //via button//<br>(The //hover-activated// content is always in fixed position.)</td>\n</tr>\n<tr>\n<td><$checkbox tiddler=\"$:/plugins/TWaddle/LeftBar/settings\" tag=\"$:/tags/ControlPanel/Settings\" /></td>\n<td>''Ctrlpanel'' - show this table also in //Ctrlpanel>  Settings//</td>\n</tr>\n<tr>\n<td><$checkbox tiddler=\"$:/plugins/TWaddle/LeftBar/Stylesheet\" field=\"hover-to-display-as\" checked=\"block\" unchecked=\"none\" default=\"block\"/></td>\n<td>''Hover to display'' - enable \"hover window edge\" to display pop-out</td>\n</tr>\n</table>",
+            "title": "$:/plugins/TWaddle/LeftBar/settings",
+            "tags": "$:/tags/ControlPanel/Settings",
+            "modifier": "Mat von TWaddle",
+            "modified": "20180905120536003",
+            "list-before": "",
+            "creator": "Mat von TWaddle",
+            "created": "20170430123149149",
+            "caption": "LeftBar Settings"
+        }
+    }
+}

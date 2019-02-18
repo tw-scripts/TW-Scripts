@@ -1,0 +1,16 @@
+created: 20181115033549515
+creator: Mohammad
+modified: 20190216180317349
+modifier: Mohammad
+tags: coding
+title: New Codes Standard Tiddlers
+type: text/vnd.tiddlywiki
+
+These are the standard tiddler which will accompany any new plugin
+
+* license
+* developer (Mohammad)
+* mbox-utility
+* tw_version
+
+These tiddlers located in: `TW\02. My Plugins\Tids -license and utility`

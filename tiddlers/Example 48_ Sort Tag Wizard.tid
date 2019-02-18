@@ -1,0 +1,73 @@
+created: 20190211075943439
+creator: Mohammad
+modified: 20190216180310588
+modifier: Mohammad
+tags: exmp48
+title: Example 48: Sort Tag Wizard
+type: text/vnd.tiddlywiki
+
+\define tagsort(mainTag, label:"Sort Tags", order:"ascend") 
+<$button>$label$
+<$reveal type="match" default="ascend" text=<<__order__>> >
+<$action-listops  $tiddler=<<__mainTag__>>  $filter="[tag<__mainTag__>sortan[]]"/>
+</$reveal>
+<$reveal type="nomatch" default="ascend" text=<<__order__>> >
+<$action-listops  $tiddler=<<__mainTag__>>  $filter="[tag<__mainTag__>!sortan[]]"/>
+</$reveal>
+</$button>
+\end
+
+\define sortTagWizard()
+
+<$edit-text
+tiddler="$:/temp/sort-tag-tiddlers"
+field="sortTag"
+tag="input"
+default=""
+placeholder="select tag to sort"
+focusPopup=<<qualify "$:/state/popup/sort-tag-tiddlers">>
+class="tc-popup-handle"/>
+<$button
+popup=<<qualify "$:/state/popup/sort-tag-tiddlers">>
+class="tc-btn-invisible tc-btn-dropdown"
+tooltip={{$:/language/EditTemplate/Tags/Dropdown/Hint}}
+aria-label={{$:/language/EditTemplate/Tags/Dropdown/Caption}}>
+{{$:/core/images/down-arrow}}</$button>
+&nbsp;
+<$reveal state="$:/temp/sort-tag-tiddlers!!sortTag" type="nomatch" text="">
+<$button class="tc-btn-invisible tc-btn-dropdown">
+<$action-deletetiddler $tiddler="$:/temp/sort-tag-tiddlers"/>
+{{$:/core/images/close-button}}
+</$button>
+</$reveal>
+<$reveal state="$:/temp/sort-tag-tiddlers!!sortTag" type="nomatch" text="">
+<$macrocall $name="tagsort" mainTag={{$:/temp/sort-tag-tiddlers!!sortTag}} label="Sort {{$:/temp/sort-tag-tiddlers!!sortTag}} tag"/>
+</$reveal>
+<div class="tc-block-dropdown-wrapper">
+<$reveal
+state=<<qualify "$:/state/popup/sort-tag-tiddlers">>
+type="nomatch"
+text=""
+default="">
+<div class="tc-block-dropdown">
+<$linkcatcher to="$:/temp/sort-tag-tiddlers!!sortTag">
+<$list filter="[tags[]search:title{$:/temp/sort-tag-tiddlers!!sortTag}sort[]]">
+{{||$:/core/ui/Components/tag-link}}
+</$list>
+</$linkcatcher>
+</div>
+</$reveal>
+</div>
+\end
+
+
+!! Example
+The macros in this tiddler implement a mechanism to select a tag and sort tiddlers tagged with it. Edit the tiddler to see the code behind this tool.
+
+
+> <<sortTagWizard>>
+
+
+
+!! More information
+See [[Sort Tag Wizard]] for description of code and its mechanism. Similar and yet more efficient tool has been developed in <<tag exmp47>>

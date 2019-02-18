@@ -1,0 +1,24 @@
+created: 20141209104005777
+creator: Tobias Beer
+modified: 20190216180309093
+modifier: Mohammad
+tags: tools
+title: Clean
+type: text/vnd.tiddlywiki
+
+This tiddler is used for mass deletion (removal) of tiddlers.<br>
+For more info look at:
+[[Deleting Tiddlers Via Lists|http://tobibeer.github.io/tb5/#Deleting%20Tiddlers%20Via%20Lists]]
+
+''Filter''
+<$edit-text tiddler="$:/temp/delete-filter" tag="input" placeholder="enter a filter" default="" size=50/>
+<$reveal state="$:/temp/delete-filter" type="nomatch" text="">
+<$button class="tc-btn-invisible">
+<$action-setfield $tiddler="$:/temp/delete-filter" $field="text" $value=""/>
+{{$:/core/images/close-button}}
+</$button>
+</$reveal>
+
+<$list filter={{$:/temp/delete-filter}}>
+<$button message="tm-delete-tiddler" param={{!!title}}>{{$:/core/images/delete-button}}</$button> <$link to={{!!title}}><$view field=title/></$link><br>
+</$list>

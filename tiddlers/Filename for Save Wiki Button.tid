@@ -1,0 +1,11 @@
+created: 20190207035530432
+creator: Mohammad
+modified: 20190216180314314
+modifier: Mohammad
+tags: tip
+title: Filename for Save Wiki Button
+type: text/vnd.tiddlywiki
+
+If a tiddler named $:/config/SaveWikiButton/Filename is created, the text in that tiddler will be used as the default file name used for saving the TiddlyWiki.
+
+Ref: [[Tiddlywiki|https://tiddlywiki.com/prerelease/#Hidden%20Setting%3A%20Filename%20for%20Save%20Wiki%20Button]]

@@ -1,0 +1,22 @@
+created: 20180603030605012
+creator: Mohammad
+modified: 20190216180308513
+modifier: Mohammad
+tags: filter
+title: 2.2
+type: text/vnd.tiddlywiki
+
+! Advanced usage: curly brackets
+Here a tiddler, `Preferences` is used to store a tag as its text filed. This allows the text changes over the time and so, the results will change based on the values in the tiddler Preferences.
+
+* Try to change the contant of Preferences
+
+```
+<$list filter="[tag{Preferences}]">
+<<currentTiddler>><br>
+</$list>
+```
+
+<$list filter="[tag{Preferences}]">
+<<currentTiddler>><br>
+</$list>

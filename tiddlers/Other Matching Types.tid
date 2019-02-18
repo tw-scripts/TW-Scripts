@@ -1,0 +1,47 @@
+created: 20181007161551032
+creator: Mohammad
+modified: 20190216180317111
+modifier: Mohammad
+tags: reveal
+title: Other Matching Types
+type: text/vnd.tiddlywiki
+
+! Reveal Widget and Other Matching Types
+The reveal widget has several matching types, some are used for comparison integers and characters like
+
+* type=''lt'': the content is displayed if the state tiddler contains an integer with a value less than a specified value
+* type=''gt'': the content is displayed if the state tiddler contains an integer with a value greater than a specified value
+* type=''lteq'': the content is displayed if the state tiddler contains an integer with a value less than or equal to a specified value
+* type=''gteq'': the content is displayed if the state tiddler contains an integer with a value greater than or equal to a specified value
+
+Here some examples have been given to show how these matching types (non-equality operators) work.
+
+<<alert dark """This below textbox is used to set a value to `z-number` filed of helper tiddler [[Reveal Helper Tiddler]]""">>
+
+''My Number'': <$edit-text tiddler="Reveal Helper Tiddler" field="z-number"/>
+
+!! Example I: Using state and text attributes
+<<<
+In this example if the vlue of state is greater than or equal to text then the content inside widget will be revealed. Change the value in above textbox to see the result.
+<<vspace 1cm>>
+<<wikitext-example-without-html 
+src:"""<$reveal type="gteq" state="Reveal Helper Tiddler!!z-number" text="120">
+This is another experinemt.
+<br>
+`Reveal Helper Tiddler!!z-number`: {{Reveal Helper Tiddler!!z-number}}
+</$reveal>
+""">>
+<<<
+
+!! Example II: Missing state, using text 
+<<<
+and default attributes
+When the state attribute is missing, you can use the default attribute instead. Here the value of text attribute is compared aginst the value of default attribute. Change the value in above textbox to see the result.<<vspace 1cm>>
+<<wikitext-example-without-html 
+src:"""<$reveal type="gteq" text={{Reveal Helper Tiddler!!z-number}} default="120">
+This is another experinemt.
+<br>
+`Reveal Helper Tiddler!!z-number`: {{Reveal Helper Tiddler!!z-number}}
+</$reveal>
+""">>
+<<<

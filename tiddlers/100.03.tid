@@ -1,0 +1,39 @@
+created: 20180709155043444
+modified: 20190216180308575
+tags: macro
+title: 100.03
+type: text/vnd.tiddlywiki
+
+\define simple() Hi, I am a simple macro.
+! Some more examples
+Macro can be a single line with no parameters, like
+
+```
+\define simple() Hi, I am a simple macro.
+```
+* ''Example''
+```
+<<simple>>
+```
+This gives:
+
+> <<simple>>
+
+! TW macros
+Tiddlywiki itself has several core macros can be used directly. For example
+
+```
+<<now>>
+```
+This gives:
+
+> <<now>>
+
+```
+<<now YYYY-0MM-0DD>>
+```
+Will give:
+
+><<now YYYY-0MM-0DD>>
+
+For more information see [[Core macros|https://tiddlywiki.com/#Core%20Macros]]

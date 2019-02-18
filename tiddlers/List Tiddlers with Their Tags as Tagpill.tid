@@ -1,0 +1,41 @@
+created: 20180621061324745
+creator: Mohammad
+keywords: tag tagpill list
+modified: 20190216180314993
+modifier: Mohammad
+responder: Anthony Muscio
+tags: solution
+title: List Tiddlers with Their Tags as Tagpill
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/YFEEHYyw5Yc/KJ6AzFUJBQAJ
+
+\define showtagsaspills(hidetagfilter)
+<$set name=tagfilter value={{!!tags}}$hidetagfilter$>
+<$list filter=<<tagfilter>> >
+  {{||$:/core/ui/TagTemplate}}
+</$list>
+</$set>
+\end
+
+; How we can list tiddlers based on a tag with their other tags as tagpill?
+: It can be done using nested list widget and ~TagTemplate as below
+
+```
+\define showtagsaspills(hidetagfilter)
+<$set name=tagfilter value={{!!tags}}$hidetagfilter$>
+<$list filter=<<tagfilter>> >
+  {{||$:/core/ui/TagTemplate}}
+</$list>
+</$set>
+\end
+
+<$list filter="[tag[exmp01]]" >
+<li><$link to={{!!title}} tooltip="Custom tooltip eg open tiddler">{{!!title}}</$link> <<showtagsaspills>></li>
+</$list>
+```
+
+* Example
+
+<$list filter="[tag[exmp01]]" >
+<li><$link to={{!!title}} tooltip="Custom tooltip eg open tiddler">{{!!title}}</$link> <<showtagsaspills>></li>
+</$list>

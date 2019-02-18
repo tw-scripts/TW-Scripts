@@ -1,0 +1,31 @@
+created: 20190201031142594
+creator: Mohammad
+keywords: dataformat view UTC
+modified: 20190216180310116
+modifier: Mohammad
+myfield: 20190131
+responder: S.S.
+tags: solution
+title: Date in Custom Field
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/Uun8rthvuCc/nZWp_4zlHAAJ
+
+;How to display the date stored in custom field with certain format?
+
+On the Tiddlywiki.com the tiddler: [[Date Fields|https://tiddlywiki.com/#Date%20Fields]] tells us:
+
+>To avoid problems arising from differences of time zone, TiddlyWiki always uses UTC.
+
+The tiddler: [[DateFormat|https://tiddlywiki.com/#DateFormat]] tells us:
+
+>[UTC] Time-shift the represented date to UTC. Must be at very start of format string.
+ 
+UTC is Coordinated Universal Time - so a time zone offset is needed for where you are.
+The extra 8 you used signifies HOURS. Instead this may work:
+
+!! Example
+<<wikitext-example-without-html 
+src:"""><$view field="myfield" format="date" template="[UTC]MMM DD, YYYY"/>""">>
+
+
+You can use dieffenet date format as explained on [[Tiddlywiki.com|https://tiddlywiki.com/#DateFormat]].

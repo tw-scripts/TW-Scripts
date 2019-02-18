@@ -1,0 +1,56 @@
+created: 20180517010725068
+creator: Mohammad
+modified: 20190216180315192
+modifier: Mohammad
+tags: Links
+title: Learning Resources
+type: text/vnd.tiddlywiki
+
+!! General references
+<<<
+;Thomas Elmiger (Numbered outline)
+:[[https://tid.li/tw5/numbers.html]]
+;Menu and Controls and Sidebar
+:http://smarties.tiddlyspot.com/
+;Jed Carty (Wiki Reference)
+:http://inmysocks.tiddlyspot.com/
+;Formulas for Tiddlywiki
+:https://evanbalster.com/tiddlywiki/formulas.html
+;DarJS (A nice plugin take a look)
+:https://rawgit.com/abesamma/NoSQL-for-DarJS/master/DarJS.html
+;TWaddle (A collection of ideas)
+:http://twaddle.tiddlyspot.com/#Appetizer%20TiddlyWikis:%5B%5BAppetizer%20TiddlyWikis%5D%5D
+;shortcut keys (access keys)
+:https://groups.google.com/forum/#!topic/tiddlywiki/yQx3XZwkSQc
+;MyMenu
+:https://tiddlywiki.psat.com.au/mymenus/
+;Design Write Studio
+:https://designwritestudio.updog.co/
+;NoteSlam by David Graford
+:http://giffmex.org/tw.adaptations/noteslam.online.html
+;Outliner storyview (BTC)
+:http://outlineproto.tiddlyspot.com/
+;Topbar and Toolbar
+:http://tw5toolbar.tiddlyspot.com/
+<<<
+
+
+
+!! Macro in tiddlywiki
+<<<
+;Simple example of macro
+:https://groups.google.com/forum/#!topic/tiddlywiki/g1qp3_Ln-J4
+<<<
+
+!! Lists and list widget
+<<<
+;Jeremy notes on list
+:https://groups.google.com/d/msg/tiddlywiki/2Bl9rx05jqU/nzn5p7KAs4IJ
+<<<
+
+
+!! Themes
+<<<
+;Materaila theme
+:http://j.d.material.tiddlyspot.com/
+<<<

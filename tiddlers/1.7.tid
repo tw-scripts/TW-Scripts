@@ -1,0 +1,40 @@
+created: 20180603031808818
+creator: Mohammad
+modified: 20190216180308722
+modifier: Mohammad
+tags: filter
+title: 1.7
+type: text/vnd.tiddlywiki
+
+! Formatting using CSS 
+Format the results using html and css. Here an ordered list is used followed with an ordered list format.
+
+```
+<style>
+ .myClass {
+ color:red;
+ font-size:1.1em;
+ 
+ }
+</style>
+
+<ul class="myClass">
+<$list filter="[[Tiddler-A]] [[Tiddler-B]] [[Tiddler-C]]">
+<li><<currentTiddler>></li>
+</$list>
+</ul>
+```
+
+<style>
+ .myClass {
+ color:red;
+ font-size:1.1em;
+ 
+ }
+</style>
+
+<ul class="myClass">
+<$list filter="[[Tiddler-A]] [[Tiddler-B]] [[Tiddler-C]]">
+<li><<currentTiddler>></li>
+</$list>
+</ul>

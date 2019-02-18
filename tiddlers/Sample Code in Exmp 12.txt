@@ -1,0 +1,6 @@
+function f(x)
+ real:: x, y
+ integer:: m
+ ! A test
+ print(x,y)
+end function f

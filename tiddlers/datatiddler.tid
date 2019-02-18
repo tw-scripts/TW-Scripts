@@ -1,0 +1,10 @@
+caption: DataTiddler
+created: 20190206031857322
+creator: Mohammad
+list: [[DataTiddler Terminology]] [[Access to DataTiddler Index/Value Pair]] [[Listing DataTiddler Properties]] [[DataTiddler and Property Table]] [[Search DataTiddler Using regexp]] [[Find DataTiddlers with Certain Index/Value]] [[Add Remove DataTiddler Index/Value Pairs]] [[Example: Add/Remove DataTiddler Indexes]] [[DataTiddler Value Set to a Variable]] [[Variable as DataTiddler Index]] [[Using Tiddler Widget with DataTiddler]] [[Another DataTiddler and Tiddler Widget]] [[Set the Index/Value Using Select Widget]] [[Custom Styles Using DataTiddler]] [[Field Value as DataTiddler Index]] [[How Exclude Some Indexes in Filter]] [[Select Widget and DataTiddler]] [[DataTiddler Index/Value Using Forms]] [[Remove Index/Value Using Form]] [[A Dictionary Project]] [[List all DataTiddlers]]
+modified: 20190216180310157
+modifier: Mohammad
+tags: ziron $:/.mr/toc
+title: datatiddler
+type: text/vnd.tiddlywiki
+

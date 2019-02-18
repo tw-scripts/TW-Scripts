@@ -1,0 +1,34 @@
+caption: Test of conditional output
+created: 20180730171942054
+creator: Mohammad
+keywords: conditional view transclude widget
+modified: 20190216180310389
+modifier: Mohammad
+responder: Eric Shulman
+tags: solution
+title: Conditional Output
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/pNixD9nC_hQ/Cj94cGqrAQAJ
+
+The content of the `<$view>` widget is displayed if the field or property is missing or empty.
+
+For example, see the below example. If the caption field is missing or empty, then the title will be shown if not, the caption will be shown.
+
+
+<<wikitext-example-without-html 
+"""<$view field="caption">
+   <$view field="title"></$view>
+</$view>"""
+>>
+
+!! Remarks
+There are two widgets in TW which act the same way, e.g.
+
+* view widget
+* transclude widget
+
+The content inside of the `<$view>` or `<$transclude>` widget is displayed if the field or property is missing or empty.
+
+For more information see [[Mario note|https://groups.google.com/d/msg/tiddlywiki/wonkEPdODbc/dGw9RT08AAAJ]].
+
+<<alert info "The below example and discussion reveals more insights into the conditional output<br> [[More on Conditional Output]]">>

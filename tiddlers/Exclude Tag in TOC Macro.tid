@@ -1,0 +1,59 @@
+created: 20181004081600623
+creator: Mohammad
+keywords: toc macro exclude tag toc-selective-expandable
+modified: 20190216180310557
+modifier: Mohammad
+responder: BurningTreeC
+tags: solution toc
+title: Exclude Tag in TOC Macro
+type: text/vnd.tiddlywiki
+url: http://www.yahoo.com
+
+More information at: [[Eric Shulman|https://groups.google.com/d/msg/tiddlywiki/ud_zV7Ss_bY/9SUCv4p2AgAJ]]
+
+
+; How to exclude some tiddlers tagged with say `ignored` from table of content when using `toc-selective-expandable`?
+
+
+This is the toc-selective-expandable code:
+
+```
+\define toc-selective-expandable(tag,sort:"",itemClassFilter,exclude,path)
+<$vars tag="""$tag$""" sort="""$sort$""" itemClassFilter="""$itemClassFilter$""" excluded="""$exclude$ -[[$tag$]]""" path="""$path$/$tag$""">
+  <ol class="tc-toc toc-selective-expandable">
+    <$list filter="""[all[shadows+tiddlers]tag[$tag$]!has[draft.of]$sort$] -[[$tag$]] $exclude$""">
+      <$list filter="[all[current]toc-link[no]]" variable="ignore" emptyMessage=<<toc-selective-expandable-empty-message>> >
+        <$macrocall $name=toc-unlinked-selective-expandable-body tag="""$tag$""" sort="""$sort$""" itemClassFilter="""$itemClassFilter$""" exclude=<<excluded>> path=<<path>> >
+      </$list>
+    </$list>
+  </ol>
+</$vars>
+\end
+
+```
+As you can see the macro accepts an `exclude` attribute
+
+This is the filter where your ''exclude'' filter would be used:
+
+```
+<$list filter="""[all[shadows+tiddlers]tag[$tag$]!has[draft.of]$sort$] -[[$tag$]] $exclude$""">
+```
+
+!! Example
+* Exclude tiddler tagged with `ignored`
+<<<
+If you want to exclude  - say - all tiddlers tagged `ignored` you pass 
+
+`exclude:"-[tag[bla]]"`
+<<<
+* Exclude all tiddlers has a field named `blue`
+<<<
+ If you want to exclude all tiddlers with the field `blue`
+
+`exclude:"-[has:field[blue]]"`
+<<<
+
+<<alert danger """
+''Important note'': Every term in the exclude filter MUST be a `negated` term (with the `-` prefix) or it will CAUSE infinite recursion.  For example, if you write `exclude="[tag[Foo]]"` instead of `exclude="-[tag[Foo]]"`, then all tiddlers tagged "Foo" will be treated as matching tiddlers at *every* level of the tree and the code will recurse until the browser crashes.
+
+""">>

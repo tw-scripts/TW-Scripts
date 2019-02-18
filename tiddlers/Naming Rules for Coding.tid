@@ -1,0 +1,19 @@
+created: 20181024043250197
+creator: Mohammad
+modified: 20190216180315614
+modifier: Mohammad
+tags: coding concept
+title: Naming Rules for Coding
+type: text/vnd.tiddlywiki
+
+When develop codes to be distributed use the following rules:
+
+# Start tiddler titles with this prefix: `$:/.mr/`
+# Follow it with the name of your code. For example for a code called `kookma` use prfeix as `$:/.mr/kookma`
+# For ''macro'' add the `macro` word after `$:/.mr/kookma` and add the name of each macro following it. For example for the macro called `mymac` its tiddler title will be: `$:/.mr/kookma/macro/mymac`
+# Use the same rules for
+#* ''stylesheets''
+#* ''viewtemplate''
+#* ''edittemplate''
+#* ''pagecontrol''
+#* etc...

@@ -1,0 +1,34 @@
+created: 20190201114457375
+creator: Mohammad
+keywords: global private macro
+modified: 20190216180311838
+modifier: Mohammad
+responder: Eric Shulman
+tags: macro exmp36 solution
+title: Globally and Private Macro
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/dET9eQbM1gI/oFJeC51EBgAJ
+
+!! Global macro
+Global macro are those macros defined in tiddlers tagged with `$:/tags/Macro`. These macros available in every other tiddler. See also [[ImportVariable Widget|https://tiddlywiki.com/#ImportVariablesWidget]] on Tiddlywiki.com.
+
+!! Private macro
+Any macro defined with `\define mac-name()` pragma at the top of a tiddler is private to that tiddler. This means those tiddlers are not available in other tiddlers.
+
+!! The importvariables widget
+It is possible to restrict the scope of work of macros and variables in Tiddlywiki, to do that:
+
+# Put all your private macro inside some tiddlers and tag them for example with `privateMacro` or whatever you like.
+# Use the `<$importvariables filter="[tag[privateMacro]]">` everywhere you want to use them
+
+<<alert info "''Note'': From TW 5.1.18 and later, The `\import` pragma is an alternative syntax for using the `importVariables` widget. ">>
+
+
+! Example
+<$tiddler tiddler="Private Macro: A Case Study">
+
+!!{{!!title}}
+
+<$transclude/>
+
+</$tiddler>

@@ -1,0 +1,22 @@
+created: 20181018133453367
+creator: Mohammad
+keywords: transclude list now date
+modified: 20190216180315057
+modifier: Mohammad
+responder: Eric Shulman
+tags: solution
+title: List and Transclude Tiddlers with Today Date
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/NwVTfJPGNIg/9zUTzZe7AQAJ
+
+;How all tiddlers their title started with today date cane be listed and transcluded?
+: The <<mono now>> macro can be used with a <<mono perfix>> operator as below:
+
+```
+<$set name="today" value= <<now YYYY-0MM-0DD>> >
+   <$list filter="[prefix<today>]">
+      <$view field="title"/><br>
+      <$transclude /><br>
+   </$list>
+<$set>
+```

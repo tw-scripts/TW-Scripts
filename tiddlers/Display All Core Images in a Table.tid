@@ -1,0 +1,35 @@
+created: 20181215124917843
+creator: Mohammad
+keywords: shadow tiddlers core image list dynamic-table
+modified: 20190216180309772
+modifier: Mohammad
+responder: Jeremy Ruston
+tags: image solution
+title: Display All Core Images in a Table
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywikidev/ctz7Z_dwNNo/RtQ2l4b3CQAJ
+
+; How all core images can be listed?
+ 
+The core images tagged `$:/tags/Image` are actually ''shadow tiddlers''. The "tag" macro looks for shadow tiddlers by default. The list-links macro will only look for shadow tiddlers if you provide an appropriate filter that includes them:
+
+```
+<<list-links "[all[shadows+tiddlers]tag[$:/tags/Image]]">>
+```
+
+<<alert warning """''Shadow tiddlers'' are the payload tiddlers within plugins. They are hidden from most operations because they are not "real" tiddlers; this is done to reduce clutter.""">>
+
+!! Example
+List //ten// core images in a table with their title. The below example is given by [[Joe Armstrong|https://groups.google.com/d/msg/tiddlywikidev/ctz7Z_dwNNo/Zx-Z1vo6BgAJ]]. 
+
+* You can remove the `limit[10]` operator to list all images
+* This is a dynamic table and the number of `list` widget outputs determine the number of rows
+
+<<wikitext-example-without-html 
+src:"""<table>
+<tr><th align="left">Title</th><th>Image</th></tr>
+<$list filter="[all[shadows+tiddlers]tag[$:/tags/Image]limit[10]]">
+<tr><td>{{!!title}}</td><td><$transclude /></td></tr>
+</$list>
+</table>
+""">>

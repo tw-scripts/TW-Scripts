@@ -1,0 +1,33 @@
+created: 20181121140930366
+creator: Mohammad
+modified: 20190216180311044
+modifier: Mohammad
+tags: exmp13
+title: Example 13: Macro and Variable Number of Arguments
+type: text/vnd.tiddlywiki
+
+\define stuff(myvar mylist) 
+I saw $myvar$. Then <br/>
+<$list filter="[enlist[$mylist$]]">
+<$view field="title"/><br/>
+</$list>
+\end
+
+The below macro can accept variable number of args using `mylist`.
+
+```
+\define stuff(myvar mylist) 
+I saw $myvar$. Then <br/>
+<$list filter="[enlist[$mylist$]]">
+<$view field="title"/><br/>
+</$list>
+\end
+```
+
+<$macrocall $name="wikitext-example-without-html" 
+src="""<<stuff "Rose" "aa bb cc">>"""/>
+
+And
+
+<$macrocall $name="wikitext-example-without-html" 
+src="""<<stuff "Rose" "aa bb cc dd ee">>"""/>

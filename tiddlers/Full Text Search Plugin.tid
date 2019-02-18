@@ -1,0 +1,12 @@
+created: 20181125060711442
+creator: Mohammad
+developer: Rob Hoelz
+modified: 20190216180311927
+modifier: Mohammad
+tags: Links
+title: Full Text Search Plugin
+type: text/vnd.tiddlywiki
+url: https://hoelz.ro/files/fts.html
+wiki-name: ANN: Full text search
+
+This plugin adds full text search capabilities to TiddlyWiki, which provides features like language awareness (ex. treating jump, jumps, jumping, and jumped as different forms of the same word) and ordering results by search relevance, meaning the first result is going to be the one that the search engine figures as the closest match to what you're looking for.

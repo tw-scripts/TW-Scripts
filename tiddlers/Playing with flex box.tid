@@ -1,0 +1,24 @@
+created: 20180503091309284
+creator: Mohammad
+modified: 20190216180316856
+modifier: Mohammad
+tags: beta
+title: Playing with flex box
+type: text/vnd.tiddlywiki
+
+<div style='text-align:center'>
+<$list filter='[all[shadows]prefix[$:/core/images/]]'>
+<div style='display:inline-flex;text-align:center;border:solid 1px lightgrey;background-color:lightyellow;'>
+<$link to=<<currentTiddler>>><$transclude/><br><$list filter='[<currentTiddler>removeprefix[$:/core/images/]]'><$view field='title'/></$list></$link>
+<br>
+</div>
+</$list>
+</div>
+
+<div style='text-align:center'>
+<$list filter='[all[]tags[]]'>
+<div style='display:inline-flex;'>
+<<tag>>
+</div>
+</$list>
+</div>

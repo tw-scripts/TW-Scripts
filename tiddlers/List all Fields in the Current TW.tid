@@ -1,0 +1,29 @@
+created: 20190131191009343
+creator: Mohammad
+keywords: select fields operator
+modified: 20190216180315105
+modifier: Mohammad
+tags: exmp34
+title: List all Fields in the Current TW
+type: text/vnd.tiddlywiki
+
+;How to use a `select` widget to show all `fields` in the current TW?
+
+# Use a `list` widget with filter `fields[]sort[]` to loop in all available fileds
+# Exclude shado and system tiddlers by `!is[shadow]!is[system]` filter
+# Use option to create list of items
+
+
+<$macrocall $name="wikitext-example-without-html" 
+src="""><$select field="field" tiddler="$:/temp/exmp34" default="">
+<option value="">*any</option>
+<$list filter="[!is[shadow]!is[system]fields[]sort[]]" variable="field">
+<option value=<<field>>><<field>></option>
+</$list>
+</$select>
+
+>You have selected the: ''{{$:/temp/exmp34!!field}}''
+"""/>
+
+
+

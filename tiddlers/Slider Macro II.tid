@@ -1,0 +1,65 @@
+created: 20181125061011032
+creator: Mohammad
+keywords: reveal slider
+modified: 20190216180317412
+modifier: Mohammad
+responder: Rob Hoelz
+tags: solution
+title: Slider Macro II
+type: text/vnd.tiddlywiki
+url: https://hoelz.ro/files/fts.html#Query%20Examples
+
+\define slider-ii(title)
+<$set name="revealState" value=<<qualify "$:/state-reveal-$title$">>>
+<h2>
+  <$reveal type="nomatch" state=<<revealState>> text="yes">
+    <$button class="tc-btn-invisible tc-tiddlylink" set=<<revealState>> setTo="yes">
+      {{$:/core/images/right-arrow}}
+    </$button>
+  </$reveal>
+  <$reveal type="match" state=<<revealState>> text="yes">
+    <$button class="tc-btn-invisible tc-tiddlylink" set=<<revealState>> setTo="no">
+      {{$:/core/images/down-arrow}}
+    </$button>
+  </$reveal>
+  <$view tiddler="$title$" field="caption">
+    <$view tiddler="$title$" field="title"></$view>
+  </$view>
+  
+</h2>
+
+<$reveal type="match" state=<<revealState>> text="yes">
+<$transclude tiddler="$title$" mode="block" />
+</$reveal>
+</$set>
+\end
+
+! Slider macro II
+<<<
+This is another slider macro by //{{!!responder}}//. Another slider macro introduced by //{{Slider Macro!!responder}}//. See [[Slider Macro]]
+
+Both uses the `reveal` widget to hide/show contents as a slider. The slider macro II uses tiddler title or caption as slider label and beautiful arrows to show the state of slider (opened or closed)
+<<<
+
+! Example
+<<<
+<$macrocall $name="wikitext-example-without-html" 
+src="""<<slider-ii "Button Tutorial">>
+"""/>
+<<<
+
+! Example II
+<<<
+This is a more advanced example shows the use of 
+
+```
+<$list filter="[tag[event]]">
+<$macrocall $name="slider-ii" title=<<currentTiddler>> />
+</$list>
+```
+Results in:
+
+<$list filter="[tag[event]]">
+<$macrocall $name="slider-ii" title=<<currentTiddler>> />
+</$list>
+<<<

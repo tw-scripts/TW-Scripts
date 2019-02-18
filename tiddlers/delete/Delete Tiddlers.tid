@@ -1,0 +1,39 @@
+created: 20190122081917880
+creator: Mohammad
+keywords: delete tiddler batch
+modified: 20190216180310093
+modifier: Mohammad
+responder: Diego Messa
+tags: batch solution
+title: Delete Tiddlers
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/dYK2z6Wb6ck/Ku8DyPwEBgAJ
+
+;How list and delete tiddlers as below?
+# Create a list of tiddlers whose titles match some string (simple equality, or even better, regex)
+# Delete them as a batch
+
+! Solution
+!! Step i: list tiddlers
+The below code lists tiddlers their title starts with `Formatting List`. You can use other filter you like. It uses the TW `rexexp` operator. 
+
+```
+<$list filter="[!is[system]regexp[^Formatting List]]" variable="tidToDelete">
+<li> <<tidToDelete>> </li>
+</$list>
+```
+!! Step ii: Use a button to delete all tiddlers
+
+Copy/paste the filter above into this button:
+
+```
+<$button>
+Delete these tiddlers!
+<$list filter="PLACE_FILTER_HERE" variable="tidToDelete">
+<$action-deletetiddler $tiddler=<<tidToDelete>>/>
+</$list>
+</$button>
+```
+
+!! See also
+* [[regexp operator|https://tiddlywiki.com/#regexp%20Operator]] for more information.

@@ -1,0 +1,20 @@
+created: 20180602033529572
+creator: Mohammad
+modified: 20190216180308521
+modifier: Mohammad
+tags: filter
+title: 2.1
+type: text/vnd.tiddlywiki
+
+! Filter with tag
+See how a tag is excluded
+
+```
+<$list filter="[tag[learning]!tag[slide]]">
+<<currentTiddler>><br>
+</$list>
+```
+
+<$list filter="[tag[learning]!tag[slide]]">
+<<currentTiddler>><br>
+</$list>

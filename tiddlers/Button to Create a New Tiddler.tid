@@ -1,0 +1,34 @@
+created: 20180704024336887
+creator: Mohammad
+modified: 20190216180309302
+modifier: Mohammad
+tags: button
+title: Button to Create a New Tiddler
+type: text/vnd.tiddlywiki
+
+\define content()  
+This is a sample content
+\end
+
+```
+\define content()  
+This is a sample content
+\end
+
+<$button >
+<$action-sendmessage $message="tm-new-tiddler"
+    title="Title"
+    text=<<content>>
+    tags="MetaTag [[Another Tag]]"
+/>
+New Tiddler
+</$button>
+```
+<$button >
+<$action-sendmessage $message="tm-new-tiddler"
+    title="Title"
+    text=<<content>>
+    tags="MetaTag [[Another Tag]]"
+/>
+New Tiddler
+</$button>

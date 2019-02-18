@@ -1,0 +1,24 @@
+created: 20190201125223257
+creator: Mohammad
+keywords: plugin 
+modified: 20190216180311422
+modifier: Mohammad
+responder: Jeremy Ruston
+tags: solution
+title: How to Write a Plugin
+type: text/vnd.tiddlywiki
+url: 
+
+Some resources that might be helpful for writting new plugins in Tiddlywiki:
+
+* https://tiddlywiki.com/#Plugins contains a brief explanation of what a plugin actually is, and how it works
+* https://tiddlywiki.com/dev/#Developing%20plugins%20using%20Node.js%20and%20GitHub explains how to create plugins under Node.js
+* https://tiddlywiki.com/dev/#How%20to%20create%20plugins%20in%20the%20browser is a brief guide to creating plugins in the browser
+* https://github.com/Jermolene/TiddlyWiki5/tree/master/plugins/tiddlywiki is a list of the official core plugins. Good simple examples include “blog”, “comments” and “help"
+
+!!! Tinka plugin packager
+<<<
+The Tinka plugin provides the ability to create and modify plugins in the browser, without requiring the use of Node.js.
+
+See https://github.com/TinkaPlugin/Tinka for the GitHub repo, and demo page at https://tinkaplugin.github.io/
+<<<

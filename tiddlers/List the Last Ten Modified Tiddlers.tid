@@ -1,0 +1,41 @@
+created: 20190127102432404
+creator: Mohammad
+keywords: last modified limit change
+modified: 20190216180315022
+modifier: Mohammad
+responder: Jeremy Ruston
+tags: exmp31 solution
+title: List the Last Ten Modified Tiddlers
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/GqB0apuMhiE/ZTDAR-oDDgAJ
+
+How to list the last 10 modified tiddlers in reverse order? It means 
+
+* Only show the last 1o tiddlers modified or created
+* List the last modified/created one first
+
+```
+<<list-links "[has[modified]!sort[modified]limit[10]]" type:"ol">>
+```
+
+See [[Example 31: List Few Last Modified Tiddlers]]
+
+!! Thomas Elmiger solution
+Thomas Elmiger in [[TW Google group|https://groups.google.com/d/msg/tiddlywiki/GqB0apuMhiE/xE_66ooKHQAJ]] pointed out that, you want to minitor the lasted changes, but usually don’t need state tiddlers and temporary info (often set by the system, not by the user), so you can use the below filter: 
+
+```
+[!prefix[$:/state]!prefix[$:/temp]![$:/StoryList]![$:/HistoryList]haschanged[]!sort[modified]]
+```
+
+This shows modifications from the current session (see https://tiddlywiki.com/#haschanged%20Operator).
+
+and 
+
+```
+[has[modified]!prefix[$:/state]!prefix[$:/temp]!sort[modified]limit[50]]
+```
+... nearly the same as above.
+
+
+!!! See also
+<<list-links "[search:keywords[change]] -[<currentTiddler>]" type:"ol">>

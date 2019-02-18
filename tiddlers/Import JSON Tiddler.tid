@@ -1,0 +1,39 @@
+created: 20190206060401747
+creator: Mohammad
+keywords: json datatiddler dictionary import
+modified: 20190216180315327
+modifier: Mohammad
+responder: Eric Shulman
+tags: solution
+title: Import JSON Tiddler
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/JKHDqPCoI-I/hRWTEDdMHgAJ
+
+TiddlyWiki //can// import JSON files, but only if the 'records' in the file contain certain field names.  Most important, each JSON record must have a uniquely-valued `title` field.  This is used to create the corresponding tiddler.  The remaining field names in the JSON record can be anything you like.  However, keep in mind that certain field names have special meanings in the TWCore system.
+
+Specifically, `title`, `text`, `tags`, `created`, `creator`, `modified` and `modifier` should be considered not be used as general-purpose field names.
+
+Also note that the TWCore's JSON processing does ''not'' handle complex nested JSON structures... just //plain// name/value pairs within a simple list of top level objects.
+
+Here's an example of a simple JSON file that can be imported to create tiddlers:
+
+@@width:60%;
+<pre>
+[
+    {
+        "title": "TiddlerTitleGoesHere",
+        "text": "Tiddler content here",
+        "tags": "Tiddler tags here",
+        "foo": "This is a field named foo",
+        "bar": "This is a field named bar"
+    },
+    {
+        "title": "AnotherTitle",
+        "text": "Tiddler content here",
+        "tags": "Tiddler tags here",
+        "foo": "This is a field named foo",
+        "bar": "This is a field named bar"
+    }
+]
+</pre>
+@@

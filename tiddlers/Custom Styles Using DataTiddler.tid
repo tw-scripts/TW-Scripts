@@ -1,0 +1,35 @@
+created: 20180802125153176
+creator: Mohammad
+keywords: css styles datatiddler dynamic
+modified: 20190216180310195
+modifier: Mohammad
+tags: css exmp22 hirad datatiddler
+title: Custom Styles Using DataTiddler
+type: text/vnd.tiddlywiki
+
+Tiddlywiki allows to set the values of CSS properties dynamically. One good example is to read the CSS values from a dictionary (data tiddler).
+
+!! Example
+Here [[Stylesheet|stylesheet/dynamically-read-from-datatiddler]] is a tiddler tagged with `$:/tags/Stylesheet` is used to set the font properties of every other tiddler tagged with `hirad`.
+
+In a second tiddler (a dictionary or data tiddler) called [[examp22/font-setting]], there are some key:value pairs. These values are read in [[Stylesheet|stylesheet/dynamically-read-from-datatiddler]] tiddler.
+
+For example [[examp22/font-setting]] has a line like below
+
+```
+base-font-size:14px
+```
+
+Then in the [[Stylesheet|stylesheet/dynamically-read-from-datatiddler]] tiddler, it is used as set the font-size:
+
+```
+font-size:{{examp22/font-setting##base-font-size}};
+```
+
+Tiddlywiki dynamically put the value of text reference for CSS value.
+
+
+<<alert info "''Note'': The current tiddler is tagged with hirad, so its font properties are set through [[examp22/font-setting]]">>
+
+!!! See also
+Customizing styles is a feature can be used to selectively apply styles to tiddlers meet some criteria. For more information look at [[Custom Styles Faq|https://tiddlywiki.com/#Custom%20Styles%20FAQ]]

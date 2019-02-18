@@ -1,0 +1,15 @@
+created: 20180602031908733
+creator: Mohammad
+modified: 20190216180314862
+modifier: Mohammad
+tags: macro tutorial learning
+title: Macro Tutorial
+type: text/vnd.tiddlywiki
+
+[img class="float-right"[$:/favicon.ico]]
+
+!! ''A quick tutorial on TW macro''
+ Here the usage and application of macro are shown through examples.
+
+
+<<tabs tabsList:"[tag[macro]!has[draft.of]nsort[]]  -[[Macro Tutorial]]" default:"1.1" class:"tc-vertical">>

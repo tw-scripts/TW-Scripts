@@ -1,0 +1,30 @@
+created: 20180729153252828
+creator: Mohammad
+modified: 20190216180310281
+modifier: Mohammad
+myfield: Akbar
+tags: 
+title: Create Links on Click Sets Some Fields
+type: text/vnd.tiddlywiki
+
+This is a simple example create a lists from tiddlers tagged with `contact`. Each item is clickable and on click these actions are performed:
+
+* The value of `myfield` is set to the title of clicked item
+* It is navigated to the clicked item
+
+<$macrocall $name="wikitext-example-without-html"
+src="""myField: {{!!myfield}}
+<hr>
+
+<ol>
+<$list filter="[tag[contact]]" variable="myTid">
+<li>
+<$button class="tc-btn-invisible tc-tiddlylink" 
+set="!!myfield" 
+setTo=<<myTid>>
+><<myTid>>
+<$action-navigate $to=<<myTid>>/>
+</$button></li>
+</$list>
+</ol>
+"""/>

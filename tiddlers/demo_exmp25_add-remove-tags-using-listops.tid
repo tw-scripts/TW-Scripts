@@ -1,0 +1,31 @@
+created: 20190110105826370
+creator: Mohammad
+modified: 20190216180310051
+modifier: Mohammad
+tags: ToDo exmp25
+title: demo/exmp25:add-remove-tags-using-listops
+type: text/vnd.tiddlywiki
+
+\define BtnTagListops(btntext,add-remove,tooltip)
+<$button tooltip="""$tooltip$""">
+<$wikify name="timestampState" text="{{$:/config/TimestampDisable}}">
+<$action-setfield $tiddler="$:/config/TimestampDisable" $value="yes"/>
+<$action-listops $tags="$add-remove$" />
+$btntext$
+<$action-setfield $tiddler="$:/config/TimestampDisable" $value=<<timestampState>>/>
+</$wikify>
+</$button>
+\end
+
+\define todoBtnDoNow()
+<$wikify name="tt" text="switch tag">
+   <$macrocall $name="BtnTagListops" btntext="Do this now" add-remove="ToDoNow -ToDo" tooltip=<<tt>>/>
+</$wikify>
+\end
+
+This example is part of <<tag exmp25>>. It switch tags without changing the timestamps. If you press the below button the tag of current tiddler changes from `ToDo` to `ToDoNow`
+
+<$macrocall $name="wikitext-example-without-html" 
+src="""<<todoBtnDoNow>>
+"""/>
+

@@ -1,0 +1,33 @@
+created: 20181107060912807
+creator: Mohammad
+keywords: conditional if-clause comparison variable
+modified: 20190216180317457
+modifier: Mohammad
+responder: TonyM
+tags: solution
+title: Simple Comparison of Two or More Variables
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/3NdhzmCD-Rs/WfspfUkWAAAJ
+
+See also: [[Simple Comparison of Two Variables]]
+
+The below method has the advantage of being able to test any two + items that generate a "title" in filter notation.
+Note: `<this-wiki>` is the result of a wikify widget, not a macro.
+
+The advantage here is you can put the Same and Different outcomes where ever you want, can have as much or as little wikitext inside each list widget resulting for each option.
+
+You can see it would be easy to add three or more values that should be the same", all you must do is to follow the `-[[2]]` with `-[[3]]` `-[[4]]` etc... 
+
+
+<$macrocall $name="wikitext-example-without-html" 
+src="""<$set name="this-wiki" value="Mohammad">
+<$list filter="[<this-wiki>] [{!!wiki-owner}] +[count[]] -[[2]]">
+       same
+   </$list>
+
+   <$list filter="[<this-wiki>] [{!!wiki-owner}] +[count[]] -[[1]]">
+       different
+   </$list>
+   
+</$set> 
+"""/>  

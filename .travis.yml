@@ -9,7 +9,10 @@ branches:
   - master
 
 install:
-  - npm install -g tiddlywiki
+  - git clone --depth 1 https://github.com/Jermolene/TiddlyWiki5.git
+  - cd TiddlyWiki5
+  - npm link
+  - cd ..
 
 script:
   - tiddlywiki --verbose --build index

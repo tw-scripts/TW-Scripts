@@ -1,6 +1,6 @@
 created: 20181015195322748
 creator: Mohammad
-modified: 20190216180311059
+modified: 20190224163832182
 modifier: Mohammad
 tags: exmp10 period
 title: Example 10:
@@ -12,4 +12,6 @@ The word `Experimental` is added to the end of tiddler title.
 
 Every tiddler has `period` as tag will get this style.
 
-For more information see also [[Custom styles by tag in Tiddlywiki.com|https://tiddlywiki.com/prerelease/#Custom%20styles%20by%20data-tags]]
+For more information see also [[Custom styles by tag in Tiddlywiki.com|https://tiddlywiki.com/#Custom%20styles%20by%20data-tags]]
+
+<<alert danger "''Danger'': The real title of this tiddler is ''{{!!title}}''. So be very careful of using these kind solutions.">>

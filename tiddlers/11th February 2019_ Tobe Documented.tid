@@ -1,6 +1,6 @@
 created: 20190211064542252
 creator: Mohammad
-modified: 20190216180308528
+modified: 20190224163831062
 modifier: Mohammad
 tags: task
 title: 11th February 2019: Tobe Documented
@@ -13,3 +13,14 @@ type: text/vnd.tiddlywiki
 ;DRAFT: TiddlyWiki for New users
 :http://tiddlywiki.psat.com.au/TW5NewUser.html
 :see alsohttps://groups.google.com/d/msg/tiddlywiki/nVpwbtVw-F8/T4QDfsh4BgAJ
+;S.S. Tiddlywiki Beginner Guide
+:https://00ss.github.io/documentation/tiddlywiki.html#
+; 14:45, 10th February 2019: Filter operators
+: https://tiddlywiki.com/prerelease/#Filter%20Operators
+;bundler by pmario
+:https://wikilabs.github.io/editions/bundler/#
+;advanced search plus pmario
+:https://wikilabs.github.io/editions/advanced-search-plus/
+
+;state tiddler used for draft and main tiddler
+:https://groups.google.com/d/msg/tiddlywiki/Mb75FTIzbCk/E4ns-gQpAwAJ

@@ -1,7 +1,7 @@
 created: 20181003040536290
 creator: Mohammad
 keywords: transclude filter
-modified: 20190216180314216
+modified: 20190224163832716
 modifier: Mohammad
 responder: Mark S
 tags: solution
@@ -9,7 +9,7 @@ title: Filtered Transclusion
 type: text/vnd.tiddlywiki
 url: https://groups.google.com/d/msg/tiddlywiki/HhXKiJMtR90/ThgVCmDpAQAJ
 
-Also have a look at [[filtered transclusion|https://tiddlywiki.com/prerelease/#Transclusion%20in%20WikiText]].
+Also have a look at [[filtered transclusion|https://tiddlywiki.com/#Transclusion%20in%20WikiText]].
 
 The below syntax can be used to transclude a list of tiddlers matching a specified filter:
 

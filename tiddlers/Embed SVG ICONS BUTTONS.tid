@@ -1,7 +1,7 @@
 created: 20181112070818002
 creator: Mohammad
 keywords: svg icon button page-controls
-modified: 20190216180309718
+modified: 20190224163832234
 modifier: Mohammad
 responder: Thomas Elmiger
 tags: task solution
@@ -19,10 +19,10 @@ Mohammad,
 
 Interesting. 
 
-https://tiddlywiki.com/prerelease/#Using%20SVG explains what happens, if the content type is set. 
+https://tiddlywiki.com/#Using%20SVG explains what happens, if the content type is set. 
 
 The class tc-image-button seems to be used only for sizes, not for fill-definitions in vanilla, see 
-https://tiddlywiki.com/prerelease/#%24%3A%2Fthemes%2Ftiddlywiki%2Fvanilla%2Fbase
+https://tiddlywiki.com/#%24%3A%2Fthemes%2Ftiddlywiki%2Fvanilla%2Fbase
 
 All the best, 
 Thomas 

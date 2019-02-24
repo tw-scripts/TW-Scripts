@@ -1,6 +1,6 @@
 created: 20180907042225227
 creator: Mohammad
-modified: 20190216180309451
+modified: 20190224163831767
 modifier: Mohammad
 tags: concept
 title: Blank Lines in TW
@@ -12,7 +12,7 @@ type: text/vnd.tiddlywiki
 Ref: 
 
  * [[Forum discussion|https://groups.google.com/d/msg/tiddlywiki/D6_qL9Dob3w/-eZXy_qqBAAJ]]
- * [[HTML in wikitext|https://tiddlywiki.com/prerelease/#HTML%20in%20WikiText]]
+ * [[HTML in wikitext|https://tiddlywiki.com/#HTML%20in%20WikiText]]
  
 !! Block mode versus inline mode 
  To get the content of an HTML element to be parsed in block mode, the opening tag must be followed by two linebreaks.

@@ -1,0 +1,49 @@
+created: 20190110110927487
+creator: Mohammad
+keywords: has field operator
+modified: 20190224163835035
+modifier: Mohammad
+responder: Mohammad
+tags: operator solution
+title: The has Operator Behaviour
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/MpWL2zebuo0/Hohm5Z24CAAJ
+
+; What are the differences between these two filters:
+# `[has[fieldname]]` and
+# `[has:field[fieldname]]`
+
+Assume you have used above filters inside a `$list` widget as below:
+
+```
+Case I:
+<$list filter="[has[fieldname]]" variable="v">
+<<v>>
+</$list>
+```
+and
+
+```
+Case I:
+<$list filter="[has:field[fieldname]]" variable="v">
+<<v>>
+</$list>
+```
+The differences are as below:
+
+<<<
+* Both cases returns nothing (empty `v`) if the field does not exist.
+* Both cases return the same result is the field exist and is //NOT EMPTY//.
+* Case I returns nothing (empty `v`) if the field //EXIST// but is //EMPTY//.
+* Case II returns the tiddler title if the field //EXIST// but is //EMPTY//.
+<<< [[TonyM|https://groups.google.com/d/msg/tiddlywiki/MpWL2zebuo0/xCSWw6e6CAAJ]]
+
+!! Remark
+In [[has operator|https://groups.google.com/d/msg/tiddlywiki/PiUwdVpdyzQ/OwsKmr6TEgAJ]] on Tiddlywiki, it has been explained that:
+
+* `has` operator can be used with a suffix
+* the `value` suffix is equivalent to no suffix
+** `[has[myfield]]` or `[has:value[myfield]` are the same
+** result is: those input tiddlers in which field has a //non-empty value//
+* the `field` suffix
+** result: those input tiddlers in which //field exists//

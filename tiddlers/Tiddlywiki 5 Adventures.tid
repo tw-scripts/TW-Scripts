@@ -1,0 +1,18 @@
+created: 20190201090032840
+creator: Mohammad
+description: This is the a resource of plugins develope by {{!!developer}} and called My Adventures.
+developer: Andrew Harrison
+modified: 20190224163834880
+modifier: Mohammad
+tags: Links
+title: Tiddlywiki 5 Adventures
+type: text/vnd.tiddlywiki
+url: http://t5a.tiddlyspot.com
+wiki-name: Tiddlywiki 5 Adventures
+
+Some plugins in this wiki:
+
+* OpenAll
+* Favorites
+* Random background
+* Plugin tools

@@ -1,0 +1,17 @@
+created: 20180922144221241
+creator: Mohammad
+keywords: server self-host save
+modified: 20190224163837352
+modifier: Mohammad
+responder: cs8425
+tags: solution
+title: Widdly
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/TnKTOdzvn30/bKJ9djJdCQAJ
+
+Widdly provides a minimal self-hosted TiddlyWiki5 server written in Go, original form opennota/widdly,  and bring proof of concept flat-file & sqlite backends support from xarnze/widdly with much improvements.
+
+* Download: [[Github|https://github.com/cs8425/widdly/releases]]
+
+* Update release v1.2.2,
+And here are some must to be known: https://github.com/cs8425/widdly#important-to-know

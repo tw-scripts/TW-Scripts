@@ -1,0 +1,26 @@
+created: 20180601141552210
+creator: Mohammad
+modified: 20190224163837473
+modifier: Mohammad
+tags: tutorial learning list
+title: Work with Lists - 13
+type: text/vnd.tiddlywiki
+
+* Using `emptymessage` parameter
+
+If the list returns no results, the content of `emptyMessage` if used will be shown.
+
+* Example
+
+```
+<$list filter='[tag[slide2]]' emptyMessage="This list returns ''nothing''! <br>Try with different parameters">
+<<currentTiddler>><br>
+</$list>
+```
+
+* Result
+<<<
+<$list filter='[tag[slide2]]' emptyMessage="This list returns ''nothing''! <br>Try with different parameters">
+<<currentTiddler>><br>
+</$list>
+<<<

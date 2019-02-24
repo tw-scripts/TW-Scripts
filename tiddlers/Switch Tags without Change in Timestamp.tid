@@ -1,0 +1,46 @@
+created: 20190110100524937
+creator: Mohammad
+keywords: tag add remove swith timestamp listops
+modified: 20190224163834533
+modifier: Mohammad
+responder: Thomas Elmiger
+tags: exmp25 solution
+title: Switch Tags without Change in Timestamp
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/dDtYhMUQgFY/BuyQM-ofAQAJ
+
+A short script here is developed to switch tags (add new tag and remove old one) without change in the tiddler ''timestamp''.
+
+To do so, the content of `$:/config/TimestampDisable` is read and then it is set to `yes`. The tags are switched and the content of `$:/config/TimestampDisable` of restored to its initial value.
+
+```
+\define BtnTagListops(btntext,add-remove,tooltip)
+<$button tooltip="""$tooltip$""">
+<$wikify name="timestampState" text="{{$:/config/TimestampDisable}}">
+<$action-setfield $tiddler="$:/config/TimestampDisable" $value="yes"/>
+<$action-listops $tags="$add-remove$" />
+$btntext$
+<$action-setfield $tiddler="$:/config/TimestampDisable" $value=<<timestampState>>/>
+</$wikify>
+</$button>
+\end
+```
+
+* The `BtnTagListops` has three parameters
+*# `btntext` the text or caption of button 
+*# `add-remove` the tag to be added or removed (with `-` sign)
+*# `tooltip` a tooltip text for button to be displayed on mouse hover
+
+This does change tags //WITHOUT// updating ''timestamps'' (it stores and restores the previous setting for updating timestamps).
+
+The `BtnTagListops` can be called from other macro. For example the `todoBtnDoNow` macro below adds the tag `ToDoNow` and removes the tag with the minus (-) `ToDo`. //You could add and remove as many tags as you like//.
+
+```
+\define todoBtnDoNow()
+<$wikify name="tt" text="switch tags">
+   <$macrocall $name="BtnTagListops" btntext="Do this now" add-remove="ToDoNow -ToDo" tooltip=<<tt>>/>
+</$wikify>
+\end
+```
+
+See [[Example 25|demo/exmp25:add-remove-tags-using-listops]]

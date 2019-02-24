@@ -1,0 +1,14 @@
+created: 20181016022436568
+creator: Mohammad
+keywords: table automatic json
+modified: 20190224163834507
+modifier: Mohammad
+responder: Malup
+tags: table solution
+title: Table Tool
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/Z9lTOZccJsE/OLZrQ-sHCAAJ
+
+TableTool helps to create a table based on a collection of JSON tiddlers (the row tiddlers), where each tiddler represents a row and the values of the columns are stored as json keys.
+
+Wiki page: https://mauloop.github.io/tw5-table-tool/

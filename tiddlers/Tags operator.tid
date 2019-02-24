@@ -1,0 +1,26 @@
+created: 20181008202532680
+creator: Mohammad
+list: 
+modified: 20190224163834488
+modifier: Mohammad
+tags: $:/_site/tagging operator
+title: Tags operator
+type: text/vnd.tiddlywiki
+
+The `tags` operator shows the corresponding tiddler's tags (in order of appearance in the tags field).
+
+!! Example I
+If you want to retrive the tags of [[Button Tutorial]] tiddler do as below
+
+><$macrocall $name="wikitext-example-without-html" src="""<$list filter="[[Button Tutorial]tags[]]">
+<<currentTiddler>><br>
+</$list>
+"""/>
+
+!! Example II
+Show the other tags for those tiddlers tagged with `kookma`
+
+><$macrocall $name="wikitext-example-without-html" src="""<$list filter="[tag[kookma]tags[]]">
+<$view field="title"/><br>
+</$list>
+"""/>

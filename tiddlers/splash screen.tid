@@ -1,0 +1,36 @@
+created: 20181206190333344
+creator: Mohammad
+modified: 20190224163834746
+modifier: Mohammad
+tags: $:/tags/RawMarkupWikified/TopBody
+title: splash screen
+type: text/vnd.tiddlywiki
+
+\rules only filteredtranscludeinline transcludeinline
+<div class="tc-remove-when-wiki-loaded">
+
+<style scoped>
+
+.tc-splash-text {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 2rem;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+	margin: 120px auto 0;
+	width: 50rem;
+	text-align: center;
+	color: <<colour foreground>>;
+	fill: <<colour foreground>>;
+}
+
+
+}
+
+</style>
+
+<div class="tc-splash-text" style="width:100%;">
+<h1>{{$:/SiteTitle}} </h1>
+<p>Please wait while wiki is loading.</p>
+</div>
+
+</div>

@@ -1,0 +1,21 @@
+created: 20180602033057515
+creator: Mohammad
+modified: 20190224163834922
+modifier: Mohammad
+note: demo
+page: 04
+tags: slide learning
+title: Tiddler-D
+type: text/vnd.tiddlywiki
+
+! {{!!title}}
+
+Here is a fourth tiddler.
+This Tiddler has two tags
+
+# learning
+# slide
+
+
+!!! Note:
+Page: {{!!page}}

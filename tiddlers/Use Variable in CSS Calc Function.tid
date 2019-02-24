@@ -1,0 +1,64 @@
+created: 20181216111737274
+creator: Mohammad
+keywords: variable css cal function
+modified: 20190224163837248
+modifier: Mohammad
+responder: Jed Carty
+tags: exmp17 solution
+title: Use Variable in CSS Calc Function
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/SqJ2YZ9x7mU/lwMsDf2vBwAJ
+
+\define makeCSS() width: calc(3em * $(len)$);
+\define xtip(label, tip)
+<$set name="x" value=<<__tip__>> >
+<$list filter="[enlist<x>count[]]" variable="len">
+<div class="xwrapper">$label$
+  <div class="xtip" style=<<makeCSS>>>
+    $tip$<br>
+    ''Number of words'': <<len>>
+  </div>
+</div>
+</$list>
+</$set>
+\end
+
+; How is it possible to use the TW variables inside a CSS `calc()` function?
+
+There is not any way that works for inline styles, but it works fine if you make a tiddler and tag it with `$:/tags/Stylesheet` and then define the css in that tiddler with whatever wikitext you want.
+
+If you can rearrange your tiddlers to have the css defined in its own place that is a solution.
+
+If you can't than you could use helper macros like this:
+
+```
+\define makeCSS() width: calc(3em * $(len)$);
+
+```
+
+* Exampel
+This is a sample code shows a variable width div element, its width is set dynamically by a macro through css using TW variable and css `calc` function.
+
+''Note:'' The stylesheet has been defined in [[stylesheet/Exmp17-Tooltip]]
+
+```
+\define makeCSS() width: calc(3em * $(len)$);
+\define xtip(label, tip)
+<$set name="x" value=<<__tip__>> >
+<$list filter="[enlist<x>count[]]" variable="len">
+<div class="xwrapper">$label$
+  <div class="xtip" style=<<makeCSS>>>
+    $tip$<br>
+    ''Number of words'': <<len>>
+  </div>
+</div>
+</$list>
+</$set>
+\end
+
+This is a sample <<xtip "tooltip" "This is a tooltip">> and this is another one <<xtip "next tip" "This is the ''second'' toltip">>.
+```
+
+* Result
+
+This is a sample <<xtip "tooltip" "This is a tooltip">> and this is another one <<xtip "next tip" "This is the ''second'' toltip">>.

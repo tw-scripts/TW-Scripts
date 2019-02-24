@@ -1,0 +1,20 @@
+created: 20190221190926185
+creator: Mohammad
+modified: 20190224163837436
+modifier: Mohammad
+tags: task
+title: View Widget and Date Format
+type: text/vnd.tiddlywiki
+
+<<docit>>
+<$macrocall $name="wikitext-example-without-html" 
+src="""<$view tiddler="solution" field="created" 
+format="date" 
+template="DDD, mmm DDth, YYYY 0hh:0mm:0ss" />
+"""/>
+
+''Ref'': 
+
+* https://tiddlywiki.com/#ViewWidget
+* https://tiddlywiki.com/#Date%20Fields
+* https://tiddlywiki.com/#DateFormat

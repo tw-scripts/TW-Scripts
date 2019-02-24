@@ -1,0 +1,29 @@
+created: 20190124130809032
+creator: Mohammad
+modified: 20190224163834211
+modifier: Mohammad
+tags: tools
+title: Search TW-Scripts
+type: text/vnd.tiddlywiki
+
+\define search-tws(word:"", criteria:"title", type:"")
+\rules except wikilink
+<$wikify name="input" text="https://kookma.github.io/TW-Scripts/#:[$type$search:$criteria$[$word$]]">
+<a href=<<input>> target="_blank"><$text text="$word$" /></a>
+</$wikify>
+\end
+
+Search in https://kookma.github.io/TW-Scripts/... &nbsp; <span class="tc-advanced-search-check"><$checkbox field="search-field" tiddler="$:/temp/search-twscript" checked="title"> only title</$checkbox></span>
+<span class="tc-advanced-search-check"><$checkbox field="search-field" tiddler="$:/temp/search-twscript" checked="*"> all fields (everything)</$checkbox></span>
+
+
+<$edit-text  tiddler="$:/temp/search-twscript" size="30" field="keywords" placeholder="search tiddlywiki.com"/>
+&nbsp;<span class="tc-advanced-search-check"><$checkbox field="search-type" tiddler="$:/temp/search-twscript" checked="!is[system]"> exclude system tiddlers</$checkbox></span>
+
+<$list filter="[{$:/temp/search-twscript!!keywords}] +[minlength[3]]" emptyMessage="Type at least 3 characters to see results">
+<$macrocall $name="search-tws" 
+ word={{$:/temp/search-twscript!!keywords}} 
+ criteria={{$:/temp/search-twscript!!search-field}}
+ type={{$:/temp/search-twscript!!search-type}} 
+/>
+</$list>

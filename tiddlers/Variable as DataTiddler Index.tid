@@ -1,0 +1,26 @@
+created: 20190131150550292
+creator: Mohammad
+keywords: datatiddler dictionary transclude variable index
+modified: 20190224163837029
+modifier: Mohammad
+responder: Mohammad
+tags: solution datatiddler
+title: Variable as DataTiddler Index
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/hqXfmhuCm14/0XXFHd7EHAAJ
+
+For getting the property value from a data tiddler (dictionary) using a variable, use the below syntax
+
+```
+<$transclude tiddler="data-tiddler" index=<<var-name>> />
+```
+
+!! Storing the property value in another variable
+If you want to store the property value into another variable you can use the `set` widget as below
+
+```
+<$set name="data" tiddler=<<dataTid>> index=<<idx>> >
+... the property value can be accessed here using <<data>> variable.
+</$set>
+```
+See also [[DataTiddler Value Set to a Variable]] for similar example.

@@ -1,0 +1,38 @@
+created: 20190214045412932
+creator: Mohammad
+modified: 20190224163834544
+modifier: Mohammad
+tags: task
+title: Subfilter operation
+type: text/vnd.tiddlywiki
+
+Tobe docummented
+
+Add how subfilter can create a filter from the contents of a tiddler
+
+```
+<$list  filter="[subfilter{mytiddler}]">
+
+</$list>
+```
+
+and the text field of myTiddler is like
+
+```
+[tag[xx]] +[search:title[yy]]
+```
+
+Also see this
+
+```
+<$list filter="[subfilter{$:/temp/commander/field-remove}]">
+<<currentTiddler>><br>
+</$list>
+
+<$checkbox 
+ tiddler="$:/temp/commander/field-remove" 
+ field="text" 
+ checked="[subfilter{$:/temp/commander}fields[]sort[]] -title" 
+ unchecked="[subfilter{$:/temp/commander}fields[]sort[]] -[[$:/commander/empty-tiddler]fields[]]"
+> Include system fields?</$checkbox>
+```

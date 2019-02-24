@@ -1,0 +1,53 @@
+created: 20180928045459676
+creator: Mohammad
+keywords: css inline
+modified: 20190224163834682
+modifier: Mohammad
+responder: Mark S
+tags: solution
+title: Stylesheet Tiddler or Inline CSS
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/r-O4O4v_NA8/6uVcmYyEAAAJ
+
+Ref: [[Mark|https://groups.google.com/d/msg/tiddlywiki/r-O4O4v_NA8/6uVcmYyEAAAJ]]
+
+See also [[CSS inside Macro]]
+
+; To set a new css, what is the best solution?
+# create a stylesheet tiddler? or
+# put the css inside a style tag in tiddler (inline css)?
+
+* ''Solution''
+!! Use inline CSS
+<<<
+This is a quick and dirty solution to use custom stylesheet but the problme is the leakage! Whne a tiddler with inline css is open, the css inside it will be available to all opened tiddler and also to the wiki iteself. The below show an example
+
+```
+title: myTest
+<style>
+.mcls{color: red;}
+</style>
+
+<div class="mcls">This is a text in red.</div>
+```
+<<<
+
+!! Use stylesheet tiddler
+<<<
+This is the recommended solution. In this way you create a tiddler and tag it with `$:\tags\Stylesheet` and put your css code inside. This css is available to all tiddler and the whole wiki. Opening the tiddler has no effect. As an example see below code
+
+```
+title: myCSS
+tag:   $:/tags/Stylesheet
+
+.mcls{color: red;}
+```
+In any other tiddler you can use the css in above tiddler. For example
+
+```
+title: myTest
+<div class="mcls">This is a text in red.</div>
+```
+<<<
+
+<<alert danger "''Don't use inline css'' (using style tag inside normal tiddlers) as much as possible. They have the risk of unwanted leak">>

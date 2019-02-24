@@ -1,0 +1,35 @@
+created: 20181018133106529
+creator: Mohammad
+keywords: transclude missing template
+modified: 20190224163836560
+modifier: Mohammad
+responder: BTC
+tags: solution
+title: Transclude a Missing Tiddler
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/B0VGpW27MC4/zPO-P9ZDBAAJ
+
+If you transclude a missing text reference or missing tiddler using `{{myTid!!myField}}` and/or `{{myTid}}` nothing is shown and you cannot realize it is missing one solution is to use a macro with a template as proposed by BTS below to address the missing tiddler transclusion:
+
+* The macro
+```
+Title: TranscludeMissingTiddler
+Tag: $:/tags/Macro
+
+\define trl(text)
+{{$text$||transcludilinktemplate}}
+\end
+```
+
+* The template
+```
+Title: transcludilinktemplate
+
+<$list filter="[<currentTiddler>is[missing]]">
+<$link to=<<currentTiddler>>><<currentTiddler>></$link>
+</$list>
+<$list filter="[<currentTiddler>!is[missing]]">
+<$transclude/>
+</$list>
+```
+

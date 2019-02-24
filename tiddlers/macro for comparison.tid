@@ -1,0 +1,34 @@
+created: 20190214102856434
+creator: Mohammad
+keywords: 
+modified: 20190224163833520
+modifier: Mohammad
+responder: Mohammad
+tags: task solution
+title: macro for comparison
+type: text/vnd.tiddlywiki
+url: 
+
+<<docit>>
+
+```
+\define xx(a:"Empty",b:"Empty")
+<$reveal type="nomatch" text={{{[<__a__>] -[<__b__>]}}} default="">
+
+Ther are different. 
+
+* a: $a$ 
+* b:$b$
+</$reveal>
+<$reveal type="match" text={{{[<__a__>] -[<__b__>]}}} default="">
+
+They are the same.
+
+* a: $a$ 
+* b:$b$
+</$reveal>
+\end
+```
+
+<<xx 12>>
+<<xx>>

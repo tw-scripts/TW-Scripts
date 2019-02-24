@@ -1,0 +1,32 @@
+caption: Basics
+created: 20181006040922470
+creator: Mohammad
+modified: 20190224163834819
+modifier: Mohammad
+tags: tinka
+title: Tinka Basics
+type: text/vnd.tiddlywiki
+
+! Steps to create a new plugin
+Assume you have developed your code and tested it, now you want to create your plugin. To do so, follow below steps
+
+# From control panel, click on `Tinka Plugin Management`
+# Next click on the `Create new Plugin` tab
+# Select plugin type e.g. 
+#* plugin, or
+#* theme
+# Set the ''plugin path'': """
+ This is the name of the tiddler where the finished plugin is going to be stored in. ~TiddlyWiki uses a special naming theme for these, so you will mostly find that the actual tiddlers that contain a plugin are named in this scheme:<br>
+ `$:/plugins/myOrganisation/pluginName`
+"""
+# Set the ''author'': Name of the plugin author
+# Set the ''source'':  Website or URL of the plugin, also the place where updates are found
+# Set the dependents: List of plugins this plugin depends on (usually empty, but e.g. `$:/core`)
+# Set the ''list'': List of tiddlers contained in the plugin, that will serve as readme tiddlers, when inspecting a plugin via the control panel. (e.g. `$:/plugins/myOrganization/pluginName/readme`)
+# Set the ''version'': Version of the plugin with format of `x.x.x` e.g. 1.0.0
+# Set the ''core-version'':  Usually the minimal ~TiddlyWiki version your plugin requires in order for it to work (e.g >=5.1.8)
+# Set the ''description'': For plugins, this contains the plugin title that is shown in the control panel
+# Set the ''name'': For themes, this contains the theme title that is shown in the control panel
+# Add the tiddlers to plugin in ''Step 2: Add Tiddlers''
+# Packge the plugin
+# Save and reload

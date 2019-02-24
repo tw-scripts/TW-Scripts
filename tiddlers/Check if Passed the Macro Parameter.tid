@@ -1,0 +1,50 @@
+created: 20190214163529629
+creator: Mohammad
+keywords: macro blank empty parameter
+modified: 20190224163831614
+modifier: Mohammad
+responder: Mohammad and Bimlas
+tags: solution
+title: Check if Passed the Macro Parameter
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/82N15sAnoPs/Ybp53yrOAwAJ
+
+;How to check if the macro parameter has not been passed;
+:Use an empty value and use a `list` widget to check it.
+
+```
+\define mm(argIn:"Empty")
+<$list filter="[<__argIn__>] -Empty">
+Do my job!
+</$list>
+\end
+
+<$button>Check
+<<mm test>>
+</$button>
+```
+
+!! Remarks
+* If no value for `argIn` passed, then it will get the default value `Empty`
+* The filter then `"[<__argIn__>] -Empty"` then will return nothing and the list widget will not run
+* So, the script between `<$list` and `</$list>` will be ignored.
+
+<<alert info "''Note'': Wrapping the whole macro inside above `list` widget causes macro only run if the parameter gets a non-Empty value.">>
+
+
+
+!! Alternative
+Bimlas in [[forum|https://groups.google.com/d/msg/tiddlywiki/82N15sAnoPs/iWhtoBjbAwAJ]] proposed this alternative, in that the macro is blank
+
+```
+\define mymacro(argIn)
+<$list filter="[<__argIn__>] -[[]]">
+
+Do my job!
+</$list>
+\end
+
+<$button>Check
+<<mymacro test>>
+</$button>
+```

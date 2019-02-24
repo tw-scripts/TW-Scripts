@@ -1,0 +1,16 @@
+created: 20180601100408815
+creator: Mohammad
+modified: 20190224163837297
+modifier: Mohammad
+tags: tutorial learning list
+title: Work with Lists - 03
+type: text/vnd.tiddlywiki
+
+Use template with list widget
+
+```
+<$list filter="[tag[slide]sort[title]]" template="$:/core/ui/ViewTemplate/subtitle"/>
+```
+<<<
+<$list filter="[tag[slide]sort[title]]" template="$:/core/ui/ViewTemplate/subtitle"/>
+<<<

@@ -1,0 +1,23 @@
+created: 20181020184912225
+creator: Mohammad
+modified: 20190224163834790
+modifier: Mohammad
+tags: task
+title: To be discussed and added
+type: text/vnd.tiddlywiki
+
+!! From Tiddlywiki.com
+Read the Table of contents, more specially the below cases
+
+* [[toc-tabbed-internal-nav|https://tiddlywiki.com/#Table-of-Contents%20Macros]]
+*[[toc-tabbed-external-nav|https://tiddlywiki.com/#Table-of-Contents%20Macros]]
+
+!! Other
+* http://tw5custom.tiddlyspot.com/ 
+** tips, tricks, customization
+* http://tiddlystuff.tiddlyspot.com/
+**Has a great tool for footnote. It is a stylesheet and view template for creating footnot for module used
+* Create a custome search tool
+* Use the idea by Riz [[Customize Search Result]]
+** Idea: You can create a tool to search in caption, keywords, responder of solution tiddler and show the results for other fileds also.
+*

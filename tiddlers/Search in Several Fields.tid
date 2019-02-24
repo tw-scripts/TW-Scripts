@@ -1,0 +1,34 @@
+created: 20190124152545321
+creator: Mohammad
+keywords: 
+modified: 20190224163834258
+modifier: Mohammad
+tags: search
+title: Search in Several Fields
+type: text/vnd.tiddlywiki
+
+Search can be done in several tiddler fields like caption, title, author, ...
+
+!! Example 1
+Search all tiddlers have `Simple` word in thier title or caption.
+
+> use a list field as `caption, title`
+
+<$macrocall $name="wikitext-example-without-html" 
+src="""<$list filter="[search:caption,title[Simple]]">
+
+</$list>
+"""/>
+
+<<alert warning "''Warning'': By default `search` is not case sensitive.">>
+
+!! Example 2
+Search all tiddlers have `Eric` word in thier responder field or title, and //limit the results by 5//.
+
+>use a list field as `responder, title`
+
+<$macrocall $name="wikitext-example-without-html" 
+src="""<$list filter="[search:responder,title[Eric]limit[5]]">
+
+</$list>
+"""/>

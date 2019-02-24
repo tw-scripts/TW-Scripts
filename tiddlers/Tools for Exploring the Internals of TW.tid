@@ -1,0 +1,23 @@
+caption: Exploring the Internals of TW
+created: 20180907041552085
+creator: Mohammad
+modified: 20190224163836598
+modifier: Mohammad
+tags: tools
+title: Tools for Exploring the Internals of TW
+type: text/vnd.tiddlywiki
+
+Ref: [[PMario|https://groups.google.com/d/msg/tiddlywiki/D6_qL9Dob3w/CCFCYOsmBQAJ]]
+
+To be able to debug the code in TW you need the [[$:/plugins/tiddlywiki/internals]] plugin.
+
+The belwo steps shows debuging on https://tiddlywiki.com/prerelease but is the same for any wiki with the above plugin:
+
+
+# Open: https://tiddlywiki.com/prerelease
+# Create a new tiddler
+# Write your code into the tiddler and keep it in the edit mode
+# Open the "preview" panel (the eyelash icon in the edit toolbar)
+# Open the "choose preview type" dropdown (last button in the edit toolbar)
+#* Choose: parsetree 
+#* Choose: raw html  ... for smaller examples 

@@ -1,0 +1,24 @@
+created: 20190201034157547
+creator: Mohammad
+keywords: brackets syntax
+modified: 20190224163834522
+modifier: Mohammad
+responder: Eric Shulman
+tags: syntax solution
+title: Syntax for Using Brackets
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/SNCfVLGldTM/yj-OC4x7BwAJ
+
+The thing to remember is that the brackets go with the TYPE of operand....
+
+* use square brackets for literal values: `tag[foo]`
+* use curly brackets for tiddler field references: `tag{foo}`
+* use angle brackets for variable references: `tag<foo>`
+
+The thing to remember is that the brackets go with the TYPE of operand....
+
+* `[foo]` is a literal value
+* `<foo>` is a variable reference
+* `{!!foo}` is a reference to field "foo" in the current tiddler
+* `{SomeTiddler}` is a reference to the text field contents of a tiddler named "~SomeTiddler"
+* `{SomeTiddler!!foo}` is a reference to the value of the "foo" field in tiddler "~SomeTiddler"

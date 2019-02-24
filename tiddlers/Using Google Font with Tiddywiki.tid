@@ -1,0 +1,43 @@
+created: 20190206143001033
+creator: Mohammad
+keywords: goole font
+modified: 20190224163837239
+modifier: Mohammad
+responder: Erwan Dano
+tags: solution
+title: Using Google Font with Tiddywiki
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/HynvAJZ21_8/LjLGeCiNR8sJ
+
+;How to use Google API Fonts in Tiddlywiki?
+
+# <div>
+
+Create a new tiddler named as you like with the tag `$:/tags/RawMarkup` and add the link to your font, e.g:
+
+Example:
+
+```
+<link href='http://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
+```
+</div>
+#<div>
+
+Create another tiddler named as you like with the tag `$:/tags/Stylesheet` and put your css in there, for instance :
+
+```
+html span.tc-title{
+  color: red;
+  font-family: "Poiret One", "Impact";
+}
+```
+</div>
+
+!!See also
+* Google fonts: https://fonts.google.com/
+* Sample wiki: http://asciifish.tiddlyspot.com/
+* TheDiveO plugins
+** [[Font Awesome|http://thediveo.github.io/TW5FontAwesome/]]
+** [[Roboto Font|https://github.com/TheDiveO/TW5Roboto]]
+
+<<alert info "The Roboto Font above is an embeded font in TW. Embeding fonts makes TW gets big and heavy. But it is self contained." width:65%>>

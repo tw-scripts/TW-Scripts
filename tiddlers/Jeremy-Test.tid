@@ -1,0 +1,24 @@
+created: 20190221142517068
+creator: Mohammad
+modified: 20190224163832953
+modifier: Mohammad
+tags: trash
+title: Jeremy-Test
+type: application/x-tiddler
+
+\define utility(a, b) This is //$a$//  and ''$b$''.
+
+\define test(tidName, v1, v2)
+<$wikify name="newText" 
+text="""<$macrocall $name="utility"
+a=<<__v1__>> b=<<__v2__>>
+/>""" output="formattedtext">
+<$action-setfield $tiddler="""$tidName$""" $field="text" $value=<<newText>> />
+</$wikify>
+\end
+
+<$button>Do it
+<<test "myTiddler" italic bold>>
+</$button>
+
+<pre><$view/></pre>

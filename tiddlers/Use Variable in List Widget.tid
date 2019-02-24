@@ -1,0 +1,23 @@
+created: 20180625165639721
+modified: 20190224163837244
+tags: variable
+title: Use Variable in List Widget
+type: text/vnd.tiddlywiki
+
+\define myItem() Item name is: ''$(item)$''
+
+* ''Code''
+```
+\define myItem() Item name is: ''$(item)$''
+
+<$list filter="[tag[learning]]" variable="item" >
+<<myItem>><br>
+</$list>
+```
+
+* ''Example''
+<<<
+<$list filter="[tag[learning]]" variable="item" >
+<<myItem>><br>
+</$list>
+<<<

@@ -1,0 +1,25 @@
+created: 20181018140354871
+creator: Mohammad
+keywords: transclusion template
+modified: 20190224163836492
+modifier: Mohammad
+responder: Tobias Beer
+tags: exmp08 solution
+title: Transclusion by Template
+type: text/vnd.tiddlywiki
+url: http://tobibeer.github.io/tw/filters/#Filter%20Examples
+
+Using template you can transclude different parts of tiddlers and format them. See for more information [[transclusion with template|https://tiddlywiki.com/#Transclusion%20with%20Templates]] on Tiddlywiki.com.
+
+The syntax is as below
+
+```
+{{title of tiddler||title of template}}
+```
+
+* Example
+<<<
+<<wikitext-example-without-html 
+src:"""{{exmp08/data01||Box-Template}}
+""">>
+<<<

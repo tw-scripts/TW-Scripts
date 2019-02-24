@@ -1,0 +1,41 @@
+created: 20180812031606759
+creator: Mohammad
+modified: 20190224163834469
+modifier: Mohammad
+responder: Jeremy Ruston
+tags: tiddler solution
+title: Template and Tiddler Widget
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/slwB8u1PQrA/Smruue6IAAAJ
+
+This is a good example shows several features
+
+# Using `$tiddler` widget
+# Using addprefix and addsufix to produce some conetnt for a newly created tiddler
+# Using template tiddler in `set` widget
+
+```
+<$tiddler tiddler="$:/state/NewTiddlerForm">
+
+!Title
+
+<$edit-text class='tc-edit-texteditor' field='name_temp' placeholder='Life the Universe and Everything' /><br>
+
+!!Value of Constant
+
+<$edit-text class='tc-edit-texteditor' field='value'/>
+
+<$button>
+Create Tiddler
+<$set name="valuetext" value={{{ [{!!value}addprefix[<$latex text="""]addsuffix["""></$latex>]] }}}>
+<$action-setfield $tiddler={{!!name_temp}} text=<<valuetext>> value={{!!value}}/>
+</$set>
+<$action-navigate $to={{!!name_temp}}/>
+</$button>
+
+</$tiddler>
+```
+
+* If you are referring to the same tiddler many times, it is often helpful to use the `<$tiddler>` widget to set the `currentTiddler`, and then be able to take advantage of defaults and omit the tiddler title from widgets like the edit widget
+
+* We use a filtered transclusion with the set widget to create the text value for the new tiddler by taking the value entered by the user and adding a prefix and suffix

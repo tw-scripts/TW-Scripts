@@ -1,0 +1,76 @@
+created: 20190131041149873
+creator: Mohammad
+keywords: table variable table-class
+modified: 20190224163834516
+modifier: Mohammad
+responder: Mark S and Mohammad
+tags: table solution
+title: Table Class by Variable
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/UqndFtJ6FM0/PWpynAmXHAAJ
+
+\define mytable() 
+<table class="$(myclasses)$">
+<caption>This is the table caption</caption>
+<thead><tr><td>Header-L</td><td>Header-R</td></tr></thead>
+<tbody>
+<tr><td>Cell 1</td><td>Cell 2</td></tr>
+<tr><td>Cell 3</td><td>Cell 4</td></tr>
+<tr><td>Cell 5</td><td>Cell 6</td></tr>
+<tr><td>Cell 7</td><td>Cell 8</td></tr>
+</tbody>
+<tfoot><tr><td>Footer-L</td><td>Footer-R</td></tr></tfoot>
+\end
+
+; How set the table class by variable?
+It is possible to set the table class by variable. To do this define the whole table inside a macro.
+
+!! Example
+The below example sets two different classes to a table defined inside a macro. This example contains three parts
+
+# A macro defines a table
+# A set of css to define the table classes
+# A small script to set the variable class and call the macro
+
+!!! The table macro
+`mytable` simply defines a table containing four rows, two columns, with table header, footer and caption. The table class is set by `<table class="$(myclasses)$">`.
+
+```
+\define mytable() 
+<table class="$(myclasses)$">
+<caption>This is the table caption</caption>
+<thead><tr><td>Header-L</td><td>Header-R</td></tr></thead>
+<tbody>
+<tr><td>Cell 1</td><td>Cell 2</td></tr>
+<tr><td>Cell 3</td><td>Cell 4</td></tr>
+<tr><td>Cell 5</td><td>Cell 6</td></tr>
+<tr><td>Cell 7</td><td>Cell 8</td></tr>
+</tbody>
+<tfoot><tr><td>Footer-L</td><td>Footer-R</td></tr></tfoot>
+\end
+```
+
+!!! Table classes
+For the sake of simplicity two classes `myclass` and `anotherClass` are defined an inline tiddler as below.
+
+Then the `vars` widget is used to define the variable classes and inside the `vars` widget the `mytable` macro is called.
+
+<$macrocall $name="wikitext-example-without-html" 
+src="""<style>
+ .myclass td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+.anotherClass tr:nth-child(even) 
+  {background-color: #f5f5dc;}
+</style>
+
+
+<$vars myclasses="myclass anotherClass">
+
+<<mytable>>
+</$vars>
+"""/>
+
+<<alert info "To have more complex table, use the html5 tags inside macro.">>

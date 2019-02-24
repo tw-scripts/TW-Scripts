@@ -1,0 +1,17 @@
+created: 20181204065934856
+creator: Mohammad
+modified: 20190224163834641
+modifier: Mohammad
+tags: exmp23 $:/tags/Stylesheet
+title: stylesheet/exmp23
+type: text/vnd.tiddlywiki
+
+\define assign-css()
+\rules only
+[data-tiddler-title="$(currentTiddler)$"].tc-tiddler-frame {
+border-color: red;
+}
+\end
+<$list filter="[all[tiddlers]has:field[xmp]]">
+<<assign-css>><br>
+</$list>

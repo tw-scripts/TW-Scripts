@@ -1,0 +1,15 @@
+created: 20180718024201433
+creator: Mohammad
+modified: 20190224163837231
+modifier: Mohammad
+title: Using Iframe
+type: text/vnd.tiddlywiki
+
+This is an example of how iframe works in TW
+
+```
+<iframe src='https://en.wikipedia.org/wiki/France_national_football_team' frameborder="0" width="1024"; height="600"></iframe>
+```
+
+* ''Result''
+<iframe src='https://en.wikipedia.org/wiki/France_national_football_team' frameborder="0" width="1024"; height="600"></iframe>

@@ -1,0 +1,3 @@
+/*Change when Shiraz is added*/
+.stripedTbl tr:nth-child(even) 
+  {background-color: #f5f5dc;}

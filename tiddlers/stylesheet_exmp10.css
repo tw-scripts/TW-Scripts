@@ -1,0 +1,4 @@
+[data-tags*="period"] .tc-title:after {
+  content:"Experimental";
+  color:red;
+}

@@ -1,0 +1,44 @@
+created: 20190129081944200
+creator: Mohammad
+modified: 20190224163834241
+modifier: Mohammad
+tags: tools
+title: Search Local TWs
+type: text/vnd.tiddlywiki
+
+\define search-local-tw-files(data-file, index, word:"", criteria:"title", type:"")
+\rules except wikilink
+<$wikify name="input" text="{{$data-file$##$index$}}/#:[$type$search:$criteria$[$word$]]">
+<a href=<<input>> target="_blank" ><$text text="$index$" /></a><br>
+</$wikify>
+\end
+
+
+\define list-search-local-tws(word:"", criteria:"", type:"", datafile:"dictionary/mylocal-TWs")
+<small>
+<$list filter="[[$datafile$]indexes[]]" variable="index">
+<$macrocall $name="search-local-tw-files" 
+ data-file="$datafile$" 
+ index=<<index>> 
+ word=<<__word__>>
+ criteria=$criteria$
+ type=$type$
+ />
+</$list>
+</small>
+\end
+
+
+Search in local Tiddlywiki files &nbsp; <span class="tc-advanced-search-check"><$checkbox field="search-field" tiddler="$:/temp/search-tw-local" checked="title" unchecked="*" default="title"> only title</$checkbox></span>
+<span class="tc-advanced-search-check"><$checkbox field="search-field" tiddler="$:/temp/search-tw-local" checked="*" unchecked="title" default="title"> all fields (everything)</$checkbox></span>
+
+<$edit-text  tiddler="$:/temp/search-tw-local" size="30" field="keywords" placeholder="search local TWs"/>
+&nbsp;<span class="tc-advanced-search-check"><$checkbox field="search-type" tiddler="$:/temp/search-tw-local" checked="!is[system]" unchecked="all[tiddlers]"> exclude system tiddlers</$checkbox></span>
+
+<$list filter="[{$:/temp/search-tw-local!!keywords}] +[minlength[3]]" emptyMessage="Type at least 3 characters to see results">
+<$macrocall $name="list-search-local-tws" 
+ word="""{{$:/temp/search-tw-local!!keywords}}""" 
+ criteria={{$:/temp/search-tw-local!!search-field}}
+ type={{$:/temp/search-tw-local!!search-type}} 
+/>
+</$list>

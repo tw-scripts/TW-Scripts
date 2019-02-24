@@ -1,0 +1,26 @@
+created: 20190208092519949
+creator: Mohammad
+keywords: variable macro scope
+modified: 20190224163836991
+modifier: Mohammad
+responder: Eric Shulman
+tags: solution
+title: Variable Reference inside Macro
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/GZWkp3452Pc/OOv_EDa7HQAJ
+
+A variable that is defined outside a macro can be referred to within the macro using ''either'' `$(varname)$` or `<<varname>>`, depending on context.
+
+The difference is that occurrences of `$(varname)$` are immediately replaced with the current value of the variable, while `<<varname>>` is simply returned unchanged as part of the macro output.  Thus these are all valid uses:
+
+```
+\define mymacro() <$somewidget param="$(currentTiddler)$" />
+\define mymacro() <$somewidget param="TEXTBEFORE $(currentTiddler)$ TEXTAFTER" />
+\define mymacro() <$somewidget param=<<currentTiddler>> />
+```
+
+but the following is NOT (because it mixes` <<...>>` inside a quoted parameter value where parsing doesn't occur)
+
+```
+\define mymacro() <$somewidget param="TEXTBEFORE <<currentTiddler>> TEXTAFTER" />
+```

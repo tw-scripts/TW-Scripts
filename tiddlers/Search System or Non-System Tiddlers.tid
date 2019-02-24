@@ -1,0 +1,32 @@
+created: 20190124173410311
+creator: Mohammad
+modified: 20190224163834235
+modifier: Mohammad
+tags: search
+title: Search System or Non-System Tiddlers
+type: text/vnd.tiddlywiki
+
+!! Search non-system tiddlers
+To exclude the system tiddlers (those threir title starts with `$:/`) use the below filter
+
+* Exclude system tiddlers: `[!is[system]]`
+
+!!! Example: 
+Search all non system tiddlers have `Eric` word in thier title or tags, or body (text).
+
+<$macrocall $name="wikitext-example-without-html" 
+src="""<$list filter="[!is[system]search[Eric]]">
+
+</$list>
+"""/>
+  
+!! Search system tiddlers
+Search all system tiddlers have `Eric` word in thier title or tags, or body (text).
+
+* Only system tiddlers: `[is[system]]`
+
+<$macrocall $name="wikitext-example-without-html" 
+src="""<$list filter="[is[system]search[Eric]]">
+
+</$list>
+"""/>

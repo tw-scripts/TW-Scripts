@@ -1,0 +1,13 @@
+created: 20190109042622440
+creator: Mohammad
+modified: 20190224163834348
+modifier: Mohammad
+tags: $:/tags/SideBar
+title: Solutions
+type: text/vnd.tiddlywiki
+
+Number of solutions: <b><$count filter="[tag[solution]]"/></b>
+
+<div class="tc-table-of-contents" >
+<<toc-selective-expandable "solution" "sort[title]">>
+</div>

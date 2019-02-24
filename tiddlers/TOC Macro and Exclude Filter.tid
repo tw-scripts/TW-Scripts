@@ -1,0 +1,38 @@
+created: 20190110175726801
+creator: Mohammad
+keywords: toc exclude 
+modified: 20190224163834768
+modifier: Mohammad
+responder: Mark S
+tags: toc solution
+title: TOC Macro and Exclude Filter
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/AiLokhh70_0/9aYNsJ_QCAAJ
+
+The `toc` macro in Tiddlywiki version greater than 5.1.17 does not accept //exclude// attribute. So, it is not possible to exclude some tiddlers say tagged with `ignored` from table of contents. <a href={{!!url}}>{{!!responder}}</a> has introduced a simple hack as below
+
+<<< Mark S
+You can use the sort argument to sneak in extra, simple requirements:
+
+```
+sort: "!tag[ignored]sort[title]"
+```
+<<<
+
+!! Example 1
+The below script shows a table of contents with `Contents` as the root tag and excludes all tiddlers also tag with `ignored`
+
+```
+<div class="tc-table-of-contents">
+<<toc-selective-expandable "Contents" sort:"!tag[ignored]sort[title]">>
+</div>
+```
+
+!! Example 2: Complex case
+The below script shows a table of contents with `Contents` as the root tag and excludes all tiddlers have in their name `Test`. You can also omit `sort[title]` part.
+
+```
+<div class="tc-table-of-contents">
+<<toc-selective-expandable "Contents" sort:"!search:title[Test]">>
+</div>
+```

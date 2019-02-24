@@ -1,0 +1,28 @@
+created: 20180629121425137
+creator: Mohammad
+modified: 20190224163834177
+modifier: Mohammad
+tags: field
+title: Set a field
+type: application/x-tiddler
+
+\define setNote(myVal:"100")
+<$button>Push me
+<$action-setfield $tiddler="myTiddler" $field="note" $value=$myVal$/>
+</$button>
+\end
+
+! Set a filed through a button
+The below macro sets the `note` filed of myTiddler to `myVal`. If `myVal` is omitted, the default value (100) will be set! When myTiddler is not existed, it will be created.
+
+
+```
+\define setNote(myVal:"100")
+<$button>Push me
+<$action-setfield $tiddler="myTiddler" $field="note" $value=$myVal$/>
+</$button>
+\end
+```
+* Example
+
+<<setNote "Hi, this is a note">>

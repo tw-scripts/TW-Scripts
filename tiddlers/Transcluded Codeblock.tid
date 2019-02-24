@@ -1,0 +1,31 @@
+created: 20181028045624062
+creator: Mohammad
+keywords: code highlight 
+modified: 20190224163836510
+modifier: Mohammad
+responder: BTC
+tags: exmp12 solution
+title: Transcluded Codeblock
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/kfGg6VBDYyI/2lH5YhU6CQAJ
+
+How to transclude a tiddler tagged with `$:/tags/highlight/some-language` and highlight it using the syntax highlighter in TW?
+
+TW uses the `Highlight.js` plugin to do it. To address this case:
+
+<<<
+A macro is needed to get the tiddler containing the code and corectly tagged to transclude it as a codeblock with correct language
+{{Macro in Exmp 12}}
+[[Macro in Exmp 12]]
+<<<
+
+Now you can use `<<snip tiddler-title>>` to transclude the tiddler as a codeblock highlighted in correct language
+
+<<alert primary "Any tiddler containing the code should be tagged in correct manner i.e `$:/tags/highlight/language`">>
+
+* Exampel
+The tiddler [[Sample Code in Exmp 12]] contains fortran code and is tagged with `$:/tags/highlight/fortran`. To transclude it in highlighted form inside this tiddler do as below
+
+<$macrocall $name="wikitext-example-without-html" 
+src="""<<snip "Sample Code in Exmp 12">>
+"""/>

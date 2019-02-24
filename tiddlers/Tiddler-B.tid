@@ -1,0 +1,20 @@
+created: 20180602030415306
+creator: Mohammad
+modified: 20190224163834934
+modifier: Mohammad
+page: 02
+tags: learning
+title: Tiddler-B
+type: text/vnd.tiddlywiki
+
+! {{!!title}}
+
+Here is another tiddler
+
+```
+function f(x)
+end function f
+```
+
+!!! Note:
+Page: {{!!page}}

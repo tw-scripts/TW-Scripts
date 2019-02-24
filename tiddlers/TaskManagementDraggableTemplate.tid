@@ -1,0 +1,8 @@
+created: 20180307153530187
+creator: Mohammad
+modified: 20190224163834476
+modifier: Mohammad
+title: TaskManagementDraggableTemplate
+type: text/vnd.tiddlywiki
+
+<$checkbox tag="done"> <$link to={{!!title}}><$view field="title"/></$link></$checkbox>

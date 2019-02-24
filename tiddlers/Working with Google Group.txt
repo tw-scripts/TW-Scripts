@@ -1,0 +1,2 @@
+?: shows the shortcut keys
+shift+a: makes all read

@@ -1,0 +1,14 @@
+created: 20180718030501393
+creator: Mohammad
+modified: 20190224163835019
+modifier: Mohammad
+tags: toc
+title: The Table of Contents Macro
+type: text/vnd.tiddlywiki
+
+```
+<<toc solution>>
+```
+> To be completed later
+
+<<toc solution>>

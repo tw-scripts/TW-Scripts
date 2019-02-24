@@ -1,0 +1,33 @@
+created: 20180601100026880
+creator: Mohammad
+modified: 20190224163837313
+modifier: Mohammad
+tags: tutorial learning list
+title: Work with Lists
+type: text/vnd.tiddlywiki
+
+* See also
+<<link-lists filter:"[all[]prefix[Work with Lists]]">>
+
+* The simplest
+```
+{{{ [tag[slide]] }}}
+```
+
+* List widget
+```
+<$list filter="[tag[slide]sort[title]]"/>
+```
+
+* List widget with custom output
+```
+<$list filter="[tag[ListWidget]sort[title]]">
+<<currentTiddler>>
+{{||$:/core/ui/ViewTemplate/tags}}
+</$list>
+```
+
+* List widget with template
+```
+<$list filter="[tag[ListWidget]sort[title]]" template="$:/core/ui/ViewTemplate/subtitle"/>
+```

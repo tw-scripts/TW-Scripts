@@ -1,0 +1,43 @@
+created: 20180718024728689
+creator: Mohammad
+keywords: empty macro parameter
+modified: 20190224163834164
+modifier: Mohammad
+responder: Talha
+tags: solution
+title: Setting Empty Value for a Macro Parameter
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/K-DjOxbd7HQ/JYoIoW9cBgAJ
+
+\define mymacro(var1, var2:"")
+<$set name=result value="$var2$" emptyValue="$var1$">
+<li>v1: $var1$</li>
+<li>v2: $var2$</li>
+<li>v2(result): <<result>></li>
+</$set>
+\end
+
+; Develop a macro having two parameters like (`var1`, `var2`) if `var2` is empty set its value to `var1`
+:You need to use a third variable inside macro to take the value of `var1` whenever `var2` is empty
+
+
+
+```
+\define mymacro(var1, var2:"")
+<$set name=result value="$var2$" emptyValue="$var1$">
+<li>v1: $var1$</li>
+<li>v2: $var2$</li>
+<li>v2(result): <<result>></li>
+</$set>
+\end
+```
+ * ''Example''
+```
+<<mymacro test next>>
+<<mymacro test>>
+
+```
+ * ''Result''
+
+<<mymacro test next>>
+<<mymacro test>>

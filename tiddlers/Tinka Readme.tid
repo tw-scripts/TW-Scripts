@@ -1,0 +1,26 @@
+caption: Readme
+created: 20181006060938325
+creator: Mohammad
+modified: 20190224163834802
+modifier: Mohammad
+tags: tinka
+title: Tinka Readme
+type: text/vnd.tiddlywiki
+
+! How to add readme tiddlers
+In the `Create new Plugin tab` ''List'' can contains the title of documentation tiddlers contained in the plugin, that will serve as readme, usage, license, ... tiddlers, when inspecting a plugin via the control. To add readme tiddlers do as below
+
+# Name your readme, usage and license and other documentation tiddlers like below
+```
+$:/plugins/myOrganisation/pluginName/readme
+$:/plugins/myOrganisation/pluginName/usage
+$:/plugins/myOrganisation/pluginName/license
+```
+
+# Add your tiddlers to plugin as described in [[Basics]]
+# """Fill in the `list` in `Create new Plugin tab` with the //short title// of readme, usage, license, etc as below:<br>
+`readme license usage`"""
+# Package the plugin.
+
+<<alert primary width:75% text:"""''Important note'': the full name of documentation tiddler shall be like `$:/plugins/myOrganisation/pluginName/readme`, but the short title (e.g. `readme`) is filled in the `List`
+""">>

@@ -1,0 +1,39 @@
+created: 20180816050717000
+creator: Mohammad
+keywords: tiddler widget
+modified: 20190224163837114
+modifier: Mohammad
+responder: Eric Shulman
+tags: exmp04 tiddler solution datatiddler
+title: Using Tiddler Widget with DataTiddler
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/ObhOIy_lZCg/X0WaI5VqAwAJ
+
+Assume you have a data tiddler (dictionary) and you want to list the properties (name/value or index/value) pairs. One solution is using the `tiddler` widget.
+
+* Use `<$tiddler>` widget
+
+```
+<$tiddler tiddler="Data for Example04">
+
+* Ali is {{##Ali}}
+* Mohammad is {{##Mohammad}}
+* Hirad is {{##Hirad}}
+</$tiddler>
+```
+
+Because of the surrounding `<$tiddler>...</$tiddler>` widget, you can omit the tiddlername from the index references so that they will be relative to the "currentTiddler"... which has been set by the `<$tiddler>` widget to be the appropriate ~DataTiddler.  Thus, you only have to change ONE place, instead of "more than a hundred"
+
+* ''Results''
+
+<$tiddler tiddler="Data for Example04">
+
+* Ali is {{##Ali}}
+* Mohammad is {{##Mohammad}}
+* Hirad is {{##Hirad}}
+</$tiddler>
+
+
+---
+Related tiddlers
+<<list-links "[tag[exmp04]]">>

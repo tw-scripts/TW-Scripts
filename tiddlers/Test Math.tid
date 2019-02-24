@@ -1,0 +1,16 @@
+created: 20190208045317652
+creator: Mohammad
+modified: 20190224163834454
+modifier: Mohammad
+tags: task
+title: Test Math
+type: text/vnd.tiddlywiki
+
+<$macrocall $name="wikitext-example-without-html" 
+src="""
+{{{ [[9]add[1]] }}}
+
+{{{ [[9]subtract[1]] }}}
+
+{{{ [[2 3 9]sum[]] }}}
+"""/>

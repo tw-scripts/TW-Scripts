@@ -1,0 +1,16 @@
+created: 20190207035753048
+creator: Mohammad
+keywords: svg image transclude
+modified: 20190224163834539
+modifier: Mohammad
+responder: Jeremy Rustopn
+tags: solution
+title: SVG Images Transclusion
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/8LOZ5abzo34/XDC4ZC80DAAJ
+
+There is some documentation about the difference between SVG images and tiddlers containing SVG elements here:
+
+https://tiddlywiki.com/#Using%20SVG
+
+The advantage of using //raw// SVG elements is that they can be styled via ''CSS'', unlike SVG images within an img element.

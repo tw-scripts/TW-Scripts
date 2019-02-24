@@ -1,0 +1,65 @@
+created: 20181118070619215
+creator: Mohammad
+keywords: class attribute splitbefore addprefix variable html
+modified: 20190224163837022
+modifier: Mohammad
+responder: Mohammad
+tags: variable solution
+title: Variable Class Attribute for Html Tag
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/TeHlcTZJ9uc/9lgm9PZrBgAJ
+
+\define makeCls() $(cls)$ mr-contents
+\define setCls(p)
+<$set name=cls filter="$p$ +[addprefix[mr-dcls-]]">
+<span class=<<makeCls>> > This is a test </span>
+</$set>
+\end
+<style>
+.mr-dcls-red{color:red; font-weight:700;}
+.mr-dcls-yellow{background-color:#ffff00;}
+.mr-contents{border:1px solid blue;padding:5px;}
+</style>
+
+; How dynamically set the class attribute of Html tag using Tiddlywiki macros?
+: A macro can accepts class names or aliases or part an abbreviated name and then creates the correct class name to set for the desired Html tag. An example is given below.
+
+!! Example
+In the below example the class attribute of `span` tag has been set by `makeCls` macro.
+
+* The `setCls` accept class aliases as a single input parameter i.e. `p`
+* It then split it using space as delimiter and add the prefix `mr-dcls-` to make the class name
+** If `p` is  "red yellow" then `mr-dcls-red` and `mr-dcls-yellow` will be created.
+* The macro `makeCls` then encapsulates all classes. For our example here the macro output will be `mr-dcls-red mr-dcls-yellow mr-contents`
+* Finally the class attribute of `span` tag will be set by a class to `makeCls` macro as `<span class=<<makeCls>>> ... </span>`
+
+```
+\define makeCls() $(cls)$ mr-contents
+\define setCls(p)
+<$set name=cls filter="$p$ +[addprefix[mr-fadeIn-]]">
+<span class=<<makeCls>> > This is a test </span>
+</$set>
+\end
+```
+The below styles are used in this example
+
+```
+<style>
+.mr-dcls-red{color:red; font-weight:700;}
+.mr-dcls-yellow{background-color:#ffff00;}
+.mr-contents{border:1px solid blue;padding:5px;}
+</style>
+```
+
+<<alert warning "''Note'': The `$p$` in filter operation above, when `p` contains space, is interpreted as a list title (each word as a title).">>
+
+!! Demo
+This demo sets two classes to span element `mr-dcls-red mr-dcls-yellow`. The `mr-contens` is always applied.
+<$macrocall $name="wikitext-example-without-html" 
+src="""<<setCls "red yellow">>
+"""/>
+
+This demo sets only on class to span element `mr-dcls-yellow`
+<$macrocall $name="wikitext-example-without-html" 
+src="""<<setCls "yellow">>
+"""/>

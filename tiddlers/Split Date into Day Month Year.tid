@@ -1,0 +1,38 @@
+created: 20190202185242220
+creator: Mohammad
+keywords: 
+modified: 20190224163834741
+modifier: Mohammad
+responder: 
+tags: exmp37 solution
+title: Split Date into Day Month Year
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/Uun8rthvuCc/SNj8Hsw1HQAJ
+
+;Having a date string like "2019-01-28" split it to day, month, and year and return result as Jan 28, 2019
+: Use `splitbefore` and `removeprefix` and use a data dictionary to map numbers 01 ... 12 to months Jan... Dec.
+
+!! Solution
+The solution needs
+
+# a macro to get the date string, split the date string into year, month and day
+# a data dictionary to map numbers 01...12 to months Jan,...Dec.
+
+
+```
+\define date-str(date)
+<$list filter="[[$date$]splitbefore[-]]" variable=x >
+<$list filter="[[$date$]removeprefix<x>splitbefore[-]removesuffix[-]]" variable=m>
+
+<$list filter="[[data-months]getindex<m>]" variable="mname">
+
+<$list filter="[[$date$]splitbefore[-]removesuffix[-]]" variable=y >
+<$list filter="[[$date$]removeprefix<x>removeprefix<m>removeprefix[-]]" variable=d >
+<<mname>> <<d>>, <<y>>
+</$list>
+</$list>
+</$list>
+</$list>
+</$list>
+\end
+```

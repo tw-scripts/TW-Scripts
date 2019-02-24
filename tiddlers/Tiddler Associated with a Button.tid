@@ -1,0 +1,21 @@
+created: 20181226152931018
+creator: Mohammad
+keywords: state tiddler UI button
+modified: 20190224163834972
+modifier: Mohammad
+responder: Jeremy Ruston
+tags: state solution
+title: Tiddler Associated with a Button
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/jJJZF-dm_ZY/dedINMkVBAAJ
+
+Interactivity in TiddlyWiki is based on a couple of priniciples:
+
+* The entire state of the user interface is modelled as the values of tiddlers in the store
+* User interface events such as button clicks make changes to the tiddler store which then trigger a refresh of the display to match the new state of the store
+
+You can explore this happening by opening up the advanced search tiddler, switching to the "Filter" tab, and then selecting "Recently modified tiddlers, including system tiddlers" from the dropdown. Keep an eye on the results as you switch between sidebar tabs and you'll see that the tiddler `$:/state/tab/sidebar--595412856` contains the title of the currently selected tab. It's a two way binding: if you manually edit that tiddler then you'll see the current tab change in reaction.
+
+All UI in TW is constructed in this same way. For example, dropdowns are modelled as a state tiddler that keeps track of whether the dropdown is open or not. The reveal widget is used with the state tiddler to show or hide the dropdown as required.
+
+A critical challenge when designing UIs in TiddlyWiki is choosing between the options for titling these state tiddlers. Most of the core uses a scheme we call "qualified titles" to generate a title that depends upon the position in the render tree.

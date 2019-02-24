@@ -1,0 +1,16 @@
+class: shoutout
+created: 20181029192152729
+creator: Mohammad
+modified: 20190224163835049
+modifier: Mohammad
+tags: 
+title: Test myWideClass only for Body
+type: text/vnd.tiddlywiki
+
+Another example of User Class
+
+Style only the tiddler body!
+
+
+
+See: [[myWideClass]]

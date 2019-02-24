@@ -1,0 +1,27 @@
+created: 20190206153606428
+creator: Mohammad
+modified: 20190224163834191
+modifier: Mohammad
+search-engine: DuckDuckGo
+tags: datatiddler exmp38
+title: Select Widget and DataTiddler
+type: text/vnd.tiddlywiki
+
+The below example shows how a data tiddler (dictionary also json tiddler) can be used with `select` widget. 
+
+* A DataTiddler is used here [[S.S./data/dictionaryLinks]]
+* The option values are populated using a `list` widgets to read all indexes from DataTiddler.
+* Selecting a value, changes the `search-engine` field of current tiddler.
+* The value of `search-engine` field is also displayed
+
+<$macrocall $name="wikitext-example-without-html" 
+src="""><$select tiddler=<<currentTiddler>> field="search-engine">
+<$list filter="[[S.S./data/dictionaryLinks]indexes[]]" variable="index">
+<option value=<<index>>><$view tiddler=<<index>> field='title'/></option> 
+</$list>
+</$select>
+
+You have selected: {{!!search-engine}}
+
+"""/>
+

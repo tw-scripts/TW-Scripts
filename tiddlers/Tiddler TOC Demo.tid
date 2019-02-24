@@ -1,0 +1,25 @@
+created: 20181126055112018
+creator: Mohammad
+modified: 20190224163834950
+modifier: Mohammad
+tags: tidtoc
+title: Tiddler TOC Demo
+type: text/vnd.tiddlywiki
+
+! Test tiddler
+{{||toc}}
+<<.lorem>>
+
+!! Heading ii-a
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+
+!!Heading ii-b
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+
+! Another heading
+<<.lorem>>
+!! Next heading ii-a
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+
+!! Another heading ii-b
+<<.lorem>>

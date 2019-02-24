@@ -1,0 +1,37 @@
+created: 20190107194652842
+keywords: subfilter dynamic filter
+modified: 20190224163834550
+responder: Riz
+tags: exmp20 solution
+title: Subfilter Example
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/Socq_O1eU0w/868v3fyZEQAJ
+
+; How and where subfilter is used?
+Imagine you want to dynamically create filters. You can obviously use macro definitions and use them like
+
+```
+filter=<<mymacro>>
+```
+
+Issue arises when you want to add steps to the filter. You cannot go
+
+```
+filter="<<mymacro>> +[tag[mytag]]"
+```
+
+Subfilter solves this issue. You can go like 
+
+```
+filter="[subfilter<mymacro>] +[tag[mytag]]"
+```
+
+And in another tiddler you can go like 
+
+```
+filter="[subfilter<mymacro>append[!]]"
+```
+
+Basically it enables you to define dynamic filters and reuse them.
+
+See [[Example 20|Example 20: Using subfilter]]

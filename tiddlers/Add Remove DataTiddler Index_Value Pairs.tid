@@ -1,6 +1,6 @@
 created: 20190207064142677
 creator: Mohammad
-modified: 20190216180308064
+modified: 20190224163831880
 modifier: Mohammad
 tags: datatiddler exmp40
 title: Add Remove DataTiddler Index/Value Pairs
@@ -46,4 +46,4 @@ Remove the index/vlue (`PNG: Portable Network Graphics`) from the `Acronyms` Dat
 
 !! For more information
 * See it in action: [[Example: Add/Remove DataTiddler Indexes]]
-* https://tiddlywiki.com/prerelease/#ActionSetFieldWidget
+* https://tiddlywiki.com/#ActionSetFieldWidget

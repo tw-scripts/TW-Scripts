@@ -1,0 +1,27 @@
+created: 20190131141144564
+creator: Mohammad
+keywords: search filter
+modified: 20190224163834796
+modifier: Mohammad
+responder: Mohammad
+tags: search solution
+title: Tips: Advanced Search with Search Operator
+type: text/vnd.tiddlywiki
+url: 
+
+Different filters can be used to do simple to sophisticated search queries using the filter tab in Advances Search tiddler. The advanced search can be opened by clicking on magnifier button right to standard search in sidebar: <<advanced-search>>
+
+
+The below table shows sample filters to use the `search` operator for different queries. The `keyword` is the word or phrases your are looking for in the wiki file.
+
+<<property-table 
+ dataTiddler:"data/search-filter"
+ indexTitle:"Purpose"
+ valueTitle:"Filter"
+ caption:"''Search Filters: Use them in Advanced Seach Textbox''"
+ tblClass:"stripedTbl">>
+
+!! Use with other widgets
+All widgets accept filter can use the above filters, like `list`, `set`, ...
+
+<<alert info  """''Note'': This tiddler uses the dictionary (data tiddler) [[data/search-filter]] to create the search filter table above.""">>

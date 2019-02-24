@@ -1,0 +1,37 @@
+created: 20151221102758131
+creator: Tobias Beer
+keywords: color template dictionary css
+modified: 20190224163837145
+modifier: Mohammad
+responder: Matabele
+tags: css exmp11 solution palette
+title: Using Named Colors
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/_czb8FpcmhI/tFdRJSr5BwAJ
+
+Follow these simple steps to use named colors in your palettes or templates:
+
+
+# create a tiddlerfor your colors, e.g. $:/.mr/colors
+# set its type to ''Data dictionary'' (`application/x-tiddler-dictionary`)
+# add entries with descriptive color names, specifying a [[valid color format|http://www.w3schools.com/cssref/css_colors_legal.asp]]
+# use them in your palette or stylesheets as `{{$:/.mr/colors##color-name}}`
+
+Some example colors:
+* using [[standard html color names|http://www.w3schools.com/cssref/css_colornames.asp]] 
+* sample custom color defined in [[hsla()|http://www.w3.org/wiki/CSS3/Color/HSLA]]
+
+Here's an example using those:
+
+<div style="width:40%">
+
+```css
+.fancy{
+background:{{$:/.mr/colors##AliceBlue}};
+color:{{$:/.mr/colors##crimson}};
+border: 2px solid {{$://colors##Beige}};
+border-radius: 10px;
+padding:5px;
+}
+```
+</div>

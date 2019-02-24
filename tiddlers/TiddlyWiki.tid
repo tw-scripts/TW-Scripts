@@ -1,0 +1,97 @@
+created: 20141122093610703
+creator: Tobias Beer
+modified: 20190224163834885
+modifier: Mohammad
+tags: 
+title: TiddlyWiki
+type: text/vnd.tiddlywiki
+
+Example contents from Wikipedia, the free encyclopedia...
+{{||toc}}
+TiddlyWiki is an open-source single page application wiki. A single HTML file contains CSS, JavaScript, and the content. The content is divided into a series of components, or Tiddlers. A user is encouraged to read a TiddlyWiki by following links rather than sequentially scrolling down the page.
+
+
+
+!Tiddlers
+
+TiddlyWiki content is divided into a series of components called tiddlers. Each tiddler is stored inside an HTML division that contains the source text and meta data in wiki markup. For example, the following could be the HTML source code for the beginning of this section written as a tiddler:
+
+```
+<div title="Tiddlers" 
+    modifier="John Smith" 
+    created="200811132220" 
+    modified="200811132225" 
+    changecount="3" 
+    tags="wikipedia section example code">
+      <pre>TiddlyWiki content is divided into a ...
+```
+
+!Plugins
+
+In addition to containing text, a tiddler can be a plugin with additional JavaScript and CSS to extend TiddlyWiki. As a result, TiddlyWiki is used in a wide variety of adaptations and uses beyond that of a personal wiki.
+
+!File saving
+
+A TiddlyWiki opened from a file URI may save changes made back to the original file using one of the following techniques:
+
+*    formerly the Mozilla File I/O [2] under the control of the UniversalXPConnect per-file preferences [3] for Mozilla Firefox. That functionality was removed from Firefox, and is now replaced with a plugin called TiddlyFox.
+*    the Microsoft ActiveX FileSystemObject [4] for Internet Explorer
+*    TiddlySaver Java applet to extend Safari, Opera, Chrome/Chromium, and other browsers. Requires the Java runtime.
+
+!Applications
+
+Although there are many TiddlyWiki documents on the Web, the majority of TiddlyWikis reside on personal computers and are exchanged on USB flash drives and over email, in a manner similar to word processing documents and spreadsheets. It has been suggested that, as a single HTML file, or saved as an HTA file in Microsoft Windows (allowing corporate IE lockdown to be bypassed), TiddlyWiki is useful in corporate environments where red tape or IT resources might prevent the use of a wiki that requires a more complicated installation.[5]
+
+TiddlyWiki has been used as a Software framework to build specialisations. SocialText uses TiddlyWiki as a part of their unplugged feature.[6]
+
+!History
+
+*    The first version of TiddlyWiki was released by Jeremy Ruston in September 2004.
+*    BT Group bought Osmosoft in 2007[7][8] appointing Ruston as BT's "Head of Open Source Innovation".[9]
+*    TiddlyWiki was selected as one of the Top 100 Tools for 2007 and 2008 by the Centre for Learning & Performance Technologies.[10]
+*    In November 2011, Jeremy Ruston announced his departure from Osmosoft and commitment to continue development on TiddlyWiki.[11][12] He is currently building a new TiddlyWiki called TiddlyWiki 5 from the ground up based on lessons learned from the first versions. A beta version was released mid December 2013.[13]
+
+!License
+
+TiddlyWiki is free and open source software and is distributed under the terms of the BSD license.[14] The copyright of TiddlyWiki is held in trust by UnaMesa, a Non-profit organization.[15]
+
+!See also
+
+*    Single page application
+*    Personal wiki
+*    List of wiki software
+*    Comparison of wiki software
+*    Comparison of notetaking software
+
+!References
+
+#    "TiddlyWiki Translations". TiddlyWiki Trac Wiki. TiddlyWiki Development team. 2004–2011. Retrieved 20 January 2011.
+#    "File I/O - MDN". Developer.mozilla.org. 2012-03-31. Retrieved 2012-05-23.
+#    Stoltz, Mitch. "Per-File Permissions". Mozilla.org. Retrieved 2012-05-23.
+#    "FileSystemObject Basics". MSDN. Microsoft. Retrieved 2012-05-23.
+#    "Guerilla wiki". Tech Writer Wiki. Retrieved 11 February 2012.
+#    "TiddlyWiki - a reusable non-linear personal web notebook". W3.org. 2008-01-01. Retrieved 2012-05-23.
+#    jermolene (May 29, 2007). "I For One Welcome My New BT Overlords". Treat with Jermolene. Archived from the original on 2011-08-18.
+#    "Telco 2.0: BT Tries To Fix Global Services with Open Source". Telco2.net. Retrieved 2012-05-23.
+#    "Open Source Will Change Enterprises, Says BT Guru". TechWeekEurope UK. Eweekeurope.co.uk. 2009-10-16. Retrieved 2012-05-23.
+#    Hart, Jane (13 August 2011). "Top Tools: Tiddlywiki". Centre for Learning & Performance Technologies. Retrieved 2012-05-23.
+#    "On Leaving BT and Osmosoft - TiddlyWiki | Google Groups". Groups.google.com. Retrieved 2012-05-23.
+#    Rejali, Cameron. "Jeremy Ruston to leave BT". Osmosoft.
+#    "TiddlyWiki release history".
+#    "TiddlyWiki License". 1 August 2009. Archived from the original on 2010-12-22.
+#    "tiddlywiki - home". Tiddlywiki.projects.unamesa.org. Retrieved 2012-05-23.
+
+!External links
+*	Wikimedia Commons has media related to TiddlyWiki.
+*    Official website
+*    TiddlyWiki Community documentation wiki
+*    TiddlyWiki source code repository
+*    Workaround to use TiddlyWiki remote for iPhone
+*    local Workaround for WebOS
+*    Runtime environment for TiddlyWiki on Android
+*    https://sourceforge.net/projects/woas/ - Woas (my wiki-on-a-stick fork)
+
+Retrieved from "http://en.wikipedia.org/w/index.php?title=TiddlyWiki&oldid=627648501"
+
+*    This page was last modified on 30 September 2014 at 07:06.
+*    Text is available under the Creative Commons Attribution-ShareAlike License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy. Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc., a non-profit organization.

@@ -1,0 +1,27 @@
+created: 20190208053822002
+creator: Mohammad
+modified: 20190224163834694
+modifier: Mohammad
+tags: task
+title: String operation
+type: text/vnd.tiddlywiki
+
+<$macrocall $name="wikitext-example-without-html" 
+src="""><$set name=mystr value="I am a Tiddlywiki lover.">
+<$text text={{{[<mystr>uppercase[]]}}}/><br>
+<$text text={{{[<mystr>lowercase[]]}}}/><br>
+<$text text={{{[<mystr>length[]]}}}/><br>
+<$text text={{{[<mystr>concat[ TW is the best.]]}}}/><br>
+<hr>
+<$list filter="[<mystr>split[ ]]" variable="word">
+<<word>><br>
+</$list>
+</$set>
+"""/>
+
+
+
+Ref: 
+
+* https://github.com/Jermolene/TiddlyWiki5/blob/master/core/modules/filters/strings.js
+* https://github.com/Jermolene/TiddlyWiki5/commit/9b2d52716a24197ba9fd67b708cbe2c56fa1b5d0

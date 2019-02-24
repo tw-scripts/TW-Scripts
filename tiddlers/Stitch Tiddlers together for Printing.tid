@@ -1,0 +1,20 @@
+created: 20190107165345469
+creator: Mohammad
+keywords: print css stitch tiddler
+modified: 20190224163834706
+modifier: Mohammad
+responder: Eric Shulman
+tags: solution
+title: Stitch Tiddlers together for Printing
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/yyw7PeqdkNo/elTj_wI6EAAJ
+
+;Can I stitch Tiddlers together for printing?
+
+Put the following CSS syntax in a tiddler, tagged with `$:/tags/Stylesheet`:
+
+```css
+@media print {
+.tc-tiddler-frame { page-break-before:always; }
+}
+```

@@ -1,0 +1,16 @@
+class: myClass
+created: 20180729044524866
+creator: Mohammad
+modified: 20190224163834448
+modifier: Mohammad
+tags: 
+title: Test myWideClass
+type: text/vnd.tiddlywiki
+
+! Customizing tiddlers by user classes
+
+Ref: [[Custom styles by user-class|https://tiddlywiki.com/#Custom%20styles%20by%20user-class]]
+
+Every tiddler can accpet a user class through `class` filed. User classes can be defined inside tiddlers tagged with `$:/tags/Stylesheet`.
+
+See: [[myWideClass]]

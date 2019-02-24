@@ -1,0 +1,12 @@
+/* Colors taked from [1] https://www.w3schools.com/colors/colors_names.asp 
+[2] http://www.workwithcolor.com/color-chart-full-01.htm*/
+/* High tone background colors*/
+[data-tags~="powderblue"]{background-color:#B0E0E6}
+[data-tags~="aquamarine"]{background-color:#7FFFD4;}
+[data-tags~="palegreen"]{background-color:#98FB98;}
+[data-tags~="pink"]{background-color:#FFC0CB;}
+[data-tags~="lightsalmon"]{background-color:#FFA07A;}
+[data-tags~="lime"]{background-color:#bfef45;}
+[data-tags~="mint"]{background-color:#aaffc3;}
+[data-tags~="beige"]{background-color:#fffac8;}
+[data-tags~="appricot"]{background-color:#ffd8b1;}

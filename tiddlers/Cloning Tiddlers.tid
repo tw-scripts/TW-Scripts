@@ -1,0 +1,72 @@
+created: 20190220110127021
+creator: Mohammad
+keywords: clone tiddler
+modified: 20190224163831564
+modifier: Mohammad
+responder: Mohammad
+tags: solution
+title: Cloning Tiddlers
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/tUwDeDPQyDc/tEkUH9N5BQAJ
+
+;How to clone tiddlers programmatically?
+The purpose is to clone a tiddler silently using Tiddlywiki scripts. 
+
+```
+\define clone(newTid,Template)
+<$action-createtiddler $basetitle=$newTid$ $savetitle="temp" />
+<$list filter="[<__Template__>fields[]] -title" variable=fname >
+<$set name="fval" tiddler=<<__Template__>> field=<<fname>> >
+<$action-setfield $tiddler={{temp}} $field=<<fname>> $value=<<fval>> />
+</$set>
+</$list>
+\end
+```
+!!! Remarks
+* The `action-createtiddler` widget creates a new tiddler using basetitle and save it in a temp tiddler
+* The `list` widgets iterated over all fileds except the `title` and set them for the new tiddler. These include tags, creator, created, ... fileds
+
+;Note
+: It is required to iterate over all fileds using this method. You can also use the method by Mark below, but it needs a unique title.
+
+!! Example
+The below example makes 5 clones of //testTemplate//.
+
+```
+<$button>Clone me
+<$list filter="[range[1,5]addprefix[b00]]">
+<$macrocall $name=clone newTid=<<currentTiddler>> Template=testTemplate />
+</$list>
+</$button>
+```
+
+
+!! Alternatives
+Other solution has given here, each has pores and cons.
+
+!!!Solution by FrD
+A code to clone a tiddler and remove filed2 from it.
+
+Ref: [[FrD|https://groups.google.com/d/msg/tiddlywiki/swbra9EhOm4/dQk3YpsPAQAJ]]
+
+* Create a tiddler, for instance "//testtemplate//" with a tag ("//MyTag//"), some text and two fields : //field1// and //field2//.
+* Create a tiddler, say "//testcreate//" with this code inside :
+
+```
+\define actions()
+<$action-setfield $tiddler="testtemplate" $field="title" $value="MyNewTiddler" />
+<$action-deletefield $tiddler="MyNewTiddler" $field="field2" />
+\end
+
+<$button actions=<<actions>>>
+Create and remove field
+</$button>
+```
+
+!!! Solution by Mark
+Ref: [[Mark|https://groups.google.com/d/msg/tiddlywiki/tUwDeDPQyDc/uKPP3sl1BQAJ]]
+
+* Create a unique title (possibly title plus date stamp). 
+* Use `action-setfield` to create new tiddler with the new, unique title.
+
+<<alert info "A tiddler can be directly cloned by clicked on the clone icon in Tiddler toolbar.">>

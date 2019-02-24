@@ -1,0 +1,16 @@
+created: 20181205053000183
+creator: Mohammad
+modified: 20190224163834727
+modifier: Mohammad
+tags: mywiki
+title: Status Badges
+type: text/vnd.tiddlywiki
+
+<<<status-badge
+*''url'': https://kookma.github.io/status-badge/
+*''pass'': -
+*''user'': -
+*''desc'': macros and stylesheets for creating badges and status badges like github
+<<<
+
+''Note'': The Shiraz plugin has a version of this staus badges.

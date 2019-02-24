@@ -1,0 +1,29 @@
+created: 20190124111011095
+creator: Mohammad
+modified: 20190224163834224
+modifier: Mohammad
+tags: tools
+title: Search Tiddlywiki.com
+type: text/vnd.tiddlywiki
+
+\define tw5(word:"", criteria:"title", type:"")
+\rules except wikilink
+<$wikify name="input" text="https://tiddlywiki.com/#:[$type$search:$criteria$[$word$]]">
+<a href=<<input>> target="_blank"><$text text="$word$" /></a>
+</$wikify>
+\end
+
+Search in https://www.tiddlywiki.com... &nbsp; <span class="tc-advanced-search-check"><$checkbox field="search-field" tiddler="$:/temp/search-tw5" checked="title"> only title</$checkbox></span>
+<span class="tc-advanced-search-check"><$checkbox field="search-field" tiddler="$:/temp/search-tw5" checked="*"> all fields (everything)</$checkbox></span>
+
+
+<$edit-text  tiddler="$:/temp/search-tw5" size="30" field="keywords" placeholder="search tiddlywiki.com"/>
+&nbsp;<span class="tc-advanced-search-check"><$checkbox field="search-type" tiddler="$:/temp/search-tw5" checked="!is[system]"> exclude system tiddlers</$checkbox></span>
+
+<$list filter="[{$:/temp/search-tw5!!keywords}] +[minlength[3]]" emptyMessage="Type at least 3 characters to see results">
+<$macrocall $name="tw5" 
+ word={{$:/temp/search-tw5!!keywords}} 
+ criteria={{$:/temp/search-tw5!!search-field}}
+ type={{$:/temp/search-tw5!!search-type}} 
+/>
+</$list>

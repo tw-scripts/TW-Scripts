@@ -1,7 +1,7 @@
 created: 20190211082905066
 creator: Mohammad
 keywords: count field
-modified: 20190216180310339
+modified: 20190224163831415
 modifier: Mohammad
 responder: Mohammad
 tags: exmp49 solution
@@ -26,10 +26,10 @@ src="""><$list filter="[tag[solution]limit[5]]">
 * The `limit[5]` only shows the output for first 5 tiddlers tagged with solution
 * The count widget counts the number of items in the `keywords` field of current tiddler using the `list` operator (`list[!!keywords]`)
 * The output is displayed as link to each tiddler with the number of items.
-* Note that if there is duplicate items, count considers them as one. See [[dominant append|https://tiddlywiki.com/prerelease/#Dominant%20Append]]
+* Note that if there is duplicate items, count considers them as one. See [[dominant append|https://tiddlywiki.com/#Dominant%20Append]]
 
 <<alert infor "Note how count widget uses a list operator to count the number of items `[!!field-name]`.">>
 
 
 !! More information
-* [[List operator|https://tiddlywiki.com/prerelease/#list%20Operator]]
+* [[List operator|https://tiddlywiki.com/#list%20Operator]]

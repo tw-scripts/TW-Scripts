@@ -1,0 +1,39 @@
+created: 20190208080154555
+creator: Mohammad
+keywords: tagpill sort 
+modified: 20190224163834329
+modifier: Mohammad
+responder: Mark S
+tags: exmp46 solution
+title: Sort Tiddlers in Tag Pill
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/fwmEj4d_B3A/AC6HobevHQAJ
+
+; How sort tiddlers in tag-pills?
+: One solution is the manual drag and drop and reorder tiddlers inside tag-pill. The below solution shows how to do this automatically.
+
+When you click on a tag and see a list, and then drag an item in the list, where is that sort-order stored? It's stored in the `list` field of the tiddler with the same name as the master tag that you clicked on. So, for instance, if you go to TiddlyWiki.com and open the HelloThere tiddler, and look at the "list" field, you will see the tiddlers that reference "HelloThere" listed in the field. They are not in alphabetical order.
+
+If you copy the following into a tiddler at TiddlyWiki.com, and press the "Sort" button, the corresponding tiddlers will be sorted:
+
+```
+\define alphasort() <$action-listops $tiddler="HelloThere" $subfilter="+[sort[]]"/>
+
+<$button actions=<<alphasort>>
+Sort "HelloThere"
+</$button>
+```
+
+You can make changes to this code to sort the list field of any tiddler.
+
+The catch is, that there is no requirement that all tiddlers that are tagged by a tiddler are listed in its list field. This version will ''populate'' the field AND ''sort'' it:
+
+```
+\define alphasort() <$action-listops $tiddler="HelloThere" $filter="[tag[HelloThere]sort[]]"/>
+
+<$button actions=<<alphasort>>>
+Sort "HelloThere"
+</$button>
+```
+
+A generic macro has been developed to use for sorting tagged tiddlers in the list field. See [[Example 46: Sort Tiddlers in Tag Pill]]

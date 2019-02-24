@@ -1,0 +1,45 @@
+created: 20181224181136166
+creator: Mohammad
+keywords: stylesheet print css
+modified: 20190224163834688
+modifier: Mohammad
+responder: Eric Shulman
+tags: css print solution
+title: Stylesheet for Print Media
+type: application/x-tiddler
+url: https://groups.google.com/d/msg/tiddlywiki/uC87n0sa_WE/_he7iyj1DQAJ
+
+!! TW and Print media
+How to adjust TW elements for print? 
+
+Start here: https://tiddlywiki.com/#Using%20Stylesheets
+
+Basically, you just create a tiddler (any title) containing your desired CSS, and tag it with `$:/tags/Stylesheet`.  That's it.  The CSS is automatically applied as soon as you finish editing the tiddler.
+
+To create print-specific CSS rules, use the `@media` CSS syntax:
+
+```
+@media print  { ... print-specific CSS rules go here ... }
+```
+
+Of course, by default, printing will show all rendered elements of the page.  To limit the printed output, you need to decide which elements are to be excluded from the output, and then add rules to the print-specific definition to hide those elements.  For example, suppose you want to print tiddlers but omit the tags from the output.  You could write:
+
+```
+@media print { .tc-tags-wrapper { display:none; } }
+```
+
+''Note'': in most browsers, you can find the class name for a TiddlyWiki element by right-clicking on the element and select "//inspect element//" from the popup menu.  In this particular case (hiding the tags), inspecting a rendered tag on a tiddler takes you to a span with a  class name of `tc-tag-label`.  Working up from that element, you will find a containing element called `tc-tags-wrapper` that surrounds the entire tags display area (not just the specific tag you clicked on).  Hiding THAT element hides ALL the tags in ALL tiddlers.
+
+For hiding specific pieces of tiddler content, define a CSS rule (e.g., ".hideForPrint"), like this:
+
+```
+@media print { .hideForPrint { display:none; } }
+```
+
+Then, within your tiddler content, you can use it like this:
+
+```
+@@.hideForPrint ... screen-only content goes here... @@
+```
+
+When displayed on-screen, you will see the enclosed content, but when printed, the enclosed content is suppressed.

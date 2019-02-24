@@ -1,0 +1,22 @@
+created: 20180816202941973
+creator: Mohammad
+keywords: count table html tag rowspan
+modified: 20190224163834965
+modifier: Mohammad
+responder: Jeremy Ruston
+tags: solution
+title: Tiddler Count to Dictate HTML Table Rowspan
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/SVucxOh36Mc/vFzscGCpEAAJ
+
+```
+<$wikify name="count" text="<$count filter='[tag[Contents]]'/>">
+<table>
+<tr>
+<td colspan=<<count>>>
+<$count tiddler="Contents" filter=[tag[Contents]]/> columns </td>
+</tr>
+<tr><td> 1 </td><td> 1 </td><td> 1 </td><td> 1 </td></tr>
+</table>
+</$wikify>
+```

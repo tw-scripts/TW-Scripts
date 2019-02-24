@@ -1,0 +1,16 @@
+created: 20190219050301660
+creator: Mohammad
+keywords: tiddler exist
+modified: 20190224163833245
+modifier: Mohammad
+responder: Mal
+tags: solution
+title: How Check a Tiddler Exist
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/WsiLG2xTViM/87hFhT0OBQAJ
+
+<<docit>>
+
+```
+Note that I tried an alternative to your "[<newTitle>]  -[has[title]] -[[]]" filter, using "[<newTitle>!is[tiddler]]" instead, but it had the same problem.
+```

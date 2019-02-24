@@ -1,0 +1,17 @@
+created: 20180602030313866
+creator: Mohammad
+modified: 20190224163834939
+modifier: Mohammad
+note: demo
+page: 01
+tags: learning
+title: Tiddler-A
+type: text/vnd.tiddlywiki
+
+! {{!!title}}
+This is a tiidler
+
+!!! Footnote
+''My order is''
+
+Page: {{!!page}}

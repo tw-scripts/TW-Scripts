@@ -1,0 +1,19 @@
+created: 20181208193104537
+creator: Mohammad
+keywords: autonumbering reference number
+modified: 20190224163834322
+modifier: Mohammad
+responder: Olegh
+tags: idea solution
+title: Specification for Autonumbering References
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/z7iotkgKQHw/ypO4IW68DQAJ
+
+The basic requirements can be summarized as follows:
+
+# ''anchor'': ability of setting in the text the place the original reference, as well as its label and description;
+# ''reference'': ability of repeatative referencing of the original reference from other places to the tiddler and from other tiddlers;
+# ''list'': ability to create a list of all primary references;
+# ''formatting'': ability to display whether the label or the automatic number with a variety of representations (e.g., in round or square brackets, with or without description, etc.), in addition to the description inserted in the text should be wikified, that is, processed by the wiki parser, to be able displaying, in particular, math formulas, other macros, etc.;
+# ''popup window'': mouse clicking a primary or a repeatative reference launches a popup window containing wikified reference descriptor;
+# ''toolbar button'': a button in the toolbar of the editor (as well as a shortcut key) to insert a primary and a repeatative reference, selecting the type of object from the list, and for repeatative reference selecting the primary reference via label and description listing.

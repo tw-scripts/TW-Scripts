@@ -1,0 +1,44 @@
+created: 20181223131047221
+creator: Mohammad
+keywords: conditional stylesheet sidebar color
+modified: 20190224163834676
+modifier: Mohammad
+responder: Jeremy Ruston
+tags: exmp18 solution
+title: Stylesheet with Conditional Rules
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywikidev/PHYH7zCgeN8/QZoIfTrlCgAJ
+
+We can use wikitext primitives within stylesheets to make conditional rules. 
+
+Tiny bit of background about stylesheets: TiddlyWiki in the browser renders all tiddlers `tagged $:/tags/Stylesheet` into a `<style>` element. Tiddlers of content type `text/css` will be processed as raw CSS, but tiddlers with the content type `text/vnd.tiddlywiki` (the default) are processed by first wikifying them, and then extracting the plain text portion. (So, for example, if a `text/vnd.tiddlywiki` stylesheet were to contain the text `<p>23</p>`, the plain text content would be the string “23”).
+
+There's a danger of inadvertent wikification of stylesheet text, and so we usually use a `\rules pragma` to restrict the wikitext rules that will be observed within the stylesheet to just transclusion and macro invocations:
+
+```
+\rules only filteredtranscludeinline transcludeinline macrocallinline macrocallblock
+```
+
+Putting the pieces together, here’s a stylesheet that sets the page background colour to green whenever the sidebar is hidden:
+
+Open [[example 18|Exmple 18: Conditionally Change Background Color]] and add `$:/tags/Stylesheet` tag to see it is in action. 
+
+```
+\define if-sidebar-visible(text)
+<$reveal state="$:/state/sidebar" type="nomatch" text="yes" default="yes">
+$text$
+</$reveal>
+\end
+
+\define if-sidebar-not-visible(text)
+<$reveal state="$:/state/sidebar" type="nomatch" text="no" default="yes">
+$text$
+</$reveal>
+\end
+
+\rules only filteredtranscludeinline transcludeinline macrocallinline macrocallblock
+
+html body.tc-body {
+	background: <<if-sidebar-visible "green">><<if-sidebar-not-visible "blue">>;
+}
+```

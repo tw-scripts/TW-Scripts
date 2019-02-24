@@ -1,0 +1,27 @@
+created: 20181126191541064
+creator: Mohammad
+keywords: toc tiddler
+modified: 20190224163834957
+modifier: Mohammad
+responder: Tobias Beer
+tags: tidtoc solution
+title: Tiddler TOC
+type: text/vnd.tiddlywiki
+url: http://tidtoc.tiddlyspot.com/#
+
+This is small code to generate tiddler TOC. It actually uses the [[MatchFilter from EucalyJ|http://eucaly-tw5.tiddlyspot.com/#MatchFilter]], e.g. [[$:/core/modules/filters/match.js]], providing a plugin to extract tiddler contents via regular expressions.
+
+!! How it works
+The tiddler toc has two parts
+
+# a JS code e.g $:/core/modules/filters/match.js
+# a template tiddler e,g [[toc]]
+The match filter extract the heading and the template display them in a nice looking format
+
+!! Example
+Use the `{{!!toc}}` inside your tiddler with several headings
+
+See:
+
+ * [[TiddlyWiki]]
+ * [[Tiddler TOC Demo]]

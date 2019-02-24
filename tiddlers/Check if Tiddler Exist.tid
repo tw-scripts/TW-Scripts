@@ -1,0 +1,43 @@
+created: 20190221141032590
+creator: Mohammad
+keywords: exist tiddler missing
+modified: 20190224163831608
+modifier: Mohammad
+responder: Mal
+tags: solution
+title: Check if Tiddler Exist
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/Sq5bx5-QWok/44n5PPnVAAAJ
+
+;How to check if a title refere to an existing tiddler;
+: Use the `is` or `has` operator.
+
+Any of below form may be used
+
+```
+[is[tiddler]]   [!is[missing]] [has[title]]
+```
+
+!! Example i
+The below example uses `[is[tiddler]]` and only lists the existing tiddlers. So, it seems `c` is not a tiddler.
+<$macrocall $name="wikitext-example-without-html" 
+src="""><$list filter="solution tutorial TalhaTid +[is[tiddler]]">
+
+</$list>
+"""/>
+
+!! Example ii
+The below example uses `[is[missing]]` and only lists the non-existing tiddlers e.g. missing tiddlers. So, it seems `TalhaTid` is not a tiddler.
+<$macrocall $name="wikitext-example-without-html" 
+src="""><$list filter="solution tutorial TalhaTid +[is[missing]]">
+
+</$list>
+"""/>
+
+!! Example iii
+The below example uses `[has[title]]` and only lists only the existing tiddlers. So, it seems `TalhaTid` is not a tiddler.
+<$macrocall $name="wikitext-example-without-html" 
+src="""><$list filter="solution tutorial TalhaTid +[has[title]]">
+
+</$list>
+"""/>

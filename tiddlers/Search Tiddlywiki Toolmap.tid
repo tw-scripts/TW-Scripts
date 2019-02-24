@@ -1,0 +1,19 @@
+created: 20190119043257485
+creator: Mohammad
+modified: 20190224163834230
+modifier: Mohammad
+tags: tools
+title: Search Tiddlywiki Toolmap
+type: text/vnd.tiddlywiki
+
+\define toolmap(word)
+\rules except wikilink
+<$wikify name="input" text="https://dynalist.io/d/zUP-nIWu2FFoXH-oM7L7d9DM#q=$word$">
+<a href=<<input>> target="_blank">$word$</a>
+</$wikify>
+\end
+
+Search in Tiddlywiki Toolmap: 
+<$edit-text  tiddler="$:/temp/search-toolmap" field="keywords" placeholder="search toolmap"/>
+
+<$macrocall $name="toolmap" word={{$:/temp/search-toolmap!!keywords}} />

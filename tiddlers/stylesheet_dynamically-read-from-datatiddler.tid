@@ -1,0 +1,17 @@
+created: 20180802104452237
+creator: Mohammad
+modified: 20190224163834661
+modifier: Mohammad
+tags: exmp22 $:/tags/Stylesheet
+title: stylesheet/dynamically-read-from-datatiddler
+type: text/vnd.tiddlywiki
+
+<pre>
+/* The values of css properties here are read from a data tiddler*/
+.tc-tagged-hirad .tc-tiddler-body {
+font-size:{{examp22/font-setting##base-font-size}};
+line-height:{{examp22/font-setting##base-line-height}};
+font-weight:{{examp22/font-setting##base-font-weight}};
+color:{{examp22/font-setting##base-font-color}};
+}
+</pre>

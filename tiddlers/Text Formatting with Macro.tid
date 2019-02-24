@@ -1,0 +1,46 @@
+created: 20180820085115280
+creator: Mohammad
+keywords: macro format text
+modified: 20190224163835043
+modifier: Mohammad
+responder: Mark S
+tags: exmp07 solution
+title: Text Formatting with Macro
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/koJkD2DGbIw/hd5jeE1qBwAJ
+
+\define say-hi-using-variables()
+
+"""
+''{{$(name)$##Salutation}} {{$(name)$##HerFirstName}} {{$(name)$##HerLastName}}'' 
+{{$(name)$##PostAddress1}}
+{{Suburb##Cast}}
+
+Dear ''{{$(name)$##HerFirstName}}'',
+
+"""
+
+! //INCOME TAX ASSESSMENT 2018//
+
+<br>
+"""
+
+We attach your income tax assessment for the {{CYR}}, which has been checked and agreed with your return as lodged.
+
+The tax office shows a refund  of  ${{$(name)$##HerTax17}}  for you  which should have been  forwarded  to your  nominated  bank account.
+ 
+Please contact us if you have any queries.
+
+{{YoursFaithfullySteveHarding}}
+"""
+
+
+\end
+
+<$set name="name" value="SimaParsi">
+<<say-hi-using-variables>>
+</$set>
+
+---
+Other tiddlers in exmp07
+<<list-links "[tag[exmp07]]">>

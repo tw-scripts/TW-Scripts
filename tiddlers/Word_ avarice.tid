@@ -1,0 +1,12 @@
+created: 20190119042621727
+creator: Mohammad
+modified: 20190224163837325
+modifier: Mohammad
+tags: lookup exmp28
+title: Word: avarice
+type: text/vnd.tiddlywiki
+
+!! Example
+This tiddler shows an example for search in online dictionaries, databases, search engines. Here the title of tiddler has a word `avarice`. So to use the search is those online sites, just put the below macrocall inside the tiddler.
+
+<<alert info "This example uses a template [[S.S./viewtemplate/lookup]]. This is a conditional template is used for all tiddlers have lookup tag.">>

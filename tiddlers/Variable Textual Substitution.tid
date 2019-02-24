@@ -1,0 +1,23 @@
+created: 20180812192041813
+modified: 20190224163836982
+tags: 
+title: Variable Textual Substitution
+type: text/vnd.tiddlywiki
+
+Ref: [[Jeremy Rutson|https://groups.google.com/d/msg/tiddlywiki/-U6g3QZB-nA/0sOWCPNaBAAJ]]
+
+;Q:  Does the variable can be passed to the filter in two possible way as `$(var)$` and `<var>`?
+
+```
+<$set name="var" value="vim">
+
+<<tabs "[tag<var>sort[title]]" default:"" state:"$:/state/tab1" class:"tc-vertical">>
+
+<<tabs "[tag[$(var)$]sort[title]]" default:"" state:"$:/state/tab1" class:"tc-vertical">>
+
+</$set>
+```
+
+* The second example uses the textual substitution feature of macros, and so only works within a macro definition. It's actually more complicated than that: the textual substitution is performed as the first step of evaluating the macro. In an example like this, it means that the value of the "var" variable that is substituted will be the value prevailing at the time the macro is evaluated, i.e. before the assignment in the `<$set>` widget.
+
+* For all of these reasons, I advise strongly to avoid the textual substitution features of ~TiddlyWiki. The improvements over the last couple of years to filter processing have have rendered it unnecessary in my experience. There's still a lot of textual substitution used in the core, which is unfortunate, but I try to refactor it whenever I'm working on a core component that makes use of it.

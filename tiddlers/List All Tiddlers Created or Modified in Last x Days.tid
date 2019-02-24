@@ -1,0 +1,39 @@
+created: 20190201095848057
+creator: Mohammad
+keywords: days modified
+modified: 20190224163833646
+modifier: Mohammad
+responder: Anthony Muscio (TonyM)
+tags: solution
+title: List All Tiddlers Created or Modified in Last x Days
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/hDU8Ed1UArQ/Zo0UgxH-HAAJ
+
+;How to list all tiddlers modified in the last x days?
+: Use `days` operator.
+As described in [[Days Operator|https://tiddlywiki.com/#days%20Operator]]
+Select tiddlers where a specified date field (default "modified") is within a specified date range. Time portion is ignored.
+
+!! Example i
+List all tiddlers tagged with `solution` and ''modified'' within the last two days.
+
+<$macrocall $name="wikitext-example-without-html" 
+src="""><$list filter="[tag[solution]days[-2]!sort[modified]]">
+
+</$list>
+"""/>
+
+!! Example ii
+List all tiddlers tagged with `solution` and ''created'' within the last two days.
+
+<$macrocall $name="wikitext-example-without-html" 
+src="""><$list filter="[tag[solution]days:created[-2]!sort[created]]">
+
+</$list>
+"""/>
+!! Remarks
+* The last example only shows newly created tiddlers tagged with //solution//
+* Note to the `days:created[-2]` and the `created` suffix.
+* Compare the two examples, one list recent ''modified'' and the other lists recent ''created'' tiddlers tagged with //solution//.
+
+For more information see [[days operator|https://tiddlywiki.com/#days%20Operator]]

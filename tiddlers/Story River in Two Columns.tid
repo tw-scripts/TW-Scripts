@@ -1,0 +1,30 @@
+created: 20180823165254420
+creator: Mohammad
+keywords: flexbox column
+modified: 20190224163834699
+modifier: Mohammad
+responder: Rustem
+tags: solution
+title: Story River in Two Columns
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/lVRs1qfXEsc/vS_mo36e_vMJ
+
+The below css can split the stroy river in two columns
+
+```
+.tc-story-river {   display: flex;   flex-wrap: wrap; }
+.tc-tiddler-frame { max-width: 49%; margin-right: 1%; }
+```
+
+* Use max-height, no wasted space for smaller tiddlers
+* Put that in .tc-tiddler-body, that way the heading part won’t scroll (title,etc,tags)
+
+```
+.tc-tiddler-body { max-height: 24em; overflow: auto; }
+```
+
+There is a nice demo with a button to switch single / two columns view. Have a look at:
+
+> [[Solar flair|http://solar-flair.tiddlyspot.com/]]
+
+<mark>Check and download later.</mark>

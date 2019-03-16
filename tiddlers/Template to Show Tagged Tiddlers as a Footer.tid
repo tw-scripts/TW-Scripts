@@ -1,0 +1,29 @@
+created: 20190226105927482
+creator: Mohammad
+keywords: template
+modified: 20190316114920857
+modifier: Mohammad
+responder: Magnus, Mohammad
+tags: template solution
+title: Template to Show Tagged Tiddlers as a Footer
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/ufLQJoS04_4/OZYCnTJ_AgAJ
+
+To show a list of all tiddlers tagged say with `Content` as footer in all those tiddlers, use a template as below
+
+;Template tiddler
+: title: list-tagged-tiddlers
+: tag: `$:/tags/ViewTemplate`
+: text:
+
+```
+<$list filter="[all[current]tag[Content]]">
+ | <$list filter="[tag[Content]!has[draft.of]]"><$link to={{!!title}}><$view field="caption"><$view field="title"></$view></$view></$link> | </$list>
+</$list>
+```
+
+Now every tiddler has been tagged with `Contents` will show in its footer a nice list of all tiddlers, they have `Conetnt` tag.
+
+If tiddlers have caption, their caption will show instead of title.
+
+<<alert info  """This code uses conditional output for displaying among caption/title. See: [[Conditional Output]]""">>

@@ -1,0 +1,36 @@
+created: 20190223065144463
+creator: Mohammad
+modified: 20190316114915179
+modifier: Mohammad
+tags: exmp50
+title: Example 50: Tiddler Title with Zero Padded Number
+type: text/vnd.tiddlywiki
+
+\define newTitle() myTiddler-{{{[[0]add[$(inc)$]addprefix[0000]split[]last[3]join[]]}}} 
+
+\define newTiddler(n:0)
+<$set name="inc" value={{{ [<__n__>add[1]] }}}>
+<$wikify name="myTitle" text="<<newTitle>>" >
+<$list filter="[<myTitle>] +[!has[title]]" 
+emptyMessage=""" <$macrocall $name="newTiddler" n=<<inc>> /> """>
+<$action-createtiddler $basetitle=<<myTitle>> tags="myTag" />
+</$list>
+</$wikify>
+</$set>
+\end
+
+
+!! Zero padded sequence number
+This example demonstrate how the second and third solutions of [[Create Tiddler with Sequence Number]] works. A macro called `newTitle` creates a zero padded number as below.
+
+```
+\define newTitle() myTiddler-{{{[[0]add[$(inc)$]addprefix[0000]split[]last[3]join[]]}}}  
+```
+
+This code also prevent any overwritting previous tiddlers, i.e if some tiddlers with lower sequence number are deleted, the first free sequence number is selected.
+
+To see the details edit this tiddler and look at the code. Here is a button to create new tiddler
+
+<$button actions=<<newTiddler>>>
+Create a new tiddler
+</$button>

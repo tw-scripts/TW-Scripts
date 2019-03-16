@@ -1,7 +1,7 @@
 created: 20190214163529629
 creator: Mohammad
 keywords: macro blank empty parameter
-modified: 20190224163831614
+modified: 20190316114915029
 modifier: Mohammad
 responder: Mohammad and Bimlas
 tags: solution
@@ -31,9 +31,21 @@ Do my job!
 
 <<alert info "''Note'': Wrapping the whole macro inside above `list` widget causes macro only run if the parameter gets a non-Empty value.">>
 
+!! Alternative i
+A rather robust solution is proposed by BTC as below
+
+```
+\define macro2(param)
+<$list filter="[<__param__>minlength[1]]">
+
+Do my job!
+</$list>
+\end
+```
+In this method, if param has not been passed the `minlength[1]` returns nothing. This operator means the input should have at least one character.
 
 
-!! Alternative
+!! Alternative ii
 Bimlas in [[forum|https://groups.google.com/d/msg/tiddlywiki/82N15sAnoPs/iWhtoBjbAwAJ]] proposed this alternative, in that the macro is blank
 
 ```

@@ -1,0 +1,32 @@
+created: 20190226150200580
+creator: Mohammad
+keywords: macro name
+modified: 20190316114917257
+modifier: Mohammad
+responder: Jeremy Ruston
+tags: solution
+title: Get Macro Name as String
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/4rEuAWc4EpM/eeo4BE9WAQAJ
+
+; How to get the macro name only NOT retreive the value?
+
+In filter expression, sometimes you need to get the name of macro instead of its value:
+
+* To get the macro name only use it inside `[]`
+* To retrieve the value oc macro use it inside angle bracket `<MyMacro>`
+
+For example 
+
+```
+\define MyMacro() This is a test
+<$list filter="[[myMacro]addsuffix[ -Variable]]" ...
+<$list filter=:"[<MyMacro>addsuffix[ -Variable]]" ...
+
+```
+
+* In the first $list it produces `MyMacro - Variable`
+* In the second $list it produces `This is a test -Variable `
+
+
+For a real use case see: [[Check if Macro or Variable Exists]]

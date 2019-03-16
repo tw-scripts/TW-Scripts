@@ -1,0 +1,81 @@
+created: 20190222064439458
+creator: Mohammad
+keywords: create tiddler sequence number
+modified: 20190316114914237
+modifier: Mohammad
+responder: Mohammad
+tags: exmp50 solution
+title: Create Tiddler with Sequence Number
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/3_Xacb7H1p0/BN73J04iAQAJ
+
+Assume you want to create tiddlers all tagged with say `myTag` and have unique title with ordinal number.
+So
+
+* tiddlers have title like `myTiddler-1`
+* tiddlers all tagged with `myTag`
+
+```
+\define newTitle() myTiddler-{{{[tag[myTag]count[]add[1]]}}} 
+\define newTiddler()
+<$wikify name="myTitle" text="<<newTitle>>" >
+<$action-createtiddler $basetitle=<<myTitle>> tags="myTag" /> 
+</$wikify>
+\end
+```
+
+Then use it like below
+
+```
+<$button actions=<<newTiddler>>>
+Create a new tiddler
+</$button>
+```
+
+!!! Remarks
+* The `wikify` widget, calls newTitle macro, creates a new title using filter transclusion and store it in myTitle variable.
+* The `action-createtiddler` creates a new tiddler using myTitle and myTag.
+
+!! Issues and solution
+[[Thomas Elmiger|https://groups.google.com/d/msg/tiddlywiki/3_Xacb7H1p0/KSYPzQguAQAJ]] states that if some tiddlers deleted in this between, the above code may overwrite the previous ones. Assume you have myTiddler-1, myTiddler-2, and myTiddler-3. Now you delete myTiddler-2 abd then create another, the current code sees there is two tiddler, so it creates the next and overwrite myTiddler-3.
+
+!!! Solution
+* If myTiddler-2 deleted, the code will create myTiddler-3 1. So there is no risk to overwrite
+* To overcome this issue, the below recursive macro take cares of this issue as below
+
+```
+\define newTitle() myTiddler-{{{[tag[myTag]count[]add[$(inc)$]]}}} 
+
+\define newTiddler(n:0)
+<$set name="inc" value={{{ [<__n__>add[1]] }}}>
+<$wikify name="myTitle" text="<<newTitle>>" >
+<$list filter="[<myTitle>] +[!has[title]]" 
+emptyMessage=""" <$macrocall $name="newTiddler" n=<<inc>> /> """>
+<$action-createtiddler $basetitle=<<myTitle>> tags="myTag" />
+</$list>
+</$wikify>
+</$set>
+\end
+
+<$button actions=<<newTiddler>>>
+Create a new tiddler
+</$button>
+```
+
+!!! Remarks
+* The newTiddler macro check if the tiddler is going to created is existed or not. It uses the `list` widget for this purpose.
+* If the tiddler is existed, it calls itself with n icremented by one. This is done by emptyMessage part of `list` widget.
+* The newTiddler macro calls itself as many as time to find a sequence number not in use and then creates the tiddler.
+
+!!! Solution iii
+[[Mal|https://groups.google.com/d/msg/tiddlywiki/3_Xacb7H1p0/6LqGKyVmAQAJ]] has proposed using zero padded number. A revised version of zero padded number (assuming 3 digits) is given below.
+
+```
+\define newTitle() myTiddler-{{{[tag[myTag]count[]add[1]addprefix[0000]split[]last[3]join[]]}}} 
+\define newTiddler()
+<$wikify name="myTitle" text="<<newTitle>>" >
+<$action-createtiddler $basetitle=<<myTitle>> tags="myTag" /> 
+</$wikify>
+\end
+```
+See this method in action: [[Example 50: Tiddler Title  with Zero Padded Number]].

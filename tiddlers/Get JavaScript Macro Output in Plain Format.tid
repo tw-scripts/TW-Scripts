@@ -1,0 +1,69 @@
+created: 20190303130542711
+creator: Mohammad
+keywords: macro Javascript plain text output variabe
+modified: 20190316114917264
+modifier: Mohammad
+responder: Jeremy Ruston
+tags: solution
+title: Get JavaScript Macro Output in Plain Format
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/_OnqU7IiB9g/Dk40NpL6CAAJ
+
+;[[Question|https://groups.google.com/d/msg/tiddlywiki/_OnqU7IiB9g/XrbaGLBUCAAJ]]: How get the JavaScript macro output as raw text (NOT wikified)?
+<<<
+In a normal TiddlyWiki macro the below pragma 
+
+```
+\rules only
+```
+prevents the macro output from wikification! How prevent TiddlyWiki from wikifying the output of a JS macro output or how get the raw text as output?
+<<<
+
+!! Solution i
+Ref: [[Best solution|https://groups.google.com/d/msg/tiddlywiki/_OnqU7IiB9g/Dk40NpL6CAAJ]]
+
+The trick is to use the “type” attribute of the ''$macrocall'' widget. It causes it to interpret the text as //plain text//, rather than //wikitext//. However, if you try `<$macrocall $type="text/plain" $name="dumpvariables"/>` on it’s own you’ll see that it puts the text in a plain text block (like triple backticks). The wikify widget lets us extract the plain text from that output.
+
+```
+<$wikify name="output" text="""<$macrocall $type="text/plain" $name="dumpvariables"/>""">
+<$text text=<<output>>/>
+</$wikify>
+```
+
+!!Example
+<<<
+```
+<$wikify name="output" text="""<$macrocall $type="text/plain" $name="dumpvariables"/>""">
+;Raw or plain output
+:<$text text=<<output>> />
+;Wikified output
+:<<xx>>
+</$wikify>
+```
+
+!!!Remarks
+Here `dumpvariables` is a sample JS macro. You can use your own JS macro which may have many input parameters e.g
+
+```
+<$wikify name="output" text="""<$macrocall $type="text/plain" $name="regexpsub" sourceText={{snr/sample01}} searchValue="is" replaceValue="IS" />""">
+<$text text=<<output>>/>
+</$wikify>
+```
+<<<
+
+!! Solution ii
+Ref: [[Alternative solution|https://groups.google.com/d/msg/tiddlywiki/_OnqU7IiB9g/IxloHlq3CAAJ]]
+
+To render the plain output of a JS macro you can do this:
+
+```
+<pre><$text text=<<macro-name-here>>/></pre>
+```
+
+If you need the output in a ''variable'' you’ll need to use the wikify widget:
+
+```
+<$wikify name="output" text="""<pre><$text text=<<macro-name-here>>/></pre>""">
+<$text text={{{ [<output>split[|]join[||]] }}} />
+</$wikify>
+```

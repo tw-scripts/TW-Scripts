@@ -1,0 +1,29 @@
+created: 20190228054349538
+creator: Mohammad
+modified: 20190316114915156
+modifier: Mohammad
+tags: exmp52
+title: Example 52: Check if Variable Macro Exists
+type: text/vnd.tiddlywiki
+
+\define variable-test(var)
+<$list filter="[[$var$]] +[is[variable]]" emptyMessage="''$var$'' - //Undefined variable or macro//">
+''$var$'' - Existed variable or macro
+</$list>
+\end
+
+This example shows solution ii in [[Check if Macro or Variable Exists]] to check the existence of a macro variable.
+
+```
+\define variable-test(var)
+<$list filter="[[$var$]] +[is[variable]]" emptyMessage="''$var$'' - //Undefined variable or macro//">
+''$var$'' - Existed variable or macro
+</$list>
+\end
+```
+
+<$macrocall $name="wikitext-example-without-html" 
+src="""
+# <<variable-test list-links>>
+# <<variable-test list-linkss>>
+"""/>

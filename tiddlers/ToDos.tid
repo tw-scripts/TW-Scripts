@@ -1,6 +1,6 @@
 created: 20180615032251583
 creator: Mohammad
-modified: 20190224163834760
+modified: 20190316114921064
 modifier: Mohammad
 tags: $:/tags/SideBar task done
 title: ToDos
@@ -14,7 +14,7 @@ type: text/vnd.tiddlywiki
 ! Outstanding tasks
 //Drag the tasks to re-order them//
 
-<<list-tagged-draggable tag:"task" subFilter:"!has[draft.of]!tag[done]" itemTemplate:"TaskManagementDraggableTemplate" emptyMessage:"You don't have any active tasks">>
+<<list-tagged-draggable tag:"task" subFilter:"!has[draft.of]!tag[done]!sort[created]" itemTemplate:"TaskManagementDraggableTemplate" emptyMessage:"You don't have any active tasks">>
 
 ! Completed tasks
 

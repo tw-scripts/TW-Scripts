@@ -1,0 +1,32 @@
+created: 20190312191616305
+creator: Mohammad
+keywords: comparison conditional greater less
+modified: 20190316114917198
+modifier: Mohammad
+responder: Arlen Beiler
+tags: exmp53 solution
+title: Greater and Less Than Macros
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/LLenDBhK-9I/bTfq8WBACAAJ
+
+The below macro was introduced by {{!!responder}} to create a filter to compare two numbers and return the bigger one
+
+```
+\define gt(a, b) $a$ $b$ +[nsort[]last[1]remove[$b$]]
+```
+
+!! Remarks
+* `a`, `b`' two number as input parameters
+* `gt` filter will return `a`, if it is greater than `b`
+
+Based on this idea, the below macro is developed to return the smaller number
+
+```
+\define lt(a, b) $a$ $b$ +[nsort[]first[1]remove[$b$]]
+```
+
+!! Remarks
+* `a`, `b`' two number as input parameters
+* `lt` filter will return `a`, if it is less than `b`
+
+See [[Example 53|Example 53: Greater and Less Than Macro]]

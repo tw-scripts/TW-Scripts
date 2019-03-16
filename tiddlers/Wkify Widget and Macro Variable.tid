@@ -1,0 +1,50 @@
+created: 20190227125352827
+creator: Mohammad
+keywords: rules wikify variable
+modified: 20190316114921615
+modifier: Mohammad
+responder: Simon Huber (BTC)
+tags: exmp51 solution
+title: Wkify Widget and Macro Variable
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/n-A2J_3DhBQ/4Cn0DmVmAAAJ
+
+Consider the below example in which a macro output contains some wikitext has been fed to a wikify widget! The widget removes part of formatting:
+
+```
+\define mc() This is a `code` and __underline__.
+<$wikify name="result"  text="""<<mc>>""">
+<<result>>
+</$wikify>
+```
+* The output is: "This is a code and underline."
+* While it should be: "This is a `code` and __underline__."
+How to solve this issue?
+
+!! Solution
+In cases like this, the wikiparser does its magic first ... 
+see the below example, where it wikifies the text field of another tiddler, but viewing it with `<$view tiddler="someTiddler" mode="block" format="text"/>` 
+
+```
+<$wikify name="something" text="""<$view tiddler="bla" mode="block" format="text"/>""">
+
+<<something>>
+
+</$wikify>
+```
+
+The `view` widget here assures that the plain text comes in ...
+
+In the above example here you have no such "helper". So, you need to change macro as below:
+
+```
+\define mc()
+\rules only
+This is a `code` and __underline__.
+\end
+```
+
+This way, you prevent the parser from kicking in in this macro block and it works. See [[Example 51: Rules Only Pragma]].
+
+!! Remarks
+This method is useful when the output of a macro should be written in a tiddler whitout wikifying! In other words the wikitext itself is writte.

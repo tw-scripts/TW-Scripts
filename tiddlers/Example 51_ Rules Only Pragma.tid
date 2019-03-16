@@ -1,0 +1,42 @@
+created: 20190227131118596
+creator: Mohammad
+modified: 20190316114915166
+modifier: Mohammad
+tags: exmp51
+title: Example 51: Rules Only Pragma
+type: text/vnd.tiddlywiki
+
+\define mc2()
+This is a `code` and __underline__.
+\end
+
+\define mc()
+\rules only
+This is a `code` and __underline__.
+\end
+
+
+Consider the below two macros. They are fed to `wikify` widget. The second macro has `\rules only` pragma. This prevents the parser from kicking in in this macro block and it works. The second example does not work. See the output and compare with expected output. For more information hae a look at: [[Wkify Widget and Macro Variable]]
+
+```
+\define mc2()
+This is a `code` and __underline__.
+\end
+
+\define mc()
+\rules only
+This is a `code` and __underline__.
+\end
+```
+
+<$macrocall $name="wikitext-example-without-html" 
+src="""
+>Example 1: <$wikify name="result"  text=<<mc>>>
+<<result>>
+</$wikify>
+
+>Example 2: <$wikify name="result"  text=<<mc2>>>
+<<result>>
+</$wikify>
+
+"""/>

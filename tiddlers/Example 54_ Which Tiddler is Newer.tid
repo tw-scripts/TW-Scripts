@@ -1,0 +1,31 @@
+created: 20190314201834721
+creator: Mohammad
+modified: 20190316114915143
+modifier: Mohammad
+tags: 
+title: Example 54: Which Tiddler is Newer
+type: text/vnd.tiddlywiki
+
+\define is-thisTid-newer(TidA, TidB)
+<$set name="tidAMod" value={{{ [[$TidA$]get[modified]] }}}>
+<$set name="tidBMod" value={{{ [[$TidB$]get[modified]] }}}>
+<$list filter="[<tidAMod>] [<tidBMod>] +[nsort[]last[1]removesuffix<tidAMod>]">
+Yes, ''$TidA$'' is newer
+</$list>
+<$list filter="[<tidAMod>] [<tidBMod>] +[nsort[]last[1]removesuffix<tidBMod>]">
+No, ''$TidA$'' is older
+</$list>
+</$set>
+</$set>
+\end
+
+This example shows how `is-thisTid-newer` works. Edit the two tiddlers
+
+* [[demo/exmp54/tid01]]
+* [[demo/exmp54/tid02]]
+
+to see how result changes.
+
+<$macrocall $name="wikitext-example-without-html" 
+src="""> <<is-thisTid-newer demo/exmp54/tid01 demo/exmp54/tid02>>
+"""/>

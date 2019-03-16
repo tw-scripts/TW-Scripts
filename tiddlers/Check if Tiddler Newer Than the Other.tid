@@ -1,0 +1,52 @@
+created: 20190314174758260
+creator: Mohammad
+keywords: newer greater tiddler
+modified: 20190316114914999
+modifier: Mohammad
+responder: BurningTreeC
+tags: exmp54 solution
+title: Check if Tiddler Newer Than the Other
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/9QQvkJkLogA/UbIgaSFSBgAJ
+
+; How to check if a tiddler is newer than the other?
+: Compare the modified time of two tiddlers
+
+```
+\define is-thisTid-newer(TidA, TidB)
+<$set name="tidAMod" value={{{ [[$TidA$]get[modified]] }}}>
+<$set name="tidBMod" value={{{ [[$TidB$]get[modified]] }}}>
+<$list filter="[<tidAMod>] [<tidBMod>] +[nsort[]last[1]remove<tidAMod>]">
+Yes, $TidA$ is newer
+</$list>
+<$list filter="[<tidAMod>] [<tidBMod>] +[nsort[]last[1]remove<tidBMod>]">
+No, $TidA$ is older
+</$list>
+</$set>
+</$set>
+\end
+```
+
+!! Remarks
+# The first two `$set` widgets get the date of modification of two tiddlers and stores in related variables
+# The first `$list` widget uses a smart filter to determine if //tidAMod// is greater than //tidBMod//.
+# The second `$list` widget uses a smart filter to determine if //tidBMod// is greater than //tidAMod//.
+
+!! This is another solution
+Here the `$reveal` widget has been used! This is a little longer code in comparison to the above solution.
+See for more infor [[BTC|https://groups.google.com/d/msg/tiddlywiki/9QQvkJkLogA/xDWozyJRBgAJ]].
+
+```
+\define is-newer(TidA, TidB)
+<$set name="tidAMod" value={{{ [[$TidA$]get[modified]] }}}>
+<$set name="tidBMod" value={{{ [[$TidB$]get[modified]] }}}>
+<$reveal type="match" text="yes" default={{{ [<tidAMod>] [<tidBMod>] +[nsort[]last[1]remove<tidBMod>addprefix[yes]removesuffix<tidAMod>] ~[[no]] }}}>
+$TidA$ is newer
+</$reveal>
+<$reveal type="match" text="no" default={{{ [<tidAMod>] [<tidBMod>] +[nsort[]last[1]remove<tidBMod>addprefix[yes]removesuffix<tidAMod>] ~[[no]] }}}>
+$TidB$ is newer
+</$reveal>
+</$set>
+</$set>
+\end
+```

@@ -1,0 +1,73 @@
+created: 20190226082832151
+creator: Mohammad
+keywords: macro script
+modified: 20190316114917819
+modifier: Mohammad
+responder: Eric Shulman
+tags: solution
+title: Macro in Tiddlywiki: A Programming Issue
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/0b8VdPq5vok/Zl0cZmF1AgAJ
+
+! Macro in Tiddlywiki
+TiddlyWiki //macro definitions// are ''NOT'' //functions// in the traditional programming sense.  Although input "parameters" can be passed to them, and they "return" something as a result, __they don't actually "run" any of the "code" they contain__.  When a macro is invoked, it does two things (and ONLY two things):
+
+# replace all occurrences of `$paramname$` with the corresponding value that was passed as an input parameter
+# replace all occurrences of `$(variablename)$` with the current value of the variable (assuming it is defined in the context of the "caller" of the macro)
+
+That is ALL it does.  After doing the replacements, the resulting content is "returned".  If the macro call is being used as a widget parameter, then the result is simply passed along to the widget for further processing.  However, if the macro call is embedded directly in wiki content, then it is rendered.
+
+!! An Issue
+Consider the below code in a tiddler:
+
+```
+Fields
+title : Headache
+list : [[A B]] [[C D]] E
+tidd : Headache
+
+\define get-related-tiddlers() <$view tiddler=$(tid)$ field="list" mode="block"/>
+
+\define test(list-tids) 
+list-tids= $list-tids$
+<$list filter="[enlist<__list-tids__>]">
+
+</$list>
+\end
+
+<$set name=tid value={{!!tidd}}>
+
+tid= <<tid>>
+
+get-related-tiddlers= <<get-related-tiddlers>>
+
+1. WORKS: <$macrocall $name="test" list-tids={{!!list}} field="list" />
+
+2. BREAKS: <$macrocall $name="test" list-tids=<<get-related-tiddlers>> field="list" />
+
+<$wikify name="GOT-related-tiddlers" text=<<get-related-tiddlers>>>
+
+3. WORKS!: <$macrocall $name="test" list-tids=<<GOT-related-tiddlers>> field="list" />
+
+</$wikify>
+</$set>
+```
+;Question
+: Why example 2 in the above code breaks?
+
+In light of the above, when you invoke the following:
+
+```
+2. BREAKS: <$macrocall $name="test" list-tids=<<get-related-tiddlers>> field="list" />
+```
+
+the value of the "list-tids" parameter is simply passed along to the widget and will ''NOT'' be the contents of the list field, but rather will literally be:
+
+```
+<$view tiddler=SomeTiddlerName field="list" mode="block"/>
+```
+
+In contrast, when you use `<$wikify>` on the macro, //you are forcing it to be rendered and then capturing that result in the variable "GOT-related-tiddlers"//.  Thus, the `<$view>` widget contained in the macro //DOES get processed//, and the result is then available to pass along to the "list-tids" param.
+
+; Also, I wonder if this use case was the primary reason for making the $wikify widget? If not, what was?
+: I would say it was a convincing reason, though perhaps not the only one.

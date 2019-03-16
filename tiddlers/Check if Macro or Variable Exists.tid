@@ -1,0 +1,48 @@
+created: 20190227065336369
+creator: Mohammad
+keywords: macro variable exist
+modified: 20190316114911890
+modifier: Mohammad
+responder: Jeremy Ruston
+tags: solution exmp52
+title: Check if Macro or Variable Exists
+type: text/vnd.tiddlywiki
+url: Ref: https://groups.google.com/d/msg/tiddlywiki/4rEuAWc4EpM/JFBoPsibBwAJ
+
+;How to check if a macro / variable exists?
+A new subfilter `[is[variable]` has been introduced in Tddly 5.1.20 to support checking the existence of a macro variable.
+
+<<dbadge Tiddlywiki 5.1.20+ danger>>
+
+!! Syntax
+```
+[[VAR_NAME]] +[is[variable]addsuffix[ is a variable]] ~[[Undefined variable or macro 'VAR_NAME']]
+
+[[currentTiddler]] +[is[variable]addsuffix[ is a variable]] ~[[Undefined variable or macro ‘currentTiddler']]
+```
+
+!! Example i
+The below macro was proposed by [[S.S.|https://groups.google.com/d/msg/tiddlywiki/4rEuAWc4EpM/8kvLDh7qBwAJ]] and works as expected.
+
+```
+\define variable-test(var)
+<$list filter="[[$var$]] +[is[variable]]" emptyMessage="''$var$'' - //Undefined variable or macro//">
+''$var$'' - Existed variable or macro
+</$list>
+\end
+
+1. <<variable-test list-links>>
+
+2. <<variable-test list-linkss>>
+```
+
+See in [[Example 52: Check if Variable Macro Exists]] the new `subfilter` in action.
+
+!! Example ii
+[[Mal|https://groups.google.com/d/msg/tiddlywiki/4rEuAWc4EpM/1qOUvPdhAgAJ]] has proposed the below simple syntax
+
+```
+{{{ [[myMacro]] +[!is[variable]addsuffix[ is not defined]] }}}
+```
+
+This should produce "myMacro is not defined" or nothing if the macro or variable is defined.

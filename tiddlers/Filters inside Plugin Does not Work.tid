@@ -1,0 +1,19 @@
+created: 20190312201747613
+creator: Mohammad
+keywords: filter shadow
+modified: 20190316114915825
+modifier: Mohammad
+responder: Jeremy Ruston
+tags: solution
+title: Filters inside Plugin Does not Work
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/nmzDZEYxNoI/ON71PFFCCAAJ
+
+;There is a demo tiddler packed into a plugin and it used a viewtemplate. It did not work until it is opened and saved again. Example is sticky footer in Shiraz plugin!
+:When you say “open them and save them again” are you referring to the tiddlers within your plugins? If so, it sounds like some of your filter expressions are only picking up “real” tiddlers, and not shadow tiddlers. 
+
+If you want to get all tiddlers tagged “foo” including shadow tiddlers you need a filter like this: 
+
+```
+[all[shadows+tiddlers]tag[foo]] 
+```

@@ -1,0 +1,16 @@
+created: 20190226102901635
+creator: Mohammad
+keywords: build release
+modified: 20190316114919167
+modifier: Mohammad
+responder: Mohammad
+tags: solution
+title: Nightly Build
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/9BEZKUneCv0/54nXAWZ9AgAJ
+
+When working with [[https://tiddlywiki.com/prerelease/]] it is good to know when and from which branch it has been built. To know this open `$:/build` tiddler and it will show the required information including:
+
+# Branch
+# Commit number
+# Date and time of build

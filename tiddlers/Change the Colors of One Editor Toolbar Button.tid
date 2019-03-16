@@ -1,0 +1,50 @@
+created: 20190314032516038
+creator: Mohammad
+keywords: editor toolbar
+modified: 20190316114911902
+modifier: Mohammad
+responder: JD
+tags: solution
+title: Change the Colors of One Editor Toolbar Button
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/hpBJ1peI4zU/i_9Lw4T9BQAJ
+
+; How to change the background color of list-bullet button in Tiddlywiki editor toolbar?
+: Use the below CSS. It is possible to change the background color of all butons in a similar way.
+
+Create a tiddler
+Tag it with `$:/tags/Stylesheet`
+Put the below CSS inside the tiddler body (text)
+
+```
+.tc-editor-toolbar > .tc-reveal > button {
+     display: inline-flex;
+     padding: 0; 
+}
+
+.tc-editor-toolbar button .tc-image-button {
+     padding: 2px;
+     font-size: 1.25em;
+}
+
+.tc-editor-toolbar button .tc-image-list-bullet {
+     display: flex;
+     align-items: stretch;
+     justify-content: stretch;
+     fill: red;
+     background-color: yellow;
+}
+```
+
+!! Remark
+If you need to change the background color of all toolbar buttons change the last part of above CSS as below:
+
+```
+.tc-editor-toolbar button {
+     display: flex;
+     align-items: stretch;
+     justify-content: stretch;
+     fill: red;
+     background-color: yellow;
+}
+```

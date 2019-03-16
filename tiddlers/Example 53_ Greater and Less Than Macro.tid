@@ -1,0 +1,52 @@
+created: 20190312191650597
+creator: Mohammad
+modified: 20190316114915149
+modifier: Mohammad
+tags: exmp53
+title: Example 53: Greater and Less Than Macro
+type: text/vnd.tiddlywiki
+
+\define gt(a, b) $a$ $b$ +[nsort[]last[1]remove[$b$]]
+\define lt(a, b) $a$ $b$ +[nsort[]first[1]remove[$b$]]
+
+\define exmp-gt()
+<$list filter=<<gt $(x)$ 5>>  variable="result">
+<<result>>
+</$list>
+\end
+
+\define exmp-lt()
+<$list filter=<<lt $(x)$ 5>>  variable="result">
+<<result>>
+</$list>
+\end
+
+!! Simple example
+<<<
+This example shows how greater and less than filter works.
+
+<$macrocall $name="wikitext-example-without-html" 
+src="""<$list filter=<<gt 5 3>> variable="x" >
+<<x>>
+</$list>
+
+<$list filter=<<lt 3 9>> variable="x" >
+<<x>>
+</$list>
+"""/>
+<<<
+
+!! Another example
+<<<
+Here two example macros have been developed to demonstrate how a variable can be compared to a constant.
+
+<$macrocall $name="wikitext-example-without-html" 
+src="""<$list filter="2 8 5 7 6 3 9" variable="x">
+<<exmp-gt>>
+</$list>
+
+<$list filter="2 8 5 7 6 3 9" variable="x">
+<<exmp-lt>>
+</$list>
+"""/>
+<<<

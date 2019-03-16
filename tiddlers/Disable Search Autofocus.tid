@@ -1,0 +1,15 @@
+created: 20190226102239362
+creator: Mohammad
+keywords: search auto-focus
+modified: 20190316114915566
+modifier: Mohammad
+responder: Jeremy Ruston
+tags: solution
+title: Disable Search Autofocus
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/kuG94UuCnV8/MSVM6MY3DAAJ
+
+Tiddlywiki by default has auofocus on Searchbox on the sidebar. This may cause annoying behaviour when you open a wiki and a search word in the sidebar search box. To disable this feature:
+
+# Open [[$:/config/Search/AutoFocus]]
+# Set the text value of this tiddler to `false`.

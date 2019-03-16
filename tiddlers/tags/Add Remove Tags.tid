@@ -1,7 +1,7 @@
 created: 20180801184016331
 creator: Mohammad
 keywords: tag add remove
-modified: 20190216180308047
+modified: 20190316114912235
 modifier: Mohammad
 responder: Mark S
 tags: exmp24 solution
@@ -18,7 +18,7 @@ The below code can add an new tag to current tiddler and remove an old tag.
 \define myactions(old, new)
 <$fieldmangler>
 <$action-sendmessage $message="tm-add-tag" $param="$new$"/>
-<$action-sendmessage $message="tm-remove-tag" $param="$old$"></$button>
+<$action-sendmessage $message="tm-remove-tag" $param="$old$">
 </$fieldmangler>
 \end
 \define add-remove-tags(old new)

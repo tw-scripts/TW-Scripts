@@ -1,0 +1,42 @@
+created: 20190401052541941
+creator: Mohammad
+modified: 20190406122515776
+modifier: Mohammad
+tags: exmp57
+title: Example 57: Doubly Sorted Table
+type: text/vnd.tiddlywiki
+
+This example shows how a doubly sort table can be created using a nested `$list` widgets.
+
+There is a list of tiddlers contains book data tagged with //ebook//! the below table shows the books bibliography data 
+
+* sorted first in vendor name, and 
+* second, sorted in author name
+
+<$macrocall $name="wikitext-example-without-html" 
+src="""><table>
+<$list filter="[tag[ebook]has[vendor]each[vendor]get[vendor]sort[]]" variable="publisherName">
+<$list filter="[tag[ebook]has[vendor]field:vendor<publisherName>sort[author]]" variable="bookName">
+<tr>
+  <td>
+    <$link to=<<bookName>>><$text text={{{[<bookName>get[title]removeprefix[demo/exmp57/]]}}}/></$link>
+  </td>
+  <td>
+    <$view tiddler=<<bookName>> field='author'/>
+  </td>
+  <td>
+    <$view tiddler=<<bookName>> field='vendor'/>
+  </td>
+</tr>
+</$list>
+</$list>
+</table>
+"""/>
+
+;Remark
+: The below `$text` widget gets the tiddler name and remove the `demo/exmp57` prefix. This is because the tiddlers name in this wiki has a special prefixes to show they are part of certain example.
+```
+<$link to=<<bookName>> >
+<$text text={{{[<bookName>get[title]removeprefix[demo/exmp57/]]}}}/>
+</$link>
+```

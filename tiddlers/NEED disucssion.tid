@@ -1,0 +1,31 @@
+created: 20190326113843736
+creator: Mohammad
+keywords: 
+modified: 20190406122518558
+modifier: Mohammad
+responder: 
+tags: solution
+title: NEED disucssion
+type: text/vnd.tiddlywiki
+url: 
+
+<<docit>>
+
+; Create a tiddler with unique title and open it in edit mode?
+: use tm-new-tiddler, also the below method
+
+```
+\define newTiddler(title, fields)
+<$set name="tempTid" value=<<qualify "temp/$(currentTiddler)$">> >
+<$action-createtiddler 
+$basetitle=<<__title__>> 
+$savetitle=<<tempTid>>
+$fields$/>
+<$action-sendmessage $message="tm-edit-tiddler" $param={{{[<tempTid>get[text]]}}} />
+</$set>
+\end
+
+<$button>Test
+<<newTiddler test>>
+</$button>
+```

@@ -1,0 +1,9 @@
+.ml-list ol {
+  counter-reset: mylist;
+  list-style-type: none;
+}
+
+.ml-list ol li::before {
+  counter-increment: mylist;
+  content: counters(mylist,".") ". ";
+}

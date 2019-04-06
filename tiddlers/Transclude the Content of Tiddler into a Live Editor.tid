@@ -1,0 +1,30 @@
+created: 20190324034715813
+creator: Mohammad
+keywords: live editor text-area
+modified: 20190406122521263
+modifier: Mohammad
+responder: Eric Shulman
+tags: exmp55 solution
+title: Transclude the Content of Tiddler into a Live Editor
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/ltLkZu0YYYw/AmNBR1YSBAAJ
+
+<$macrocall $name="wikitext-example-without-html" 
+src="""<$select tiddler="$:/temp/selected/character">
+   <$list filter="[tag[exmp55]] -[tag[solution]]">
+      <option><$text text=<<currentTiddler>> /></option>
+   </$list>
+</$select>
+<br>
+<style>.wideEdit { width:75%; } </style>
+<$edit-text tiddler={{$:/temp/selected/character}} tag="textarea" class="wideEdit" autoHeight="no" rows="5" />
+"""/>
+What it does:
+
+* The `$select` widget creates a drop-down list of all the titles matching the tag value (in this example, "exmp55")
+* The current selection is stored in a temporary tiddler, "$:/temp/selected/character" (note: you can use any tiddler title you like)
+* The embedded `<style>` defines a classname for setting the edit field width (you can't use a style attribute directly in the $edit-text widget)
+* The name of the target tiddler title used by `$edit-text` is retrieved from the temporary tiddler
+* The remaining `$edit-text` parameters control how the edit field looks/behaves
+
+<<alert danger "''Note'': unlike the usual tiddler editor "draft mode", the `$edit-text` field used here is ''LIVE''... that is, changes to the content are applied ''immediately'' to the underlying tiddler... there is no "ok/cancel" or "undo" functionality.">>

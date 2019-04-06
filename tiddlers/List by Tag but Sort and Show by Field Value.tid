@@ -1,0 +1,24 @@
+created: 20190331091058156
+creator: Mohammad
+keywords: list sort field get
+modified: 20190406122518105
+modifier: Mohammad
+responder: Jed Carty
+tags: exmp56 solution
+title: List by Tag but Sort and Show by Field Value
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/GKLwSWCdNDU/T95JkYq4AwAJ
+
+; How to list all tiddlers tagged with say //myTag// and sort them by a specified field value and show those value
+: Use a `$list` widget with `get` and `sort` operator
+
+!! Example
+The below code list all tiddleers tagged with //fruit// and sort them by the value of `nameit` field and show those values. (See <<tag exmp56>> tiddlers)
+
+<$macrocall $name="wikitext-example-without-html" 
+src="""><$list filter='[tag[exmp56]get[myfield]sort[]]'>
+<<currentTiddler>><br>
+</$list>
+"""/>
+
+See also [[Create a Doubly Sorted Table]]

@@ -1,7 +1,7 @@
 created: 20190226105927482
 creator: Mohammad
 keywords: template
-modified: 20190316114920857
+modified: 20190406122520657
 modifier: Mohammad
 responder: Magnus, Mohammad
 tags: template solution
@@ -22,7 +22,7 @@ To show a list of all tiddlers tagged say with `Content` as footer in all those 
 </$list>
 ```
 
-Now every tiddler has been tagged with `Contents` will show in its footer a nice list of all tiddlers, they have `Conetnt` tag.
+Now every tiddler has been tagged with `Content` will show in its footer a nice list of all tiddlers, they have `Conetnt` tag.
 
 If tiddlers have caption, their caption will show instead of title.
 

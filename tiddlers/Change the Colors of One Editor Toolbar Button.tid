@@ -1,7 +1,7 @@
 created: 20190314032516038
 creator: Mohammad
 keywords: editor toolbar
-modified: 20190316114911902
+modified: 20190406122514096
 modifier: Mohammad
 responder: JD
 tags: solution
@@ -46,5 +46,16 @@ If you need to change the background color of all toolbar buttons change the las
      justify-content: stretch;
      fill: red;
      background-color: yellow;
+}
+```
+
+!! Extra
+you can also add a width to the svg to make it narrower, specially if it used on mobile.
+
+```
+.tc-editor-toolbar button .tc-image-button {
+     padding: 4px 0px;
+     font-size: 1.45em;
+     width: 30px;
 }
 ```

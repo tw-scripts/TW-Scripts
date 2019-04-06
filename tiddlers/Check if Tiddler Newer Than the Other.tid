@@ -1,7 +1,7 @@
 created: 20190314174758260
 creator: Mohammad
 keywords: newer greater tiddler
-modified: 20190316114914999
+modified: 20190406122514053
 modifier: Mohammad
 responder: BurningTreeC
 tags: exmp54 solution
@@ -16,10 +16,10 @@ url: https://groups.google.com/d/msg/tiddlywiki/9QQvkJkLogA/UbIgaSFSBgAJ
 \define is-thisTid-newer(TidA, TidB)
 <$set name="tidAMod" value={{{ [[$TidA$]get[modified]] }}}>
 <$set name="tidBMod" value={{{ [[$TidB$]get[modified]] }}}>
-<$list filter="[<tidAMod>] [<tidBMod>] +[nsort[]last[1]remove<tidAMod>]">
+<$list filter="[<tidAMod>] [<tidBMod>] +[nsort[]last[1]removesuffix<tidAMod>]">
 Yes, $TidA$ is newer
 </$list>
-<$list filter="[<tidAMod>] [<tidBMod>] +[nsort[]last[1]remove<tidBMod>]">
+<$list filter="[<tidAMod>] [<tidBMod>] +[nsort[]last[1]removesuffix<tidBMod>]">
 No, $TidA$ is older
 </$list>
 </$set>

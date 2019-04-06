@@ -1,0 +1,37 @@
+created: 20190329040019478
+creator: Mohammad
+keywords: textarea css resize
+modified: 20190406122517892
+modifier: Mohammad
+responder: Jeremy Ruston
+tags: solution
+title: How Prevent Resizing textarea
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/U0loqd2slGw/3akudy64BgAJ
+
+;When an `$edit-text` widget is tagged 'textarea' we get a multi-line resizable text editor, how to prevent/disable resizing textarea?
+:Use CSS property
+
+There’s a CSS property that lets you control resizability of text areas. This will disable resizing on all textareas:
+
+```css
+textarea {
+resize: none;
+}
+```
+
+If it is desired to disable resizing a specified textarea then wrap it in a div element as below
+
+```css
+.mycls textarea {
+resize: none;
+}
+```
+
+and use it as below
+
+```
+<div class="mycls">
+<$edit-text tiddler="yourTid" field="your-field" tag="textarea"/>
+</div>
+```

@@ -1,0 +1,23 @@
+created: 20190315105425281
+creator: Mohammad
+keywords: 
+modified: 20190406122513724
+modifier: Mohammad
+responder: 
+tags: task solution
+title: Compare Texts of Two Tiddlers
+type: text/vnd.tiddlywiki
+url: 
+
+<<docit>>
+
+```
+\define is-Tiddlers-text-equal(TidA, TidB)
+<$set name="tidAText" value={{{ [[$TidA$]get[text]] }}}>
+<$set name="tidBText" value={{{ [[$TidB$]get[text]] }}}>
+<$reveal type="match" default=<<tidAText>> text=<<tidBText>>>Equal</$reveal>
+<$reveal type="nomatch" default=<<tidAText>> text=<<tidBText>>>NotEqual</$reveal>
+</$set>
+</$set>
+\end
+```

@@ -1,0 +1,12 @@
+created: 20190401045018669
+creator: Mohammad
+modified: 20190406122522119
+modifier: Mohammad
+tags: concept
+title: What is Semantics
+type: text/vnd.tiddlywiki
+url: https://www.webopedia.com/TERM/S/semantics.html
+
+In linguistics, ''semantics'' is the study of //meanings//. In computer science, the term is frequently used to differentiate the meaning of an //instruction// from its //format//. The //format//, which covers the spelling of language components and the rules controlling how components are combined, is called the language's ''syntax''. For example, if you misspell a command, it is a syntax error. If, on the other hand, you enter a legal command that does not make any sense in the current context, it is a ''semantic'' error.
+
+Ref: {{!!url}}

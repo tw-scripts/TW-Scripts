@@ -1,0 +1,17 @@
+created: 20190331101555996
+creator: Mohammad
+keywords: css 
+modified: 20190406122520920
+modifier: Mohammad
+responder: Mario Pietsch
+tags: solution
+title: Tiddlywiki CSS Prefixes
+type: text/vnd.tiddlywiki
+url: 
+
+About CSS prefixes: TW uses `tc-`, `tv-`, `tm-` and `th-`   prefixes for different things.
+
+* tc- tw class
+* tv- tw variable
+* tm- tw message
+* th- tw hook

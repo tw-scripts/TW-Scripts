@@ -1,0 +1,96 @@
+created: 20190331174211304
+creator: Mohammad
+keywords: set widget logic
+modified: 20190406122515768
+modifier: Mohammad
+responder: Eric Shulman
+tags: exmp58 solution
+title: Example 58: Logic of Set Widget
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/lvLfDiqNxEE/RDW_oxbUAwAJ
+
+<div class="ml-list">
+
+Here's my take on examples plus a little bit of re-arranging and editing of Jeremy's descriptions
+
+# <div> 
+
+If the "tiddler" attribute is present, get the text of the tiddler, or the value of the "emptyValue" attribute if the text field is blank or missing
+
+```
+<$set name="myvar" tiddler="SomeTiddler" emptyValue="sometext">
+```
+</div>
+
+##<div>
+
+If the "subtiddler" attribute is present, get the text of the subtiddler from the specified tiddler, or the value of the "emptyValue" attribute if the subtiddler text is blank or missing
+
+```
+<$set name="myvar" tiddler="SomeTiddler" subtiddler="SomeSubTiddler" emptyValue="sometext">`
+```
+</div>
+##<div>
+
+If the "field" attribute is present, get the value of that field, or the value of the "emptyValue" attribute if the field is blank or missing
+
+```
+<$set name="myvar" tiddler="SomeTiddler" field="somefield" emptyValue="sometext">
+```
+</div>
+##<div>
+
+If the "index" attribute is present, get the value of the specified index, or the value of the "emptyValue" attribute if the index is blank or missing
+
+```
+<$set name="myvar" tiddler="SomeTiddler" index="somefield" emptyValue="sometext">
+```
+</div>
+#<div>
+
+If the "filter" attribute is present and not blank, return the entire filter results using double square brackets quoting around any results that include spaces
+
+```
+<$set name="myvar" filter="[somefilter[]]">
+```
+</div>
+##<div>
+
+If both the "filter" attribute and the "value" attribute are present and the filter results are not empty, return the value of the "value" attribute, otherwise return blank
+
+```
+<$set name="myvar" filter="[somefilter[]]" value="somevalue">
+```
+</div>
+##<div>
+
+If both the "filter" attribute and the "emptyValue" attribute are present, return the entire filter results using double square brackets quoting around any results that include spaces, or the value of the "emptyValue" attribute if the result is empty
+
+```
+<$set name="myvar" filter="[somefilter[]]" emptyValue="sometext">
+```
+</div>
+##<div>
+
+If the "filter" attribute, the "value" attribute, and the "emptyValue" attribute are present, return the value of the "value" attribute, or the value of the "emptyValue" attribute if the result is empty
+
+```
+<$set name="myvar" filter="[somefilter[]]" value="somevalue" emptyValue="sometext">
+```
+</div>
+##<div> 
+
+If both the "filter" attribute and the "select" attribute are present and the "select" attribute is a valid number "N", return the "Nth" result from the filter
+
+```
+<$set name="myvar" filter="[somefilter[]]" select="3">
+```
+</div>
+#<div>
+
+If neither the "tiddler" or "filter" attributes are provided, return the value of the "value" attribute, or the value of the "emptyValue" attribute if the "value" attribute is blank or missing
+
+```
+<$set name="myvar" value="somevalue" emptyValue="sometext">
+```
+</div>

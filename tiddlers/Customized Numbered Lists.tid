@@ -1,0 +1,54 @@
+created: 20190317165008800
+creator: Mohammad
+keywords: typed-list ordered
+modified: 20190406122514938
+modifier: Mohammad
+responder: Mario Pietsch (PMario)
+tags: solution
+title: Customized Numbered Lists
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/WljmpJCcXYI/h-OGDAwyBwAJ
+
+; How to set typed list attribute?
+: Use css
+
+If you want to set things globally just create a new stylesheet tiddler with this content and tagged with `$:/tags/Stylesheet`
+
+```
+ol li { list-style-type:upper-alpha; }
+ol li li  { list-style-type:lower-alpha; }
+ol li li li { list-style-type:upper-roman; }
+
+```
+
+Using with ordered lists 
+
+```
+# One
+## One-one
+## One-two
+# Tow
+## Two-one
+### Two-one-one
+### Two-one-two
+# Three
+```
+
+Will create
+
+```
+A. One
+  a. One-one
+  b. One-two
+B. Tow
+  a. Two-one
+    I.Two-one-one
+   II.Two-one-two
+C. Three
+
+```
+No extra chars needed. Especially if you need to change something later, you don't need to think about it, which class to use
+
+!! More information
+* [[Styleing lists|https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_text/Styling_lists#Bullet_styles]]
+* [[list-style-type|https://developer.mozilla.org/en-US/docs/Web/CSS/list-style-type#Values]]

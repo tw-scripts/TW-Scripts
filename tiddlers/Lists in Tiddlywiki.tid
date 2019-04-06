@@ -1,0 +1,23 @@
+created: 20190317164107191
+creator: Mohammad
+modified: 20190406122518014
+modifier: Mohammad
+tags: concept
+title: Lists in Tiddlywiki
+type: text/vnd.tiddlywiki
+
+In Tiddlywiki, there two list concept
+
+* Typed list
+** Ordered list (numbered list)
+** Unordered list (bullet list)
+** Definitions
+Here in this wiki, when refered to these kind of lists, `typed-list` is used
+
+* List widget
+This is a Tiddlywiki widget creates lits of objects. Here in this wiki when it is refered to list widget, `$list` is used
+
+!! More information
+* [[Introduction to lists|https://tiddlywiki.com/prerelease/#Introduction%20to%20Lists]]
+* [[Lists in Wikitext|https://tiddlywiki.com/prerelease/#Lists%20in%20WikiText]]
+* [[W3.org|https://www.w3.org/TR/html401/struct/lists.html]]

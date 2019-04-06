@@ -1,13 +1,15 @@
 created: 20190222064439458
 creator: Mohammad
 keywords: create tiddler sequence number
-modified: 20190316114914237
+modified: 20190406122515134
 modifier: Mohammad
 responder: Mohammad
 tags: exmp50 solution
 title: Create Tiddler with Sequence Number
 type: text/vnd.tiddlywiki
 url: https://groups.google.com/d/msg/tiddlywiki/3_Xacb7H1p0/BN73J04iAQAJ
+
+''Double check, seems does not work!''
 
 Assume you want to create tiddlers all tagged with say `myTag` and have unique title with ordinal number.
 So
@@ -78,4 +80,4 @@ Create a new tiddler
 </$wikify>
 \end
 ```
-See this method in action: [[Example 50: Tiddler Title  with Zero Padded Number]].
+See this method in action: [[Example 50: Tiddler Title with Zero Padded Number]].

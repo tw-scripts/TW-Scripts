@@ -1,0 +1,49 @@
+created: 20190329154322139
+creator: Mohammad
+keywords: toc sort
+modified: 20190406122520357
+modifier: Mohammad
+responder: Eric Shulman
+tags: solution
+title: Sorting in Table of Contents
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/_Pz51rhNH8U/Ijg5x0hHBgAJ
+
+;Is there any way to sort toc entries based on a field value?
+: Table of contents (TOC) is normally sorted based on caption and title field, but it is possible to use other field.
+
+The second parameter of the `toc-selective-expandable` macro uses filter syntax to apply a sort order to the set of tiddlers being displayed at each level of the tree.
+
+`sort[toc-order]` means "sort the list of tiddlers by the value in the `toc-order` field of each tiddler.
+
+Thus, if each tiddler has a `toc-order` field containing a number then when those tiddlers are shown in the tree, they will be sorted based on those numbers.
+
+!! Example
+
+The below code shows a table of contents with //hirbod// as the root tag and sorts entries first based on title and then based on `page` field.
+
+```
+<div class="tc-table-of-contents">
+
+<<toc-selective-expandable 'hirbod' "sort[title]nsort[page]">>
+
+</div>
+```
+
+So, if these tiddlers tagged with //hirbod//, and have `page` field value as below:
+
+* Book, page: 0
+* Article, page: 2
+* Chapter, page: -1
+* Section, with no `page` field
+
+Will results in:
+
+<<<
+* Chapter
+* Book
+* Section
+* Article
+<<<
+
+<<alert info "''Note:'' It seems that if a tiddler does not have the field, a default value of ''zero'' will be considered, when use nsort instead of sort!" >>

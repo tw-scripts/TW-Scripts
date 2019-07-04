@@ -1,0 +1,10 @@
+author: JeremyRuston
+created: 20190704155012295
+dependents: 
+description: CodeMirror Mode: Markdown Highlighting
+list: readme
+modified: 20190704155012295
+plugin-type: plugin
+title: $:/plugins/tiddlywiki/codemirror-mode-markdown
+type: application/json
+version: 5.1.19

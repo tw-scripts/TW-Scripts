@@ -1,0 +1,24 @@
+created: 20190406202428656
+creator: Mohammad
+modified: 20190704155016349
+modifier: Mohammad
+tags: 
+title: New Tiddler 4
+type: text/vnd.tiddlywiki
+
+\define append-text(tidTitle, text:"", btnLabel:"Append Text", sep:"<br>")
+<$button> $btnLabel$
+<$list variable="newText" filter="[<__tidTitle__>get[text]addsuffix<__sep__>addsuffix<__text__>]" emptyMessage="""<$action-setfield $tiddler=<<__tidTitle__>> text=<<__text__>> />""" >
+<$action-setfield $tiddler=<<__tidTitle__>> text=<<newText>> />
+</$list>
+</$button>
+\end
+
+Example 1:
+
+<<append-text tidTitle:"TidB" text:"This is another text">>
+
+
+Example 2:
+
+<$macrocall $name=append-text tidTitle="TidB" text={{TidA}} sep=" " />

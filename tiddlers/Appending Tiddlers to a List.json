@@ -1,0 +1,15 @@
+[
+    {
+        "created": "20181023170415328",
+        "title": "Appending Tiddlers to a List",
+        "text": "\\define addmember()\n<$tiddler tiddler=\"$:/temp/newproject\"><$action-listops $field=\"members\" $subfilter=\"[{!!newmember}]\"/></$tiddler>\n\\end\n\nHow is it possible to choose and append tiddlers to a list based on some filter criteria?\n\n\n```\n\\define addmember()\n<$tiddler tiddler=\"$:/temp/newproject\"><$action-listops $field=\"members\" $subfilter=\"[{!!newmember}]\"/></$tiddler>\n\\end\n```\n\n<$macrocall $name=\"wikitext-example-without-html\" \nsrc=\"\"\"Member List: {{$:/temp/newproject!!members}} + <$select tiddler=\"$:/temp/newproject\" field=\"newmember\" actions=<<addmember>>><$list filter=\"[tag[contact]]\"><option>{{!!title}}</option></$list></$select>\n\"\"\"/>",
+        "creator": "Mohammad",
+        "modified": "20190704155012615",
+        "modifier": "Mohammad",
+        "tags": "solution",
+        "type": "text/vnd.tiddlywiki",
+        "keywords": "subfilter ",
+        "responder": "Mark S",
+        "url": "https://groups.google.com/d/msg/tiddlywiki/FXW8Zjv6atU/jAcdFnucBgAJ"
+    }
+]

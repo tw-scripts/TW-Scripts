@@ -1,0 +1,15 @@
+[
+    {
+        "created": "20190109095528835",
+        "title": "List Tiddler Tags Based on a Field",
+        "text": "There as a question by [[bimlas|https://groups.google.com/d/msg/tiddlywiki/uYGhHaZzo9w/zK6mMJtEEQAJ]] on using a stored variabe value in other scopes. \n\n[[Mark S|https://groups.google.com/d/msg/tiddlywiki/uYGhHaZzo9w/x-RIBEuuEQAJ]] gave a neat solution as below (I have modified it for minor issues)\n\n```\n\\define mytiddlerslist()\n<$list filter=\"[has[myfield]tags[]]\"><$view field=title/> </$list>\n\\end\n<$wikify name=\"mytiddlers\" text=<<mytiddlerslist>>>\n<$list filter=\"<mytiddlers>\" variable=\"v\"><<v>></$list>\n</$wikify>\n```\nThis means using a macro the same variable can be used in different scope. A working example based on this has been given in [[Example 21: List Tags Based on a Field]]. It that all tiddlers with a //responder// `filed` are listed and then their tags are displayed using a list widget in another scope.\n\n<<alert info \"The above code does not save/store the variable value, but it recalculates the variable again.\">>\n",
+        "creator": "Mohammad",
+        "modified": "20190704155015833",
+        "modifier": "Mohammad",
+        "tags": "exmp21 solution",
+        "type": "text/vnd.tiddlywiki",
+        "keywords": "variable wikify store value scope ",
+        "responder": "Mohammad",
+        "url": "https://groups.google.com/d/msg/tiddlywiki/uYGhHaZzo9w/QpULYX7eBwAJ"
+    }
+]

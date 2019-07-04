@@ -1,0 +1,57 @@
+created: 20190608052743689
+creator: Mohammad
+keywords: svg
+modified: 20190704155018639
+modifier: Mohammad
+responder: Mohammad
+tags: exmp59 solution svg
+title: Working with SVG
+type: text/vnd.tiddlywiki
+url: 
+
+;How to use svg in TW?
+:[[PMario|https://groups.google.com/d/msg/tiddlywiki/xoBAOY7OMGY/EKKTDPdIBAAJ]] instruction has beed given as below
+
+!! First Rule: Remove the svg overhead 
+* Include onle the pure `<svg>` part. 
+* Remove all additional parameters  eg:
+** `<?xml version="1.0" encoding="UTF-8"?>` wrapper element
+** the whole meta data block
+* Depending on the svg editor software you use and how you save the file, an svg file can contain a lot of editor specific stuff, that is irrelevant for TW. The overhead can be significant, in terms of tiddler size and also usability within TW. 
+
+!! Second Rule: Use outline paths
+* Use ''outline'' paths, so they can be filled!
+* <div> 
+
+The advantage of the outline is, that we can use //CSS// fill style setting to change the svg color. eg: 
+
+```
+.tc-image-chevron-left {
+  fill: green;}
+```
+</div>
+
+!! Third Rule: Remove all hardcoded styling attributes
+*  The important part now is, we have to remove every //fill-attributes// from the paths.
+* Internl stylings (those have been set in tiddler.svg) would always win, so it would not possible to use css
+* Apply css class definitions instead, if you need to style icon elements. 
+
+!! Fourth Rule: Use proper default values
+* The recommended settings can be as follow:
+** `width="22pt" height="22pt"`
+** `viewBox="0 0 128 128"`
+
+!! Fifth Rule: Use a proper svg editor
+* Depending on the editor, svg files can contain a lot of bloat.
+** Make sure, you have a save option similar to: Optimized SVG  in InkScape. 
+** You still have to remove some stuff manually, but the editor specific crap is gone. 
+
+!! Sixth Rule: Optimize the svg for size
+* You can use: [[SvgOmg|https://jakearchibald.github.io/svgomg/]]. It has a lot of parameters, you can play with, to optimize the image size, without loosing quality. 
+
+!! Seventh Rule: Do not embed big images 
+* They only make your TW file big. 
+* As a crude rule of thumb, big is >100 kByte
+
+! Examples
+<<list-links "[tag[exmp59]] -[<currentTiddler>]">>

@@ -1,0 +1,18 @@
+caption: Intro
+created: 20150429192209932
+creator: Mohammad
+modified: 20190704155018038
+modifier: Mohammad
+tags: tinka
+title: Tinka Introduction
+type: text/vnd.tiddlywiki
+
+This is a Control Panel extension that helps with creating and modifying plugins in the browser.
+You can get the extension 
+
+# Visiting: [[$:/plugins/ahahn/tinka|https://tinkaplugin.github.io/#%24%3A%2Fplugins%2Fahahn%2Ftinka]]
+# Dragging and droping the `$:/plugins/ahahn/tinka` into your own wiki. 
+
+!!!Links to more information
+* <a target="blank" href="http://tinkaplugin.github.io">Project Homepage on tinkaplugin.github.io</a>
+* <a target="blank" href="https://github.com/TinkaPlugin/Tinka">Repository on Github</a>

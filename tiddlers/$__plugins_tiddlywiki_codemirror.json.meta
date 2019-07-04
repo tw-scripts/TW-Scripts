@@ -1,0 +1,10 @@
+author: JeremyRuston
+created: 20190704155012338
+dependents: 
+description: CodeMirror _Editor
+list: readme usage keyboard license
+modified: 20190704155012338
+plugin-type: plugin
+title: $:/plugins/tiddlywiki/codemirror
+type: application/json
+version: 5.1.19

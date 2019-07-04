@@ -1,0 +1,15 @@
+[
+    {
+        "created": "20180901180711126",
+        "title": "Search Titles Followed by Text",
+        "text": ";Is there any way to refine a search in title followed by a search in text body of that tiddler?\nYes, the search operator can be refined by field name. So I assume that the most optimized filters for your queries would work like:\n\n```\n[search:title[foo]search:text[bar]]\n```\nIn the above snippet, all tiddlers have foo in their titles and bar in their text will be shown!\n\n\n!!! Example\n```\n{{{[search:title[kookma]search:text[rb]]}}}\n```\n\n{{{[search:title[kookma]search:text[rb]]}}}\n",
+        "creator": "Mohammad",
+        "modified": "20190704155016832",
+        "modifier": "Mohammad",
+        "tags": "search operator solution",
+        "type": "text/vnd.tiddlywiki",
+        "keywords": "search ",
+        "responder": "Mark S",
+        "url": "https://groups.google.com/d/msg/tiddlywiki/q_AStBDQCxI/Qpcc9YzsAgAJ"
+    }
+]

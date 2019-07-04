@@ -1,0 +1,15 @@
+[
+    {
+        "created": "20190211073455331",
+        "title": "Sort Tag Wizard",
+        "text": ";How to sort tiddlers tagged with specific tag through a dropdown list?\n: Use one of sort tagged tiddler macro with a `edit-text` widget.\n\n!!Example\nIn [[Example 48: Sort Tag Wizard]] a code has been given to do the job. It includes\n\n* An `edit-text` widget to let type the desired tag\n* A dropdown to select a tag from list of all tags\n* A macro to sort tiddlers tagged with selected one\n\n!! Similar topics\nThe below topics are related to sort items. This method  is also used in some of the below solution.\n<<list-links \"[search:title[sort]] [search:keywords[sort]] -[<currentTiddler>]\" type:\"ol\">>\n\n<<vspace 1cm>>\n<<alert info \"''Note:'' Based on this solution an elegant code has been developed lets you sort tiddlers using the tagpill dropdown menu. See [[Buttons to Sort Tiddlers in Tagpill]]\">>",
+        "creator": "Mohammad",
+        "modified": "20190704155017286",
+        "modifier": "Mohammad",
+        "tags": "exmp48 solution",
+        "type": "text/vnd.tiddlywiki",
+        "keywords": "sort tagging ",
+        "responder": "Talha",
+        "url": ""
+    }
+]

@@ -1,0 +1,15 @@
+[
+    {
+        "created": "20190207171551032",
+        "title": "Tag Hierachy and Table of Contents",
+        "text": "; How display the tag tree for three levels of tag hierachy?\n: The below code uses three nested `list` widget to show the tag tree up to level 3. This procedure can be used to create table of contents. A customized numbered list is used (ref: [[Tobias Beer|https://tobibeer.github.io/tb5/#Advanced%20Numbered%20Lists]])\n<$macrocall $name=\"wikitext-example-without-html\" \nsrc=\"\"\"<ol class=\"ol\">\n  <$list filter=\"[tag[$:/.mr/toc]]\" variable=\"maintag\">\n    <li>\n      <$link to=<<maintag>> ><$text text=<<maintag>>/></$link>\n      <ol>\n        <$list filter=\"[tag<maintag>]\" variable=\"level1\">\n          <li>\n            <$link to=<<level1>> ><$text text=<<level1>>/></$link>\n            <ol>\n              <$list filter=\"[tag<level1>]\" variable=\"level2\">\n                <li>\n                  <$link to=<<level2>> ><$text text=<<level2>>/></$link>\n                </li>\n              </$list>\n            </ol>\n          </li>\n        </$list>\n      </ol>\n    </li>\n  </$list>\n</ol>\n\"\"\"/>\n",
+        "creator": "Mohammad",
+        "modified": "20190704155017519",
+        "modifier": "Mohammad",
+        "tags": "solution",
+        "type": "text/vnd.tiddlywiki",
+        "keywords": "toc ",
+        "responder": "Stephan Hradek",
+        "url": "https://groups.google.com/d/msg/tiddlywiki/8ULQNg7GPog/1tMjtdVyGhUJ"
+    }
+]

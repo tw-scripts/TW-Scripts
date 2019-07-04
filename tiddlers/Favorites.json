@@ -1,0 +1,16 @@
+[
+    {
+        "created": "20181008201248802",
+        "title": "Favorites",
+        "text": "",
+        "creator": "Mohammad",
+        "modified": "20190704155015039",
+        "modifier": "Mohammad",
+        "tags": "Links",
+        "type": "text/vnd.tiddlywiki",
+        "description": "Simply add/remove tiddler to favorites tab<br> A new release published at https://github.com/kookma/Reveal-Gradually ",
+        "developer": "Andrew Harrison",
+        "name": "Favorites",
+        "url": "http://favorites.tiddlyspot.com/"
+    }
+]

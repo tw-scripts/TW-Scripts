@@ -1,11 +1,3 @@
-created: 20180629121425137
-creator: Mohammad
-modified: 20190224163834177
-modifier: Mohammad
-tags: field
-title: Set a field
-type: application/x-tiddler
-
 \define setNote(myVal:"100")
 <$button>Push me
 <$action-setfield $tiddler="myTiddler" $field="note" $value=$myVal$/>

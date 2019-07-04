@@ -1,0 +1,13 @@
+caption: Tid02 caption
+created: 20190608194953754
+creator: Mohammad
+modified: 20190704155014783
+modifier: Mohammad
+tags: exmp60
+title: exmp60/data/tid02
+type: text/vnd.tiddlywiki
+
+This text pulls its content from caption and title fields of this tiddler:
+
+* Tiddler title: //{{!!title}}//
+* Tiddler caption: //{{!!caption}}//

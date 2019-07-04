@@ -1,0 +1,52 @@
+created: 20190704043104627
+creator: Mohammad
+keywords: switch field set
+modified: 20190704155017572
+modifier: Mohammad
+responder: Mohammad
+tags: exmp66 solution
+title: Switch Two Fields Value
+type: text/vnd.tiddlywiki
+url: 
+
+\define switch()
+<$action-setfield $tiddler="exmp66/temp" $value={{exmp66/data!!fa}} />
+<$action-setfield $tiddler="exmp66/data" $field="fa" $value={{exmp66/data!!fb}} />
+<$action-setfield $tiddler="exmp66/data" $field="fb" $value={{exmp66/temp}} />
+\end
+
+; How to exchange the values of two fields?
+: Use the `set` widget plug and action widget like `button` and perform it as below
+
+* temp = fa
+* fa = fb
+* fb = temp
+
+!! Example
+Assume a tiddler has two fields `fa`, and `fb`, the below code perform the job
+
+```
+\define switch()
+<$action-setfield $tiddler="exmp66/temp" $value={{exmp66/data!!fa}} />
+<$action-setfield $tiddler="exmp66/data" $field="fa" $value={{exmp66/data!!fb}} />
+<$action-setfield $tiddler="exmp66/data" $field="fb" $value={{exmp66/temp}} />
+\end
+
+<$button actions=<<switch>> >Exchange fields value
+</$button>
+```
+
+<$button actions=<<switch>> >Exchange fields value
+</$button>
+
+* Field fa in [[exmp66/data]]: <mark>{{exmp66/data!!fa}}</mark>
+* Field fb in [[exmp66/data]]: <mark style="background:cyan;">{{exmp66/data!!fb}}</mark>
+
+!! Remarks
+* The button lets do the actions, other action widgets also can be used
+* The switch macro implements the operation as below
+** first the value of field `fa` is stored in temporary tiddler `exmp66/temp`
+** second, the value of field `fa` is set by the value of field `fb`
+** third the value of field `fb` is set the stored value of `fa` in temp tiddler
+* the [[exmp66/data]] is the tiddler used fro demonstration and holds the two fields
+

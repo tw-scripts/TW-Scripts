@@ -1,0 +1,13 @@
+core-version: >=5.1.14
+created: 20150902052640307
+creator: Andrew Harrison
+dependents: $:/language/Buttons/Choose/Caption $:/language/Buttons/Choose/Hint $:/language/Buttons/Favorites/Caption $:/language/Buttons/Favorites/Hint $:/language/SideBar/Favorites/Caption $:/plugins/ajh/favorites/icon $:/plugins/ajh/favorites/readme $:/plugins/ajh/favorites/SideBar $:/plugins/ajh/favorites/image $:/plugins/ajh/favorites/stylesheet $:/plugins/ajh/favorites/template
+description: Favorites
+list: readme
+modified: 20190704155012378
+modifier: Andrew Harrison
+plugin-type: plugin
+source: http://favorites.tiddlyspot.com
+title: $:/plugins/ajh/favorites
+type: application/json
+version: 3.0.11

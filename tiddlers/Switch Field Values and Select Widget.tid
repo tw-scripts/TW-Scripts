@@ -1,0 +1,44 @@
+created: 20190704045929715
+creator: Mohammad
+keywords: switch field select
+modified: 20190704155017587
+modifier: Mohammad
+responder: Mohammad
+tags: exmp67 solution
+title: Switch Field Values and Select Widget
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/AoL8zjxKH5U/s18my3GpDAAJ
+
+; How to switch a field value among predefined values and keep the old one for further processing?
+: Use `set` and `select` widgets with together and store the old value in a variable using the set widget
+
+As described by [[Jeremy|https://groups.google.com/d/msg/tiddlywiki/AoL8zjxKH5U/qZvQNZDdCwAJ]] when select widget is used, any variables setup outside of the action string will not be updated to reflect the new value of the target tiddler.
+
+!! Example
+Assume a tiddler like [[exmp67/data]] has a field `fa`, its value is set among predefined items provided by a `select` widget. The code has to let to change the value of `fa` and keep its previous value for further processing. In breif the code shall do the below operations
+
+* Temp = fa
+* fa    = new value
+
+This is a demo is given in [[exmp67/data]]
+
+<<<
+* Field fa: <mark style="background:cyan;">{{exmp67/data!!fa}}</mark>
+* Field fb: <mark>{{exmp67/data!!fb}}</mark>
+{{exmp67/data}}
+<<<
+
+!! Code
+The code is given in [[exmp67/data]] has tow parts as below
+
+* action macro
+* set/select widget
+
+<pre><$view tiddler="exmp67/data"/></pre>
+
+!! Remarks
+* The outer `set` widget first stores the value of field `fa` from tiddler [[exmp67/data]] into a variable, `Temp`
+* The `select` widget lets user choose a new value from a list of predefined values
+* The `select` widget then calls the action macro `switch` to perform the below operation
+** set the value of `fa` field by what is selected within `select` widget
+** set the previous value of `fa` into `fb` field (this is only for demo purpose, any other operation can be done on the previous value)

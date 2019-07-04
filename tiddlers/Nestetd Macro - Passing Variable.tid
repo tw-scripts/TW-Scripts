@@ -1,9 +1,3 @@
-created: 20180620024947885
-modified: 20190216180317354
-tags: macro
-title: Nestetd Macro - Passing Variable
-type: application/x-tiddler
-
 \define firstlevel(param1:"the parameter")
 <<secondlevel "$param1$">>
 \end

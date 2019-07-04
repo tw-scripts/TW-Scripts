@@ -1,6 +1,6 @@
 created: 20181212041419278
 description: This viewtemplate causes the contents of macro tiddlers (e.g those tagged with `$:/tags/Macro`) to be shown
-modified: 20190224163837425
+modified: 20190704155018478
 tags: macro $:/tags/ViewTemplate
 title: viewtemplate/show-contents-macro-tiddler
 type: text/vnd.tiddlywiki

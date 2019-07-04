@@ -1,0 +1,30 @@
+created: 20181205051148937
+creator: Mohammad
+keywords: codemirror editor spellcheck
+modified: 20190704155017250
+modifier: Mohammad
+responder: Jeremy Rustone
+tags: solution
+title: Spellcheck Preview in Codemirror
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/c3y-PycRP4M/V0IyOvR0AAAJ
+
+How one can activate the spellcheck for codemirror editor?
+
+A possible solution would be to add a new editor preview pane that contains a plain text editor so that you could switch to it quicklt to perform spell checking and correction.
+
+Create a new tiddler called `$:/_EditorPreview` tagged `$:/tags/EditPreview`, add a `caption` field containing `Spell check`, and the following content:
+
+```
+<$edit-text tiddler=<<currentTiddler>> class="tc-spell-check-preview"/>
+
+<style>
+.tc-spell-check-preview {width:100%;}
+</style>
+```
+
+Then select "Spell check" as the editor preview.
+
+In my tests, I needed to click on the preview editor textarea in order to activate spell checking and make the dotted underlines visible.
+
+''Note'': This is not work in Tiddlydesktop.

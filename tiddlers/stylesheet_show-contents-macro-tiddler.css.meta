@@ -1,7 +1,7 @@
 created: 20181219101236877
 creator: Mohammad
 description: This viewtemplate causes the contents of macro tiddlers (e.g those tagged with `$:/tags/Macro`) to be shown
-modified: 20190224163834556
+modified: 20190704155017461
 modifier: Mohammad
 tags: $:/tags/Stylesheet macro
 title: stylesheet/show-contents-macro-tiddler

@@ -1,0 +1,15 @@
+[
+    {
+        "created": "20171204000427499",
+        "title": "Variables, Fields and Filters in TiddlyWiki",
+        "type": "text/vnd.tiddlywiki",
+        "text": "* See also: [[Shorthand syntax summary]]\n* See also [[Eric description on brackets|Brackets]]\n!! Types of Brackets\n<<<\nBrackets are used to indicate the ''type of operand'':\n\n* `[]` - square brackets surround ''literal'' values, \n* `{}` - curly braces around ''field references'', \n* `<>` - angle brackets around ''variable names''.  \n<<<\n\n!! Single or Double Brackets - `<` vs `<<`\n<<<\nIn ~TiddlyWiki ''content'', ''variables'' and ''macros'' are referenced using `<<variableName>>`.  The ''double''-bracket syntax is used to avoid conflicts with standard HTML syntax (i.e., `<b>` starts normal HTML bold formatting, while `<<b>>` embeds the value of a ~TiddlyWiki variable named \"b\").\n\nHowever, ''within'' ~TiddlyWiki ''filters'', there is no need to double the brackets, as HTML is not allowed ''within'' the filter, so only single `<variableName>` is used.\n\nThus, inside a filter we can use a pair of ''single'' angle brackets, like this:\n\n```\n<$list filter=\"[is[current]!has<eachfield>]\" variable=null>\n```\n<<<\n\n!! Brackets within filters\n<<<\nWhy I don't have to wrap `<fieldname>` with `[<fieldname>]` in a filter? \n\nThink of the brackets in filters as part of the operand itself rather than a \"container\" for the operand.  As explained above, the type of bracket indicates the type of operand being used:\n\n* use `[...]` for ''literal'' values, e.g., `[texthere]`\n* use `{...}` for ''field'' references, e.g., `{!!fieldname}`\n* use `<...>` for ''variables'' e.g. `<currentTiddler>`\n\nThus, to split the literal text, \"sometext\", you could write: `[title[sometext]splitbefore[t]removesuffix[t]]`\nyou would get \"some\" as a result:\n\nEx: `<<list-links \"[title[sometext]splitbefore[t]removesuffix[t]]\">>`\n\n\nIf the value \"sometext\" is stored in a field named \"somefield\" in the current tiddler, you could write: `[{!!somefield}splitbefore[t]removesuffix[t]]`\n\nand, if the value \"sometext\" is stored in a variable named \"somevariable\", you could write: `[<somevariable>splitbefore[t]removesuffix[t]]`\n\nAs a slightly more complex example, suppose the value to split on was also stored in a variable.  Then you could write:\n `[<somevariable>splitbefore<othervariable>removesuffix<othervariable>]`\n<<<\nhope this helps,\n\nenjoy,\n-e\nEric Shulman",
+        "creator": "Mohammad",
+        "modified": "20190704155018511",
+        "modifier": "Mohammad",
+        "tags": "syntax solution",
+        "keywords": "variable filter field ",
+        "responder": "Eric Shulman",
+        "url": "https://groups.google.com/d/msg/tiddlywiki/3DyHxqqFQbg/JxjN6kYjAQAJ"
+    }
+]

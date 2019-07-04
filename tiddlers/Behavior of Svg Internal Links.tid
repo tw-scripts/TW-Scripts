@@ -1,0 +1,26 @@
+created: 20190703054825850
+creator: Mohammad
+keywords: svg internal link
+modified: 20190704155013150
+modifier: Mohammad
+responder: A Gloom
+tags: task solution
+title: Behavior of Svg Internal Links
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/O8nj6kMaQNA/_JVt0qlMDAAJ
+
+An observation on behavior of links to tiddlers that are embedded into svgs (will seem out of context till I post about svg overlays for tiddler images)
+
+Using svg's for map & diagrams with links to tiddlers embedded into the svg code such as
+
+``<a xlink:href="#tiddler title">`` (Deprecated)
+
+``<a href="#tiddler title">``
+
+- - normally, full or shortened standard urls are used but "#" allows you ro target individual tiddlers inside the wiki.
+
+That "#tiddler title"  may cue you into what will result-- a permalink link in the browser address bar.
+
+1- The permalink url in the browser address bar will change with each different svg embedded link
+2- If you close the tiddler that gets opened, the embedded svg link will not open it again while the browser address bar contains its permalink url, making it look like that embedded link doesn't work any longer
+3- If you refresh the wiki without noticing the permalink url and clearing it, you will be left wondering why an unexpected tiddler displays and not your default start up tiddlers

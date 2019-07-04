@@ -1,0 +1,13 @@
+created: 20190613065338788
+creator: Mohammad
+modified: 20190704155012687
+modifier: Mohammad
+tags: 
+title: Add More Language Brushes to Highlight.js Plugin
+type: text/vnd.tiddlywiki
+
+There are three different methods to add new language brushes to highlight.js plugin
+
+# Using Tiddlywiki on node.js you can simply follow the instruction has been given in the highlight.js plugon [[$:/plugins/tiddlywiki/highlight/howto]]. This method is the simplest and the recommended one
+# Manually create `$:/plugins/tiddlywiki/highlight/highlight.js` using the instruction given in [[Manually Add More Language Brushes to Highlight.js]] and overwrite the plugin tiddler
+# [[Add Language Brushes to Highlight.js Using Startup Modules]]. This is a flexible method you can append new language bruches to exisiting highlight.js plugin brushes.

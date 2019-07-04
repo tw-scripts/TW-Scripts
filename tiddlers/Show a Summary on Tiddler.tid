@@ -1,0 +1,29 @@
+created: 20190616025542443
+creator: Mohammad
+keywords: 
+modified: 20190704155016995
+modifier: Mohammad
+responder: Jeremy Ruston
+tags: exmp62 solution
+title: Show a Summary on Tiddler
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/YEgHhQ0ZcFo/8oS__hRhnLIJ
+
+! Conditional Summary
+Excerpt from [[Tobias Beer|https://tobibeer.github.io/tb5/#Conditional%20Summary]]: How to conditionally generate a summary section (or other related information) at the top of all tiddlers tagged `xx`, so that one doesn't have to click twice, skim the fields until one finds there to be a summary field.
+
+!!Step 1
+Create a [[tiddler|$:/.tb/ui/ViewTemplate/summary]] tagged [[$:/tags/ViewTemplate]] containing:
+
+```
+<$list filter="[all[current]tag[xx]]">
+<$transclude field="summary" mode="block"/>
+</$list>
+```
+
+!!Step 2
+Create a `list-after` field with the value "[[$:/core/ui/ViewTemplate/tags]]" to make the summary segment appear immediately after the tags.
+
+!Example
+
+The [[$:/.tb/ui/ViewTemplate/summary]] serves as a template for a conditional ViewTemplate section that displays the value of the ''summary'' field for all tiddlers having a `summary` field defined, see [[Example 62: Conditional Summary]]..

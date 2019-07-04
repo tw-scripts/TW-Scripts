@@ -1,0 +1,15 @@
+[
+    {
+        "created": "20190109113508471",
+        "title": "Apply Custom Styles Dynamically",
+        "text": "Tiddlywiki can dynamically apply styles to tiddlers based on filters. A filter can screen tiddlers based on some criteria.\n\n!! Example\nAssume it is desired to change the color of border of each existing or newly created tiddler has a field called `xmp`. To do this\n\n# Create a new tiddler tagged with `$:/tags/Stylesheet`\n#* Name it whatever you want, here it is [[stylesheet/exmp23]]\n# <div>\n\nPut the below script inside tiddler of step 1\n\n```\n\\define assign-css()\n\\rules only\n[data-tiddler-title=\"$(currentTiddler)$\"].tc-tiddler-frame {\nborder-color: red;\n}\n\\end\n<$list filter=\"[all[tiddlers]has:field[xmp]]\">\n<<assign-css>><br>\n</$list>\n```\n* In the above script, the `$list` widget select all tiddlers has a `xmp` field .\n* It then calls the `assign-css` macro to apply the custom styles (here border-color) to selected tiddlers using the `data-tiddler-title` selector\n* Every newly created tiddler having a `xmp` filed will get this custom style.\n</div>\n# Create some test tiddlers to see the result\n#* Here two tiddlers were created as below\n#** [[demo/exmp23/p01]]\n#** [[demo/exmp23/p02]]\n\n\n<<alert info \"See the new pluging `escapecss[]` by [[BTC|https://burningtreec.github.io/TW5-escapecss/]]\" for more sophisticated cases\">>",
+        "creator": "Mohammad",
+        "modified": "20190704155012611",
+        "modifier": "Mohammad",
+        "tags": "exmp23 solution css",
+        "type": "text/vnd.tiddlywiki",
+        "keywords": "cstom style css dynamic ",
+        "responder": "BTC",
+        "url": "https://groups.google.com/d/msg/tiddlywiki/wWCn7BCanrQ/7xNN6I68BwAJ"
+    }
+]

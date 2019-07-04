@@ -1,0 +1,23 @@
+created: 20180601134852538
+creator: Mohammad
+modified: 20190704155018677
+modifier: Mohammad
+tags: tutorial learning list
+title: Work with Lists - 10
+type: text/vnd.tiddlywiki
+
+* Using `<<currentTiddler>>` variable
+
+* If you put `<<currentTiddler>>` inside a tiddler it refere to the title of that tiddler, e.g
+
+<$macrocall $name="wikitext-example-without-html" 
+src="""> <<currentTiddler>>"""/>
+
+
+* If you use it with list widget it acts as the list variable abd iterate over all tiddlers one by one in the list
+
+<$macrocall $name="wikitext-example-without-html" 
+src="""<$list filter="[tag[slide]]">
+<br><<currentTiddler>>
+</$list>
+"""/>

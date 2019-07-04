@@ -1,0 +1,12 @@
+author: Mat von TWaddle
+core-version: >=5.1.16
+created: 20180905142253202
+creator: Mat von TWaddle
+description: LeftBar - a menu type sidebar, on the left
+list: contents readme
+modified: 20190704155012263
+modifier: Mat von TWaddle
+plugin-type: plugin
+title: $:/plugins/TWaddle/LeftBar
+type: application/json
+version: 2.1.4

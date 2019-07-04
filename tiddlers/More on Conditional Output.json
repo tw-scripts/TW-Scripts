@@ -1,0 +1,15 @@
+[
+    {
+        "created": "20190109081509307",
+        "title": "More on Conditional Output",
+        "text": "When `transclude` or `view` widgets are used for conditional output, an issue raised with empty `caption` field.\n\nConsider below solution [[Eric Shulman|Conditional Output]]\n\n```\n<$view field=\"caption\">\n   <$view field=\"title\"></$view>\n</$view>\n```\n\nor this one by [[THomas Elmiger|https://groups.google.com/d/msg/tiddlywiki/dzZWAa5Hmlo/b4vWK6yTEQAJ]]:\n\n```\n<$link tooltip={{!!title}}><$transclude field=\"caption\"><$view field=\"title\"/></$transclude>&nbsp;</$link>\n```\n\n<<<[[S.S.|https://groups.google.com/d/msg/tiddlywiki/dzZWAa5Hmlo/EwUqundEEQAJ]]\nThe problem with the above code is that if there is a `caption` field, but it is empty, nothing will show. I find that unacceptable. This was the exact issue I tried to have fixed (on github) but that hasn't been resolved because of possible performance issues in a large table of contents.\n<<<\n\nThe better solution proposed by [[S.S.|https://groups.google.com/d/msg/tiddlywiki/dzZWAa5Hmlo/EwUqundEEQAJ]] as below\n\n<<< Best solution\n```\n<$list filter=\"[all[current]has[caption]]\"\n      emptyMessage=\"\"\"<$view field=\"title\"/>\"\"\">\n      <$transclude field=\"caption\"/>\n</$list>\n```\n<<< See also  [[Jeremy note|https://github.com/Jermolene/TiddlyWiki5/issues/3624#issuecomment-445157136]] on GitHub\n\n!! Remarks\n[[TonyM|https://groups.google.com/d/msg/tiddlywiki/dzZWAa5Hmlo/vPJjeTBFEQAJ]] proposed a solution if you want to make a link to a tiddler when there is a caption and it has higher priority\n\n```\n<$list filter=\"[all[current]has[caption]get[caption]] ~[{!!title}]\" variable=name>\n<$link to=<<name>> tooltip=\"Custom tooltip\"><<name>></$link>\n</$list>\n```\n\nYou can also make a macro for this as below\n\n```\n\\define caption-title()\n<$list filter=\"[all[current]has[caption]get[caption]] ~[{!!title}]\" variable=name>\n<$link to=<<name>> tooltip=\"Custom tooltip\"><<name>></$link>\n</$list>\n\\end\n\nand use <<caption-title>> no paramters to always show first the caption, then the titlewith an active link.\n```",
+        "creator": "Mohammad",
+        "modified": "20190704155016232",
+        "modifier": "Mohammad",
+        "tags": "conditional solution",
+        "type": "text/vnd.tiddlywiki",
+        "keywords": "conditional transclude view empty caption",
+        "responder": "S.S. ",
+        "url": "https://groups.google.com/d/msg/tiddlywiki/dzZWAa5Hmlo/EwUqundEEQAJ"
+    }
+]

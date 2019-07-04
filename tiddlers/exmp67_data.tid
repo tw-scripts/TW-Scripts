@@ -1,0 +1,25 @@
+created: 20190704040650463
+creator: Mohammad
+fa: One
+fb: Three
+modified: 20190704155014976
+modifier: Mohammad
+tags: exmp67
+title: exmp67/data
+type: text/vnd.tiddlywiki
+
+\define switch()
+<$action-setfield $tiddler="exmp67/data" $field="fa" $value={{exmp67/state}} />
+<$action-setfield $tiddler="exmp67/data" $field="fb" $value="$(Temp)$" />
+\end
+
+<$set name=Temp tiddler="exmp67/data" field="fa">
+Select a value
+<$select tiddler='exmp67/state'
+         actions=<<switch>>
+>
+   <$list filter='One Two Three Four Five'>
+      <option><$view field='title'/></option>
+   </$list>
+</$select>
+</$set>

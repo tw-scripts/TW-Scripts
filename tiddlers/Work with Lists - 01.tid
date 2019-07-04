@@ -1,0 +1,17 @@
+created: 20180601095701423
+creator: Mohammad
+modified: 20190704155018560
+modifier: Mohammad
+tags: tutorial learning list
+title: Work with Lists - 01
+type: text/vnd.tiddlywiki
+
+* The simplest
+```
+{{{ filter }}}
+e.g
+{{{ [tag[slide]] }}}
+```
+<<<
+{{{ [tag[slide]] }}}
+<<<

@@ -1,0 +1,15 @@
+[
+    {
+        "created": "20190220142757982",
+        "title": "Multiple Sort Rules in TOC",
+        "text": ";How to create a table of contents and sort sub branches?\n\nIf you make a table of contents from all tiddlers tagged with `TableOfContents` then\n\n```\n<<toc-selective-expandable  \"TableOfContents\">>\n```\n\nThe sorting is fine for most cases, but you would like all your items tagged `Journal` to be sorted by the created field. How can you apply a separate sort order to just those sub-items tagged Journal?\n\nThe trick is to add a field to the parent tagging tiddler (i.e. `Journal`) that points to a different sort criteria. Let's call the field `fuzzy`, and populate it with the value `created` (created is the name of the field that contains a tiddler's creation date).\n\nNow change your Table of Contents to look like this:\n\n```\n<<toc-selective-expandable  \"TableOfContents\" \"sort{!!fuzzy}\" >>\n```\n\n!! Other readings\n* [[TOC in Sidebar|https://tiddlywiki.com/#Adding%20a%20table%20of%20contents%20to%20the%20sidebar]]\n* [[Sort order of sub branches|https://tiddlywiki.com/prerelease/#How%20to%20change%20the%20sort%20order%20of%20sub-branches%20in%20a%20TOC%20macro]]",
+        "creator": "Mohammad",
+        "modified": "20190704155016221",
+        "modifier": "Mohammad",
+        "tags": "solution",
+        "type": "text/vnd.tiddlywiki",
+        "keywords": "toc sort ",
+        "responder": "S.S. and Ikaro",
+        "url": "https://groups.google.com/d/msg/tiddlywiki/pAXFBDjxp64/sVX1A3aeAAAJ"
+    }
+]

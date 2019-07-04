@@ -1,0 +1,11 @@
+author: Mohammad rahmani
+core-version: > = 5.1.19
+created: 20190613141603288
+description: Slider: Create trails, walk through, guided help, sequence, doubly linked contents
+modified: 20190704155012348
+plugin-type: plugin
+source: https://github.com/kookma/slider
+tags: 
+title: $:/plugins/kookma/slider
+type: application/json
+version: 1.1

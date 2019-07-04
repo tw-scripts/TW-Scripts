@@ -1,0 +1,27 @@
+created: 20190608152308338
+creator: Mohammad
+modified: 20190704155017409
+modifier: Mohammad
+tags: exmp59
+title: SVG Example 3
+type: text/vnd.tiddlywiki
+
+This example shows how svg images in a tiddler with empty content type can be used for ''css'' styling
+
+<$macrocall $name="wikitext-example-without-html" 
+src="""<style>
+.my-svg svg {
+width: 2em;
+height: 2em;
+margin: 0.2em;
+fill:purple;
+}
+</style>
+<div class="my-svg">
+<$list filter="[all[tiddlers+shadows]tag[$:/tags/Image]last[10]] -[[$:/core/images/blank]]">
+<span title=<<currentTiddler>>>
+<$transclude/>
+</span>
+</$list>
+</div>
+"""/>

@@ -2,13 +2,16 @@ created: 20190208134235750
 creator: Mohammad
 description: This viewtemplate lists all tiddlers tagged with current tiddler
 list-before: $:/core/ui/ViewTemplate/body
-modified: 20190224163837377
+modified: 20190704155018463
 modifier: Mohammad
 tags: $:/tags/ViewTemplate
 title: viewtemplate/tagging
 type: text/vnd.tiddlywiki
 
-<$list filter="[is[current]tagging[]] +[limit[1]]" variable="null" >
+<$list filter="[all[current]!tag[trail]tagging[]] +[limit[1]]" variable="null" >
 Tiddlers tagged with <$text text=<<currentTiddler>>/>:
 <$macrocall $name="list-links" filter="[is[current]tagging[]]" type="ol"/>
 </$list>
+<!-- 
+Important note: to not acts on trail tiddlers from slider plugin, the filter changed from [is[current]tagging[]] to [all[current]!tag[trail]tagging[]] 
+-->

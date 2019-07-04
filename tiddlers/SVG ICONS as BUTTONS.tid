@@ -1,0 +1,43 @@
+created: 20181112070818002
+creator: Mohammad
+keywords: svg icon button page-controls
+modified: 20190704155017626
+modifier: Mohammad
+responder: Thomas Elmiger
+tags: solution
+title: SVG ICONS as BUTTONS
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/fxhVN0DCBDc/aTWACf_bAwAJ
+
+The below instruction shows how to use css effectively for styling embeded svg tiddlers as buttons.
+
+!! Change the fill color of svg buttons
+; The image-buttons (svg) on the top right of TW5 have a hover effect, having your custom svg button how it is possible to have the same behavior?
+: The CSS selectors that control these buttons look like this (with different colour definitions)
+: <div><pre>
+.tc-page-controls button.tc-selected svg {
+   fill: rgb(99, 99, 99);
+}
+
+.tc-page-controls svg {
+   fill: rgb(150, 150, 150);
+}
+
+.tc-page-controls button:hover svg,
+.tc-page-controls a:hover svg {
+   fill: rgb(99, 99, 99);
+}
+</pre>
+So make sure you use svg images and that you can control their fill colour via CSS (no fill colors inside the graphics).
+</div>
+
+!! The content type of svg tiddlers
+;Why the svg tiddlers having the content type (`image/svg+xml`) does not take affect from css selectors?
+: The reason is explained in [[Tiddlywiki.com|https://tiddlywiki.com/#Using%20SVG]]. Tiddlers with the type `image/svg+xml` are interpreted as SVG images, and displayed and transcluded as self-contained `<img>` elements with the SVG embedded as a data `URI` in the src attribute.
+
+!! Example
+See [[SVG Example 2]] for further details. Also [[SVG Example 3]] for applying css classes to svg transcluded as inline image (button).
+
+!! References
+# [[Using svg|https://tiddlywiki.com/#Using%20SVG]] explains what happens, if the content type of an svg tiddler is set. 
+# [[Vanilla theme|https://tiddlywiki.com/#%24%3A%2Fthemes%2Ftiddlywiki%2Fvanilla%2Fbase]] explains, the class `tc-image-button` to be used only for sizes, not for fill-definitions.

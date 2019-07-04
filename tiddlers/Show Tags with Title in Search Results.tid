@@ -1,0 +1,49 @@
+created: 20190615171324513
+creator: Mohammad
+keywords: link tag title
+modified: 20190704155016960
+modifier: Mohammad
+responder: talha 131
+tags: solution
+title: Show Tags with Title in Search Results
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/KFrMHsyL1FU/EkBf1NryBgAJ
+
+;How do I show tags along with tiddler title in the search result?
+:Every tiddler consists of fields. One field is the `title` field. Another is the `tags` field. They can be transcluded using this form `{{!!fieldname}}`.
+
+The solution is given as
+
+```
+<div class="tc-menu-list-item">
+<$link to={{!!title}}>
+<$view field="title"/>
+
+   <$list filter={{!!tags}}>
+      <$macrocall $name=tag-pill tag={{!!title}} />
+   </$list>
+</$link>
+</div>
+```
+!! Remarks
+* The `tc-menu-list-item` was taken from $:/core/ui/ListItemTemplate
+* The `<$link>...</$link>` is new in TW 5.1.20 and equal to `<$link to={{!!title}}>...</$link>`
+* The ` <$list filter={{!!tags}}>` list all tags in the currentTiddler
+* The `tag-pill` macro is called to show the tags in form of tag-pill one by one
+
+!! Example
+Show a list of all tiddlers have in their title the  `xampl` AND `6`
+<$macrocall $name="wikitext-example-without-html" 
+src="""><$list filter="[search:title[xampl 6]]">
+<div class="tc-menu-list-item">
+<$link>
+<$view field="title"/>
+
+   <$list filter={{!!tags}}>
+      <$macrocall $name=tag-pill tag={{!!title}} />
+   </$list>
+</$link>
+</div>
+</$list>
+"""/>
+

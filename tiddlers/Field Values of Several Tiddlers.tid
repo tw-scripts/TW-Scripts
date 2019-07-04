@@ -1,0 +1,36 @@
+created: 20190629044747705
+creator: Mohammad
+keywords: field value filter get operator each
+modified: 20190704155015221
+modifier: Mohammad
+responder: TonyM
+tags: exmp63 solution
+title: Field Values of Several Tiddlers
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/368NGw5u-oM/Gd9XH0rcCgAJ
+
+; Assume several tiddlers have a common tag and a field called `ingredient`, how to display the value of the `ingredient` from all tiddlers with the tag?
+: Use the `list` widget with `get` operator. Each input title is processed in turn. If the corresponding tiddler contains field `ingredient`, and the value of this field is //not empty//, then its value is appended to the output. For more information see [1].
+
+!! Example
+The below example displays the value of ingredient field from sveral tiddlers tagged with <<tag exmp63>>
+
+<$macrocall $name="wikitext-example-without-html" 
+src="""><$list filter="[tag[exmp63]get[ingredient]]">
+<<currentTiddler>><br>
+</$list>
+"""/>
+
+!! Duplicated values
+; If there are several tiddlers with same ingredent value, how list (display) the value only one time (no repeated values)?
+: Use the `each` operator, to remove duplicates. See [2] below
+
+```
+<$list filter="[tag[food]each[ingredient]get[ingredient]]">
+
+</$list>
+```
+
+!! Reference
+# https://tiddlywiki.com/#get%20Operator
+# https://tiddlywiki.com/#each%20Operator

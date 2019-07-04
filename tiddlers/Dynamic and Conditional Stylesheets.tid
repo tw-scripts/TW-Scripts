@@ -1,0 +1,53 @@
+created: 20190701062442813
+creator: Mohammad
+keywords: dynamic stylesheet css
+modified: 20190704155014369
+modifier: Mohammad
+responder: Mohammad
+tags: exmp64 solution
+title: Dynamic and Conditional Stylesheets
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/Puq3nkIlMtk/57MUmrwJDAAJ
+
+; How create CSS dynamically in Tiddlywiki?
+:Use TW scrippting elements to generate a stylesheet dynamically!
+
+!! Example
+Assume you have some tiddlers contains CSS but NOT tagged with `$:/tags/Stylesheet`. It is also possible to add more tiddlers (for example those added by users), you can create a stylesheet by dynamic populating CSS from those tiddlers.
+
+As an example, we have three diffent tiddlers each have some CSS and tagged with <<tag exmp64>>, to create a dynamic stylesheet create a tiddler as below
+
+<<<
+* title: what you want
+* tag: `$:/tags/Stylesheet`
+* text:
+
+```
+<$list filter="[tag[exmp64]]">
+<$transclude/>
+</$list>
+```
+<<<
+
+For details see [[Example 64: Demo]]
+
+!! Remarks
+As [[PMario|https://groups.google.com/d/msg/tiddlywiki/Puq3nkIlMtk/qZLZRd4QDAAJ]] stated the tiddlers that contains the CSS code needs the pragma as below. Have a look at the added "prettylink" rule. The below is valid CSS and the prettylink will be active. 
+
+```
+\rules only filteredtranscludeinline transcludeinline macrodef macrocallinline macrocallblock prettylink
+
+/*
+[[Link to the docs]]
+*/
+
+.test-style { 
+color: red;
+}
+```
+
+If you delete the pragma in such example, the pretty link like `[[test */]]` will fool the brower css parser.
+
+!! More resources
+;Use a custom field to style a tiddler
+:[[Tiddlywiki custom style faqs|https://tiddlywiki.com/#Q%3A%20How%20can%20I%20use%20a%20custom%20field%20to%20style%20a%20tiddler%3F]]

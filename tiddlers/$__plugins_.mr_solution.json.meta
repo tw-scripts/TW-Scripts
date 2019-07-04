@@ -1,0 +1,14 @@
+author: Mohammad Rahmani
+core-version: 5.1.17
+created: 20181115112823991
+creator: Mohammad
+description: Solution
+list: readme license release
+modified: 20190704155012387
+modifier: Mohammad
+name: Solution
+plugin-type: plugin
+source: https://github.com/kookma/Solution
+title: $:/plugins/.mr/solution
+type: application/json
+version: 1.0.4

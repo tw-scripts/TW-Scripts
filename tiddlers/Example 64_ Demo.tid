@@ -1,0 +1,25 @@
+created: 20190701064727700
+creator: Mohammad
+modified: 20190704155014593
+modifier: Mohammad
+tags: exmp64
+title: Example 64: Demo
+type: text/vnd.tiddlywiki
+
+The below example shows how `mycls` CSS class is generated using dynamic stylesheet.
+
+The `mycls` is generated dynamically from several other tiddlers has CSS in [[exmp64/stylesheet]].
+
+The [[exmp64/stylesheet]] is tagged with `$:/tags/Stylesheet` and so it is applied as a CSS stylesheet by Tiddlywiki.
+
+
+<$macrocall $name="wikitext-example-without-html" 
+src="""<div class="mycls">
+This is a DEMO!
+</div>
+"""/>
+
+!!Remarks
+The below tiddlers are used to create this demo
+
+<<list-links "[tag[exmp64]!<currentTiddler>]" type:ol>>

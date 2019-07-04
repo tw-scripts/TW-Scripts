@@ -1,0 +1,15 @@
+[
+    {
+        "created": "20190702125146689",
+        "title": "How Switch a Tag among Tiddlers",
+        "text": "\\define applyTag()\n<!-- first remove tag -->\n<$list filter=\"[search:title[exmp65/data]tag[exmp65]]\">\n<$fieldmangler>\n<$action-sendmessage $message=\"tm-remove-tag\" $param=\"exmp65\"/>\n</$fieldmangler>\n</$list>\n<!-- then add tag -->\n<$tiddler tiddler={{exmp65/state}}>\n<$fieldmangler>\n<$action-sendmessage $message=\"tm-add-tag\" $param=\"exmp65\"/>\n</$fieldmangler>\n</$list>\n</$tiddler>\n\\end\n\n\n<<docit>>\n[[Read this and see it would be solved|https://groups.google.com/d/msg/tiddlywiki/cV1Gs0RV6Jg/XPspaCj2DAAJ]]\n\n \n;How swith a tag among a set of tiddlers? Only one tiddler can have the tag at a time!\n: The solution is to use `select` widget and an action macro\n\nThe below example demonstrate how to switch a tag among set of tiddlers. The code has two parts\n\n# select widget to choose one tiddler among set of tiddlers\n# action macro to set tag to the selected tiddler and remove it from previous tiddler\n\nHere for this example, tag `exmp65` between three tiddlers is switched. Only one tiddler has the tag at a time. The action macro called `applyTag` is as below\n\n```\n\\define applyTag()\n<!-- first remove tag -->\n<$list filter=\"[search:title[exmp65/data]tag[exmp65]]\">\n<$fieldmangler>\n<$action-sendmessage $message=\"tm-remove-tag\" $param=\"exmp65\"/>\n</$fieldmangler>\n</$list>\n<!-- then add tag -->\n<$tiddler tiddler={{exmp65/state}}>\n<$fieldmangler>\n<$action-sendmessage $message=\"tm-add-tag\" $param=\"exmp65\"/>\n</$fieldmangler>\n</$list>\n</$tiddler>\n\\end\n```\n\n\n<$macrocall $name=\"wikitext-example-without-html\" \nsrc=\"\"\"<$select \n  tooltip=\"select a tiddler\"\n  tiddler=\"exmp65/state\" \n  field=\"text\"\n  actions=<<applyTag>>\n>\n<$list filter=\"[search:title[exmp65/data]]\" variable=\"tid\">\n<option value=<<tid>> > <<tid>> </option>\n</$list>\n</$select>\n\"\"\"/>\n\n\n\n",
+        "creator": "Mohammad",
+        "modified": "20190704155015232",
+        "modifier": "Mohammad",
+        "tags": "task exmp65 solution",
+        "type": "text/vnd.tiddlywiki",
+        "keywords": "switch tag ",
+        "responder": "Mohammad",
+        "url": ""
+    }
+]

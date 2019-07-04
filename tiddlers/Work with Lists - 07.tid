@@ -1,0 +1,31 @@
+created: 20180601111903493
+creator: Mohammad
+modified: 20190704155018695
+modifier: Mohammad
+tags: tutorial learning list
+title: Work with Lists - 07
+type: text/vnd.tiddlywiki
+
+This is a very intresting and important example and show how you can transclude a lot of tiddlers in on tiddler using list widget
+
+```
+<$list filter="[tag[slide]]">
+
+<$link to={{!!title}}><$view field="title"/></$link>
+
+<hr>
+
+<$transclude/>
+
+</$list>
+```
+
+<$list filter="[tag[slide]]">
+
+<$link to={{!!title}}><$view field="title"/></$link>
+
+<hr>
+
+<$transclude/>
+
+</$list>

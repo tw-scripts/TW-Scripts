@@ -1,0 +1,15 @@
+[
+    {
+        "created": "20190401050206784",
+        "title": "Create a Doubly Sorted Table",
+        "text": "; How to create a table from a list of tiddlers which is sorted first by value of field 1 and then sort the rsult by value of field 2?\n: This is called a doubly sorted list and can be done using a nested `$list` widget\n\n!! Example\nAssume there is a list of tiddlers contain the biblography data of some ebooks as below\n\n* tiddler `title`: ebook title\n* `vendor` field: publisher name\n* `author` field: ebook author name\n\nCreate a table contains ebook data sorted //first// in `vendor` name and //second// in `author` name.\n\n```\n<table>\n<$list filter=\"[tag[ebook]has[vendor]each[vendor]get[vendor]sort[]]\" variable=\"publisherName\">\n<$list filter=\"[tag[ebook]has[vendor]field:vendor<publisherName>sort[author]]\" variable=\"bookName\">\n<tr>\n  <td>\n    <$link to={{!!title}}><$view tiddler=<<bookName>> field=\"title\"/></$link>\n  </td>\n  <td>\n    <$view tiddler=<<bookName>> field='author'/>\n  </td>\n  <td>\n    <$view tiddler=<<bookName>> field='vendor'/>\n  </td>\n</tr>\n</$list>\n</$list>\n</table>\n```\n\n!! Remarks\nThe first `$list` filter:\n\n* Gets a list of all my books (tagged //ebook//)\n* Looks at the `vendor` field and gets a list of vendors using the `get` operator\n** Since the `get` operator is one of the few operators that allow duplicates, it is possible to have the same `vendor` listed multiple times in the list created \n* So first use the `each` operator to ensure unique items (vendors).\n* Then this list of all vendors is sorted by the vendor's name\n\n\nThe second `$list` filter will then runs for every `vendor` in the list created by the first `$list`\n\n* For the first item - which is the first vendor's name\n** It first gets a list of all the books (tagged //ebook//)\n** Then looks at the `vendor` field - selects the ones that match this first `vendor`\n** Then sorts those by the `author` field\n* Then it does that for the 2nd author in the list provided by the first `$list` filter \n* . . . and so on for all the vendors one by one as provided by the first `$list` filter.\n\n\n\n\n!! More info\nSee [[Example 57: Doubly Sorted Table]]\n\nAlso see [[List by Tag but Sort and Show by Field Value]]",
+        "creator": "Mohammad",
+        "modified": "20190704155013309",
+        "modifier": "Mohammad",
+        "tags": "exmp57 solution",
+        "type": "text/vnd.tiddlywiki",
+        "keywords": "secondary doubly sort get each ",
+        "responder": "S.S.",
+        "url": "https://groups.google.com/d/msg/tiddlywiki/FjQ8yFw8F0M/X8aBlOjvAwAJ"
+    }
+]

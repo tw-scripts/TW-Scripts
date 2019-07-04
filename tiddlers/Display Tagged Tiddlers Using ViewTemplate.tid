@@ -1,7 +1,7 @@
 created: 20190208190653532
 creator: Mohammad
 keywords: conditional viewtemplate tagging template
-modified: 20190406122515367
+modified: 20190704155014415
 modifier: Mohammad
 responder: Mohammad and Jeremy Ruston
 tags: $:/_site/tagging tagging solution
@@ -13,7 +13,7 @@ url: https://groups.google.com/d/msg/tiddlywiki/xkaG5GRu8jY/asFUUn6NFgAJ
 : Use conditional view template.
 
 !! Example
-The below template is show all tiddlers tagged with the parent tiddler as an ordered list:
+The below template shows all tiddlers tagged with the parent tiddler as an ordered list:
 
 * It checks to see if there is any tiddler tagged with the current tiddler (parent). This is performed by the outer `list` widget.
 * It then makes a call to `list-links` macro to display the tiddlers using an ordered list.

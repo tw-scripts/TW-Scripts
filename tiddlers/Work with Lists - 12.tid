@@ -1,0 +1,35 @@
+created: 20180601140007326
+creator: Mohammad
+modified: 20190704155018665
+modifier: Mohammad
+tags: tutorial learning list
+title: Work with Lists - 12
+type: text/vnd.tiddlywiki
+
+* Using list variable with ''checkbox''
+Here the currentTiddler variable refers to this tiddler (the containing tiddler) and the new variable `ThisItem` refers to list variable.
+
+@@.frmpurple
+Note that when you use a variable parameter than inside the list widget `<<currentTiddler>>` refers to the containing tiddler, not the current item on the list.
+@@
+
+* Example
+Here a list of tiddlers tagged with `slide` is shown and if you click, this tiddler tagged with that item.
+
+```
+<span style="color:#c2571a;">
+<$list filter='[tag[slide]]' variable=ThisItem>
+<$checkbox tiddler=<<currentTiddler>> tag=<<ThisItem>>/>
+<<ThisItem>><br> 
+</$list>
+</span>
+```
+* Click to add the the item as a tag to this tiddler. Here we used a little color!
+<<<
+<span style="color:#c2571a;">
+<$list filter='[tag[slide]]' variable=ThisItem>
+<$checkbox tiddler=<<currentTiddler>> tag=<<ThisItem>>/>
+<<ThisItem>><br> 
+</$list>
+</span>
+<<<

@@ -1,0 +1,33 @@
+created: 20190613081720725
+creator: Mohammad
+keywords: nodejs plugin thirdflow
+modified: 20190704155018060
+modifier: Mohammad
+tags: nodejs
+title: TiddlyWikiPluginSkeleton: Creating New Plugin
+type: text/vnd.tiddlywiki
+
+The below instruction shows how simply use Node.js for creating new plugin. It uses Thirdflow plugin from TheODive.
+
+! Set Up
+# Clone or download TiddlyWikiPluginSkeleton from (https://github.com/TheDiveO/TiddlyWikiPluginSkeleton).
+
+# install the required tools
+#* run `npm install` to install the required TiddlyWiki5 core, as well as the `ThirdFlow plugin` from the NPM registry.
+#* OR alternatively use the customised TiddlyWikiPluginSkeleton version by Mohammad (@kookma)
+#** The customized version does not need redundant installation of TW core
+#** The customized version has the `ThirdFlow plugin` installed
+
+! Develop a new plugin
+# Make a copy of `TiddlyWikiPluginSkeleton` from step 2 in your folder of choice
+# Open command window in `TiddlyWikiPluginSkeleton` folder
+# issue the  `npm run develop` command
+# next, navigate to http://localhost:8080 in your web browser.
+# follow the instructions given in the "Plugin Kickstarter" to create your plugin.
+# work on your plugin ... you can freely mix developing things inside the web browser as well as outside the browser using a standalone editor.
+
+Don't forget to stop and then restart $ npm run develop after you've made changes to TiddlyWiki files outside your web browser.
+
+! Release the new plugin
+# to control which files to release, visit your TiddlyWiki's `$:/ControlPanel` and go to the ''ThirdFlow'' tab. Then click on the subtab named ''Release''. Follow the instructions given there. Please note that you can develop multiple plugins simultaneously from the same development TiddlyWiki.
+# when you're ready to release, simply run `npm run release` to create the release file(s) in `editions/release/output`. Rinse, then repeat as necessary.

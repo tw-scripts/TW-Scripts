@@ -1,7 +1,7 @@
 created: 20190226105927482
 creator: Mohammad
 keywords: template
-modified: 20190406122520657
+modified: 20190704155017674
 modifier: Mohammad
 responder: Magnus, Mohammad
 tags: template solution
@@ -27,3 +27,6 @@ Now every tiddler has been tagged with `Content` will show in its footer a nice 
 If tiddlers have caption, their caption will show instead of title.
 
 <<alert info  """This code uses conditional output for displaying among caption/title. See: [[Conditional Output]]""">>
+
+!! More
+See the [[viewtemplate/tagging]] in this wiki how displays all tiddlers tagged with the parent.

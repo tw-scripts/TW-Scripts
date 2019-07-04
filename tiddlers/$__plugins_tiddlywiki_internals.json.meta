@@ -1,0 +1,11 @@
+author: JeremyRuston
+core-version: >=5.0.0
+created: 20190704155012278
+dependents: 
+description: Tools for exploring the internals of TiddlyWiki
+list: readme
+modified: 20190704155012278
+plugin-type: plugin
+title: $:/plugins/tiddlywiki/internals
+type: application/json
+version: 5.1.19

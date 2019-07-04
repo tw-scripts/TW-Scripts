@@ -1,0 +1,16 @@
+created: 20190701064536130
+creator: Mohammad
+modified: 20190704155014703
+modifier: Mohammad
+tags: $:/tags/Stylesheet exmp64
+title: exmp64/stylesheet
+type: text/vnd.tiddlywiki
+
+/* This stylesheet tiddler is generated conditionally! It populate all tiddlers tagged with exmp64
+and exclude the current tiddler and 'Example 64: Demo'. More sophisticated filters can be used*/
+
+
+<$list filter="[tag[exmp64]!tag[solution]!<currentTiddler>!title[Example 64: Demo]]">
+<$transclude/>
+</$list>
+

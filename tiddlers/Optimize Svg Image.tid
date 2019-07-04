@@ -1,0 +1,11 @@
+created: 20190629075202787
+creator: Mohammad
+description: SvgOmg optimize the svg images and remove the extra settings and vendor data from svg file. It also remove extra white space and optimize for size.
+developer: Jake Archibald
+modified: 20190704155016499
+modifier: Mohammad
+tags: Links
+title: Optimize Svg Image
+type: text/vnd.tiddlywiki
+url: https://jakearchibald.github.io/svgomg/
+wiki-name: svgomg

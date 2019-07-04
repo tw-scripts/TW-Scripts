@@ -1,0 +1,10 @@
+author: JeremyRuston
+created: 20190704022803226
+dependents: 
+description: CodeMirror Mode: XML Highlighting
+list: readme
+modified: 20190704022803226
+plugin-type: plugin
+title: $:/plugins/tiddlywiki/codemirror-mode-xml
+type: application/json
+version: 5.1.19

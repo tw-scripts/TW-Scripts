@@ -1,0 +1,12 @@
+created: 20190616030744615
+creator: Mohammad
+modified: 20190704022810094
+modifier: Mohammad
+summary: This is a summary filed displaying on the tiddler.
+tags: exmp62
+title: Example 62: Conditional Summary
+type: text/vnd.tiddlywiki
+
+This is a demo shows how [[Show a Summary on Tiddler]] can be implemented.
+
+The example uses a viewtemplate tiddler [[$:/.tb/ui/ViewTemplate/summary]]

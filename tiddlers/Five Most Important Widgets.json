@@ -1,0 +1,15 @@
+[
+    {
+        "created": "20181223134620754",
+        "title": "Five Most Important Widgets",
+        "text": "My take on the 5 most important widgets to learn would be: \n\n* `<$transclude>` \n* `<$set>` (note that `<$tiddler>` is really just an instance of the `<$set>` widget) \n* `<$list>` \n* `<$text>` \n* `<$link>`\n\nAnd if I was allowed another 5 they would be: \n\n* `<$macrocall>` \n* `<$edit-text>` \n* `<$button>` \n* `<$navigator>` \n* `<$reveal>` \n\nThere’s also a bundle of widgets that I consider to be hacked that have hung over from the very early days of TW5. At the beginning we didn’t have flexible enough primitives to model some behaviour (like the story river), and so there’s a number of widgets that encapsulate blobs of JavaScript that could soon be replaced by more generic, smaller components: \n\n* `<$navigator>` \n* `<$fieldmangler>` \n* `<$linkcatcher>` \n* `<$encrypt>` for encrypting the payload of standalone HTML TiddlyWikis \n* `<$raw>` ",
+        "creator": "Mohammad",
+        "modified": "20190704022812315",
+        "modifier": "Mohammad",
+        "tags": "solution",
+        "type": "text/vnd.tiddlywiki",
+        "keywords": "widget ",
+        "responder": "Jeremy, BTC, Mohammad, Brian",
+        "url": "https://groups.google.com/d/msg/tiddlywikidev/IwfddsKnSDw/y4aE4zUeCgAJ"
+    }
+]

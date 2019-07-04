@@ -1,0 +1,11 @@
+author: Mario Pietsch
+core-version: >=5.1.6
+created: 20190704022804273
+dependents: 
+description: Internal links are added to tabs if selected
+list: readme license
+modified: 20190704022804273
+plugin-type: plugin
+title: $:/plugins/wikilabs/link-to-tabs
+type: application/json
+version: 0.1.1

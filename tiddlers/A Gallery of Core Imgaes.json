@@ -1,0 +1,15 @@
+[
+    {
+        "created": "20190130195149214",
+        "title": "A Gallery of Core Imgaes",
+        "text": "; Create a gallery of all core imgaes\n: The core images are svg images. To do this use the `list` widget and a small css as below.\n\n! Linkable image\nOn mouse hover the tooltip will reveal the full path of image and on click the tiddler contans the svg image will be opened.\n\n<<wikitext-example-without-html \nsrc:\"\"\"<style>\n.my-gallery svg {\nwidth:  2.0em !important;\nheight: 2.0em !important;\nmargin: 0.5em;\n}\n</style>\n<div class=\"my-gallery\">\n<$list filter=\"[all[tiddlers+shadows]tag[$:/tags/Image]sort[]] -[[$:/core/images/blank]]\">\n<$link tooltip=\"{{!!title}}\">\n<$transclude/>\n</$link>\n</$list>\n</div>\n\"\"\">>\n\n!! Remarks\n* The my-gallery css class sets the height, width and margin of images\n* The `list` widget, list all core images\n* The `-[[$:/core/images/blank]]` filter exclude the blank (empty) image from listing\n* All images are linkable and on click open the related tiddler.\n\n! Clickable image\nThe below example shows the same gallery with clickable images. On click the tiddler name containing the image is copied to clipboard.\n\n\n<$macrocall $name=\"wikitext-example-without-html\" \nsrc=\"\"\"<div class=\"my-gallery\">\n<$list filter=\"[all[tiddlers+shadows]tag[$:/tags/Image]sort[]] -[[$:/core/images/blank]]\">\n<$button  message=\"tm-copy-to-clipboard\" param=<<currentTiddler>> tooltip=<<currentTiddler>> >\n<$transclude/>\n</$button>\n</$list>\n</div>\n\"\"\"/>\n\n!! Remarks\n* The my-gallery css class sets the height and width of images. The margin is not used here.\n* The `list` widget, list all core images\n* The `-[[$:/core/images/blank]]` filter exclude the blank (empty) image from listing\n* The `button` widget uses `tm-copy-to-clipboard` to copy the tiddler title of containing image into clipboard. Also the title is used as tooltip to be shown on mouse hover.\n* Each image is wrapped into a button and on click the related tiddler title is copied to clipboard.\n",
+        "creator": "Mohammad",
+        "modified": "20190704022804022",
+        "modifier": "Mohammad",
+        "tags": "image solution",
+        "type": "text/vnd.tiddlywiki",
+        "keywords": "list image gallery clipboard ",
+        "responder": "Thomas Elmiger",
+        "url": "https://groups.google.com/d/msg/tiddlywiki/NXMYo4arAp4/S_zKK_GoHQAJ"
+    }
+]

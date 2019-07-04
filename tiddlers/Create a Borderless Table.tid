@@ -1,0 +1,61 @@
+created: 20190614065319109
+creator: Mohammad
+keywords: table css borderless
+modified: 20190704022805326
+modifier: Mohammad
+responder: Eric Shulman
+tags: solution
+title: Create a Borderless Table
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/UC10tciyr1U/Jvj66_e2jTUJ
+
+; How create a borderless table?
+: <div>
+
+Create a tiddler tagged with `$:/tags/Stylesheet` and put the below css code inside it.
+
+```css
+.borderless,
+.borderless table,
+.borderless td,
+.borderless tr,
+.borderless th,
+.borderless tbody
+    { border:0 !important; }
+}
+```
+
+Then create your borderless table using the above class like below
+
+```
+@@.borderless
+|a|b|
+|c|d|
+@@
+```
+
+! Example
+The below code shows a sample borderless
+
+<$macrocall $name="wikitext-example-without-html" 
+src="""<style>
+.borderless,
+.borderless table,
+.borderless td,
+.borderless tr,
+.borderless th,
+.borderless tbody
+    { border:0 !important; }
+}
+</style>
+
+@@.borderless
+|col1|col2|col3|col4|h
+|a|b|12|red|
+|c|d|256|green|
+|Table 1. This is the caption|c
+@@
+"""/>
+
+
+

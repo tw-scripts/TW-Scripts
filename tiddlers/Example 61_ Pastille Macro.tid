@@ -1,0 +1,45 @@
+color: #ff8000
+created: 20190615174206162
+creator: Mohammad
+modified: 20190704022810167
+modifier: Mohammad
+tags: exmp61
+title: Example 61: Pastille Macro
+type: text/vnd.tiddlywiki
+
+\define pastille(tagName)
+<svg width="14" height="14" >
+<circle cx="7" cy="7" r="6" stroke="grey"  fill={{$tagName$!!color}}/>
+</svg>
+\end
+
+\define circle(color)
+<svg width="14" height="14" >
+<circle cx="7" cy="7" r="6" stroke="grey"  fill=<<__color__>>/>
+</svg>
+\end
+
+Sample example shows a macro create a svg where color is given to macro parameter.
+
+<$macrocall $name="wikitext-example-without-html" 
+src="""<<pastille "Example 61: Pastille Macro">>
+"""/>
+
+!! Example ii
+The circle macro is a simple form of pastille macro as below
+
+```
+\define circle(color)
+<svg width="14" height="14" >
+<circle cx="7" cy="7" r="6" stroke="grey"  fill=<<__color__>>/>
+</svg>
+\end
+```
+
+* Demo
+<$macrocall $name="wikitext-example-without-html" 
+src="""
+<$list filter="red blue green cyan yellow orange purple " variable=color>
+<$macrocall $name="circle" color=<<color>> />
+</$list>
+"""/>

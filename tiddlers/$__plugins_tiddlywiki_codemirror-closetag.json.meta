@@ -1,0 +1,10 @@
+author: JeremyRuston
+created: 20190704022803268
+dependents: 
+description: CodeMirror AddOn: Auto-Close Tags
+list: readme
+modified: 20190704022803268
+plugin-type: plugin
+title: $:/plugins/tiddlywiki/codemirror-closetag
+type: application/json
+version: 5.1.19

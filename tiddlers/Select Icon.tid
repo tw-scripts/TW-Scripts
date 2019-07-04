@@ -1,15 +1,3 @@
-created: 20181004010541350
-creator: Mohammad
-icon: $:/core/images/advanced-search-button
-keywords: icon fontawesome
-modified: 20190316114919768
-modifier: Mohammad
-responder: TonyM
-tags: solution
-title: Select Icon
-type: application/x-tiddler
-url: 
-
 \define edit-fields-image-picker(actions,filter:"[all[shadows+tiddlers]is[image]] [all[shadows+tiddlers]tag[$:/tags/Image]] -[type[application/pdf]] +[!has[draft.of]sort[title]]",subfilter:"")
 <div class="tc-image-chooser">
 <$vars state-system=<<qualify "$:/state/editFields-image-picker">>>

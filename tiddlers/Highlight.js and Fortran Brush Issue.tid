@@ -1,0 +1,39 @@
+created: 20190613071608242
+creator: Mohammad
+modified: 20190704022811550
+modifier: Mohammad
+tags: 
+title: Highlight.js and Fortran Brush Issue
+type: text/vnd.tiddlywiki
+
+The current brush for Fortran in `highlight.js` original code does not correctly highlight the user defined precision e.g 
+
+> <span style="color:red">1234.</span><span style="color:blue">567_wp</span>
+
+Where it should be rendered as 
+
+<<<
+```fortran
+1.23_wp
+```
+<<<
+
+
+
+To resolve the issue you need to replace the format instruction in 
+
+* `fortran.js` or 
+* `$:/plugins/tiddlywiki/highlight/highlight.js` or
+* `Tiddlywiki\plugins\tiddlywiki\highlight\files` 
+
+as below:
+
+* The number format in original code
+```js
+{cN:"number",b:"(?=\\b|\\+|\\-|\\.)(?=\\.\\d|\\d)(?:\\d+)?(?:\\.?\\d*)(?:[de][+-]?\\d+)?\\b\\.?",r:0}
+```
+
+* Should be eplaced with the correct modified number format as below
+```js
+{cN:"number",b:"(?=\\b|\\+|\\-|\\.)(?=\\.\\d|\\d)(?:\\d+)?(?:\\.?\\d*)(?:[de][+-]?\\d+)?\\b\\.?",r:0}
+```

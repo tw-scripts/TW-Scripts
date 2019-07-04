@@ -1,0 +1,22 @@
+created: 20190608194339648
+creator: Mohammad
+modified: 20190704022810179
+modifier: Mohammad
+tags: exmp60
+title: Example 60: Demo of Tabs Macro with Template
+type: text/vnd.tiddlywiki
+
+This tiddler shows demo for <<tag exmp60>>, in which ''tabs'' macro is used to display the content of tiddlers they have reference to fields or `currentTiddler` variavle
+
+* ''Works'' by using template
+Here a template [[exmp60/template]] is used here to solve the issue of `{{!!field-name}}` referencing (transclusion).
+<$macrocall $name="wikitext-example-without-html" 
+src="""><<tabs "[search:title[exmp60/data]]" template:"exmp60/template">>
+"""/>
+
+*''Does not work'', if template is not used
+<$macrocall $name="wikitext-example-without-html" 
+src="""><<tabs "[search:title[exmp60/data]]">>
+"""/>
+
+<<alert warning "Note to the value of fields and `currentTiddler` displayed in the above examples.">>

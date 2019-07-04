@@ -1,0 +1,26 @@
+created: 20190615173438249
+creator: Mohammad
+keywords: svg icon maco
+modified: 20190704022805270
+modifier: Mohammad
+responder: Silverfox
+tags: exmp61 solution
+title: Create Svg Icons Using Macro
+type: text/vnd.tiddlywiki
+url: 
+
+The below macro was developed by {{!!responder}} for the great [[Archipel]] wiki, in a that D3JS is used for visualization Tiddlywiki contents.
+
+!! Macro pastille
+The pastille macro creates small macro and gets its fill color from input tiddler
+
+```
+\define pastille(tagName)
+<svg width="14" height="14" >
+<circle cx="7" cy="7" r="6" stroke="grey"  fill={{$tagName$!!color}}/>
+</svg>
+\end
+```
+
+!! Example
+There is several examples on [[http://archipel.tiddlyspot.com/#Knowledge%20map%20options]]. One example has given here [[Example 61: Pastille Macro]]

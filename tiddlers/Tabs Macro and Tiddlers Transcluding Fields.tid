@@ -1,0 +1,31 @@
+created: 20190608170542322
+creator: Mohammad
+keywords: tabs template transclude field
+modified: 20190704022815139
+modifier: Mohammad
+responder: PMario
+tags: exmp60 solution
+title: Tabs Macro and Tiddlers Transcluding Fields
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/Qi8aOL8jDBg/qy7VGVGWBAAJ
+
+!! Problem with displaying tiddlers in tabs when they contains transcluded fileds
+I have a tiddler that transclude its caption filed using `{{!!caption}}` in the text (body).  It correctly pulls the caption field value and everything works as it should. However, when I call the tabs macro in a new tiddler and have it display the original tiddler as a tab, the `{{!!caption}}` reference breaks and appears to reference the tiddler calling the tabs macro.
+
+* Solution
+As described in [[https://tiddlywiki.com/#tabs%20Macro]] when tiddlers are used in ''tabs'' macro, if they contains transclusion of fields or reference to `currentTiddler` variable, these refences wil not work anymore. The solution is to use a template in tabs macro as below
+
+```
+<$tiddler tiddler=<<currentTab>>>
+<$transclude mode="block" />
+</$tiddler>
+```
+
+So the tabs macro should be used like the below
+
+```
+<<tabs "[tag[exmp60]]" template="template/exmp60">>
+```
+
+!! Example
+The tiddler [[Example 60|Example 60: Demo of Tabs Macro with Template]] shows how ''tabs'' macro work with //template// tiddler to correctly displayed the //fields// and `currentTiddler` value.

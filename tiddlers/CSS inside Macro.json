@@ -1,0 +1,15 @@
+[
+    {
+        "created": "20180928051543656",
+        "title": "CSS inside Macro",
+        "text": "; Is it valid to have css inside macro, if so which of the two below solution is recommended?\n\n# <div>\n\n''Define inline style''\n\n```\n\\define vspace(height)\n<style>\n  .vertical-space {\n     margin-bottom: $height$;\n  }\n</style>\n<p class=\"vertical-space\"></p>\n\\end\n```\n</div>\n\n# <div>\n\n''Define inline style''\n\n```\n\\define vspace(height)\n<p style=\"margin-bottom: $height$;\"></p>\n\\end\n```\n</div>\n\n<<alert primary \"\"\"\nThe 2nd approach. When you use `<style>`, the styles \"leak\" into all the other open tiddlers. Probably OK in this particular use case, but something to be aware of.\"\"\" >>",
+        "creator": "Mohammad",
+        "modified": "20190704022805226",
+        "modifier": "Mohammad",
+        "tags": "solution",
+        "type": "text/vnd.tiddlywiki",
+        "keywords": "css macro",
+        "responder": " Mark S",
+        "url": "https://groups.google.com/d/msg/tiddlywiki/r-O4O4v_NA8/6uVcmYyEAAAJ"
+    }
+]

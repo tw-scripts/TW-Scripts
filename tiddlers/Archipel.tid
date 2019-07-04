@@ -1,0 +1,11 @@
+created: 20190615173038917
+creator: Mohammad
+description: Here is a proof of concept called Archipel that uses D3 JS into TiddlyWiki to vizualize the tiddlyWiki content.  My target is to build a tool for Innovation management that will help to visualize and navigate into knowledge contained into tiddlers based on their title and tags.
+developer: Silverfox
+modified: 20190704022803859
+modifier: Mohammad
+tags: Links
+title: Archipel
+type: text/vnd.tiddlywiki
+url: http://archipel.tiddlyspot.com/
+wiki-name: Archipel

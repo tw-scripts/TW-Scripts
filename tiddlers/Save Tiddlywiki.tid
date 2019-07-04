@@ -1,0 +1,32 @@
+created: 20190616140822598
+creator: Mohammad
+keywords: saving
+modified: 20190704022814010
+modifier: Mohammad
+responder: Eric Shulman
+tags: solution
+title: Save Tiddlywiki
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/ixTpZ1siFsY/B52keETHBgAJ
+
+For security reasons, modern web browsers do not let you ''directly'' write to the local filesystem.
+
+TiddlyWiki is built on top of browser tech.  As such, it has the same restrictions on local filesystem access.
+
+Fortunately, nearly all web browsers DO have one reliable method of writing to the local filesystem: ''downloading a file''.
+
+Downloading offers some measure of implicit information privacy/security because it requires user-interaction (no silent saving of files), and uses system-level dialogs to access the filesystem (no direct program access to read your directory info).
+
+By default, when you try to save a locally-stored TiddlyWiki without any add-ons or helper apps, it triggers what appears to be a ''download'' activity, even though the file is clearly already on your own system.
+
+Many browsers automatically save downloaded files to a specific location (e.g., "/Downloads" or similar).
+
+Some browsers allow you to change this default location to a different directory and/or "ask for location" each time you download so you can specify the desired filename and directory.
+
+If you tell your browser to point to the directory in which your TiddlyWiki file is stored, then when you press "save", you get a system-level dialog that allows you to enter a new filename or select an existing file.
+
+Most systems will automatically suggest a filename by appending a number to the current filename, e.g., "index.html (1)".  You can, of course, select the *existing* TiddlyWiki filename, e.g., index.html (without any "(n)" suffix), which should then prompt you for permission to overwrite the previously saved file.  After saving, if you reload your TiddlyWiki file, it will contain your saved changes as you would expect.
+
+Although the "default download saver" ultimately ''does'' let you save changes locally, some people find the experience to be less-than-optimal.  To address this, there are ''many different add-ons'' and system-specific helper apps that can potentially provide a smoother experience, depending upon your usage patterns and platform(s) of choice.
+
+https://tiddlywiki.com/#GettingStarted

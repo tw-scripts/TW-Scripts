@@ -1,0 +1,16 @@
+[
+    {
+        "created": "20190211062621908",
+        "title": "OpenAll Tagged",
+        "text": "",
+        "creator": "Mohammad",
+        "modified": "20190704022813698",
+        "modifier": "Mohammad",
+        "tags": "Links",
+        "type": "text/vnd.tiddlywiki",
+        "description": "Open all tiddler tagged say with myTag. This is a simple macro opens all tiddlers tagged with sepecified one.",
+        "developer": "Mat TWaddle ",
+        "url": "http://openalltagged.tiddlyspot.com/#About",
+        "wiki-name": "openalltagged "
+    }
+]

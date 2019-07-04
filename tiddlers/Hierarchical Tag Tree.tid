@@ -1,0 +1,49 @@
+created: 20190606060808258
+creator: Mohammad
+keywords: toc hieracy tag
+modified: 20190704022811560
+modifier: Mohammad
+responder: Mark S
+tags: solution
+title: Hierarchical Tag Tree
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/g0W0mcy1cW0/adMBHO5_BAAJ
+
+;How a table of contents can be displayed as tree like with connected colorful branches?
+: It needs a custom TOC macro and stylesheet
+
+[[List Tree]] has been developed by //twMat// a stylesheet to reshape a bullet list into tree like display. It can be used with the below customized macro from [[Mark S|https://groups.google.com/d/msg/tiddlywiki/g0W0mcy1cW0/adMBHO5_BAAJ]].
+
+!! Customised TOC macro
+Note that, the "toc2" is the macro you will need to create to get your tree like table of contents. Install the [[List Tree]] plugin if you haven't already. 
+Then create a new tiddler and tag it `$:/tags/Macro`. Put in the following contents:
+
+```
+\define toc-body2(tag,sort:"",itemClassFilter,exclude,path)
+<ul class="list-tree">
+  <$list filter="""[all[shadows+tiddlers]tag<__tag__>!has[draft.of]$sort$] -[<__tag__>] -[enlist<__exclude__>]""">
+    <$vars item=<<currentTiddler>> path={{{ [<__path__>addsuffix[/]addsuffix<__tag__>] }}} excluded="""[enlist<__exclude__>] -[<__tag__>]""">
+      <$set name="toc-item-class" filter=<<__itemClassFilter__>> emptyValue="toc-item" value="toc-item-selected">
+        <li class="xlist-tree">
+          <$list filter="[all[current]toc-link[no]]" emptyMessage="<$link><$view field='caption'><$view field='title'/></$view></$link>">
+            <<toc-caption>>
+          </$list>
+          <$macrocall $name="toc-body" tag=<<item>> sort=<<__sort__>> itemClassFilter=<<__itemClassFilter__>> exclude=<<excluded>> path=<<path>>/>
+        </li>
+      </$set>
+    </$vars>
+  </$list>
+</ul>
+\end
+
+\define toc2(tag,sort:"",itemClassFilter:" ")
+<$macrocall $name="toc-body2"  tag=<<__tag__>> sort=<<__sort__>> itemClassFilter=<<__itemClassFilter__>> />
+\end
+```
+
+!! Usage
+To call the TOC with the title of the current tiddler, use:
+
+```
+<$macrocall $name="toc2" tag=<<currentTiddler>>/>
+```

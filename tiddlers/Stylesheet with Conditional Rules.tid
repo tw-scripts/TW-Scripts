@@ -1,7 +1,7 @@
 created: 20181223131047221
 creator: Mohammad
 keywords: conditional stylesheet sidebar color
-modified: 20190224163834676
+modified: 20190704022815599
 modifier: Mohammad
 responder: Jeremy Ruston
 tags: exmp18 solution
@@ -21,7 +21,7 @@ There's a danger of inadvertent wikification of stylesheet text, and so we usual
 
 Putting the pieces together, here’s a stylesheet that sets the page background colour to green whenever the sidebar is hidden:
 
-Open [[example 18|Exmple 18: Conditionally Change Background Color]] and add `$:/tags/Stylesheet` tag to see it is in action. 
+Open [[example 18|Example 18: Conditionally Change Background Color]] and add `$:/tags/Stylesheet` tag to see it is in action. 
 
 ```
 \define if-sidebar-visible(text)

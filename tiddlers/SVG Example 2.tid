@@ -1,0 +1,34 @@
+created: 20190608143636259
+creator: Mohammad
+modified: 20190704022815281
+modifier: Mohammad
+tags: exmp59
+title: SVG Example 2
+type: text/vnd.tiddlywiki
+
+Here a svg tiddlers are used for demonstration
+
+* The [[osa.svg]] with the content type has been set as (image/svg+xml)
+* The [[python.svg]] with empty content type
+
+!! Include in wikitext as image
+<<<
+As the conent type is set to `image/svg+xml` it can be embeded as a self contained image using `img` syntax.
+
+<<wikitext-example-without-html 
+src:"""[img width="60pt"[osa.svg]]""">>
+
+<<alert danger text:"""
+The [[python.svg]] has no content type, so it cannot be included in wikitext as self contained image. So, the `[img width="60pt"[python.svg]]` renders as nothing!
+""">>
+
+!! Simple transclusion
+Note that, the below code works as it transclude the [[python.svg]]
+
+<<wikitext-example-without-html 
+src:"""{{python.svg}}""">>
+
+<<<
+
+!! Remarks
+ * The tiddler with content type is not set to one of the image forms inclusing `image/svg+xml` cannot embed as self-contained `<img>` element.

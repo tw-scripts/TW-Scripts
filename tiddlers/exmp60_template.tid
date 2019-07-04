@@ -1,0 +1,11 @@
+created: 20190608194430696
+creator: Mohammad
+modified: 20190704022810589
+modifier: Mohammad
+tags: exmp60
+title: exmp60/template
+type: text/vnd.tiddlywiki
+
+<$tiddler tiddler=<<currentTab>>>
+<$transclude mode="block" />
+</$tiddler>

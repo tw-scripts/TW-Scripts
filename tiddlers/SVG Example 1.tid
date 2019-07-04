@@ -1,0 +1,47 @@
+created: 20190608063022519
+creator: Mohammad
+modified: 20190704022815347
+modifier: Mohammad
+tags: exmp59
+title: SVG Example 1
+type: text/vnd.tiddlywiki
+
+!! A sample svg image
+<<<
+In the below example the two
+
+* [[$:/core/images/folder]] 
+* [[$:/core/images/copy-clipboard]] 
+svg files have been used
+<<<
+
+!! Simple transclusion
+<<<
+To simply transclude the svg do as below
+
+<<wikitext-example-without-html 
+src:"""{{$:/core/images/folder}}
+""">>
+<<<
+
+!! Applyding css style
+<<<
+The below exmple shows how css class can be applied to a transcluded svg image.
+<<wikitext-example-without-html 
+src:"""
+<style>
+.my-gallery svg {
+width: 4em;
+height: 4em;
+margin: 0.1em;
+fill:green;
+}
+</style>
+
+<span class="my-gallery">
+<$transclude tiddler="$:/core/images/folder"/>
+<$transclude tiddler="$:/core/images/copy-clipboard"/>
+</span>
+""">>
+<<<
+

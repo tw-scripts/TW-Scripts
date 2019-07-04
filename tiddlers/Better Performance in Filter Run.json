@@ -1,0 +1,15 @@
+[
+    {
+        "created": "20180816201359755",
+        "title": "Better Performance in Filter Run",
+        "text": ";Which filter run faster?\n:Assume you have more than 100 tiddlers in their tittle there is a \"Demo\" word! Some of them are hidden tiddlers, their name started with \"$:/\" what is the best filter to list them?\n\n* Case i: two search:title\n```\n<$list filter=\"[search:title[exa]] -[search:title[$:]]\">\n\n</$list>\n```\n><$list filter=\"[search:title[exa]] -[search:title[$:]]\">\n\n</$list>\n\n* Case ii: one search:title and negate prefix\n```\n<$list filter=\"[search:title[exa]!prefix[$:/]]\">\n\n</$list>\n```\n><$list filter=\"[search:title[exa]!prefix[$:/]]\">\n\n</$list>\n\n* Answer\nThis would probably be a little better:\n\n`<$list filter=\"[search:title[Demo]!prefix[$]]\">`\n\nBecause this way you don't make the underlying javascript look for the `$` anywhere except the first character location.\n\nAlso, yours would omit:\n\n`X$:/My Demo`\n\nWhich might exist if a user wanted to make a system tiddler temporarily visible in the recent tiddlers sidebar.\n\n* Case iii\n```\n<$list filter=\"[!is[system]search:title[exa]]\">\n\n</$list>\n```\n><$list filter=\"[!is[system]search:title[exa]]\">\n\n</$list>\nRef: [[Jeremy Ruston|https://groups.google.com/d/msg/tiddlywiki/XuHiTCI4N60/v2Yrtpv8EAAJ]]\n\nThere is a built-in filter operator `is[system]` for detecting system tiddlers, so a better choice would be:\n\n`[!is[system]search:title[Demo]]`\n\nAgain, we filter out system tiddlers before doing the search so as to reduce the number of tiddlers that we have to search.\n\n\n!! More discussion\n\n# [[Performance comparision|https://groups.google.com/d/msg/tiddlywiki/FmuBA2SMjxw/-AkxAPCnCAAJ]] between `[is[current]]` and `<currentTiddler>`\n# [[A fast list|https://groups.google.com/d/msg/tiddlywiki/XuHiTCI4N60/_g8ZUvGuAwAJ]]",
+        "creator": "Mohammad",
+        "modified": "20190704022803822",
+        "modifier": "Mohammad",
+        "tags": "solution",
+        "type": "text/vnd.tiddlywiki",
+        "keywords": "filter run",
+        "responder": "Mark S ",
+        "url": "https://groups.google.com/d/msg/tiddlywiki/XuHiTCI4N60/JYFMavGvAwAJ"
+    }
+]

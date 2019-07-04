@@ -1,0 +1,97 @@
+created: 20190407220556955
+creator: Mohammad
+keywords: robocopy backup windows
+modified: 20190704022812786
+modifier: Mohammad
+responder: Mohammad rahmani
+tags: solution
+title: Make Version Incremented Backup on Windows
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/j28oUuw5x3A/du8r_yLGCQAJ
+
+The below code uses robocopy to create a version-incremented copies of files (here tiddlers)
+
+The script:
+
+* always create an identical copy of source tiddlers
+* create version-incremented copies of all files differ from their source (you may change a tiddler in source or backup folder)
+* version number started from 000 ~ 999, so this is maximum number of versions
+* use robocopy which is very fast method for creating backups
+* 
+!! How to use
+* change the source and destination folders to meet your case
+* run the batch file
+
+```
+:: Ref: https://www.experts-exchange.com/questions/23427327/How-to-use-Robocopy-to-create-files-Versions.html
+:: Running the script will first Robocopy any files which don't already exist in the destination,
+:: then use xcopy to create version-incremented copies of any files which do exist in the destination.
+:: Mohammad Rahmani
+:: Github: https://github.com/kookma
+
+:: Rev 0.9
+:: Apr 8th, 2019
+
+
+@echo off
+cls
+
+ 
+:: Source and destination paths.  Do not include a trailing backslash
+set SourceFolder="G:\Test-Robocopy\my source"
+set DestinationFolder="G:\Test-Robocopy\my dest"
+  
+ :: ------------------------------------------------------------------------------------------------
+ 
+ :: Remove double and single qoutes if any
+ set source=%SourceFolder:"=%
+ set source=%source:'=%
+ set dest=%DestinationFolder:"=%
+ set dest=%dest:'=%
+ 
+ setlocal EnableDelayedExpansion
+ :: Copy any file, folder not existed in the destination
+robocopy "%source%" "%dest%" /XC /XN /XO /R:3 /W:3 /E /XX 
+ 
+:: List all files existed in destination, but there is a difference between each file and its 
+:: source
+for /F "tokens=*" %%G in ('robocopy "%source%" "%dest%" /XX /L /NDL /NS /NC /NJH /NJS /E') do (
+ call :_process "%%G"
+)
+goto :eof
+ 
+:: The process subroutine here does the below tasks
+:: a. create a new copy of destination file prefixed with _vxxx, where xxx: 001 ~ 999 (version-incremented copies )
+:: so this only keep 1000 revisions and cannot work for more revisions
+:: b. copy the source file and overwrite the destination. So, destination is always equal to source
+:_process
+set counter=0
+set version=000
+set source_path=%~dp1
+set file=%~n1
+set ext=%~x1
+ 
+:: Create the destionation path for the existed file. by replacing the
+:: source path with destination path. (search and replace)
+set dest_path=!source_path:%source%=%dest%!
+
+
+:: Check to see what is the last version number to create the next version number 
+:_loop
+if exist "%dest_path%%file%_v%version%%ext%" (
+ set /A counter+=1
+ :: create a number with leading zeros like 001 ~ 999
+ set version=000!counter!
+ set version=!version:~-3!
+ goto :_loop
+)
+
+:: Increment the version number of the file in destination  which differes from its identical one in source
+echo F|xcopy "%dest_path%%file%%ext%" "%dest_path%%file%_v%version%%ext%" /C /H /R /Z  /Q
+:: Copy from source and overwrite the respective file in destination:  source = destination
+echo F|xcopy %1 "%dest_path%\%file%%ext%" /C /H /R /Z /Y /Q
+goto :eof
+
+endlocal
+
+```

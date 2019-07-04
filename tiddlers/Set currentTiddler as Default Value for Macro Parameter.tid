@@ -1,0 +1,31 @@
+created: 20190405045313404
+creator: Mohammad
+keywords: macro parameter empty default
+modified: 20190704022814847
+modifier: Mohammad
+responder: Anthony Muscio (TonyM)
+tags: solution
+title: Set currentTiddler as Default Value for Macro Parameter
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/d/msg/tiddlywiki/73PPfQHUQJU/IaTCPu_pCAAJ
+
+;How to use `currentTiddler` as default value, when a macro parameter getting a tiddler title is empty?
+:Use `$set` widget and set the emptyValue attribute!
+
+!! Example
+The below macro needs a tiddler title as its parameter `tiddlername`, the `$set` widget defines a new variable and
+
+* if the parameter `tiddlername` //has been passed//, the `selected-tiddler` variable assigned to it
+* if the parameter `tiddlername` //has not been passed//, then the `selected-tiddler` variable assigned to `currentTiddler`.
+
+
+```
+\define mymacro(tiddlername)
+<$set name=selected-tiddler value="$tiddlername$" emptyValue=<<currentTiddler>> >
+Action: <<selected-tiddler>>
+</$set>
+\end
+
+<<mymacro>>
+<<mymacro "another tiddler">>
+```

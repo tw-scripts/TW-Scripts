@@ -1,0 +1,178 @@
+created: 20170820051104983
+creator: Mohammad
+modified: 20190704022815156
+modifier: Mohammad
+tags: markup tutorial
+title: Syntax Highlighting
+type: text/vnd.tiddlywiki
+
+This TW has been updated to highlight.js 9.12 and the following language has been added:
+
+<<<
+* Fortran
+* Tex
+* Python
+* Matlab / Octave
+* Perl
+* CSS
+* Javascript
+* Julia
+* ...
+<<<
+
+!!.bluecls Example
+
+*''Fortran''
+
+```fortran
+x=1.23_wp
+y=148_wer
+z=1.25e9
+! sum.f90
+! Performs summations using in a loop using EXIT statement
+! Saves input information and the summation in a data file
+function test(x,y)
+real:: x
+print*, 'x=', x
+end function test
+program summation
+implicit none
+integer :: s, a
+
+print*, "This program performs summations. Enter 0 to stop."
+open(unit=10, file="SumData.DAT")
+
+sum = 0
+y = sin(x)*cos(x) - tanh(1-x)
+do
+ print*, "Add:"
+ read*, a
+ if (a == 0) then
+  exit
+ else
+  s = s + a
+ end if
+ write(10,*) a
+end do
+
+print*, "Summation =", s
+write(10,*) "Summation =", s
+close(10)
+contains
+function test(x)
+integer, intent(in):: x
+integer:: test
+test = 2*x
+end function test
+end
+```
+
+*''Tex''
+
+```tex
+\documentclass[]{article}
+
+% opening
+\title{}
+\author{}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+
+\end{abstract}
+\section{First Section}
+Some text!
+\end{document}
+
+```
+
+* ''Python''
+
+```python
+@requires_authorization
+def somefunc(param1='', param2=0):
+    r'''A docstring'''
+    if param1 > param2: # interesting
+        print 'Gre\'ater'
+    return (param2 - param1 + 1 + 0b10l) or None
+
+class SomeClass:
+    pass
+
+>>> message = '''interpreter
+... prompt'''
+```
+
+
+* ''Matlab/Octave''
+
+```matlab
+% A test problem
+[X,Y] = meshgrid(-10:0.25:10,-10:0.25:10);
+f = sinc(sqrt((X/pi).^2+(Y/pi).^2));
+mesh(X,Y,f);
+axis([-10 10 -10 10 -0.3 1])
+xlabel('{\bfx}')
+ylabel('{\bfy}')
+zlabel('{\bfsinc} ({\bfR})')
+hidden off
+
+```
+
+* ''Julia''
+
+```julia
+function hypot(x,y)
+    x = abs(x)
+    y = abs(y)
+    if x > y
+        r = y/x
+        return x*sqrt(1+r*r)
+    end
+    if y == 0
+        return zero(x)
+    end
+    r = x/y
+    return y*sqrt(1+r*r)
+end
+```
+
+* ''Perl''
+
+```perl
+package Name;
+my $singleton;
+
+BEGIN {
+    $singleton = {
+        attribute => 'value',
+        another   => 'something',
+    };
+    bless $singleton, "Name";
+}
+
+sub new {
+    my $class = shift;
+    return $singleton;
+}
+```
+
+* ''CSS''
+
+```css
+ * { margin: 0; padding: 0; } /* micro reset */
+
+html { font-size: 62.5%; }
+body { font-size: 14px; font-size: 1.4rem; } /* =14px */
+h1   { font-size: 24px; font-size: 2.4rem; } /* =24px */
+```
+
+* ''Javascript''
+
+```javascript
+(function(a,b){
+    var result = a+b;
+    return result;
+})(10,20)
+```
